@@ -1,8 +1,8 @@
 using System.Reflection;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyTitle("Smartlogic Semaphore API")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Smartlogic Semaphore Api")]
+[assembly: AssemblyDescription("A client library that can be used to connect to Semaphore services from Microsoft .Net framework applications")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Smartlogic Semaphore Ltd")]
 [assembly: AssemblyProduct("Smartlogic Semaphore .")]

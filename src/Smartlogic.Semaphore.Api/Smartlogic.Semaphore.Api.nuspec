@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <projectUrl>http://smartlogic.com</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <releaseNotes>Initial release. Provides the ability to connect to on-premise services up to version 4.0</releaseNotes>
+    <copyright>Copyright 2016</copyright>
+    <tags>Classification NLP C#</tags>
+  </metadata>
+</package>

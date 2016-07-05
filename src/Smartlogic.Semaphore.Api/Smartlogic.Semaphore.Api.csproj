@@ -96,7 +96,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Schemas\Structure\Structure.xml" />
+    <None Include="Schemas\Structure\Structure.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- override the default version number specified by the Microsoft.VersionNumber.Targets file-->
