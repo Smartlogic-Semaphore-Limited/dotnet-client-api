@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SEMAPHORE>
+<PARAMETERS>
+<PARAMETER NAME='SERVICE'>versions</PARAMETER>
+</PARAMETERS>
+<MAIN_VERSIONS>
+<VERSION NAME='Compatible index structure version' REVISION='209'/>
+<VERSION NAME='SES API version' REVISION='1.1'/>
+<VERSION NAME='SES build' REVISION='Semaphore 3.6 - Semantic Enhancement Server r47664'/>
+</MAIN_VERSIONS>
+<FILES_VERSIONS>
+<VERSION NAME='Configuration.cpp' REVISION='$Rev: 43077 $'/>
+<VERSION NAME='Index.cpp' REVISION='$Rev: 45945 $'/>
+<VERSION NAME='IndexVersion.cpp' REVISION='$Rev: 43077 $'/>
+<VERSION NAME='MuscatIndex.cpp' REVISION='$Rev: 47603 $'/>
+<VERSION NAME='Repository.cpp' REVISION='$Rev: 39679 $'/>
+<VERSION NAME='TermInfoIndex.cpp' REVISION='$Rev: 47545 $'/>
+<VERSION NAME='file_utils.cpp' REVISION='$Rev: 46981 $'/>
+<VERSION NAME='JsonFormatter.cpp' REVISION='$Rev: 47543 $'/>
+<VERSION NAME='JsonFormatterLoader.cpp' REVISION='$Rev: 45193 $'/>
+<VERSION NAME='PlainTextFormatter.cpp' REVISION='$Rev: 46981 $'/>
+<VERSION NAME='PlainTextFormatterLoader.cpp' REVISION='$Rev: 46981 $'/>
+<VERSION NAME='XMLFormatter.cpp' REVISION='$Rev: 47543 $'/>
+<VERSION NAME='XMLFormatterLoader.cpp' REVISION='$Rev: 46981 $'/>
+<VERSION NAME='XSLTransformer.cpp' REVISION='$Rev: 45193 $'/>
+<VERSION NAME='CommandProcessor.cpp' REVISION='$Rev: 47543 $'/>
+<VERSION NAME='FCGIRequestLoop.cpp' REVISION='$Rev: 47246 $'/>
+<VERSION NAME='FCGI_RequestParser.cpp' REVISION='$Rev: 47664 $'/>
+<VERSION NAME='QueryCompiler.cpp' REVISION='$Rev: 46981 $'/>
+<VERSION NAME='RequestLoop.cpp' REVISION='$Rev: 47478 $'/>
+<VERSION NAME='SESInit.cpp' REVISION='$Rev: 47615 $'/>
+<VERSION NAME='SESRequest.cpp' REVISION='$Rev: 45300 $'/>
+<VERSION NAME='SESResponse.cpp' REVISION='$Rev: 46678 $'/>
+<VERSION NAME='SESStats.cpp' REVISION='$Rev: 45193 $'/>
+<VERSION NAME='SESVersion.cpp' REVISION='$Rev: 39679 $'/>
+<VERSION NAME='SESlogger.cpp' REVISION='$Rev: 47612 $'/>
+<VERSION NAME='ServerFCGI.cpp' REVISION='$Rev: 47272 $'/>
+<VERSION NAME='AdvancedConceptMapTokenizer.cpp' REVISION='$Rev: 47308 $'/>
+<VERSION NAME='CMCommonDynamicTokenizer.cpp' REVISION='$Rev: 46845 $'/>
+<VERSION NAME='CMCommonDynamicTokenizerLoader.cpp' REVISION='$Rev: 46981 $'/>
+<VERSION NAME='ConceptMapTokenizer.cpp' REVISION='$Rev: 39679 $'/>
+<VERSION NAME='StemmerWrapper.cpp' REVISION='$Rev: 43077 $'/>
+<VERSION NAME='CommandProcessor.h' REVISION='$Rev: 46678 $'/>
+<VERSION NAME='OutputFormatterInterface.h' REVISION='$Rev: 46981 $'/>
+<VERSION NAME='QueryCompiler.h' REVISION='$Rev: 45193 $'/>
+<VERSION NAME='SESInit.h' REVISION='$Rev: 47478 $'/>
+<VERSION NAME='SESResponse.h' REVISION='$Rev: 47603 $'/>
+<VERSION NAME='SESStats.h' REVISION='$Rev: 45193 $'/>
+<VERSION NAME='SESVersion.h' REVISION='$Rev: 46981 $'/>
+<VERSION NAME='SESlogger.h' REVISION='$Rev: 47603 $'/>
+<VERSION NAME='Configuration.h' REVISION='$Rev: 47180 $'/>
+<VERSION NAME='Index.h' REVISION='$Rev: 46981 $'/>
+<VERSION NAME='IndexVersion.h' REVISION='$Rev: 45831 $'/>
+<VERSION NAME='MuscatIndex.h' REVISION='$Rev: 47543 $'/>
+<VERSION NAME='MuscatUtils.h' REVISION='$Rev: 43077 $'/>
+<VERSION NAME='Repository.h' REVISION='$Rev: 46981 $'/>
+<VERSION NAME='TermInfoIndex.h' REVISION='$Rev: 46845 $'/>
+<VERSION NAME='file_utils.h' REVISION='$Rev: 41550 $'/>
+<VERSION NAME='JsonFormatter.h' REVISION='$Rev: 45193 $'/>
+<VERSION NAME='PlainTextFormatter.h' REVISION='$Rev: 45193 $'/>
+<VERSION NAME='XMLFormatter.h' REVISION='$Rev: 45193 $'/>
+<VERSION NAME='XSLTransformer.h' REVISION='$Rev: 36921 $'/>
+<VERSION NAME='FCGIRequestLoop.h' REVISION='$Rev: 45105 $'/>
+<VERSION NAME='FCGI_RequestParser.h' REVISION='$Rev: 46981 $'/>
+<VERSION NAME='RequestLoop.h' REVISION='$Rev: 45193 $'/>
+<VERSION NAME='SESRequest.h' REVISION='$Rev: 45193 $'/>
+<VERSION NAME='AdvancedConceptMapTokenizer.h' REVISION='$Rev: 46790 $'/>
+<VERSION NAME='CMCommonDynamicTokenizer.h' REVISION='$Rev: 46845 $'/>
+<VERSION NAME='ConceptMapTokenizer.h' REVISION='$Rev: 46981 $'/>
+<VERSION NAME='StemmerWrapper.h' REVISION='$Rev: 46778 $'/>
+</FILES_VERSIONS>
+</SEMAPHORE>

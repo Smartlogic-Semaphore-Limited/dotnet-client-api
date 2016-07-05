@@ -1,0 +1,7259 @@
+﻿{
+"parameters":{
+"tbdb":"disp_taxonomy",
+"az":"A",
+"service":"az",
+"template":"service.json"
+},
+"terms":[
+{
+"term":{
+"name":"Abandoned vehicles",
+"id":"OMITERMO440",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO521","name":"Transport and infrastructure"}
+],
+"attributes":{
+"A-Z Entry":"1"
+},
+"metadata":{
+},
+"index":"disp_taxonomy",
+"displayName":"Abandoned vehicles",
+"foundByNPT":"0",
+"lastUpdatedDate":"20091203163113",
+"createdDate":"20091203162630",
+"creator":"admin",
+"updator":"admin",
+"status":"Approved",
+"documents":"0"
+,
+"hierarchy":[
+{ 
+"typeId":"1",
+"qty":"1",
+"name":"Broader Term",
+"abbr":"BT",
+"fields":[
+{
+"field":{
+"name":"Vehicles",
+"id":"OMITERMO1406",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO521","name":"Transport and infrastructure"}
+]
+}
+}
+]}
+],
+"associated":[
+{ 
+"typeId":"2",
+"qty":"1",
+"name":"Related To",
+"abbr":"RT",
+"fields":[
+{
+"field":{
+"name":"Flytipping",
+"id":"OMITERMO1562",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+}
+]}
+],
+"equivalence":[
+{ 
+"typeId":"3",
+"qty":"3",
+"name":"Use For",
+"abbr":"UF",
+"fields":[
+{
+"field":{
+"name":"abandoned cars",
+"id":"OMITERMO2915",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"dumped cars",
+"id":"OMITERMO2916",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"dumped vehicles",
+"id":"OMITERMO2917",
+"freq":"0"
+
+}
+}
+]}
+],
+"paths":[
+{
+"path":[
+{
+"field":{
+"name":"Transport and infrastructure",
+"id":"OMITERMO521",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO521","name":"Transport and infrastructure"}
+]
+}
+},
+{
+"field":{
+"name":"Road transport",
+"id":"OMITERMO441",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO521","name":"Transport and infrastructure"}
+]
+}
+},
+{
+"field":{
+"name":"Vehicles",
+"id":"OMITERMO1406",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO521","name":"Transport and infrastructure"}
+]
+}
+},
+{
+"field":{
+"name":"Abandoned vehicles",
+"id":"OMITERMO440",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO521","name":"Transport and infrastructure"}
+]
+}
+}
+]
+}
+]
+}
+},
+{
+"term":{
+"name":"Abnormal loads (road transport)",
+"id":"OMITERMO2900",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO521","name":"Transport and infrastructure"}
+],
+"attributes":{
+"A-Z Entry":"1"
+},
+"metadata":{
+},
+"index":"disp_taxonomy",
+"displayName":"Abnormal loads (road transport)",
+"foundByNPT":"0",
+"lastUpdatedDate":"20091203163113",
+"createdDate":"20091203162631",
+"creator":"admin",
+"updator":"admin",
+"status":"Approved",
+"documents":"0"
+,
+"hierarchy":[
+{ 
+"typeId":"1",
+"qty":"1",
+"name":"Broader Term",
+"abbr":"BT",
+"fields":[
+{
+"field":{
+"name":"HGV management and signage",
+"id":"OMITERMO2898",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO521","name":"Transport and infrastructure"}
+]
+}
+}
+]}
+],
+"equivalence":[
+{ 
+"typeId":"3",
+"qty":"3",
+"name":"Use For",
+"abbr":"UF",
+"fields":[
+{
+"field":{
+"name":"Heavy Loads (road transport)",
+"id":"OMITERMO2901",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"High Loads (road transport)",
+"id":"OMITERMO2902",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Wide Loads (road transport)",
+"id":"OMITERMO2903",
+"freq":"0"
+
+}
+}
+]}
+],
+"paths":[
+{
+"path":[
+{
+"field":{
+"name":"Transport and infrastructure",
+"id":"OMITERMO521",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO521","name":"Transport and infrastructure"}
+]
+}
+},
+{
+"field":{
+"name":"Road transport",
+"id":"OMITERMO441",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO521","name":"Transport and infrastructure"}
+]
+}
+},
+{
+"field":{
+"name":"Vehicles",
+"id":"OMITERMO1406",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO521","name":"Transport and infrastructure"}
+]
+}
+},
+{
+"field":{
+"name":"Heavy goods vehicles",
+"id":"OMITERMO310",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO521","name":"Transport and infrastructure"}
+]
+}
+},
+{
+"field":{
+"name":"HGV management and signage",
+"id":"OMITERMO2898",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO521","name":"Transport and infrastructure"}
+]
+}
+},
+{
+"field":{
+"name":"Abnormal loads (road transport)",
+"id":"OMITERMO2900",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO521","name":"Transport and infrastructure"}
+]
+}
+}
+]
+}
+]
+}
+},
+{
+"term":{
+"name":"Access for disabled people",
+"id":"OMITERMO158",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO557","name":"Health, well-being and care"}
+],
+"attributes":{
+"A-Z Entry":"1",
+"Internal":"1"
+},
+"metadata":{
+},
+"index":"disp_taxonomy",
+"displayName":"Access for disabled people",
+"foundByNPT":"0",
+"lastUpdatedDate":"20091203163113",
+"createdDate":"20091203162630",
+"creator":"admin",
+"updator":"admin",
+"status":"Approved",
+"documents":"0"
+,
+"hierarchy":[
+{ 
+"typeId":"1",
+"qty":"1",
+"name":"Broader Term",
+"abbr":"BT",
+"fields":[
+{
+"field":{
+"name":"Disability",
+"id":"OMITERMO3471",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO557","name":"Health, well-being and care"}
+]
+}
+}
+]},
+{ 
+"typeId":"1",
+"qty":"3",
+"name":"Narrower Term",
+"abbr":"NT",
+"fields":[
+{
+"field":{
+"name":"Accessible buildings",
+"id":"OMITERMO3543",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO557","name":"Health, well-being and care"},
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Disabled facilities grants",
+"id":"OMITERMO3545",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO460","name":"Housing"},
+{"id":"OMITERMO557","name":"Health, well-being and care"},
+{"id":"OMITERMO726","name":"Economics and finance"}
+]
+}
+},
+{
+"field":{
+"name":"Shopmobility",
+"id":"OMITERMO156",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO557","name":"Health, well-being and care"}
+]
+}
+}
+]}
+],
+"associated":[
+{ 
+"typeId":"2",
+"qty":"2",
+"name":"Related To",
+"abbr":"RT",
+"fields":[
+{
+"field":{
+"name":"Equipment for disabled people",
+"id":"OMITERMO3477",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO557","name":"Health, well-being and care"}
+]
+}
+},
+{
+"field":{
+"name":"Transport for disabled people",
+"id":"OMITERMO3539",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO557","name":"Health, well-being and care"},
+{"id":"OMITERMO521","name":"Transport and infrastructure"}
+]
+}
+}
+]}
+],
+"equivalence":[
+{ 
+"typeId":"3",
+"qty":"4",
+"name":"Use For",
+"abbr":"UF",
+"fields":[
+{
+"field":{
+"name":"Access for disabled",
+"id":"OMITERMO3472",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Accessibility for disabled people",
+"id":"OMITERMO3536",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Disability access",
+"id":"OMITERMO3535",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Disabled Access",
+"id":"OMITERMO3476",
+"freq":"0"
+
+}
+}
+]}
+],
+"paths":[
+{
+"path":[
+{
+"field":{
+"name":"Health, well-being and care",
+"id":"OMITERMO557",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO557","name":"Health, well-being and care"}
+]
+}
+},
+{
+"field":{
+"name":"Disability",
+"id":"OMITERMO3471",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO557","name":"Health, well-being and care"}
+]
+}
+},
+{
+"field":{
+"name":"Access for disabled people",
+"id":"OMITERMO158",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO557","name":"Health, well-being and care"}
+]
+}
+}
+]
+}
+]
+}
+},
+{
+"term":{
+"name":"Accident prevention",
+"id":"OMITERMO2971",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO557","name":"Health, well-being and care"}
+],
+"attributes":{
+"A-Z Entry":"1",
+"Internal":"1"
+},
+"metadata":{
+},
+"index":"disp_taxonomy",
+"displayName":"Accident prevention",
+"foundByNPT":"0",
+"lastUpdatedDate":"20091203163113",
+"createdDate":"20091203162631",
+"creator":"admin",
+"updator":"admin",
+"status":"Approved",
+"documents":"0"
+,
+"hierarchy":[
+{ 
+"typeId":"1",
+"qty":"1",
+"name":"Broader Term",
+"abbr":"BT",
+"fields":[
+{
+"field":{
+"name":"Safety",
+"id":"OMITERMO1058",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO557","name":"Health, well-being and care"}
+]
+}
+}
+]}
+],
+"equivalence":[
+{ 
+"typeId":"3",
+"qty":"2",
+"name":"Use For",
+"abbr":"UF",
+"fields":[
+{
+"field":{
+"name":"Preventing accidents",
+"id":"OMITERMO2972",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Safety precautions",
+"id":"OMITERMO2973",
+"freq":"0"
+
+}
+}
+]}
+],
+"paths":[
+{
+"path":[
+{
+"field":{
+"name":"Health, well-being and care",
+"id":"OMITERMO557",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO557","name":"Health, well-being and care"}
+]
+}
+},
+{
+"field":{
+"name":"Safety",
+"id":"OMITERMO1058",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO557","name":"Health, well-being and care"}
+]
+}
+},
+{
+"field":{
+"name":"Accident prevention",
+"id":"OMITERMO2971",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO557","name":"Health, well-being and care"}
+]
+}
+}
+]
+}
+]
+}
+},
+{
+"term":{
+"name":"Accidents at work",
+"id":"OMITERMO455",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO981","name":"Employment, jobs and careers"},
+{"id":"OMITERMO692","name":"Business and industry"}
+],
+"attributes":{
+"A-Z Entry":"1",
+"Internal":"1"
+},
+"metadata":{
+},
+"index":"disp_taxonomy",
+"displayName":"Accidents at work",
+"foundByNPT":"0",
+"lastUpdatedDate":"20091203163113",
+"createdDate":"20091203162630",
+"creator":"admin",
+"updator":"admin",
+"status":"Approved",
+"documents":"0"
+,
+"hierarchy":[
+{ 
+"typeId":"1",
+"qty":"1",
+"name":"Broader Term",
+"abbr":"BT",
+"fields":[
+{
+"field":{
+"name":"Health and safety at work",
+"id":"OMITERMO456",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO981","name":"Employment, jobs and careers"},
+{"id":"OMITERMO692","name":"Business and industry"}
+]
+}
+}
+]}
+],
+"associated":[
+{ 
+"typeId":"2",
+"qty":"1",
+"name":"Related To",
+"abbr":"RT",
+"fields":[
+{
+"field":{
+"name":"Compensation",
+"id":"OMITERMO6748",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO760","name":"Government, politics and public administration"},
+{"id":"OMITERMO692","name":"Business and industry"}
+]
+}
+}
+]}
+],
+"equivalence":[
+{ 
+"typeId":"3",
+"qty":"4",
+"name":"Use For",
+"abbr":"UF",
+"fields":[
+{
+"field":{
+"name":"Accident reporting at work",
+"id":"OMITERMO6093",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Accidents and incidents",
+"id":"OMITERMO7394",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Incidents (accidents at work)",
+"id":"OMITERMO7395",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"RIDDOR (reporting of injuries, diseases and dangerous occurrences)",
+"id":"OMITERMO6092",
+"freq":"0"
+
+}
+}
+]}
+],
+"paths":[
+{
+"path":[
+{
+"field":{
+"name":"Business and industry",
+"id":"OMITERMO692",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO692","name":"Business and industry"}
+]
+}
+},
+{
+"field":{
+"name":"Business practice and regulation",
+"id":"OMITERMO488",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO692","name":"Business and industry"}
+]
+}
+},
+{
+"field":{
+"name":"Health and safety at work",
+"id":"OMITERMO456",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO981","name":"Employment, jobs and careers"},
+{"id":"OMITERMO692","name":"Business and industry"}
+]
+}
+},
+{
+"field":{
+"name":"Accidents at work",
+"id":"OMITERMO455",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO981","name":"Employment, jobs and careers"},
+{"id":"OMITERMO692","name":"Business and industry"}
+]
+}
+}
+]
+},
+{
+"path":[
+{
+"field":{
+"name":"Employment, jobs and careers",
+"id":"OMITERMO981",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO981","name":"Employment, jobs and careers"}
+]
+}
+},
+{
+"field":{
+"name":"Health and safety at work",
+"id":"OMITERMO456",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO981","name":"Employment, jobs and careers"},
+{"id":"OMITERMO692","name":"Business and industry"}
+]
+}
+},
+{
+"field":{
+"name":"Accidents at work",
+"id":"OMITERMO455",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO981","name":"Employment, jobs and careers"},
+{"id":"OMITERMO692","name":"Business and industry"}
+]
+}
+}
+]
+}
+]
+}
+},
+{
+"term":{
+"name":"Addiction",
+"id":"OMITERMO523",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO642","name":"Life in the community"},
+{"id":"OMITERMO557","name":"Health, well-being and care"}
+],
+"attributes":{
+"A-Z Entry":"1",
+"Internal":"1"
+},
+"metadata":{
+},
+"index":"disp_taxonomy",
+"displayName":"Addiction",
+"foundByNPT":"0",
+"lastUpdatedDate":"20091203163113",
+"createdDate":"20091203162630",
+"creator":"admin",
+"updator":"admin",
+"status":"Approved",
+"documents":"0"
+,
+"hierarchy":[
+{ 
+"typeId":"1",
+"qty":"2",
+"name":"Broader Term",
+"abbr":"BT",
+"fields":[
+{
+"field":{
+"name":"Health",
+"id":"OMITERMO514",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO557","name":"Health, well-being and care"}
+]
+}
+},
+{
+"field":{
+"name":"Social issues",
+"id":"OMITERMO4702",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO642","name":"Life in the community"}
+]
+}
+}
+]},
+{ 
+"typeId":"1",
+"qty":"5",
+"name":"Narrower Term",
+"abbr":"NT",
+"fields":[
+{
+"field":{
+"name":"Alcohol use and abuse",
+"id":"OMITERMO522",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO642","name":"Life in the community"},
+{"id":"OMITERMO557","name":"Health, well-being and care"}
+]
+}
+},
+{
+"field":{
+"name":"Drug and alcohol action teams",
+"id":"OMITERMO3653",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO642","name":"Life in the community"},
+{"id":"OMITERMO557","name":"Health, well-being and care"}
+]
+}
+},
+{
+"field":{
+"name":"Drugs use and abuse",
+"id":"OMITERMO957",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO642","name":"Life in the community"},
+{"id":"OMITERMO557","name":"Health, well-being and care"}
+]
+}
+},
+{
+"field":{
+"name":"Smoking",
+"id":"OMITERMO961",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO642","name":"Life in the community"},
+{"id":"OMITERMO557","name":"Health, well-being and care"}
+]
+}
+},
+{
+"field":{
+"name":"Solvent abuse",
+"id":"OMITERMO959",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO642","name":"Life in the community"},
+{"id":"OMITERMO557","name":"Health, well-being and care"}
+]
+}
+}
+]}
+],
+"associated":[
+{ 
+"typeId":"2",
+"qty":"2",
+"name":"Related To",
+"abbr":"RT",
+"fields":[
+{
+"field":{
+"name":"Behaviour disorders",
+"id":"OMITERMO3484",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO557","name":"Health, well-being and care"}
+]
+}
+},
+{
+"field":{
+"name":"Crisis intervention services",
+"id":"OMITERMO4113",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO557","name":"Health, well-being and care"}
+]
+}
+}
+]}
+],
+"equivalence":[
+{ 
+"typeId":"3",
+"qty":"4",
+"name":"Use For",
+"abbr":"UF",
+"fields":[
+{
+"field":{
+"name":"Alcohol, drugs and substance use",
+"id":"OMITERMO3651",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Drugs and alcohol",
+"id":"OMITERMO3650",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"substance addiction",
+"id":"OMITERMO960",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Substance Use",
+"id":"OMITERMO3652",
+"freq":"0"
+
+}
+}
+]}
+],
+"paths":[
+{
+"path":[
+{
+"field":{
+"name":"Health, well-being and care",
+"id":"OMITERMO557",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO557","name":"Health, well-being and care"}
+]
+}
+},
+{
+"field":{
+"name":"Health",
+"id":"OMITERMO514",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO557","name":"Health, well-being and care"}
+]
+}
+},
+{
+"field":{
+"name":"Addiction",
+"id":"OMITERMO523",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO642","name":"Life in the community"},
+{"id":"OMITERMO557","name":"Health, well-being and care"}
+]
+}
+}
+]
+},
+{
+"path":[
+{
+"field":{
+"name":"Life in the community",
+"id":"OMITERMO642",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO642","name":"Life in the community"}
+]
+}
+},
+{
+"field":{
+"name":"Social issues",
+"id":"OMITERMO4702",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO642","name":"Life in the community"}
+]
+}
+},
+{
+"field":{
+"name":"Addiction",
+"id":"OMITERMO523",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO642","name":"Life in the community"},
+{"id":"OMITERMO557","name":"Health, well-being and care"}
+]
+}
+}
+]
+}
+]
+}
+},
+{
+"term":{
+"name":"Adoption",
+"id":"OMITERMO480",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO557","name":"Health, well-being and care"}
+],
+"attributes":{
+"A-Z Entry":"1"
+},
+"metadata":{
+},
+"index":"disp_taxonomy",
+"displayName":"Adoption",
+"foundByNPT":"0",
+"lastUpdatedDate":"20091203163113",
+"createdDate":"20091203162630",
+"creator":"admin",
+"updator":"admin",
+"status":"Approved",
+"documents":"0"
+,
+"hierarchy":[
+{ 
+"typeId":"1",
+"qty":"1",
+"name":"Broader Term",
+"abbr":"BT",
+"fields":[
+{
+"field":{
+"name":"Child care",
+"id":"OMITERMO140",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO557","name":"Health, well-being and care"}
+]
+}
+}
+]}
+],
+"associated":[
+{ 
+"typeId":"2",
+"qty":"1",
+"name":"Related To",
+"abbr":"RT",
+"fields":[
+{
+"field":{
+"name":"Adoption rights",
+"id":"OMITERMO7912",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO564","name":"Public order, justice and rights"},
+{"id":"OMITERMO981","name":"Employment, jobs and careers"}
+]
+}
+}
+]}
+],
+"equivalence":[
+{ 
+"typeId":"3",
+"qty":"2",
+"name":"Use For",
+"abbr":"UF",
+"fields":[
+{
+"field":{
+"name":"Adoption Services",
+"id":"OMITERMO4163",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Family Placement (adoption)",
+"id":"OMITERMO4169",
+"freq":"0"
+
+}
+}
+]}
+],
+"paths":[
+{
+"path":[
+{
+"field":{
+"name":"Health, well-being and care",
+"id":"OMITERMO557",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO557","name":"Health, well-being and care"}
+]
+}
+},
+{
+"field":{
+"name":"Care",
+"id":"OMITERMO481",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO557","name":"Health, well-being and care"}
+]
+}
+},
+{
+"field":{
+"name":"Child care",
+"id":"OMITERMO140",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO557","name":"Health, well-being and care"}
+]
+}
+},
+{
+"field":{
+"name":"Adoption",
+"id":"OMITERMO480",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO557","name":"Health, well-being and care"}
+]
+}
+}
+]
+}
+]
+}
+},
+{
+"term":{
+"name":"Adult and community education",
+"id":"OMITERMO483",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO439","name":"Education and skills"}
+],
+"attributes":{
+"A-Z Entry":"1"
+},
+"metadata":{
+},
+"index":"disp_taxonomy",
+"displayName":"Adult and community education",
+"foundByNPT":"0",
+"lastUpdatedDate":"20091203163113",
+"createdDate":"20091203162630",
+"creator":"admin",
+"updator":"admin",
+"status":"Approved",
+"documents":"0"
+,
+"hierarchy":[
+{ 
+"typeId":"1",
+"qty":"1",
+"name":"Broader Term",
+"abbr":"BT",
+"fields":[
+{
+"field":{
+"name":"Education and skills",
+"id":"OMITERMO439",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO439","name":"Education and skills"}
+]
+}
+}
+]},
+{ 
+"typeId":"1",
+"qty":"3",
+"name":"Narrower Term",
+"abbr":"NT",
+"fields":[
+{
+"field":{
+"name":"Adult and community education centres",
+"id":"OMITERMO1938",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO439","name":"Education and skills"},
+{"id":"OMITERMO642","name":"Life in the community"}
+]
+}
+},
+{
+"field":{
+"name":"Evening classes",
+"id":"OMITERMO1583",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO439","name":"Education and skills"}
+]
+}
+},
+{
+"field":{
+"name":"Family learning",
+"id":"OMITERMO1942",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO439","name":"Education and skills"}
+]
+}
+}
+]}
+],
+"associated":[
+{ 
+"typeId":"2",
+"qty":"6",
+"name":"Related To",
+"abbr":"RT",
+"fields":[
+{
+"field":{
+"name":"Adult basic education courses",
+"id":"OMITERMO1856",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO439","name":"Education and skills"}
+]
+}
+},
+{
+"field":{
+"name":"Education on recycling",
+"id":"OMITERMO2460",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Further and higher education",
+"id":"OMITERMO984",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO439","name":"Education and skills"}
+]
+}
+},
+{
+"field":{
+"name":"Learning partnerships",
+"id":"OMITERMO1943",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO6999","name":"People and organisations"}
+]
+}
+},
+{
+"field":{
+"name":"Parenting skills and courses",
+"id":"OMITERMO2206",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO439","name":"Education and skills"}
+]
+}
+},
+{
+"field":{
+"name":"Studies and qualifications (post-16)",
+"id":"OMITERMO435",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO439","name":"Education and skills"}
+]
+}
+}
+]}
+],
+"equivalence":[
+{ 
+"typeId":"3",
+"qty":"16",
+"name":"Use For",
+"abbr":"UF",
+"fields":[
+{
+"field":{
+"name":"adult basic skills",
+"id":"OMITERMO482",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Adult Education",
+"id":"OMITERMO1923",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Adult Education and skills",
+"id":"OMITERMO1937",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"adult learning and skills",
+"id":"OMITERMO484",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Community Education",
+"id":"OMITERMO1924",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"community learning",
+"id":"OMITERMO828",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Community Services (education)",
+"id":"OMITERMO4774",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Learndirect",
+"id":"OMITERMO397",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Learndirect Scotland",
+"id":"OMITERMO1582",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"learning opportunities for adults",
+"id":"OMITERMO398",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Lifelong learning (post-16)",
+"id":"OMITERMO1247",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Night School (adult education)",
+"id":"OMITERMO2187",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"skills development for adults",
+"id":"OMITERMO1581",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Training (adults)",
+"id":"OMITERMO1249",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"U3A",
+"id":"OMITERMO1944",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"University of the Third Age",
+"id":"OMITERMO1939",
+"freq":"0"
+
+}
+}
+]}
+],
+"paths":[
+{
+"path":[
+{
+"field":{
+"name":"Education and skills",
+"id":"OMITERMO439",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO439","name":"Education and skills"}
+]
+}
+},
+{
+"field":{
+"name":"Adult and community education",
+"id":"OMITERMO483",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO439","name":"Education and skills"}
+]
+}
+}
+]
+}
+]
+}
+},
+{
+"term":{
+"name":"Adult and community education centres",
+"id":"OMITERMO1938",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO439","name":"Education and skills"},
+{"id":"OMITERMO642","name":"Life in the community"}
+],
+"attributes":{
+"A-Z Entry":"1"
+},
+"metadata":{
+},
+"index":"disp_taxonomy",
+"displayName":"Adult and community education centres",
+"foundByNPT":"0",
+"lastUpdatedDate":"20091203163113",
+"createdDate":"20091203162630",
+"creator":"admin",
+"updator":"admin",
+"status":"Approved",
+"documents":"0"
+,
+"hierarchy":[
+{ 
+"typeId":"1",
+"qty":"2",
+"name":"Broader Term",
+"abbr":"BT",
+"fields":[
+{
+"field":{
+"name":"Adult and community education",
+"id":"OMITERMO483",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO439","name":"Education and skills"}
+]
+}
+},
+{
+"field":{
+"name":"Community facilities",
+"id":"OMITERMO4651",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO642","name":"Life in the community"}
+]
+}
+}
+]}
+],
+"equivalence":[
+{ 
+"typeId":"3",
+"qty":"12",
+"name":"Use For",
+"abbr":"UF",
+"fields":[
+{
+"field":{
+"name":"Adult Education providers",
+"id":"OMITERMO1941",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Adult Learning Exchanges",
+"id":"OMITERMO2196",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Adult resource centres (education and training)",
+"id":"OMITERMO2195",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"adult training centres",
+"id":"OMITERMO2197",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Community education centres",
+"id":"OMITERMO2112",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"education centres (adult and community)",
+"id":"OMITERMO2111",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"educational establishments (adult and community education)",
+"id":"OMITERMO2054",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Educational Institutions (adult and community education centres)",
+"id":"OMITERMO2053",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Learning Access Points (adults)",
+"id":"OMITERMO2110",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"learning centres (adults)",
+"id":"OMITERMO2109",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Technology Centres",
+"id":"OMITERMO2201",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Training Centres",
+"id":"OMITERMO2077",
+"freq":"0"
+
+}
+}
+]}
+],
+"paths":[
+{
+"path":[
+{
+"field":{
+"name":"Life in the community",
+"id":"OMITERMO642",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO642","name":"Life in the community"}
+]
+}
+},
+{
+"field":{
+"name":"Community facilities",
+"id":"OMITERMO4651",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO642","name":"Life in the community"}
+]
+}
+},
+{
+"field":{
+"name":"Adult and community education centres",
+"id":"OMITERMO1938",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO439","name":"Education and skills"},
+{"id":"OMITERMO642","name":"Life in the community"}
+]
+}
+}
+]
+},
+{
+"path":[
+{
+"field":{
+"name":"Education and skills",
+"id":"OMITERMO439",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO439","name":"Education and skills"}
+]
+}
+},
+{
+"field":{
+"name":"Adult and community education",
+"id":"OMITERMO483",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO439","name":"Education and skills"}
+]
+}
+},
+{
+"field":{
+"name":"Adult and community education centres",
+"id":"OMITERMO1938",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO439","name":"Education and skills"},
+{"id":"OMITERMO642","name":"Life in the community"}
+]
+}
+}
+]
+}
+]
+}
+},
+{
+"term":{
+"name":"Advertising",
+"id":"OMITERMO487",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO692","name":"Business and industry"}
+],
+"attributes":{
+"A-Z Entry":"1"
+},
+"metadata":{
+},
+"index":"disp_taxonomy",
+"displayName":"Advertising",
+"foundByNPT":"0",
+"lastUpdatedDate":"20091203163113",
+"createdDate":"20091203162630",
+"creator":"admin",
+"updator":"admin",
+"status":"Approved",
+"documents":"0"
+,
+"hierarchy":[
+{ 
+"typeId":"1",
+"qty":"1",
+"name":"Broader Term",
+"abbr":"BT",
+"fields":[
+{
+"field":{
+"name":"Marketing",
+"id":"OMITERMO6013",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO692","name":"Business and industry"}
+]
+}
+}
+]},
+{ 
+"typeId":"1",
+"qty":"1",
+"name":"Narrower Term",
+"abbr":"NT",
+"fields":[
+{
+"field":{
+"name":"Fly posting",
+"id":"OMITERMO2773",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO692","name":"Business and industry"}
+]
+}
+}
+]}
+],
+"associated":[
+{ 
+"typeId":"2",
+"qty":"4",
+"name":"Related To",
+"abbr":"RT",
+"fields":[
+{
+"field":{
+"name":"Advertising hoardings",
+"id":"OMITERMO2765",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO521","name":"Transport and infrastructure"}
+]
+}
+},
+{
+"field":{
+"name":"Communications industries",
+"id":"OMITERMO490",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO758","name":"Information and communication"},
+{"id":"OMITERMO692","name":"Business and industry"}
+]
+}
+},
+{
+"field":{
+"name":"Description of goods",
+"id":"OMITERMO6243",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO692","name":"Business and industry"}
+]
+}
+},
+{
+"field":{
+"name":"Media and the press",
+"id":"OMITERMO489",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO758","name":"Information and communication"}
+]
+}
+}
+]}
+],
+"equivalence":[
+{ 
+"typeId":"3",
+"qty":"5",
+"name":"Use For",
+"abbr":"UF",
+"fields":[
+{
+"field":{
+"name":"adverts",
+"id":"OMITERMO2772",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Commercials (radio and TV)",
+"id":"OMITERMO7647",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Promotion (advertisements)",
+"id":"OMITERMO7276",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Radio advertising",
+"id":"OMITERMO7645",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Television advertising",
+"id":"OMITERMO7646",
+"freq":"0"
+
+}
+}
+]}
+],
+"paths":[
+{
+"path":[
+{
+"field":{
+"name":"Business and industry",
+"id":"OMITERMO692",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO692","name":"Business and industry"}
+]
+}
+},
+{
+"field":{
+"name":"Business practice and regulation",
+"id":"OMITERMO488",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO692","name":"Business and industry"}
+]
+}
+},
+{
+"field":{
+"name":"Marketing",
+"id":"OMITERMO6013",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO692","name":"Business and industry"}
+]
+}
+},
+{
+"field":{
+"name":"Advertising",
+"id":"OMITERMO487",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO692","name":"Business and industry"}
+]
+}
+}
+]
+}
+]
+}
+},
+{
+"term":{
+"name":"Advertising hoardings",
+"id":"OMITERMO2765",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO521","name":"Transport and infrastructure"}
+],
+"attributes":{
+"A-Z Entry":"1"
+},
+"metadata":{
+},
+"index":"disp_taxonomy",
+"displayName":"Advertising hoardings",
+"foundByNPT":"0",
+"lastUpdatedDate":"20091203163113",
+"createdDate":"20091203162631",
+"creator":"admin",
+"updator":"admin",
+"status":"Approved",
+"documents":"0"
+,
+"hierarchy":[
+{ 
+"typeId":"1",
+"qty":"1",
+"name":"Broader Term",
+"abbr":"BT",
+"fields":[
+{
+"field":{
+"name":"Structures and installations",
+"id":"OMITERMO3076",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO521","name":"Transport and infrastructure"}
+]
+}
+}
+]}
+],
+"associated":[
+{ 
+"typeId":"2",
+"qty":"2",
+"name":"Related To",
+"abbr":"RT",
+"fields":[
+{
+"field":{
+"name":"Advertisement permissions",
+"id":"OMITERMO5910",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Advertising",
+"id":"OMITERMO487",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO692","name":"Business and industry"}
+]
+}
+}
+]}
+],
+"equivalence":[
+{ 
+"typeId":"3",
+"qty":"6",
+"name":"Use For",
+"abbr":"UF",
+"fields":[
+{
+"field":{
+"name":"Advertisement control on highways",
+"id":"OMITERMO2771",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Advertisement hoardings",
+"id":"OMITERMO2768",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"advertising signs",
+"id":"OMITERMO2770",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Display advertisements and hoardings",
+"id":"OMITERMO2766",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Hoardings (advertisements)",
+"id":"OMITERMO2767",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Roundabout advertising",
+"id":"OMITERMO2769",
+"freq":"0"
+
+}
+}
+]}
+],
+"paths":[
+{
+"path":[
+{
+"field":{
+"name":"Transport and infrastructure",
+"id":"OMITERMO521",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO521","name":"Transport and infrastructure"}
+]
+}
+},
+{
+"field":{
+"name":"Structures and installations",
+"id":"OMITERMO3076",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO521","name":"Transport and infrastructure"}
+]
+}
+},
+{
+"field":{
+"name":"Advertising hoardings",
+"id":"OMITERMO2765",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO521","name":"Transport and infrastructure"}
+]
+}
+}
+]
+}
+]
+}
+},
+{
+"term":{
+"name":"Advice agencies",
+"id":"OMITERMO6265",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO6999","name":"People and organisations"}
+],
+"attributes":{
+"A-Z Entry":"1"
+},
+"metadata":{
+},
+"index":"disp_taxonomy",
+"displayName":"Advice agencies",
+"foundByNPT":"0",
+"lastUpdatedDate":"20091203163113",
+"createdDate":"20091203162631",
+"creator":"admin",
+"updator":"admin",
+"status":"Approved",
+"documents":"0"
+,
+"hierarchy":[
+{ 
+"typeId":"1",
+"qty":"1",
+"name":"Broader Term",
+"abbr":"BT",
+"fields":[
+{
+"field":{
+"name":"Organisations",
+"id":"OMITERMO4373",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO6999","name":"People and organisations"}
+]
+}
+}
+]},
+{ 
+"typeId":"1",
+"qty":"2",
+"name":"Narrower Term",
+"abbr":"NT",
+"fields":[
+{
+"field":{
+"name":"Citizens Advice Bureaux",
+"id":"OMITERMO6266",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO6999","name":"People and organisations"}
+]
+}
+},
+{
+"field":{
+"name":"Helplines (care services)",
+"id":"OMITERMO6964",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO557","name":"Health, well-being and care"},
+{"id":"OMITERMO6999","name":"People and organisations"}
+]
+}
+}
+]}
+],
+"associated":[
+{ 
+"typeId":"2",
+"qty":"7",
+"name":"Related To",
+"abbr":"RT",
+"fields":[
+{
+"field":{
+"name":"Bereavement counselling",
+"id":"OMITERMO4248",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO557","name":"Health, well-being and care"}
+]
+}
+},
+{
+"field":{
+"name":"Business advice services",
+"id":"OMITERMO6067",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO692","name":"Business and industry"}
+]
+}
+},
+{
+"field":{
+"name":"Consumer advice services",
+"id":"OMITERMO6255",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO692","name":"Business and industry"}
+]
+}
+},
+{
+"field":{
+"name":"Debt advice services",
+"id":"OMITERMO4743",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO692","name":"Business and industry"}
+]
+}
+},
+{
+"field":{
+"name":"Legal aid and advice",
+"id":"OMITERMO1452",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO564","name":"Public order, justice and rights"}
+]
+}
+},
+{
+"field":{
+"name":"Medical advice and support services",
+"id":"OMITERMO4310",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO557","name":"Health, well-being and care"}
+]
+}
+},
+{
+"field":{
+"name":"Unemployment advice services",
+"id":"OMITERMO6116",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO981","name":"Employment, jobs and careers"}
+]
+}
+}
+]}
+],
+"equivalence":[
+{ 
+"typeId":"3",
+"qty":"3",
+"name":"Use For",
+"abbr":"UF",
+"fields":[
+{
+"field":{
+"name":"Advice Centres",
+"id":"OMITERMO6268",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Advice Helplines",
+"id":"OMITERMO6272",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"ICIS (Independent Combined Information Service)",
+"id":"OMITERMO6267",
+"freq":"0"
+
+}
+}
+]}
+],
+"paths":[
+{
+"path":[
+{
+"field":{
+"name":"People and organisations",
+"id":"OMITERMO6999",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO6999","name":"People and organisations"}
+]
+}
+},
+{
+"field":{
+"name":"Organisations",
+"id":"OMITERMO4373",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO6999","name":"People and organisations"}
+]
+}
+},
+{
+"field":{
+"name":"Advice agencies",
+"id":"OMITERMO6265",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO6999","name":"People and organisations"}
+]
+}
+}
+]
+}
+]
+}
+},
+{
+"term":{
+"name":"After school care",
+"id":"OMITERMO4146",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO557","name":"Health, well-being and care"}
+],
+"attributes":{
+"A-Z Entry":"1"
+},
+"metadata":{
+},
+"index":"disp_taxonomy",
+"displayName":"After school care",
+"foundByNPT":"0",
+"lastUpdatedDate":"20091203163113",
+"createdDate":"20091203162631",
+"creator":"admin",
+"updator":"admin",
+"status":"Approved",
+"documents":"0"
+,
+"hierarchy":[
+{ 
+"typeId":"1",
+"qty":"1",
+"name":"Broader Term",
+"abbr":"BT",
+"fields":[
+{
+"field":{
+"name":"Child care",
+"id":"OMITERMO140",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO557","name":"Health, well-being and care"}
+]
+}
+}
+]}
+],
+"associated":[
+{ 
+"typeId":"2",
+"qty":"1",
+"name":"Related To",
+"abbr":"RT",
+"fields":[
+{
+"field":{
+"name":"Out of school activities",
+"id":"OMITERMO1631",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO439","name":"Education and skills"}
+]
+}
+}
+]}
+],
+"equivalence":[
+{ 
+"typeId":"3",
+"qty":"2",
+"name":"Use For",
+"abbr":"UF",
+"fields":[
+{
+"field":{
+"name":"Play Schemes (after school)",
+"id":"OMITERMO4549",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Playschemes (after school)",
+"id":"OMITERMO4539",
+"freq":"0"
+
+}
+}
+]}
+],
+"paths":[
+{
+"path":[
+{
+"field":{
+"name":"Health, well-being and care",
+"id":"OMITERMO557",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO557","name":"Health, well-being and care"}
+]
+}
+},
+{
+"field":{
+"name":"Care",
+"id":"OMITERMO481",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO557","name":"Health, well-being and care"}
+]
+}
+},
+{
+"field":{
+"name":"Child care",
+"id":"OMITERMO140",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO557","name":"Health, well-being and care"}
+]
+}
+},
+{
+"field":{
+"name":"After school care",
+"id":"OMITERMO4146",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO557","name":"Health, well-being and care"}
+]
+}
+}
+]
+}
+]
+}
+},
+{
+"term":{
+"name":"Agenda 21 implementation",
+"id":"OMITERMO2280",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+],
+"attributes":{
+"A-Z Entry":"1",
+"Internal":"1"
+},
+"metadata":{
+},
+"index":"disp_taxonomy",
+"displayName":"Agenda 21 implementation",
+"foundByNPT":"0",
+"lastUpdatedDate":"20091203163113",
+"createdDate":"20091203162630",
+"creator":"admin",
+"updator":"admin",
+"status":"Approved",
+"documents":"0"
+,
+"hierarchy":[
+{ 
+"typeId":"1",
+"qty":"1",
+"name":"Broader Term",
+"abbr":"BT",
+"fields":[
+{
+"field":{
+"name":"Environmental sustainability",
+"id":"OMITERMO2241",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+}
+]}
+],
+"paths":[
+{
+"path":[
+{
+"field":{
+"name":"Environment",
+"id":"OMITERMO499",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Environmental protection",
+"id":"OMITERMO501",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Environmental sustainability",
+"id":"OMITERMO2241",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Agenda 21 implementation",
+"id":"OMITERMO2280",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+}
+]
+}
+]
+}
+},
+{
+"term":{
+"name":"Air pollution",
+"id":"OMITERMO4",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+],
+"attributes":{
+"A-Z Entry":"1",
+"Internal":"1"
+},
+"metadata":{
+},
+"index":"disp_taxonomy",
+"displayName":"Air pollution",
+"foundByNPT":"0",
+"lastUpdatedDate":"20091203163113",
+"createdDate":"20091203162630",
+"creator":"admin",
+"updator":"admin",
+"status":"Approved",
+"documents":"0"
+,
+"hierarchy":[
+{ 
+"typeId":"1",
+"qty":"1",
+"name":"Broader Term",
+"abbr":"BT",
+"fields":[
+{
+"field":{
+"name":"Pollution",
+"id":"OMITERMO1018",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+}
+]},
+{ 
+"typeId":"1",
+"qty":"2",
+"name":"Narrower Term",
+"abbr":"NT",
+"fields":[
+{
+"field":{
+"name":"Odours",
+"id":"OMITERMO2486",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Smoke emissions",
+"id":"OMITERMO2475",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+}
+]}
+],
+"equivalence":[
+{ 
+"typeId":"3",
+"qty":"1",
+"name":"Use For",
+"abbr":"UF",
+"fields":[
+{
+"field":{
+"name":"Atmospheric pollution",
+"id":"OMITERMO2474",
+"freq":"0"
+
+}
+}
+]}
+],
+"paths":[
+{
+"path":[
+{
+"field":{
+"name":"Environment",
+"id":"OMITERMO499",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Environmental protection",
+"id":"OMITERMO501",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Pollution",
+"id":"OMITERMO1018",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Air pollution",
+"id":"OMITERMO4",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+}
+]
+}
+]
+}
+},
+{
+"term":{
+"name":"Airports",
+"id":"OMITERMO518",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO521","name":"Transport and infrastructure"}
+],
+"attributes":{
+"A-Z Entry":"1"
+},
+"metadata":{
+},
+"index":"disp_taxonomy",
+"displayName":"Airports",
+"foundByNPT":"0",
+"lastUpdatedDate":"20091203163113",
+"createdDate":"20091203162630",
+"creator":"admin",
+"updator":"admin",
+"status":"Approved",
+"documents":"0"
+,
+"hierarchy":[
+{ 
+"typeId":"1",
+"qty":"1",
+"name":"Broader Term",
+"abbr":"BT",
+"fields":[
+{
+"field":{
+"name":"Air transport",
+"id":"OMITERMO517",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO521","name":"Transport and infrastructure"}
+]
+}
+}
+]}
+],
+"associated":[
+{ 
+"typeId":"2",
+"qty":"1",
+"name":"Related To",
+"abbr":"RT",
+"fields":[
+{
+"field":{
+"name":"Structures and installations",
+"id":"OMITERMO3076",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO521","name":"Transport and infrastructure"}
+]
+}
+}
+]}
+],
+"equivalence":[
+{ 
+"typeId":"3",
+"qty":"2",
+"name":"Use For",
+"abbr":"UF",
+"fields":[
+{
+"field":{
+"name":"Aerodromes",
+"id":"OMITERMO2811",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Airfields",
+"id":"OMITERMO2812",
+"freq":"0"
+
+}
+}
+]}
+],
+"paths":[
+{
+"path":[
+{
+"field":{
+"name":"Transport and infrastructure",
+"id":"OMITERMO521",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO521","name":"Transport and infrastructure"}
+]
+}
+},
+{
+"field":{
+"name":"Air transport",
+"id":"OMITERMO517",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO521","name":"Transport and infrastructure"}
+]
+}
+},
+{
+"field":{
+"name":"Airports",
+"id":"OMITERMO518",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO521","name":"Transport and infrastructure"}
+]
+}
+}
+]
+}
+]
+}
+},
+{
+"term":{
+"name":"Alarms for elderly and disabled",
+"id":"OMITERMO3598",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO564","name":"Public order, justice and rights"},
+{"id":"OMITERMO557","name":"Health, well-being and care"}
+],
+"attributes":{
+"A-Z Entry":"1"
+},
+"metadata":{
+},
+"index":"disp_taxonomy",
+"displayName":"Alarms for elderly and disabled",
+"foundByNPT":"0",
+"lastUpdatedDate":"20091203163113",
+"createdDate":"20091203162631",
+"creator":"admin",
+"updator":"admin",
+"status":"Approved",
+"documents":"0"
+,
+"hierarchy":[
+{ 
+"typeId":"1",
+"qty":"2",
+"name":"Broader Term",
+"abbr":"BT",
+"fields":[
+{
+"field":{
+"name":"Equipment for disabled people",
+"id":"OMITERMO3477",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO557","name":"Health, well-being and care"}
+]
+}
+},
+{
+"field":{
+"name":"Personal security",
+"id":"OMITERMO1339",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO564","name":"Public order, justice and rights"}
+]
+}
+}
+]}
+],
+"associated":[
+{ 
+"typeId":"2",
+"qty":"3",
+"name":"Related To",
+"abbr":"RT",
+"fields":[
+{
+"field":{
+"name":"Home care",
+"id":"OMITERMO4182",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO557","name":"Health, well-being and care"}
+]
+}
+},
+{
+"field":{
+"name":"Older people",
+"id":"OMITERMO494",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO6999","name":"People and organisations"}
+]
+}
+},
+{
+"field":{
+"name":"Security equipment",
+"id":"OMITERMO6898",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO564","name":"Public order, justice and rights"}
+]
+}
+}
+]}
+],
+"equivalence":[
+{ 
+"typeId":"3",
+"qty":"4",
+"name":"Use For",
+"abbr":"UF",
+"fields":[
+{
+"field":{
+"name":"Alarm Systems (disabled people)",
+"id":"OMITERMO3599",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"alarms for older people",
+"id":"OMITERMO4420",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Emergency Alarms (sick, elderly or disabled people)",
+"id":"OMITERMO6897",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Panic Alarms (sick and disabled people)",
+"id":"OMITERMO7090",
+"freq":"0"
+
+}
+}
+]}
+],
+"paths":[
+{
+"path":[
+{
+"field":{
+"name":"Health, well-being and care",
+"id":"OMITERMO557",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO557","name":"Health, well-being and care"}
+]
+}
+},
+{
+"field":{
+"name":"Disability",
+"id":"OMITERMO3471",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO557","name":"Health, well-being and care"}
+]
+}
+},
+{
+"field":{
+"name":"Equipment for disabled people",
+"id":"OMITERMO3477",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO557","name":"Health, well-being and care"}
+]
+}
+},
+{
+"field":{
+"name":"Alarms for elderly and disabled",
+"id":"OMITERMO3598",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO564","name":"Public order, justice and rights"},
+{"id":"OMITERMO557","name":"Health, well-being and care"}
+]
+}
+}
+]
+},
+{
+"path":[
+{
+"field":{
+"name":"Public order, justice and rights",
+"id":"OMITERMO564",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO564","name":"Public order, justice and rights"}
+]
+}
+},
+{
+"field":{
+"name":"Security",
+"id":"OMITERMO886",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO564","name":"Public order, justice and rights"}
+]
+}
+},
+{
+"field":{
+"name":"Personal security",
+"id":"OMITERMO1339",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO564","name":"Public order, justice and rights"}
+]
+}
+},
+{
+"field":{
+"name":"Alarms for elderly and disabled",
+"id":"OMITERMO3598",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO564","name":"Public order, justice and rights"},
+{"id":"OMITERMO557","name":"Health, well-being and care"}
+]
+}
+}
+]
+}
+]
+}
+},
+{
+"term":{
+"name":"Alcohol use and abuse",
+"id":"OMITERMO522",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO642","name":"Life in the community"},
+{"id":"OMITERMO557","name":"Health, well-being and care"}
+],
+"attributes":{
+"A-Z Entry":"1",
+"Internal":"1"
+},
+"metadata":{
+},
+"index":"disp_taxonomy",
+"displayName":"Alcohol use and abuse",
+"foundByNPT":"0",
+"lastUpdatedDate":"20091203163113",
+"createdDate":"20091203162630",
+"creator":"admin",
+"updator":"admin",
+"status":"Approved",
+"documents":"0"
+,
+"hierarchy":[
+{ 
+"typeId":"1",
+"qty":"1",
+"name":"Broader Term",
+"abbr":"BT",
+"fields":[
+{
+"field":{
+"name":"Addiction",
+"id":"OMITERMO523",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO642","name":"Life in the community"},
+{"id":"OMITERMO557","name":"Health, well-being and care"}
+]
+}
+}
+]}
+],
+"associated":[
+{ 
+"typeId":"2",
+"qty":"3",
+"name":"Related To",
+"abbr":"RT",
+"fields":[
+{
+"field":{
+"name":"Antisocial behaviour and disorder",
+"id":"OMITERMO568",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO564","name":"Public order, justice and rights"}
+]
+}
+},
+{
+"field":{
+"name":"Drinks",
+"id":"OMITERMO524",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO557","name":"Health, well-being and care"}
+]
+}
+},
+{
+"field":{
+"name":"Liquor licences",
+"id":"OMITERMO946",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO557","name":"Health, well-being and care"}
+]
+}
+}
+]}
+],
+"equivalence":[
+{ 
+"typeId":"3",
+"qty":"8",
+"name":"Use For",
+"abbr":"UF",
+"fields":[
+{
+"field":{
+"name":"Addiction (alcohol)",
+"id":"OMITERMO126",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Alcohol Abuse",
+"id":"OMITERMO3657",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"alcohol misuse",
+"id":"OMITERMO3658",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Alcohol problems",
+"id":"OMITERMO7924",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Alcoholism",
+"id":"OMITERMO385",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Binge Drinking",
+"id":"OMITERMO5248",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"drink problems",
+"id":"OMITERMO5250",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Drinking (alcohol)",
+"id":"OMITERMO5249",
+"freq":"0"
+
+}
+}
+]}
+],
+"paths":[
+{
+"path":[
+{
+"field":{
+"name":"Life in the community",
+"id":"OMITERMO642",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO642","name":"Life in the community"}
+]
+}
+},
+{
+"field":{
+"name":"Social issues",
+"id":"OMITERMO4702",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO642","name":"Life in the community"}
+]
+}
+},
+{
+"field":{
+"name":"Addiction",
+"id":"OMITERMO523",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO642","name":"Life in the community"},
+{"id":"OMITERMO557","name":"Health, well-being and care"}
+]
+}
+},
+{
+"field":{
+"name":"Alcohol use and abuse",
+"id":"OMITERMO522",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO642","name":"Life in the community"},
+{"id":"OMITERMO557","name":"Health, well-being and care"}
+]
+}
+}
+]
+},
+{
+"path":[
+{
+"field":{
+"name":"Health, well-being and care",
+"id":"OMITERMO557",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO557","name":"Health, well-being and care"}
+]
+}
+},
+{
+"field":{
+"name":"Health",
+"id":"OMITERMO514",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO557","name":"Health, well-being and care"}
+]
+}
+},
+{
+"field":{
+"name":"Addiction",
+"id":"OMITERMO523",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO642","name":"Life in the community"},
+{"id":"OMITERMO557","name":"Health, well-being and care"}
+]
+}
+},
+{
+"field":{
+"name":"Alcohol use and abuse",
+"id":"OMITERMO522",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO642","name":"Life in the community"},
+{"id":"OMITERMO557","name":"Health, well-being and care"}
+]
+}
+}
+]
+}
+]
+}
+},
+{
+"term":{
+"name":"Allotments",
+"id":"OMITERMO528",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"},
+{"id":"OMITERMO499","name":"Environment"}
+],
+"attributes":{
+"A-Z Entry":"1"
+},
+"metadata":{
+},
+"index":"disp_taxonomy",
+"displayName":"Allotments",
+"foundByNPT":"0",
+"lastUpdatedDate":"20091203163113",
+"createdDate":"20091203162630",
+"creator":"admin",
+"updator":"admin",
+"status":"Approved",
+"documents":"0"
+,
+"hierarchy":[
+{ 
+"typeId":"1",
+"qty":"2",
+"name":"Broader Term",
+"abbr":"BT",
+"fields":[
+{
+"field":{
+"name":"Gardening",
+"id":"OMITERMO1119",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"},
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Parks and gardens",
+"id":"OMITERMO529",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+]
+}
+}
+]}
+],
+"paths":[
+{
+"path":[
+{
+"field":{
+"name":"Environment",
+"id":"OMITERMO499",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Horticulture",
+"id":"OMITERMO504",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Gardening",
+"id":"OMITERMO1119",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"},
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Allotments",
+"id":"OMITERMO528",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"},
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+}
+]
+},
+{
+"path":[
+{
+"field":{
+"name":"Leisure and culture",
+"id":"OMITERMO616",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+]
+}
+},
+{
+"field":{
+"name":"Parks and gardens",
+"id":"OMITERMO529",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+]
+}
+},
+{
+"field":{
+"name":"Allotments",
+"id":"OMITERMO528",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"},
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+}
+]
+},
+{
+"path":[
+{
+"field":{
+"name":"Leisure and culture",
+"id":"OMITERMO616",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+]
+}
+},
+{
+"field":{
+"name":"Hobbies and interests",
+"id":"OMITERMO5070",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+]
+}
+},
+{
+"field":{
+"name":"Gardening",
+"id":"OMITERMO1119",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"},
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Allotments",
+"id":"OMITERMO528",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"},
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+}
+]
+}
+]
+}
+},
+{
+"term":{
+"name":"Ancient monuments",
+"id":"OMITERMO533",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+],
+"attributes":{
+"A-Z Entry":"1"
+},
+"metadata":{
+},
+"index":"disp_taxonomy",
+"displayName":"Ancient monuments",
+"foundByNPT":"0",
+"lastUpdatedDate":"20091203163113",
+"createdDate":"20091203162630",
+"creator":"admin",
+"updator":"admin",
+"status":"Approved",
+"documents":"0"
+,
+"hierarchy":[
+{ 
+"typeId":"1",
+"qty":"1",
+"name":"Broader Term",
+"abbr":"BT",
+"fields":[
+{
+"field":{
+"name":"Heritage",
+"id":"OMITERMO534",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+]
+}
+}
+]}
+],
+"equivalence":[
+{ 
+"typeId":"3",
+"qty":"5",
+"name":"Use For",
+"abbr":"UF",
+"fields":[
+{
+"field":{
+"name":"archaeological monuments",
+"id":"OMITERMO5268",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"historic monuments (ancient)",
+"id":"OMITERMO5264",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"monuments (ancient)",
+"id":"OMITERMO1166",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Standing Stones",
+"id":"OMITERMO2669",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Stone Circles",
+"id":"OMITERMO2668",
+"freq":"0"
+
+}
+}
+]}
+],
+"paths":[
+{
+"path":[
+{
+"field":{
+"name":"Leisure and culture",
+"id":"OMITERMO616",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+]
+}
+},
+{
+"field":{
+"name":"Culture and creativity",
+"id":"OMITERMO578",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+]
+}
+},
+{
+"field":{
+"name":"Heritage",
+"id":"OMITERMO534",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+]
+}
+},
+{
+"field":{
+"name":"Ancient monuments",
+"id":"OMITERMO533",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+]
+}
+}
+]
+}
+]
+}
+},
+{
+"term":{
+"name":"Angling",
+"id":"OMITERMO5556",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+],
+"attributes":{
+"A-Z Entry":"1"
+},
+"metadata":{
+},
+"index":"disp_taxonomy",
+"displayName":"Angling",
+"foundByNPT":"0",
+"lastUpdatedDate":"20091203163113",
+"createdDate":"20091203162631",
+"creator":"admin",
+"updator":"admin",
+"status":"Approved",
+"documents":"0"
+,
+"hierarchy":[
+{ 
+"typeId":"1",
+"qty":"1",
+"name":"Broader Term",
+"abbr":"BT",
+"fields":[
+{
+"field":{
+"name":"Field sports",
+"id":"OMITERMO5554",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+]
+}
+}
+]},
+{ 
+"typeId":"1",
+"qty":"3",
+"name":"Narrower Term",
+"abbr":"NT",
+"fields":[
+{
+"field":{
+"name":"Fishing licences",
+"id":"OMITERMO5620",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+]
+}
+},
+{
+"field":{
+"name":"Fly fishing",
+"id":"OMITERMO5559",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+]
+}
+},
+{
+"field":{
+"name":"Sea angling",
+"id":"OMITERMO5560",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+]
+}
+}
+]}
+],
+"equivalence":[
+{ 
+"typeId":"3",
+"qty":"2",
+"name":"Use For",
+"abbr":"UF",
+"fields":[
+{
+"field":{
+"name":"Fishing (sport)",
+"id":"OMITERMO5558",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Game fishing",
+"id":"OMITERMO5619",
+"freq":"0"
+
+}
+}
+]}
+],
+"paths":[
+{
+"path":[
+{
+"field":{
+"name":"Leisure and culture",
+"id":"OMITERMO616",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+]
+}
+},
+{
+"field":{
+"name":"Sports and recreation",
+"id":"OMITERMO896",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+]
+}
+},
+{
+"field":{
+"name":"Field sports",
+"id":"OMITERMO5554",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+]
+}
+},
+{
+"field":{
+"name":"Angling",
+"id":"OMITERMO5556",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+]
+}
+}
+]
+}
+]
+}
+},
+{
+"term":{
+"name":"Animal fouling",
+"id":"OMITERMO2599",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+],
+"attributes":{
+"A-Z Entry":"1"
+},
+"metadata":{
+},
+"index":"disp_taxonomy",
+"displayName":"Animal fouling",
+"foundByNPT":"0",
+"lastUpdatedDate":"20091203163113",
+"createdDate":"20091203162631",
+"creator":"admin",
+"updator":"admin",
+"status":"Approved",
+"documents":"0"
+,
+"hierarchy":[
+{ 
+"typeId":"1",
+"qty":"2",
+"name":"Broader Term",
+"abbr":"BT",
+"fields":[
+{
+"field":{
+"name":"Animal nuisance",
+"id":"OMITERMO2685",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Pollution",
+"id":"OMITERMO1018",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+}
+]}
+],
+"associated":[
+{ 
+"typeId":"2",
+"qty":"1",
+"name":"Related To",
+"abbr":"RT",
+"fields":[
+{
+"field":{
+"name":"Dog litter bins",
+"id":"OMITERMO3108",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"},
+{"id":"OMITERMO521","name":"Transport and infrastructure"}
+]
+}
+}
+]}
+],
+"equivalence":[
+{ 
+"typeId":"3",
+"qty":"7",
+"name":"Use For",
+"abbr":"UF",
+"fields":[
+{
+"field":{
+"name":"animal faeces",
+"id":"OMITERMO2605",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Dog fouling",
+"id":"OMITERMO2600",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Dog Mess",
+"id":"OMITERMO2602",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Dog poo",
+"id":"OMITERMO2603",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Dog Shit",
+"id":"OMITERMO2604",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Dog's dirt",
+"id":"OMITERMO2601",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"fouling (animals)",
+"id":"OMITERMO2607",
+"freq":"0"
+
+}
+}
+]}
+],
+"paths":[
+{
+"path":[
+{
+"field":{
+"name":"Environment",
+"id":"OMITERMO499",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Plants, animals and wildlife",
+"id":"OMITERMO505",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Animal nuisance",
+"id":"OMITERMO2685",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Animal fouling",
+"id":"OMITERMO2599",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+}
+]
+},
+{
+"path":[
+{
+"field":{
+"name":"Environment",
+"id":"OMITERMO499",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Environmental protection",
+"id":"OMITERMO501",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Pollution",
+"id":"OMITERMO1018",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Animal fouling",
+"id":"OMITERMO2599",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+}
+]
+}
+]
+}
+},
+{
+"term":{
+"name":"Animal health",
+"id":"OMITERMO538",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO557","name":"Health, well-being and care"},
+{"id":"OMITERMO499","name":"Environment"}
+],
+"attributes":{
+"A-Z Entry":"1"
+},
+"metadata":{
+},
+"index":"disp_taxonomy",
+"displayName":"Animal health",
+"foundByNPT":"0",
+"lastUpdatedDate":"20091203163113",
+"createdDate":"20091203162630",
+"creator":"admin",
+"updator":"admin",
+"status":"Approved",
+"documents":"0"
+,
+"hierarchy":[
+{ 
+"typeId":"1",
+"qty":"2",
+"name":"Broader Term",
+"abbr":"BT",
+"fields":[
+{
+"field":{
+"name":"Health, well-being and care",
+"id":"OMITERMO557",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO557","name":"Health, well-being and care"}
+]
+}
+},
+{
+"field":{
+"name":"Plants, animals and wildlife",
+"id":"OMITERMO505",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+}
+]},
+{ 
+"typeId":"1",
+"qty":"6",
+"name":"Narrower Term",
+"abbr":"NT",
+"fields":[
+{
+"field":{
+"name":"Bovine spongiform encephalopathy",
+"id":"OMITERMO663",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO557","name":"Health, well-being and care"},
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Foot and mouth disease",
+"id":"OMITERMO559",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO557","name":"Health, well-being and care"},
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Pet Travel Scheme (PETS)",
+"id":"OMITERMO550",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO557","name":"Health, well-being and care"},
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Tuberculosis",
+"id":"OMITERMO560",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO557","name":"Health, well-being and care"},
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Veterinary services",
+"id":"OMITERMO556",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO557","name":"Health, well-being and care"},
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Zoonoses",
+"id":"OMITERMO1540",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO557","name":"Health, well-being and care"},
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+}
+]}
+],
+"associated":[
+{ 
+"typeId":"2",
+"qty":"6",
+"name":"Related To",
+"abbr":"RT",
+"fields":[
+{
+"field":{
+"name":"Animal experimentation",
+"id":"OMITERMO539",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO564","name":"Public order, justice and rights"},
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Animal rescue centres",
+"id":"OMITERMO4397",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO6999","name":"People and organisations"}
+]
+}
+},
+{
+"field":{
+"name":"Animal rights and welfare",
+"id":"OMITERMO542",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO564","name":"Public order, justice and rights"},
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Epidemiology",
+"id":"OMITERMO1732",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO652","name":"Science, technology and innovation"}
+]
+}
+},
+{
+"field":{
+"name":"Farming",
+"id":"OMITERMO498",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Veterinary science",
+"id":"OMITERMO1738",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO652","name":"Science, technology and innovation"}
+]
+}
+}
+]}
+],
+"equivalence":[
+{ 
+"typeId":"3",
+"qty":"10",
+"name":"Use For",
+"abbr":"UF",
+"fields":[
+{
+"field":{
+"name":"Animal disease",
+"id":"OMITERMO537",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"brucellosis",
+"id":"OMITERMO546",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"classical swine fever",
+"id":"OMITERMO547",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Contagious Diseases (animal)",
+"id":"OMITERMO133",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Disease (animals)",
+"id":"OMITERMO548",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Infectious diseases (animal)",
+"id":"OMITERMO132",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Notifiable diseases (animals)",
+"id":"OMITERMO4050",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Scrapie",
+"id":"OMITERMO553",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Swine fever",
+"id":"OMITERMO554",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Vaccines for animals",
+"id":"OMITERMO555",
+"freq":"0"
+
+}
+}
+]}
+],
+"paths":[
+{
+"path":[
+{
+"field":{
+"name":"Environment",
+"id":"OMITERMO499",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Plants, animals and wildlife",
+"id":"OMITERMO505",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Animal health",
+"id":"OMITERMO538",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO557","name":"Health, well-being and care"},
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+}
+]
+},
+{
+"path":[
+{
+"field":{
+"name":"Health, well-being and care",
+"id":"OMITERMO557",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO557","name":"Health, well-being and care"}
+]
+}
+},
+{
+"field":{
+"name":"Animal health",
+"id":"OMITERMO538",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO557","name":"Health, well-being and care"},
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+}
+]
+}
+]
+}
+},
+{
+"term":{
+"name":"Animal licences",
+"id":"OMITERMO6343",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO692","name":"Business and industry"}
+],
+"attributes":{
+"A-Z Entry":"1"
+},
+"metadata":{
+},
+"index":"disp_taxonomy",
+"displayName":"Animal licences",
+"foundByNPT":"0",
+"lastUpdatedDate":"20091203163113",
+"createdDate":"20091203162631",
+"creator":"admin",
+"updator":"admin",
+"status":"Approved",
+"documents":"0"
+,
+"hierarchy":[
+{ 
+"typeId":"1",
+"qty":"1",
+"name":"Broader Term",
+"abbr":"BT",
+"fields":[
+{
+"field":{
+"name":"Business licences",
+"id":"OMITERMO6291",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO692","name":"Business and industry"}
+]
+}
+}
+]},
+{ 
+"typeId":"1",
+"qty":"8",
+"name":"Narrower Term",
+"abbr":"NT",
+"fields":[
+{
+"field":{
+"name":"Animal boarding licences",
+"id":"OMITERMO2621",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO564","name":"Public order, justice and rights"},
+{"id":"OMITERMO692","name":"Business and industry"},
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Animal movement licences",
+"id":"OMITERMO7017",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO692","name":"Business and industry"}
+]
+}
+},
+{
+"field":{
+"name":"Dangerous animal licences",
+"id":"OMITERMO6348",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO692","name":"Business and industry"},
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Dog breeding licences",
+"id":"OMITERMO2721",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO692","name":"Business and industry"}
+]
+}
+},
+{
+"field":{
+"name":"Performing animal licences",
+"id":"OMITERMO6347",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO692","name":"Business and industry"}
+]
+}
+},
+{
+"field":{
+"name":"Pet shop licences",
+"id":"OMITERMO6346",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO692","name":"Business and industry"}
+]
+}
+},
+{
+"field":{
+"name":"Riding establishments licences",
+"id":"OMITERMO6345",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO692","name":"Business and industry"}
+]
+}
+},
+{
+"field":{
+"name":"Zoo licences",
+"id":"OMITERMO6344",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO692","name":"Business and industry"}
+]
+}
+}
+]}
+],
+"associated":[
+{ 
+"typeId":"2",
+"qty":"3",
+"name":"Related To",
+"abbr":"RT",
+"fields":[
+{
+"field":{
+"name":"Animal experimentation",
+"id":"OMITERMO539",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO564","name":"Public order, justice and rights"},
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Animal rights and welfare",
+"id":"OMITERMO542",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO564","name":"Public order, justice and rights"},
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Grazing licences",
+"id":"OMITERMO2729",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+}
+]}
+],
+"equivalence":[
+{ 
+"typeId":"3",
+"qty":"2",
+"name":"Use For",
+"abbr":"UF",
+"fields":[
+{
+"field":{
+"name":"Animal Welfare licences",
+"id":"OMITERMO6358",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Rare animal licences",
+"id":"OMITERMO6357",
+"freq":"0"
+
+}
+}
+]}
+],
+"paths":[
+{
+"path":[
+{
+"field":{
+"name":"Business and industry",
+"id":"OMITERMO692",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO692","name":"Business and industry"}
+]
+}
+},
+{
+"field":{
+"name":"Business practice and regulation",
+"id":"OMITERMO488",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO692","name":"Business and industry"}
+]
+}
+},
+{
+"field":{
+"name":"Regulation and deregulation",
+"id":"OMITERMO704",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO692","name":"Business and industry"}
+]
+}
+},
+{
+"field":{
+"name":"Business licences",
+"id":"OMITERMO6291",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO692","name":"Business and industry"}
+]
+}
+},
+{
+"field":{
+"name":"Animal licences",
+"id":"OMITERMO6343",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO692","name":"Business and industry"}
+]
+}
+}
+]
+}
+]
+}
+},
+{
+"term":{
+"name":"Animal nuisance",
+"id":"OMITERMO2685",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+],
+"attributes":{
+"A-Z Entry":"1"
+},
+"metadata":{
+},
+"index":"disp_taxonomy",
+"displayName":"Animal nuisance",
+"foundByNPT":"0",
+"lastUpdatedDate":"20091203163113",
+"createdDate":"20091203162631",
+"creator":"admin",
+"updator":"admin",
+"status":"Approved",
+"documents":"0"
+,
+"hierarchy":[
+{ 
+"typeId":"1",
+"qty":"1",
+"name":"Broader Term",
+"abbr":"BT",
+"fields":[
+{
+"field":{
+"name":"Plants, animals and wildlife",
+"id":"OMITERMO505",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+}
+]},
+{ 
+"typeId":"1",
+"qty":"2",
+"name":"Narrower Term",
+"abbr":"NT",
+"fields":[
+{
+"field":{
+"name":"Animal fouling",
+"id":"OMITERMO2599",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Barking dogs",
+"id":"OMITERMO2593",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+}
+]}
+],
+"associated":[
+{ 
+"typeId":"2",
+"qty":"3",
+"name":"Related To",
+"abbr":"RT",
+"fields":[
+{
+"field":{
+"name":"Nuisance",
+"id":"OMITERMO6736",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO564","name":"Public order, justice and rights"}
+]
+}
+},
+{
+"field":{
+"name":"Pests and pest control",
+"id":"OMITERMO1115",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Stray animals",
+"id":"OMITERMO2591",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+}
+]}
+],
+"equivalence":[
+{ 
+"typeId":"3",
+"qty":"2",
+"name":"Use For",
+"abbr":"UF",
+"fields":[
+{
+"field":{
+"name":"Animal nuisances",
+"id":"OMITERMO4695",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Nuisance (animals)",
+"id":"OMITERMO2686",
+"freq":"0"
+
+}
+}
+]}
+],
+"paths":[
+{
+"path":[
+{
+"field":{
+"name":"Environment",
+"id":"OMITERMO499",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Plants, animals and wildlife",
+"id":"OMITERMO505",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Animal nuisance",
+"id":"OMITERMO2685",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+}
+]
+}
+]
+}
+},
+{
+"term":{
+"name":"Animal rights and welfare",
+"id":"OMITERMO542",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO564","name":"Public order, justice and rights"},
+{"id":"OMITERMO499","name":"Environment"}
+],
+"attributes":{
+"A-Z Entry":"1"
+},
+"metadata":{
+},
+"index":"disp_taxonomy",
+"displayName":"Animal rights and welfare",
+"foundByNPT":"0",
+"lastUpdatedDate":"20091203163113",
+"createdDate":"20091203162630",
+"creator":"admin",
+"updator":"admin",
+"status":"Approved",
+"documents":"0"
+,
+"hierarchy":[
+{ 
+"typeId":"1",
+"qty":"2",
+"name":"Broader Term",
+"abbr":"BT",
+"fields":[
+{
+"field":{
+"name":"Plants, animals and wildlife",
+"id":"OMITERMO505",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Public order, justice and rights",
+"id":"OMITERMO564",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO564","name":"Public order, justice and rights"}
+]
+}
+}
+]},
+{ 
+"typeId":"1",
+"qty":"5",
+"name":"Narrower Term",
+"abbr":"NT",
+"fields":[
+{
+"field":{
+"name":"Animal experimentation",
+"id":"OMITERMO539",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO564","name":"Public order, justice and rights"},
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Animal housing",
+"id":"OMITERMO2611",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO564","name":"Public order, justice and rights"},
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Hunting",
+"id":"OMITERMO565",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO564","name":"Public order, justice and rights"},
+{"id":"OMITERMO616","name":"Leisure and culture"},
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Microchipping",
+"id":"OMITERMO6944",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO564","name":"Public order, justice and rights"},
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Pet care",
+"id":"OMITERMO2693",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO564","name":"Public order, justice and rights"},
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+}
+]}
+],
+"associated":[
+{ 
+"typeId":"2",
+"qty":"5",
+"name":"Related To",
+"abbr":"RT",
+"fields":[
+{
+"field":{
+"name":"Animal health",
+"id":"OMITERMO538",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO557","name":"Health, well-being and care"},
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Animal licences",
+"id":"OMITERMO6343",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO692","name":"Business and industry"}
+]
+}
+},
+{
+"field":{
+"name":"Animal welfare organisations",
+"id":"OMITERMO4396",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO6999","name":"People and organisations"}
+]
+}
+},
+{
+"field":{
+"name":"Meat and livestock industries",
+"id":"OMITERMO443",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO692","name":"Business and industry"}
+]
+}
+},
+{
+"field":{
+"name":"Pressure groups",
+"id":"OMITERMO6542",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO760","name":"Government, politics and public administration"}
+]
+}
+}
+]}
+],
+"equivalence":[
+{ 
+"typeId":"3",
+"qty":"2",
+"name":"Use For",
+"abbr":"UF",
+"fields":[
+{
+"field":{
+"name":"Animal Welfare",
+"id":"OMITERMO562",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Welfare (animals)",
+"id":"OMITERMO563",
+"freq":"0"
+
+}
+}
+]}
+],
+"paths":[
+{
+"path":[
+{
+"field":{
+"name":"Environment",
+"id":"OMITERMO499",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Plants, animals and wildlife",
+"id":"OMITERMO505",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Animal rights and welfare",
+"id":"OMITERMO542",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO564","name":"Public order, justice and rights"},
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+}
+]
+},
+{
+"path":[
+{
+"field":{
+"name":"Public order, justice and rights",
+"id":"OMITERMO564",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO564","name":"Public order, justice and rights"}
+]
+}
+},
+{
+"field":{
+"name":"Animal rights and welfare",
+"id":"OMITERMO542",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO564","name":"Public order, justice and rights"},
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+}
+]
+}
+]
+}
+},
+{
+"term":{
+"name":"Animals",
+"id":"OMITERMO2517",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+],
+"attributes":{
+"A-Z Entry":"1"
+},
+"metadata":{
+},
+"index":"disp_taxonomy",
+"displayName":"Animals",
+"foundByNPT":"0",
+"lastUpdatedDate":"20091203163113",
+"createdDate":"20091203162631",
+"creator":"admin",
+"updator":"admin",
+"status":"Approved",
+"documents":"0"
+,
+"hierarchy":[
+{ 
+"typeId":"1",
+"qty":"1",
+"name":"Broader Term",
+"abbr":"BT",
+"fields":[
+{
+"field":{
+"name":"Plants, animals and wildlife",
+"id":"OMITERMO505",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+}
+]},
+{ 
+"typeId":"1",
+"qty":"19",
+"name":"Narrower Term",
+"abbr":"NT",
+"fields":[
+{
+"field":{
+"name":"Amphibians",
+"id":"OMITERMO2546",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Animal collections",
+"id":"OMITERMO5274",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Badgers",
+"id":"OMITERMO2520",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Bats",
+"id":"OMITERMO2521",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Birds",
+"id":"OMITERMO2547",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Cats",
+"id":"OMITERMO2524",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Cattle",
+"id":"OMITERMO2530",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Dangerous animals",
+"id":"OMITERMO2592",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Dogs",
+"id":"OMITERMO2519",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Dolphins",
+"id":"OMITERMO2523",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Donkeys",
+"id":"OMITERMO2526",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Guinea pigs",
+"id":"OMITERMO2529",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Hamsters",
+"id":"OMITERMO2528",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Horses",
+"id":"OMITERMO2525",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Pets",
+"id":"OMITERMO2518",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Rabbits",
+"id":"OMITERMO2527",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Reptiles",
+"id":"OMITERMO2531",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Stray animals",
+"id":"OMITERMO2591",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Whales",
+"id":"OMITERMO2522",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+}
+]}
+],
+"associated":[
+{ 
+"typeId":"2",
+"qty":"2",
+"name":"Related To",
+"abbr":"RT",
+"fields":[
+{
+"field":{
+"name":"Disposal of dead animals",
+"id":"OMITERMO2386",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Zoology",
+"id":"OMITERMO1749",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO652","name":"Science, technology and innovation"}
+]
+}
+}
+]}
+],
+"equivalence":[
+{ 
+"typeId":"3",
+"qty":"6",
+"name":"Use For",
+"abbr":"UF",
+"fields":[
+{
+"field":{
+"name":"Circus animals",
+"id":"OMITERMO2609",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Farm Animals",
+"id":"OMITERMO2610",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"livestock",
+"id":"OMITERMO2625",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Performing Animals",
+"id":"OMITERMO2608",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Wild animals",
+"id":"OMITERMO2597",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Zoo Animals",
+"id":"OMITERMO2620",
+"freq":"0"
+
+}
+}
+]}
+],
+"paths":[
+{
+"path":[
+{
+"field":{
+"name":"Environment",
+"id":"OMITERMO499",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Plants, animals and wildlife",
+"id":"OMITERMO505",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Animals",
+"id":"OMITERMO2517",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+}
+]
+}
+]
+}
+},
+{
+"term":{
+"name":"Ant control",
+"id":"OMITERMO2507",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+],
+"attributes":{
+"A-Z Entry":"1"
+},
+"metadata":{
+},
+"index":"disp_taxonomy",
+"displayName":"Ant control",
+"foundByNPT":"0",
+"lastUpdatedDate":"20091203163113",
+"createdDate":"20091203162631",
+"creator":"admin",
+"updator":"admin",
+"status":"Approved",
+"documents":"0"
+,
+"hierarchy":[
+{ 
+"typeId":"1",
+"qty":"1",
+"name":"Broader Term",
+"abbr":"BT",
+"fields":[
+{
+"field":{
+"name":"Pests and pest control",
+"id":"OMITERMO1115",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+}
+]}
+],
+"associated":[
+{ 
+"typeId":"2",
+"qty":"1",
+"name":"Related To",
+"abbr":"RT",
+"fields":[
+{
+"field":{
+"name":"Insect control",
+"id":"OMITERMO2496",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+}
+]}
+],
+"equivalence":[
+{ 
+"typeId":"3",
+"qty":"1",
+"name":"Use For",
+"abbr":"UF",
+"fields":[
+{
+"field":{
+"name":"ants (control)",
+"id":"OMITERMO7052",
+"freq":"0"
+
+}
+}
+]}
+],
+"paths":[
+{
+"path":[
+{
+"field":{
+"name":"Environment",
+"id":"OMITERMO499",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Plants, animals and wildlife",
+"id":"OMITERMO505",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Pests and pest control",
+"id":"OMITERMO1115",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Ant control",
+"id":"OMITERMO2507",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+}
+]
+}
+]
+}
+},
+{
+"term":{
+"name":"Archaeology",
+"id":"OMITERMO575",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+],
+"attributes":{
+"A-Z Entry":"1"
+},
+"metadata":{
+},
+"index":"disp_taxonomy",
+"displayName":"Archaeology",
+"foundByNPT":"0",
+"lastUpdatedDate":"20091203163113",
+"createdDate":"20091203162630",
+"creator":"admin",
+"updator":"admin",
+"status":"Approved",
+"documents":"0"
+,
+"hierarchy":[
+{ 
+"typeId":"1",
+"qty":"2",
+"name":"Broader Term",
+"abbr":"BT",
+"fields":[
+{
+"field":{
+"name":"Heritage",
+"id":"OMITERMO534",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+]
+}
+},
+{
+"field":{
+"name":"History",
+"id":"OMITERMO5162",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+]
+}
+}
+]},
+{ 
+"typeId":"1",
+"qty":"5",
+"name":"Narrower Term",
+"abbr":"NT",
+"fields":[
+{
+"field":{
+"name":"Archaeological services",
+"id":"OMITERMO5269",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+]
+}
+},
+{
+"field":{
+"name":"Industrial archaeology",
+"id":"OMITERMO2660",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+]
+}
+},
+{
+"field":{
+"name":"Marine archaeology",
+"id":"OMITERMO2665",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+]
+}
+},
+{
+"field":{
+"name":"Palaeontology",
+"id":"OMITERMO7109",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO652","name":"Science, technology and innovation"},
+{"id":"OMITERMO616","name":"Leisure and culture"}
+]
+}
+},
+{
+"field":{
+"name":"Portable antiquities",
+"id":"OMITERMO7134",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+]
+}
+}
+]}
+],
+"equivalence":[
+{ 
+"typeId":"3",
+"qty":"6",
+"name":"Use For",
+"abbr":"UF",
+"fields":[
+{
+"field":{
+"name":"Archaeological sites",
+"id":"OMITERMO2661",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Archeology",
+"id":"OMITERMO5171",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Buried treasure",
+"id":"OMITERMO2664",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"digs (archaeological)",
+"id":"OMITERMO2662",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Excavations (archaeological)",
+"id":"OMITERMO2667",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"treasure trove",
+"id":"OMITERMO2663",
+"freq":"0"
+
+}
+}
+]}
+],
+"paths":[
+{
+"path":[
+{
+"field":{
+"name":"Leisure and culture",
+"id":"OMITERMO616",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+]
+}
+},
+{
+"field":{
+"name":"Hobbies and interests",
+"id":"OMITERMO5070",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+]
+}
+},
+{
+"field":{
+"name":"History",
+"id":"OMITERMO5162",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+]
+}
+},
+{
+"field":{
+"name":"Archaeology",
+"id":"OMITERMO575",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+]
+}
+}
+]
+},
+{
+"path":[
+{
+"field":{
+"name":"Leisure and culture",
+"id":"OMITERMO616",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+]
+}
+},
+{
+"field":{
+"name":"Culture and creativity",
+"id":"OMITERMO578",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+]
+}
+},
+{
+"field":{
+"name":"Heritage",
+"id":"OMITERMO534",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+]
+}
+},
+{
+"field":{
+"name":"Archaeology",
+"id":"OMITERMO575",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+]
+}
+}
+]
+}
+]
+}
+},
+{
+"term":{
+"name":"Architecture",
+"id":"OMITERMO576",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+],
+"attributes":{
+"A-Z Entry":"1"
+},
+"metadata":{
+},
+"index":"disp_taxonomy",
+"displayName":"Architecture",
+"foundByNPT":"0",
+"lastUpdatedDate":"20091203163113",
+"createdDate":"20091203162630",
+"creator":"admin",
+"updator":"admin",
+"status":"Approved",
+"documents":"0"
+,
+"hierarchy":[
+{ 
+"typeId":"1",
+"qty":"1",
+"name":"Broader Term",
+"abbr":"BT",
+"fields":[
+{
+"field":{
+"name":"Culture and creativity",
+"id":"OMITERMO578",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+]
+}
+}
+]}
+],
+"associated":[
+{ 
+"typeId":"2",
+"qty":"4",
+"name":"Related To",
+"abbr":"RT",
+"fields":[
+{
+"field":{
+"name":"Building and construction",
+"id":"OMITERMO579",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO692","name":"Business and industry"}
+]
+}
+},
+{
+"field":{
+"name":"Engineering",
+"id":"OMITERMO1713",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO652","name":"Science, technology and innovation"}
+]
+}
+},
+{
+"field":{
+"name":"Heritage",
+"id":"OMITERMO534",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+]
+}
+},
+{
+"field":{
+"name":"Interior design",
+"id":"OMITERMO5258",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+]
+}
+}
+]}
+],
+"equivalence":[
+{ 
+"typeId":"3",
+"qty":"3",
+"name":"Use For",
+"abbr":"UF",
+"fields":[
+{
+"field":{
+"name":"Building Design",
+"id":"OMITERMO2267",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Design (buildings)",
+"id":"OMITERMO2268",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Design Guide (buildings)",
+"id":"OMITERMO5905",
+"freq":"0"
+
+}
+}
+]}
+],
+"paths":[
+{
+"path":[
+{
+"field":{
+"name":"Leisure and culture",
+"id":"OMITERMO616",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+]
+}
+},
+{
+"field":{
+"name":"Culture and creativity",
+"id":"OMITERMO578",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+]
+}
+},
+{
+"field":{
+"name":"Architecture",
+"id":"OMITERMO576",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+]
+}
+}
+]
+}
+]
+}
+},
+{
+"term":{
+"name":"Archives",
+"id":"OMITERMO580",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO758","name":"Information and communication"},
+{"id":"OMITERMO616","name":"Leisure and culture"}
+],
+"attributes":{
+"A-Z Entry":"1",
+"Internal":"1"
+},
+"metadata":{
+},
+"index":"disp_taxonomy",
+"displayName":"Archives",
+"foundByNPT":"0",
+"lastUpdatedDate":"20091203163113",
+"createdDate":"20091203162630",
+"creator":"admin",
+"updator":"admin",
+"status":"Approved",
+"documents":"0"
+,
+"hierarchy":[
+{ 
+"typeId":"1",
+"qty":"2",
+"name":"Broader Term",
+"abbr":"BT",
+"fields":[
+{
+"field":{
+"name":"Heritage",
+"id":"OMITERMO534",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+]
+}
+},
+{
+"field":{
+"name":"Library and information services",
+"id":"OMITERMO5733",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO758","name":"Information and communication"}
+]
+}
+}
+]},
+{ 
+"typeId":"1",
+"qty":"1",
+"name":"Narrower Term",
+"abbr":"NT",
+"fields":[
+{
+"field":{
+"name":"Diocesan records",
+"id":"OMITERMO5727",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO758","name":"Information and communication"},
+{"id":"OMITERMO616","name":"Leisure and culture"}
+]
+}
+}
+]}
+],
+"associated":[
+{ 
+"typeId":"2",
+"qty":"4",
+"name":"Related To",
+"abbr":"RT",
+"fields":[
+{
+"field":{
+"name":"History",
+"id":"OMITERMO5162",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+]
+}
+},
+{
+"field":{
+"name":"Information",
+"id":"OMITERMO7817",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO758","name":"Information and communication"}
+]
+}
+},
+{
+"field":{
+"name":"Records",
+"id":"OMITERMO7883",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO758","name":"Information and communication"}
+]
+}
+},
+{
+"field":{
+"name":"Records offices",
+"id":"OMITERMO6616",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO758","name":"Information and communication"},
+{"id":"OMITERMO760","name":"Government, politics and public administration"},
+{"id":"OMITERMO692","name":"Business and industry"}
+]
+}
+}
+]}
+],
+"equivalence":[
+{ 
+"typeId":"3",
+"qty":"4",
+"name":"Use For",
+"abbr":"UF",
+"fields":[
+{
+"field":{
+"name":"Family History archives",
+"id":"OMITERMO1043",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"genealogy archives",
+"id":"OMITERMO1123",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Historical Records",
+"id":"OMITERMO5728",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Local history archives",
+"id":"OMITERMO1246",
+"freq":"0"
+
+}
+}
+]}
+],
+"paths":[
+{
+"path":[
+{
+"field":{
+"name":"Leisure and culture",
+"id":"OMITERMO616",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+]
+}
+},
+{
+"field":{
+"name":"Culture and creativity",
+"id":"OMITERMO578",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+]
+}
+},
+{
+"field":{
+"name":"Heritage",
+"id":"OMITERMO534",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+]
+}
+},
+{
+"field":{
+"name":"Archives",
+"id":"OMITERMO580",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO758","name":"Information and communication"},
+{"id":"OMITERMO616","name":"Leisure and culture"}
+]
+}
+}
+]
+},
+{
+"path":[
+{
+"field":{
+"name":"Information and communication",
+"id":"OMITERMO758",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO758","name":"Information and communication"}
+]
+}
+},
+{
+"field":{
+"name":"Library and information services",
+"id":"OMITERMO5733",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO758","name":"Information and communication"}
+]
+}
+},
+{
+"field":{
+"name":"Archives",
+"id":"OMITERMO580",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO758","name":"Information and communication"},
+{"id":"OMITERMO616","name":"Leisure and culture"}
+]
+}
+}
+]
+}
+]
+}
+},
+{
+"term":{
+"name":"Arts and entertainment venues",
+"id":"OMITERMO4956",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+],
+"attributes":{
+"A-Z Entry":"1"
+},
+"metadata":{
+},
+"index":"disp_taxonomy",
+"displayName":"Arts and entertainment venues",
+"foundByNPT":"0",
+"lastUpdatedDate":"20091203163113",
+"createdDate":"20091203162631",
+"creator":"admin",
+"updator":"admin",
+"status":"Approved",
+"documents":"0"
+,
+"hierarchy":[
+{ 
+"typeId":"1",
+"qty":"1",
+"name":"Broader Term",
+"abbr":"BT",
+"fields":[
+{
+"field":{
+"name":"Leisure and culture",
+"id":"OMITERMO616",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+]
+}
+}
+]},
+{ 
+"typeId":"1",
+"qty":"13",
+"name":"Narrower Term",
+"abbr":"NT",
+"fields":[
+{
+"field":{
+"name":"Amusement arcades",
+"id":"OMITERMO4971",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+]
+}
+},
+{
+"field":{
+"name":"Arts centres",
+"id":"OMITERMO4962",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+]
+}
+},
+{
+"field":{
+"name":"Bingo halls",
+"id":"OMITERMO4982",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+]
+}
+},
+{
+"field":{
+"name":"Casinos",
+"id":"OMITERMO4973",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+]
+}
+},
+{
+"field":{
+"name":"Cinemas",
+"id":"OMITERMO4959",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+]
+}
+},
+{
+"field":{
+"name":"Circuses",
+"id":"OMITERMO4965",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+]
+}
+},
+{
+"field":{
+"name":"Concert halls",
+"id":"OMITERMO4961",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+]
+}
+},
+{
+"field":{
+"name":"Fairgrounds",
+"id":"OMITERMO4972",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+]
+}
+},
+{
+"field":{
+"name":"Museums and galleries",
+"id":"OMITERMO615",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+]
+}
+},
+{
+"field":{
+"name":"Nightclubs",
+"id":"OMITERMO4974",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+]
+}
+},
+{
+"field":{
+"name":"Planetariums",
+"id":"OMITERMO4975",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+]
+}
+},
+{
+"field":{
+"name":"Rehearsal space",
+"id":"OMITERMO4963",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+]
+}
+},
+{
+"field":{
+"name":"Theatres",
+"id":"OMITERMO4960",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+]
+}
+}
+]}
+],
+"associated":[
+{ 
+"typeId":"2",
+"qty":"5",
+"name":"Related To",
+"abbr":"RT",
+"fields":[
+{
+"field":{
+"name":"Buildings",
+"id":"OMITERMO2262",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Conference venues",
+"id":"OMITERMO5982",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]
+}
+},
+{
+"field":{
+"name":"Entertainment and events",
+"id":"OMITERMO5047",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+]
+}
+},
+{
+"field":{
+"name":"Piers",
+"id":"OMITERMO4976",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO521","name":"Transport and infrastructure"}
+]
+}
+},
+{
+"field":{
+"name":"Wedding venues",
+"id":"OMITERMO4617",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO642","name":"Life in the community"}
+]
+}
+}
+]}
+],
+"equivalence":[
+{ 
+"typeId":"3",
+"qty":"2",
+"name":"Use For",
+"abbr":"UF",
+"fields":[
+{
+"field":{
+"name":"Arts Venues",
+"id":"OMITERMO4957",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Entertainment Venues",
+"id":"OMITERMO4958",
+"freq":"0"
+
+}
+}
+]}
+],
+"paths":[
+{
+"path":[
+{
+"field":{
+"name":"Leisure and culture",
+"id":"OMITERMO616",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+]
+}
+},
+{
+"field":{
+"name":"Arts and entertainment venues",
+"id":"OMITERMO4956",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+]
+}
+}
+]
+}
+]
+}
+},
+{
+"term":{
+"name":"Arts development",
+"id":"OMITERMO4953",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+],
+"attributes":{
+"A-Z Entry":"1"
+},
+"metadata":{
+},
+"index":"disp_taxonomy",
+"displayName":"Arts development",
+"foundByNPT":"0",
+"lastUpdatedDate":"20091203163113",
+"createdDate":"20091203162631",
+"creator":"admin",
+"updator":"admin",
+"status":"Approved",
+"documents":"0"
+,
+"hierarchy":[
+{ 
+"typeId":"1",
+"qty":"1",
+"name":"Broader Term",
+"abbr":"BT",
+"fields":[
+{
+"field":{
+"name":"Arts administration",
+"id":"OMITERMO4952",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+]
+}
+}
+]},
+{ 
+"typeId":"1",
+"qty":"1",
+"name":"Narrower Term",
+"abbr":"NT",
+"fields":[
+{
+"field":{
+"name":"Literature development",
+"id":"OMITERMO4945",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+]
+}
+}
+]}
+],
+"equivalence":[
+{ 
+"typeId":"3",
+"qty":"1",
+"name":"Use For",
+"abbr":"UF",
+"fields":[
+{
+"field":{
+"name":"arts promotion",
+"id":"OMITERMO4955",
+"freq":"0"
+
+}
+}
+]}
+],
+"paths":[
+{
+"path":[
+{
+"field":{
+"name":"Leisure and culture",
+"id":"OMITERMO616",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+]
+}
+},
+{
+"field":{
+"name":"Culture and creativity",
+"id":"OMITERMO578",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+]
+}
+},
+{
+"field":{
+"name":"Arts administration",
+"id":"OMITERMO4952",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+]
+}
+},
+{
+"field":{
+"name":"Arts development",
+"id":"OMITERMO4953",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+]
+}
+}
+]
+}
+]
+}
+},
+{
+"term":{
+"name":"Asbestos",
+"id":"OMITERMO134",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO557","name":"Health, well-being and care"}
+],
+"attributes":{
+"A-Z Entry":"1",
+"Internal":"1"
+},
+"metadata":{
+},
+"index":"disp_taxonomy",
+"displayName":"Asbestos",
+"foundByNPT":"0",
+"lastUpdatedDate":"20091203163113",
+"createdDate":"20091203162630",
+"creator":"admin",
+"updator":"admin",
+"status":"Approved",
+"documents":"0"
+,
+"hierarchy":[
+{ 
+"typeId":"1",
+"qty":"1",
+"name":"Broader Term",
+"abbr":"BT",
+"fields":[
+{
+"field":{
+"name":"Hazardous substances",
+"id":"OMITERMO1144",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO557","name":"Health, well-being and care"}
+]
+}
+}
+]}
+],
+"paths":[
+{
+"path":[
+{
+"field":{
+"name":"Health, well-being and care",
+"id":"OMITERMO557",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO557","name":"Health, well-being and care"}
+]
+}
+},
+{
+"field":{
+"name":"Safety",
+"id":"OMITERMO1058",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO557","name":"Health, well-being and care"}
+]
+}
+},
+{
+"field":{
+"name":"Hazardous substances",
+"id":"OMITERMO1144",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO557","name":"Health, well-being and care"}
+]
+}
+},
+{
+"field":{
+"name":"Asbestos",
+"id":"OMITERMO134",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO557","name":"Health, well-being and care"}
+]
+}
+}
+]
+}
+]
+}
+},
+{
+"term":{
+"name":"Attendance and truancy",
+"id":"OMITERMO2014",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO439","name":"Education and skills"}
+],
+"attributes":{
+"A-Z Entry":"1"
+},
+"metadata":{
+},
+"index":"disp_taxonomy",
+"displayName":"Attendance and truancy",
+"foundByNPT":"0",
+"lastUpdatedDate":"20091203163113",
+"createdDate":"20091203162630",
+"creator":"admin",
+"updator":"admin",
+"status":"Approved",
+"documents":"0"
+,
+"hierarchy":[
+{ 
+"typeId":"1",
+"qty":"1",
+"name":"Broader Term",
+"abbr":"BT",
+"fields":[
+{
+"field":{
+"name":"School welfare, behaviour and attendance",
+"id":"OMITERMO688",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO439","name":"Education and skills"}
+]
+}
+}
+]}
+],
+"associated":[
+{ 
+"typeId":"2",
+"qty":"1",
+"name":"Related To",
+"abbr":"RT",
+"fields":[
+{
+"field":{
+"name":"Exclusion from school",
+"id":"OMITERMO1037",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO439","name":"Education and skills"}
+]
+}
+}
+]}
+],
+"equivalence":[
+{ 
+"typeId":"3",
+"qty":"7",
+"name":"Use For",
+"abbr":"UF",
+"fields":[
+{
+"field":{
+"name":"Absence From School",
+"id":"OMITERMO332",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Absence reporting (schoolchildren)",
+"id":"OMITERMO7260",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Presence at school",
+"id":"OMITERMO2016",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"School attendance",
+"id":"OMITERMO2015",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Schools attendance policy",
+"id":"OMITERMO2017",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Sickness absence from school",
+"id":"OMITERMO7302",
+"freq":"0"
+
+}
+},
+{
+"field":{
+"name":"Truancy",
+"id":"OMITERMO1416",
+"freq":"0"
+
+}
+}
+]}
+],
+"paths":[
+{
+"path":[
+{
+"field":{
+"name":"Education and skills",
+"id":"OMITERMO439",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO439","name":"Education and skills"}
+]
+}
+},
+{
+"field":{
+"name":"Schools",
+"id":"OMITERMO986",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO439","name":"Education and skills"}
+]
+}
+},
+{
+"field":{
+"name":"School welfare, behaviour and attendance",
+"id":"OMITERMO688",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO439","name":"Education and skills"}
+]
+}
+},
+{
+"field":{
+"name":"Attendance and truancy",
+"id":"OMITERMO2014",
+"freq":"0"
+,
+"facets":[
+{"id":"OMITERMO439","name":"Education and skills"}
+]
+}
+}
+]
+}
+]
+}
+}
+]}

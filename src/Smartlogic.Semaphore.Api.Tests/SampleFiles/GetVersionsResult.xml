@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SEMAPHORE>
+	<PARAMETERS>
+		<PARAMETER NAME='SERVICE'>versions</PARAMETER>
+	</PARAMETERS>
+	<MAIN_VERSIONS>
+		<VERSION NAME='Compatible index structure version' REVISION='135'/>
+		<VERSION NAME='SES API version' REVISION='1.1'/>
+		<VERSION NAME='SES build' REVISION='3.4-r43843'/>
+	</MAIN_VERSIONS>
+	<FILES_VERSIONS>
+		<VERSION NAME='..\C++\engine\Configuration.cpp' REVISION='$Rev: 43077 $'/>
+		<VERSION NAME='..\C++\engine\Index.cpp' REVISION='$Rev: 43085 $'/>
+		<VERSION NAME='..\C++\engine\IndexVersion.cpp' REVISION='$Rev: 43077 $'/>
+		<VERSION NAME='..\C++\engine\MuscatIndex.cpp' REVISION='$Rev: 43843 $'/>
+		<VERSION NAME='..\C++\engine\Repository.cpp' REVISION='$Rev: 39679 $'/>
+		<VERSION NAME='..\C++\engine\TermInfoIndex.cpp' REVISION='$Rev: 43843 $'/>
+		<VERSION NAME='..\C++\engine\file_utils.cpp' REVISION='$Rev: 43077 $'/>
+		<VERSION NAME='..\C++\formatters\JsonFormatter.cpp' REVISION='$Rev: 43838 $'/>
+		<VERSION NAME='..\C++\formatters\JsonFormatterLoader.cpp' REVISION='$Rev: 40213 $'/>
+		<VERSION NAME='..\C++\formatters\PlainTextFormatter.cpp' REVISION='$Rev: 42623 $'/>
+		<VERSION NAME='..\C++\formatters\PlainTextFormatterLoader.cpp' REVISION='$Rev: 39679 $'/>
+		<VERSION NAME='..\C++\formatters\XMLFormatter.cpp' REVISION='$Rev: 43838 $'/>
+		<VERSION NAME='..\C++\formatters\XMLFormatterLoader.cpp' REVISION='$Rev: 39679 $'/>
+		<VERSION NAME='..\C++\formatters\XSLTransformer.cpp' REVISION='$Rev: 39679 $'/>
+		<VERSION NAME='..\C++\src\CommandProcessor.cpp' REVISION='$Rev: 43843 $'/>
+		<VERSION NAME='..\C++\src\FCGIRequestLoop.cpp' REVISION='$Rev: 43077 $'/>
+		<VERSION NAME='..\C++\src\FCGI_RequestParser.cpp' REVISION='$Rev: 43605 $'/>
+		<VERSION NAME='..\C++\src\QueryCompiler.cpp' REVISION='$Rev: 43838 $'/>
+		<VERSION NAME='..\C++\src\RequestLoop.cpp' REVISION='$Rev: 43077 $'/>
+		<VERSION NAME='..\C++\src\SESInit.cpp' REVISION='$Rev: 43780 $'/>
+		<VERSION NAME='..\C++\src\SESRequest.cpp' REVISION='$Rev: 43689 $'/>
+		<VERSION NAME='..\C++\src\SESResponse.cpp' REVISION='$Rev: 42594 $'/>
+		<VERSION NAME='..\C++\src\SESStats.cpp' REVISION='$Rev: 42593 $'/>
+		<VERSION NAME='..\C++\src\SESVersion.cpp' REVISION='$Rev: 39679 $'/>
+		<VERSION NAME='..\C++\src\SESlogger.cpp' REVISION='$Rev: 43542 $'/>
+		<VERSION NAME='..\C++\src\ServerFCGI.cpp' REVISION='$Rev: 43214 $'/>
+		<VERSION NAME='..\C++\tokenizers\AdvancedConceptMapTokenizer.cpp' REVISION='$Rev: 43780 $'/>
+		<VERSION NAME='..\C++\tokenizers\CMCommonDynamicTokenizer.cpp' REVISION='$Rev: 43077 $'/>
+		<VERSION NAME='..\C++\tokenizers\CMCommonDynamicTokenizerLoader.cpp' REVISION='$Rev: 43077 $'/>
+		<VERSION NAME='..\C++\tokenizers\ConceptMapTokenizer.cpp' REVISION='$Rev: 39679 $'/>
+		<VERSION NAME='..\C++\tokenizers\StemmerWrapper.cpp' REVISION='$Rev: 43077 $'/>
+		<VERSION NAME='D:\PROJECTS\SES-3.4\Server\C++\includes\CommandProcessor.h' REVISION='$Rev: 43077 $'/>
+		<VERSION NAME='D:\PROJECTS\SES-3.4\Server\C++\includes\OutputFormatterInterface.h' REVISION='$Rev: 42623 $'/>
+		<VERSION NAME='D:\PROJECTS\SES-3.4\Server\C++\includes\QueryCompiler.h' REVISION='$Rev: 43838 $'/>
+		<VERSION NAME='D:\PROJECTS\SES-3.4\Server\C++\includes\SESInit.h' REVISION='$Rev: 43689 $'/>
+		<VERSION NAME='D:\PROJECTS\SES-3.4\Server\C++\includes\SESResponse.h' REVISION='$Rev: 43838 $'/>
+		<VERSION NAME='D:\PROJECTS\SES-3.4\Server\C++\includes\SESStats.h' REVISION='$Rev: 42593 $'/>
+		<VERSION NAME='D:\PROJECTS\SES-3.4\Server\C++\includes\SESVersion.h' REVISION='$Rev: 43077 $'/>
+		<VERSION NAME='D:\PROJECTS\SES-3.4\Server\C++\includes\SESlogger.h' REVISION='$Rev: 38096 $'/>
+		<VERSION NAME='d:\projects\ses-3.4\server\c++\engine\Configuration.h' REVISION='$Rev: 40838 $'/>
+		<VERSION NAME='d:\projects\ses-3.4\server\c++\engine\Index.h' REVISION='$Rev: 43085 $'/>
+		<VERSION NAME='d:\projects\ses-3.4\server\c++\engine\IndexVersion.h' REVISION='$Rev: 43833 $'/>
+		<VERSION NAME='d:\projects\ses-3.4\server\c++\engine\MuscatIndex.h' REVISION='$Rev: 43843 $'/>
+		<VERSION NAME='d:\projects\ses-3.4\server\c++\engine\MuscatUtils.h' REVISION='$Rev: 43077 $'/>
+		<VERSION NAME='d:\projects\ses-3.4\server\c++\engine\Repository.h' REVISION='$Rev: 43077 $'/>
+		<VERSION NAME='d:\projects\ses-3.4\server\c++\engine\TermInfoIndex.h' REVISION='$Rev: 43828 $'/>
+		<VERSION NAME='d:\projects\ses-3.4\server\c++\engine\file_utils.h' REVISION='$Rev: 41550 $'/>
+		<VERSION NAME='d:\projects\ses-3.4\server\c++\formatters\JsonFormatter.h' REVISION='$Rev: 42623 $'/>
+		<VERSION NAME='d:\projects\ses-3.4\server\c++\formatters\PlainTextFormatter.h' REVISION='$Rev: 42623 $'/>
+		<VERSION NAME='d:\projects\ses-3.4\server\c++\formatters\XMLFormatter.h' REVISION='$Rev: 43077 $'/>
+		<VERSION NAME='d:\projects\ses-3.4\server\c++\formatters\XSLTransformer.h' REVISION='$Rev: 36921 $'/>
+		<VERSION NAME='d:\projects\ses-3.4\server\c++\src\FCGIRequestLoop.h' REVISION='$Rev: 42594 $'/>
+		<VERSION NAME='d:\projects\ses-3.4\server\c++\src\FCGI_RequestParser.h' REVISION='$Rev: 42176 $'/>
+		<VERSION NAME='d:\projects\ses-3.4\server\c++\src\RequestLoop.h' REVISION='$Rev: 42594 $'/>
+		<VERSION NAME='d:\projects\ses-3.4\server\c++\src\SESRequest.h' REVISION='$Rev: 43689 $'/>
+		<VERSION NAME='d:\projects\ses-3.4\server\c++\tokenizers\AdvancedConceptMapTokenizer.h' REVISION='$Rev: 43780 $'/>
+		<VERSION NAME='d:\projects\ses-3.4\server\c++\tokenizers\CMCommonDynamicTokenizer.h' REVISION='$Rev: 43645 $'/>
+		<VERSION NAME='d:\projects\ses-3.4\server\c++\tokenizers\ConceptMapTokenizer.h' REVISION='$Rev: 43780 $'/>
+		<VERSION NAME='d:\projects\ses-3.4\server\c++\tokenizers\StemmerWrapper.h' REVISION='$Rev: 36921 $'/>
+	</FILES_VERSIONS>
+</SEMAPHORE>

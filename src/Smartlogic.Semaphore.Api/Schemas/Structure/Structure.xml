@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SEMAPHORE>
+	<PARAMETERS>
+		<PARAMETER NAME='TBDB'>disp_taxonomy</PARAMETER>
+		<PARAMETER NAME='SERVICE'>om_structure</PARAMETER>
+		<PARAMETER NAME='TEMPLATE'></PARAMETER>
+	</PARAMETERS>
+<OM_STRUCTURE>
+	<TERM_CLASSES>
+	</TERM_CLASSES>
+	<TERM_FACETS>
+		<FIELD FACET0='People and organisations' FACET_ID0='OMITERMO6999' FREQ='0' ID='OMITERMO6999' NAME='term'>People and organisations</FIELD>
+		<FIELD FACET0='Education and skills' FACET_ID0='OMITERMO439' FREQ='0' ID='OMITERMO439' NAME='term'>Education and skills</FIELD>
+		<FIELD FACET0='Housing' FACET_ID0='OMITERMO460' FREQ='0' ID='OMITERMO460' NAME='term'>Housing</FIELD>
+		<FIELD FACET0='Environment' FACET_ID0='OMITERMO499' FREQ='0' ID='OMITERMO499' NAME='term'>Environment</FIELD>
+		<FIELD FACET0='Transport and infrastructure' FACET_ID0='OMITERMO521' FREQ='0' ID='OMITERMO521' NAME='term'>Transport and infrastructure</FIELD>
+		<FIELD FACET0='Health, well-being and care' FACET_ID0='OMITERMO557' FREQ='0' ID='OMITERMO557' NAME='term'>Health, well-being and care</FIELD>
+		<FIELD FACET0='Public order, justice and rights' FACET_ID0='OMITERMO564' FREQ='0' ID='OMITERMO564' NAME='term'>Public order, justice and rights</FIELD>
+		<FIELD FACET0='Leisure and culture' FACET_ID0='OMITERMO616' FREQ='0' ID='OMITERMO616' NAME='term'>Leisure and culture</FIELD>
+		<FIELD FACET0='Life in the community' FACET_ID0='OMITERMO642' FREQ='0' ID='OMITERMO642' NAME='term'>Life in the community</FIELD>
+		<FIELD FACET0='Science, technology and innovation' FACET_ID0='OMITERMO652' FREQ='0' ID='OMITERMO652' NAME='term'>Science, technology and innovation</FIELD>
+		<FIELD FACET0='Business and industry' FACET_ID0='OMITERMO692' FREQ='0' ID='OMITERMO692' NAME='term'>Business and industry</FIELD>
+		<FIELD FACET0='Economics and finance' FACET_ID0='OMITERMO726' FREQ='0' ID='OMITERMO726' NAME='term'>Economics and finance</FIELD>
+		<FIELD FACET0='Information and communication' FACET_ID0='OMITERMO758' FREQ='0' ID='OMITERMO758' NAME='term'>Information and communication</FIELD>
+		<FIELD FACET0='Government, politics and public administration' FACET_ID0='OMITERMO760' FREQ='0' ID='OMITERMO760' NAME='term'>Government, politics and public administration</FIELD>
+		<FIELD FACET0='International affairs and defence' FACET_ID0='OMITERMO911' FREQ='0' ID='OMITERMO911' NAME='term'>International affairs and defence</FIELD>
+		<FIELD FACET0='Employment, jobs and careers' FACET_ID0='OMITERMO981' FREQ='0' ID='OMITERMO981' NAME='term'>Employment, jobs and careers</FIELD>
+	</TERM_FACETS>
+	<TERM_ATTRIBUTES>
+		<TERM_ATTRIBUTE ID='1' NAME='Do not use for concept mapping'/>
+		<TERM_ATTRIBUTE ID='8' NAME='A-Z Entry'/>
+		<TERM_ATTRIBUTE ID='9' NAME='Significant Term'/>
+		<TERM_ATTRIBUTE ID='10' NAME='Use for classifying content'/>
+		<TERM_ATTRIBUTE ID='11' NAME='Use for concept mapping'/>
+		<TERM_ATTRIBUTE ID='12' NAME='Internal'/>
+	</TERM_ATTRIBUTES>
+	<TERM_NOTES>
+		<TERM_NOTE ID='1' NAME='Scope note'/>
+		<TERM_NOTE ID='8' NAME='Added In Version'/>
+		<TERM_NOTE ID='9' NAME='Last Updated In Version'/>
+		<TERM_NOTE ID='10' NAME='History Note'/>
+	</TERM_NOTES>
+	<TERM_METADATA>
+		<METADATA_DEF ID='1' NAME='Influence in rulebase'>
+			<VALUE_DEF ID='1'>Normal (default)</VALUE_DEF>
+			<VALUE_DEF ID='2'>High</VALUE_DEF>
+			<VALUE_DEF ID='3'>Low</VALUE_DEF>
+			<VALUE_DEF ID='4'>Tag if present</VALUE_DEF>
+			<VALUE_DEF ID='5'>None</VALUE_DEF>
+		</METADATA_DEF>
+		<METADATA_DEF ID='2' NAME='Behaviour in rulebase'>
+			<VALUE_DEF ID='6'>Allow phrase variants (default)</VALUE_DEF>
+			<VALUE_DEF ID='7'>Treat as exact phrase only</VALUE_DEF>
+		</METADATA_DEF>
+		<METADATA_DEF ID='3' NAME='Rulebase action'>
+			<VALUE_DEF ID='8'>Generate rulebase (default)</VALUE_DEF>
+			<VALUE_DEF ID='9'>Do not generate rulebase</VALUE_DEF>
+			<VALUE_DEF ID='10'>Substitute in manually edited rulebase</VALUE_DEF>
+		</METADATA_DEF>
+		<METADATA_DEF ID='4' NAME='Match on stemmed term'>
+			<VALUE_DEF ID='11'>Yes</VALUE_DEF>
+			<VALUE_DEF ID='12'>No</VALUE_DEF>
+		</METADATA_DEF>
+	</TERM_METADATA>
+	<EQUIVALENCE_RELATIONS>
+		<RELATION_DEF ID='3' NAME='Use' REV_NAME='Use For' ABRV='USE' REV_ABRV='UF' SYMMETRIC='false'/>
+	</EQUIVALENCE_RELATIONS>
+	<HIERARCHICAL_RELATIONS>
+		<RELATION_DEF ID='1' NAME='Narrower Term' REV_NAME='Broader Term' ABRV='NT' REV_ABRV='BT' SYMMETRIC='false'/>
+	</HIERARCHICAL_RELATIONS>
+	<ASSOCIATIVE_RELATIONS>
+		<RELATION_DEF ID='2' NAME='Related To' REV_NAME='Related To' ABRV='RT' REV_ABRV='RT' SYMMETRIC='true'/>
+	</ASSOCIATIVE_RELATIONS>
+	<USERS>
+		<USER_DEF ID='0' NAME='&lt;unknown&gt;'/>
+		<USER_DEF ID='1' NAME='admin'/>
+		<USER_DEF ID='4294967295' NAME='(deleted user)'/>
+	</USERS>
+</OM_STRUCTURE>
+	<MODELS>
+		<MODEL>			<NAME>disp_taxonomy</NAME>
+</MODEL>
+	</MODELS>
+</SEMAPHORE>

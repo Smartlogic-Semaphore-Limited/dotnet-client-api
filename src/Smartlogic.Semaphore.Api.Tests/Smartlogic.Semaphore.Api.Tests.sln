@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smartlogic.Semaphore.Api.Tests", "Smartlogic.Semaphore.Api.Tests.csproj", "{52C49400-7078-4541-9AAE-B6B995DD6771}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smartlogic.Semaphore.Api", "..\..\Smartlogic.Semaphore\Smartlogic.Semaphore.Api\Smartlogic.Semaphore.Api.csproj", "{5AD8B376-8CC2-45AF-A4E7-90E582DBBAC7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smartlogic.Semaphore.Common", "..\..\Smartlogic.Semaphore\Smartlogic.Semaphore.Common\Smartlogic.Semaphore.Common.csproj", "{824163E5-53DF-4E7B-B336-C8C04C790FEC}"
+EndProject
+Global
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug with Tests|Any CPU = Debug with Tests|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		FAST Release|Any CPU = FAST Release|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{52C49400-7078-4541-9AAE-B6B995DD6771}.Debug with Tests|Any CPU.ActiveCfg = Debug with Tests|Any CPU
+		{52C49400-7078-4541-9AAE-B6B995DD6771}.Debug with Tests|Any CPU.Build.0 = Debug with Tests|Any CPU
+		{52C49400-7078-4541-9AAE-B6B995DD6771}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52C49400-7078-4541-9AAE-B6B995DD6771}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52C49400-7078-4541-9AAE-B6B995DD6771}.FAST Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52C49400-7078-4541-9AAE-B6B995DD6771}.FAST Release|Any CPU.Build.0 = Release|Any CPU
+		{52C49400-7078-4541-9AAE-B6B995DD6771}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52C49400-7078-4541-9AAE-B6B995DD6771}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5AD8B376-8CC2-45AF-A4E7-90E582DBBAC7}.Debug with Tests|Any CPU.ActiveCfg = Debug with Tests|Any CPU
+		{5AD8B376-8CC2-45AF-A4E7-90E582DBBAC7}.Debug with Tests|Any CPU.Build.0 = Debug with Tests|Any CPU
+		{5AD8B376-8CC2-45AF-A4E7-90E582DBBAC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AD8B376-8CC2-45AF-A4E7-90E582DBBAC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AD8B376-8CC2-45AF-A4E7-90E582DBBAC7}.FAST Release|Any CPU.ActiveCfg = FAST Release|Any CPU
+		{5AD8B376-8CC2-45AF-A4E7-90E582DBBAC7}.FAST Release|Any CPU.Build.0 = FAST Release|Any CPU
+		{5AD8B376-8CC2-45AF-A4E7-90E582DBBAC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AD8B376-8CC2-45AF-A4E7-90E582DBBAC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{824163E5-53DF-4E7B-B336-C8C04C790FEC}.Debug with Tests|Any CPU.ActiveCfg = Debug|Any CPU
+		{824163E5-53DF-4E7B-B336-C8C04C790FEC}.Debug with Tests|Any CPU.Build.0 = Debug|Any CPU
+		{824163E5-53DF-4E7B-B336-C8C04C790FEC}.Debug with Tests|Any CPU.Deploy.0 = Debug|Any CPU
+		{824163E5-53DF-4E7B-B336-C8C04C790FEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{824163E5-53DF-4E7B-B336-C8C04C790FEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{824163E5-53DF-4E7B-B336-C8C04C790FEC}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{824163E5-53DF-4E7B-B336-C8C04C790FEC}.FAST Release|Any CPU.ActiveCfg = Release|Any CPU
+		{824163E5-53DF-4E7B-B336-C8C04C790FEC}.FAST Release|Any CPU.Build.0 = Release|Any CPU
+		{824163E5-53DF-4E7B-B336-C8C04C790FEC}.FAST Release|Any CPU.Deploy.0 = Release|Any CPU
+		{824163E5-53DF-4E7B-B336-C8C04C790FEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{824163E5-53DF-4E7B-B336-C8C04C790FEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{824163E5-53DF-4E7B-B336-C8C04C790FEC}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

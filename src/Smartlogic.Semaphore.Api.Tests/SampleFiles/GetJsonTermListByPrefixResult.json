@@ -1,0 +1,155 @@
+﻿{
+"parameters":{
+"tbdb":"disp_taxonomy",
+"service":"prefix",
+"template":"service.json",
+"term_prefix":"fis"
+},
+"termHints":[
+{
+"name":"Fisheries and aquaculture",
+"id":"OMITERMO502",
+"index":"disp_taxonomy",
+"values":[
+{
+"value":"Fisheries and aquaculture",
+"pre_em":"",
+"em":"Fis",
+"post_em":"heries and aquaculture",
+"nature":"PT",
+"id":"OMITERMO502"
+}
+],
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]},
+{
+"name":"Fishing licences",
+"id":"OMITERMO5620",
+"index":"disp_taxonomy",
+"values":[
+{
+"value":"Fishing licences",
+"pre_em":"",
+"em":"Fis",
+"post_em":"hing licences",
+"nature":"PT",
+"id":"OMITERMO5620"
+}
+],
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+]},
+{
+"name":"Fish (food)",
+"id":"OMITERMO6843",
+"index":"disp_taxonomy",
+"values":[
+{
+"value":"Fish (food)",
+"pre_em":"",
+"em":"Fis",
+"post_em":"h (food)",
+"nature":"PT",
+"id":"OMITERMO6843"
+}
+],
+"facets":[
+{"id":"OMITERMO557","name":"Health, well-being and care"}
+]},
+{
+"name":"Fishes",
+"id":"OMITERMO1063",
+"index":"disp_taxonomy",
+"values":[
+{
+"value":"Fishes",
+"pre_em":"",
+"em":"Fis",
+"post_em":"hes",
+"nature":"PT",
+"id":"OMITERMO1063"
+}
+],
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]},
+{
+"name":"Fly fishing",
+"id":"OMITERMO5559",
+"index":"disp_taxonomy",
+"values":[
+{
+"value":"Fly fishing",
+"pre_em":"Fly ",
+"em":"fis",
+"post_em":"hing",
+"nature":"PT",
+"id":"OMITERMO5559"
+}
+],
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+]},
+{
+"name":"Common Fisheries Policy",
+"id":"OMITERMO813",
+"index":"disp_taxonomy",
+"values":[
+{
+"value":"Common Fisheries Policy",
+"pre_em":"Common ",
+"em":"Fis",
+"post_em":"heries Policy",
+"nature":"PT",
+"id":"OMITERMO813"
+}
+],
+"facets":[
+{"id":"OMITERMO499","name":"Environment"},
+{"id":"OMITERMO911","name":"International affairs and defence"}
+]},
+{
+"name":"Aquariums",
+"id":"OMITERMO5276",
+"index":"disp_taxonomy",
+"values":[
+{
+"value":"Fish Collections",
+"pre_em":"",
+"em":"Fis",
+"post_em":"h Collections",
+"nature":"NPT",
+"id":"OMITERMO5280"
+}
+],
+"facets":[
+{"id":"OMITERMO499","name":"Environment"}
+]},
+{
+"name":"Angling",
+"id":"OMITERMO5556",
+"index":"disp_taxonomy",
+"values":[
+{
+"value":"Fishing (sport)",
+"pre_em":"",
+"em":"Fis",
+"post_em":"hing (sport)",
+"nature":"NPT",
+"id":"OMITERMO5558"
+},
+{
+"value":"Game fishing",
+"pre_em":"Game ",
+"em":"fis",
+"post_em":"hing",
+"nature":"NPT",
+"id":"OMITERMO5619"
+}
+],
+"facets":[
+{"id":"OMITERMO616","name":"Leisure and culture"}
+]}
+],"total":8
+}

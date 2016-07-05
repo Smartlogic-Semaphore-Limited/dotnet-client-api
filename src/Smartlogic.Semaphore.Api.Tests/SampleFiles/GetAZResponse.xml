@@ -1,0 +1,1403 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SEMAPHORE>
+  <PARAMETERS>
+    <PARAMETER NAME='TBDB'>disp_taxonomy</PARAMETER>
+    <PARAMETER NAME='AZ'>A</PARAMETER>
+    <PARAMETER NAME='SERVICE'>az</PARAMETER>
+  </PARAMETERS>
+  <TERMS>
+    <TERM INDEX='disp_taxonomy'>
+      <NAME>Abandoned vehicles</NAME>
+      <ID>139</ID>
+      <DISPLAY_NAME>Abandoned vehicles</DISPLAY_NAME>
+      <FREQUENCY>0</FREQUENCY>
+      <PATH TYPE='Narrower Term' ABBR='NT'>
+        <FIELD FACET0='Transport and infrastructure' FACET_ID0='191' FREQ='0' ID='191' NAME='term'>Transport and infrastructure</FIELD>
+        <FIELD FACET0='Transport and infrastructure' FACET_ID0='191' FREQ='0' ID='140' NAME='term'>Road transport</FIELD>
+        <FIELD FACET0='Transport and infrastructure' FACET_ID0='191' FREQ='0' ID='573' NAME='term'>Vehicles</FIELD>
+        <FIELD FACET0='Transport and infrastructure' FACET_ID0='191' FREQ='0' ID='139' NAME='term'>Abandoned vehicles</FIELD>
+      </PATH>
+      <HIERARCHY TYPE='Broader Term' ABBR='BT' QTY='1'>
+        <FIELD FACET0='Transport and infrastructure' FACET_ID0='191' FREQ='0' ID='573' NAME='term'>Vehicles</FIELD>
+      </HIERARCHY>
+      <ASSOCIATED TYPE='Related To' ABBR='RT'>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='627' NAME='term'>Flytipping</FIELD>
+      </ASSOCIATED>
+      <FACETS>
+        <FACET NAME='Transport and infrastructure' ID='191' />
+      </FACETS>
+      <ATTRIBUTE>
+        <FIELD NAME='A-Z Entry'>1</FIELD>
+        <FIELD NAME='Internal'>0</FIELD>
+        <FIELD NAME='Do not use for concept mapping'>0</FIELD>
+      </ATTRIBUTE>
+      <METADATA>
+      </METADATA>
+      <SYNONYMS TYPE='Use' ABBR='USE'>
+        <SYNONYM ID='5815'>abandoned cars</SYNONYM>
+        <SYNONYM ID='5816'>dumped cars</SYNONYM>
+        <SYNONYM ID='5817'>dumped vehicles</SYNONYM>
+      </SYNONYMS>
+    </TERM>
+    <TERM INDEX='disp_taxonomy'>
+      <NAME>Abnormal loads (road transport)</NAME>
+      <ID>1053</ID>
+      <DISPLAY_NAME>Abnormal loads (road transport)</DISPLAY_NAME>
+      <FREQUENCY>0</FREQUENCY>
+      <PATH TYPE='Narrower Term' ABBR='NT'>
+        <FIELD FACET0='Transport and infrastructure' FACET_ID0='191' FREQ='0' ID='191' NAME='term'>Transport and infrastructure</FIELD>
+        <FIELD FACET0='Transport and infrastructure' FACET_ID0='191' FREQ='0' ID='140' NAME='term'>Road transport</FIELD>
+        <FIELD FACET0='Transport and infrastructure' FACET_ID0='191' FREQ='0' ID='573' NAME='term'>Vehicles</FIELD>
+        <FIELD FACET0='Transport and infrastructure' FACET_ID0='191' FREQ='0' ID='98' NAME='term'>Heavy goods vehicles</FIELD>
+        <FIELD FACET0='Transport and infrastructure' FACET_ID0='191' FREQ='0' ID='1052' NAME='term'>HGV management and signage</FIELD>
+        <FIELD FACET0='Transport and infrastructure' FACET_ID0='191' FREQ='0' ID='1053' NAME='term'>Abnormal loads (road transport)</FIELD>
+      </PATH>
+      <HIERARCHY TYPE='Broader Term' ABBR='BT' QTY='1'>
+        <FIELD FACET0='Transport and infrastructure' FACET_ID0='191' FREQ='0' ID='1052' NAME='term'>HGV management and signage</FIELD>
+      </HIERARCHY>
+      <FACETS>
+        <FACET NAME='Transport and infrastructure' ID='191' />
+      </FACETS>
+      <ATTRIBUTE>
+        <FIELD NAME='A-Z Entry'>1</FIELD>
+        <FIELD NAME='Internal'>0</FIELD>
+        <FIELD NAME='Do not use for concept mapping'>0</FIELD>
+      </ATTRIBUTE>
+      <METADATA>
+      </METADATA>
+      <SYNONYMS TYPE='Use' ABBR='USE'>
+        <SYNONYM ID='5806'>Heavy Loads (road transport)</SYNONYM>
+        <SYNONYM ID='5807'>High Loads (road transport)</SYNONYM>
+        <SYNONYM ID='5808'>Wide Loads (road transport)</SYNONYM>
+      </SYNONYMS>
+    </TERM>
+    <TERM INDEX='disp_taxonomy'>
+      <NAME>Access for disabled people</NAME>
+      <ID>56</ID>
+      <DISPLAY_NAME>Access for disabled people</DISPLAY_NAME>
+      <FREQUENCY>0</FREQUENCY>
+      <PATH TYPE='Narrower Term' ABBR='NT'>
+        <FIELD FACET0='Health, well-being and care' FACET_ID0='213' FREQ='0' ID='213' NAME='term'>Health, well-being and care</FIELD>
+        <FIELD FACET0='Health, well-being and care' FACET_ID0='213' FREQ='0' ID='1229' NAME='term'>Disability</FIELD>
+        <FIELD FACET0='Health, well-being and care' FACET_ID0='213' FREQ='0' ID='56' NAME='term'>Access for disabled people</FIELD>
+      </PATH>
+      <HIERARCHY TYPE='Broader Term' ABBR='BT' QTY='1'>
+        <FIELD FACET0='Health, well-being and care' FACET_ID0='213' FREQ='0' ID='1229' NAME='term'>Disability</FIELD>
+      </HIERARCHY>
+      <HIERARCHY TYPE='Narrower Term' ABBR='NT' QTY='3'>
+        <FIELD FACET0='Health, well-being and care' FACET_ID0='213' FACET1='Environment' FACET_ID1='175' FREQ='0' ID='1259' NAME='term'>Accessible buildings</FIELD>
+        <FIELD FACET0='Housing' FACET_ID0='152' FACET1='Health, well-being and care' FACET_ID1='213' FACET2='Economics and finance' FACET_ID2='309' FREQ='0' ID='1260' NAME='term'>Disabled facilities grants</FIELD>
+        <FIELD FACET0='Health, well-being and care' FACET_ID0='213' FREQ='0' ID='55' NAME='term'>Shopmobility</FIELD>
+      </HIERARCHY>
+      <ASSOCIATED TYPE='Related To' ABBR='RT'>
+        <FIELD FACET0='Health, well-being and care' FACET_ID0='213' FREQ='0' ID='1230' NAME='term'>Equipment for disabled people</FIELD>
+        <FIELD FACET0='Health, well-being and care' FACET_ID0='213' FACET1='Transport and infrastructure' FACET_ID1='191' FREQ='0' ID='1258' NAME='term'>Transport for disabled people</FIELD>
+      </ASSOCIATED>
+      <FACETS>
+        <FACET NAME='Health, well-being and care' ID='213' />
+      </FACETS>
+      <ATTRIBUTE>
+        <FIELD NAME='A-Z Entry'>1</FIELD>
+        <FIELD NAME='Internal'>1</FIELD>
+        <FIELD NAME='Do not use for concept mapping'>0</FIELD>
+      </ATTRIBUTE>
+      <METADATA>
+      </METADATA>
+      <SYNONYMS TYPE='Use' ABBR='USE'>
+        <SYNONYM ID='6193'>Access for disabled</SYNONYM>
+        <SYNONYM ID='6227'>Accessibility for disabled people</SYNONYM>
+        <SYNONYM ID='6226'>Disability access</SYNONYM>
+        <SYNONYM ID='6197'>Disabled Access</SYNONYM>
+      </SYNONYMS>
+    </TERM>
+    <TERM INDEX='disp_taxonomy'>
+      <NAME>Accident prevention</NAME>
+      <ID>1072</ID>
+      <DISPLAY_NAME>Accident prevention</DISPLAY_NAME>
+      <FREQUENCY>0</FREQUENCY>
+      <PATH TYPE='Narrower Term' ABBR='NT'>
+        <FIELD FACET0='Health, well-being and care' FACET_ID0='213' FREQ='0' ID='213' NAME='term'>Health, well-being and care</FIELD>
+        <FIELD FACET0='Health, well-being and care' FACET_ID0='213' FREQ='0' ID='470' NAME='term'>Safety</FIELD>
+        <FIELD FACET0='Health, well-being and care' FACET_ID0='213' FREQ='0' ID='1072' NAME='term'>Accident prevention</FIELD>
+      </PATH>
+      <HIERARCHY TYPE='Broader Term' ABBR='BT' QTY='1'>
+        <FIELD FACET0='Health, well-being and care' FACET_ID0='213' FREQ='0' ID='470' NAME='term'>Safety</FIELD>
+      </HIERARCHY>
+      <FACETS>
+        <FACET NAME='Health, well-being and care' ID='213' />
+      </FACETS>
+      <ATTRIBUTE>
+        <FIELD NAME='A-Z Entry'>1</FIELD>
+        <FIELD NAME='Internal'>1</FIELD>
+        <FIELD NAME='Do not use for concept mapping'>0</FIELD>
+      </ATTRIBUTE>
+      <METADATA>
+      </METADATA>
+      <SYNONYMS TYPE='Use' ABBR='USE'>
+        <SYNONYM ID='5858'>Preventing accidents</SYNONYM>
+        <SYNONYM ID='5859'>Safety precautions</SYNONYM>
+      </SYNONYMS>
+    </TERM>
+    <TERM INDEX='disp_taxonomy'>
+      <NAME>Accidents at work</NAME>
+      <ID>149</ID>
+      <DISPLAY_NAME>Accidents at work</DISPLAY_NAME>
+      <FREQUENCY>0</FREQUENCY>
+      <PATH TYPE='Narrower Term' ABBR='NT'>
+        <FIELD FACET0='Business and industry' FACET_ID0='285' FREQ='0' ID='285' NAME='term'>Business and industry</FIELD>
+        <FIELD FACET0='Business and industry' FACET_ID0='285' FREQ='0' ID='167' NAME='term'>Business practice and regulation</FIELD>
+        <FIELD FACET0='Employment, jobs and careers' FACET_ID0='436' FACET1='Business and industry' FACET_ID1='285' FREQ='0' ID='150' NAME='term'>Health and safety at work</FIELD>
+        <FIELD FACET0='Employment, jobs and careers' FACET_ID0='436' FACET1='Business and industry' FACET_ID1='285' FREQ='0' ID='149' NAME='term'>Accidents at work</FIELD>
+      </PATH>
+      <PATH TYPE='Narrower Term' ABBR='NT'>
+        <FIELD FACET0='Employment, jobs and careers' FACET_ID0='436' FREQ='0' ID='436' NAME='term'>Employment, jobs and careers</FIELD>
+        <FIELD FACET0='Employment, jobs and careers' FACET_ID0='436' FACET1='Business and industry' FACET_ID1='285' FREQ='0' ID='150' NAME='term'>Health and safety at work</FIELD>
+        <FIELD FACET0='Employment, jobs and careers' FACET_ID0='436' FACET1='Business and industry' FACET_ID1='285' FREQ='0' ID='149' NAME='term'>Accidents at work</FIELD>
+      </PATH>
+      <HIERARCHY TYPE='Broader Term' ABBR='BT' QTY='1'>
+        <FIELD FACET0='Employment, jobs and careers' FACET_ID0='436' FACET1='Business and industry' FACET_ID1='285' FREQ='0' ID='150' NAME='term'>Health and safety at work</FIELD>
+      </HIERARCHY>
+      <ASSOCIATED TYPE='Related To' ABBR='RT'>
+        <FIELD FACET0='Government, politics and public administration' FACET_ID0='323' FACET1='Business and industry' FACET_ID1='285' FREQ='0' ID='2630' NAME='term'>Compensation</FIELD>
+      </ASSOCIATED>
+      <FACETS>
+        <FACET NAME='Employment, jobs and careers' ID='436' />
+        <FACET NAME='Business and industry' ID='285' />
+      </FACETS>
+      <ATTRIBUTE>
+        <FIELD NAME='A-Z Entry'>1</FIELD>
+        <FIELD NAME='Internal'>1</FIELD>
+        <FIELD NAME='Do not use for concept mapping'>0</FIELD>
+      </ATTRIBUTE>
+      <METADATA>
+      </METADATA>
+      <SYNONYMS TYPE='Use' ABBR='USE'>
+        <SYNONYM ID='7571'>Accident reporting at work</SYNONYM>
+        <SYNONYM ID='8486'>Accidents and incidents</SYNONYM>
+        <SYNONYM ID='8487'>Incidents (accidents at work)</SYNONYM>
+        <SYNONYM ID='7570'>RIDDOR (reporting of injuries, diseases and dangerous occurrences)</SYNONYM>
+      </SYNONYMS>
+    </TERM>
+    <TERM INDEX='disp_taxonomy'>
+      <NAME>Addiction</NAME>
+      <ID>193</ID>
+      <DISPLAY_NAME>Addiction</DISPLAY_NAME>
+      <FREQUENCY>0</FREQUENCY>
+      <PATH TYPE='Narrower Term' ABBR='NT'>
+        <FIELD FACET0='Health, well-being and care' FACET_ID0='213' FREQ='0' ID='213' NAME='term'>Health, well-being and care</FIELD>
+        <FIELD FACET0='Health, well-being and care' FACET_ID0='213' FREQ='0' ID='186' NAME='term'>Health</FIELD>
+        <FIELD FACET0='Life in the community' FACET_ID0='260' FACET1='Health, well-being and care' FACET_ID1='213' FREQ='0' ID='193' NAME='term'>Addiction</FIELD>
+      </PATH>
+      <PATH TYPE='Narrower Term' ABBR='NT'>
+        <FIELD FACET0='Life in the community' FACET_ID0='260' FREQ='0' ID='260' NAME='term'>Life in the community</FIELD>
+        <FIELD FACET0='Life in the community' FACET_ID0='260' FREQ='0' ID='1743' NAME='term'>Social issues</FIELD>
+        <FIELD FACET0='Life in the community' FACET_ID0='260' FACET1='Health, well-being and care' FACET_ID1='213' FREQ='0' ID='193' NAME='term'>Addiction</FIELD>
+      </PATH>
+      <HIERARCHY TYPE='Broader Term' ABBR='BT' QTY='2'>
+        <FIELD FACET0='Health, well-being and care' FACET_ID0='213' FREQ='0' ID='186' NAME='term'>Health</FIELD>
+        <FIELD FACET0='Life in the community' FACET_ID0='260' FREQ='0' ID='1743' NAME='term'>Social issues</FIELD>
+      </HIERARCHY>
+      <HIERARCHY TYPE='Narrower Term' ABBR='NT' QTY='5'>
+        <FIELD FACET0='Life in the community' FACET_ID0='260' FACET1='Health, well-being and care' FACET_ID1='213' FREQ='0' ID='192' NAME='term'>Alcohol use and abuse</FIELD>
+        <FIELD FACET0='Life in the community' FACET_ID0='260' FACET1='Health, well-being and care' FACET_ID1='213' FREQ='0' ID='1310' NAME='term'>Drug and alcohol action teams</FIELD>
+        <FIELD FACET0='Life in the community' FACET_ID0='260' FACET1='Health, well-being and care' FACET_ID1='213' FREQ='0' ID='420' NAME='term'>Drugs use and abuse</FIELD>
+        <FIELD FACET0='Life in the community' FACET_ID0='260' FACET1='Health, well-being and care' FACET_ID1='213' FREQ='0' ID='422' NAME='term'>Smoking</FIELD>
+        <FIELD FACET0='Life in the community' FACET_ID0='260' FACET1='Health, well-being and care' FACET_ID1='213' FREQ='0' ID='421' NAME='term'>Solvent abuse</FIELD>
+      </HIERARCHY>
+      <ASSOCIATED TYPE='Related To' ABBR='RT'>
+        <FIELD FACET0='Health, well-being and care' FACET_ID0='213' FREQ='0' ID='1233' NAME='term'>Behaviour disorders</FIELD>
+        <FIELD FACET0='Health, well-being and care' FACET_ID0='213' FREQ='0' ID='1527' NAME='term'>Crisis intervention services</FIELD>
+      </ASSOCIATED>
+      <FACETS>
+        <FACET NAME='Life in the community' ID='260' />
+        <FACET NAME='Health, well-being and care' ID='213' />
+      </FACETS>
+      <ATTRIBUTE>
+        <FIELD NAME='A-Z Entry'>1</FIELD>
+        <FIELD NAME='Internal'>1</FIELD>
+        <FIELD NAME='Do not use for concept mapping'>0</FIELD>
+      </ATTRIBUTE>
+      <METADATA>
+      </METADATA>
+      <SYNONYMS TYPE='Use' ABBR='USE'>
+        <SYNONYM ID='6289'>Alcohol, drugs and substance use</SYNONYM>
+        <SYNONYM ID='6288'>Drugs and alcohol</SYNONYM>
+        <SYNONYM ID='6290'>Substance Use</SYNONYM>
+        <SYNONYM ID='4576'>substance addiction</SYNONYM>
+      </SYNONYMS>
+    </TERM>
+    <TERM INDEX='disp_taxonomy'>
+      <NAME>Adoption</NAME>
+      <ID>162</ID>
+      <DISPLAY_NAME>Adoption</DISPLAY_NAME>
+      <FREQUENCY>0</FREQUENCY>
+      <PATH TYPE='Narrower Term' ABBR='NT'>
+        <FIELD FACET0='Health, well-being and care' FACET_ID0='213' FREQ='0' ID='213' NAME='term'>Health, well-being and care</FIELD>
+        <FIELD FACET0='Health, well-being and care' FACET_ID0='213' FREQ='0' ID='163' NAME='term'>Care</FIELD>
+        <FIELD FACET0='Health, well-being and care' FACET_ID0='213' FREQ='0' ID='51' NAME='term'>Child care</FIELD>
+        <FIELD FACET0='Health, well-being and care' FACET_ID0='213' FREQ='0' ID='162' NAME='term'>Adoption</FIELD>
+      </PATH>
+      <HIERARCHY TYPE='Broader Term' ABBR='BT' QTY='1'>
+        <FIELD FACET0='Health, well-being and care' FACET_ID0='213' FREQ='0' ID='51' NAME='term'>Child care</FIELD>
+      </HIERARCHY>
+      <ASSOCIATED TYPE='Related To' ABBR='RT'>
+        <FIELD FACET0='Public order, justice and rights' FACET_ID0='217' FACET1='Employment, jobs and careers' FACET_ID1='436' FREQ='0' ID='3022' NAME='term'>Adoption rights</FIELD>
+      </ASSOCIATED>
+      <FACETS>
+        <FACET NAME='Health, well-being and care' ID='213' />
+      </FACETS>
+      <ATTRIBUTE>
+        <FIELD NAME='A-Z Entry'>1</FIELD>
+        <FIELD NAME='Internal'>0</FIELD>
+        <FIELD NAME='Do not use for concept mapping'>0</FIELD>
+      </ATTRIBUTE>
+      <METADATA>
+      </METADATA>
+      <SYNONYMS TYPE='Use' ABBR='USE'>
+        <SYNONYM ID='6555'>Adoption Services</SYNONYM>
+        <SYNONYM ID='6560'>Family Placement (adoption)</SYNONYM>
+      </SYNONYMS>
+    </TERM>
+    <TERM INDEX='disp_taxonomy'>
+      <NAME>Adult and community education</NAME>
+      <ID>164</ID>
+      <DISPLAY_NAME>Adult and community education</DISPLAY_NAME>
+      <FREQUENCY>0</FREQUENCY>
+      <PATH TYPE='Narrower Term' ABBR='NT'>
+        <FIELD FACET0='Education and skills' FACET_ID0='138' FREQ='0' ID='138' NAME='term'>Education and skills</FIELD>
+        <FIELD FACET0='Education and skills' FACET_ID0='138' FREQ='0' ID='164' NAME='term'>Adult and community education</FIELD>
+      </PATH>
+      <HIERARCHY TYPE='Broader Term' ABBR='BT' QTY='1'>
+        <FIELD FACET0='Education and skills' FACET_ID0='138' FREQ='0' ID='138' NAME='term'>Education and skills</FIELD>
+      </HIERARCHY>
+      <HIERARCHY TYPE='Narrower Term' ABBR='NT' QTY='3'>
+        <FIELD FACET0='Education and skills' FACET_ID0='138' FACET1='Life in the community' FACET_ID1='260' FREQ='0' ID='740' NAME='term'>Adult and community education centres</FIELD>
+        <FIELD FACET0='Education and skills' FACET_ID0='138' FREQ='0' ID='635' NAME='term'>Evening classes</FIELD>
+        <FIELD FACET0='Education and skills' FACET_ID0='138' FREQ='0' ID='741' NAME='term'>Family learning</FIELD>
+      </HIERARCHY>
+      <ASSOCIATED TYPE='Related To' ABBR='RT'>
+        <FIELD FACET0='Education and skills' FACET_ID0='138' FREQ='0' ID='135' NAME='term'>Studies and qualifications (post-16)</FIELD>
+      </ASSOCIATED>
+      <ASSOCIATED TYPE='Related To' ABBR='RT'>
+        <FIELD FACET0='Education and skills' FACET_ID0='138' FREQ='0' ID='718' NAME='term'>Adult basic education courses</FIELD>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='893' NAME='term'>Education on recycling</FIELD>
+        <FIELD FACET0='Education and skills' FACET_ID0='138' FREQ='0' ID='438' NAME='term'>Further and higher education</FIELD>
+        <FIELD FACET0='People and organisations' FACET_ID0='2717' FREQ='0' ID='742' NAME='term'>Learning partnerships</FIELD>
+        <FIELD FACET0='Education and skills' FACET_ID0='138' FREQ='0' ID='810' NAME='term'>Parenting skills and courses</FIELD>
+      </ASSOCIATED>
+      <FACETS>
+        <FACET NAME='Education and skills' ID='138' />
+      </FACETS>
+      <ATTRIBUTE>
+        <FIELD NAME='A-Z Entry'>1</FIELD>
+        <FIELD NAME='Internal'>0</FIELD>
+        <FIELD NAME='Do not use for concept mapping'>0</FIELD>
+      </ATTRIBUTE>
+      <METADATA>
+      </METADATA>
+      <SYNONYMS TYPE='Use' ABBR='USE'>
+        <SYNONYM ID='5172'>Adult Education</SYNONYM>
+        <SYNONYM ID='5183'>Adult Education and skills</SYNONYM>
+        <SYNONYM ID='5173'>Community Education</SYNONYM>
+        <SYNONYM ID='6946'>Community Services (education)</SYNONYM>
+        <SYNONYM ID='4326'>Learndirect</SYNONYM>
+        <SYNONYM ID='4946'>Learndirect Scotland</SYNONYM>
+        <SYNONYM ID='4740'>Lifelong learning (post-16)</SYNONYM>
+        <SYNONYM ID='5352'>Night School (adult education)</SYNONYM>
+        <SYNONYM ID='4742'>Training (adults)</SYNONYM>
+        <SYNONYM ID='5186'>U3A</SYNONYM>
+        <SYNONYM ID='5184'>University of the Third Age</SYNONYM>
+        <SYNONYM ID='4373'>adult basic skills</SYNONYM>
+        <SYNONYM ID='4374'>adult learning and skills</SYNONYM>
+        <SYNONYM ID='4518'>community learning</SYNONYM>
+        <SYNONYM ID='4327'>learning opportunities for adults</SYNONYM>
+        <SYNONYM ID='4945'>skills development for adults</SYNONYM>
+      </SYNONYMS>
+    </TERM>
+    <TERM INDEX='disp_taxonomy'>
+      <NAME>Adult and community education centres</NAME>
+      <ID>740</ID>
+      <DISPLAY_NAME>Adult and community education centres</DISPLAY_NAME>
+      <FREQUENCY>0</FREQUENCY>
+      <PATH TYPE='Narrower Term' ABBR='NT'>
+        <FIELD FACET0='Education and skills' FACET_ID0='138' FREQ='0' ID='138' NAME='term'>Education and skills</FIELD>
+        <FIELD FACET0='Education and skills' FACET_ID0='138' FREQ='0' ID='164' NAME='term'>Adult and community education</FIELD>
+        <FIELD FACET0='Education and skills' FACET_ID0='138' FACET1='Life in the community' FACET_ID1='260' FREQ='0' ID='740' NAME='term'>Adult and community education centres</FIELD>
+      </PATH>
+      <PATH TYPE='Narrower Term' ABBR='NT'>
+        <FIELD FACET0='Life in the community' FACET_ID0='260' FREQ='0' ID='260' NAME='term'>Life in the community</FIELD>
+        <FIELD FACET0='Life in the community' FACET_ID0='260' FREQ='0' ID='1729' NAME='term'>Community facilities</FIELD>
+        <FIELD FACET0='Education and skills' FACET_ID0='138' FACET1='Life in the community' FACET_ID1='260' FREQ='0' ID='740' NAME='term'>Adult and community education centres</FIELD>
+      </PATH>
+      <HIERARCHY TYPE='Broader Term' ABBR='BT' QTY='2'>
+        <FIELD FACET0='Education and skills' FACET_ID0='138' FREQ='0' ID='164' NAME='term'>Adult and community education</FIELD>
+        <FIELD FACET0='Life in the community' FACET_ID0='260' FREQ='0' ID='1729' NAME='term'>Community facilities</FIELD>
+      </HIERARCHY>
+      <FACETS>
+        <FACET NAME='Education and skills' ID='138' />
+        <FACET NAME='Life in the community' ID='260' />
+      </FACETS>
+      <ATTRIBUTE>
+        <FIELD NAME='A-Z Entry'>1</FIELD>
+        <FIELD NAME='Internal'>0</FIELD>
+        <FIELD NAME='Do not use for concept mapping'>0</FIELD>
+      </ATTRIBUTE>
+      <METADATA>
+      </METADATA>
+      <SYNONYMS TYPE='Use' ABBR='USE'>
+        <SYNONYM ID='5185'>Adult Education providers</SYNONYM>
+        <SYNONYM ID='5358'>Adult Learning Exchanges</SYNONYM>
+        <SYNONYM ID='5357'>Adult resource centres (education and training)</SYNONYM>
+        <SYNONYM ID='5297'>Community education centres</SYNONYM>
+        <SYNONYM ID='5263'>Educational Institutions (adult and community education centres)</SYNONYM>
+        <SYNONYM ID='5295'>Learning Access Points (adults)</SYNONYM>
+        <SYNONYM ID='5363'>Technology Centres</SYNONYM>
+        <SYNONYM ID='5275'>Training Centres</SYNONYM>
+        <SYNONYM ID='5359'>adult training centres</SYNONYM>
+        <SYNONYM ID='5296'>education centres (adult and community)</SYNONYM>
+        <SYNONYM ID='5264'>educational establishments (adult and community education)</SYNONYM>
+        <SYNONYM ID='5294'>learning centres (adults)</SYNONYM>
+      </SYNONYMS>
+    </TERM>
+    <TERM INDEX='disp_taxonomy'>
+      <NAME>Advertising</NAME>
+      <ID>166</ID>
+      <DISPLAY_NAME>Advertising</DISPLAY_NAME>
+      <FREQUENCY>0</FREQUENCY>
+      <PATH TYPE='Narrower Term' ABBR='NT'>
+        <FIELD FACET0='Business and industry' FACET_ID0='285' FREQ='0' ID='285' NAME='term'>Business and industry</FIELD>
+        <FIELD FACET0='Business and industry' FACET_ID0='285' FREQ='0' ID='167' NAME='term'>Business practice and regulation</FIELD>
+        <FIELD FACET0='Business and industry' FACET_ID0='285' FREQ='0' ID='2398' NAME='term'>Marketing</FIELD>
+        <FIELD FACET0='Business and industry' FACET_ID0='285' FREQ='0' ID='166' NAME='term'>Advertising</FIELD>
+      </PATH>
+      <HIERARCHY TYPE='Broader Term' ABBR='BT' QTY='1'>
+        <FIELD FACET0='Business and industry' FACET_ID0='285' FREQ='0' ID='2398' NAME='term'>Marketing</FIELD>
+      </HIERARCHY>
+      <HIERARCHY TYPE='Narrower Term' ABBR='NT' QTY='1'>
+        <FIELD FACET0='Business and industry' FACET_ID0='285' FREQ='0' ID='1005' NAME='term'>Fly posting</FIELD>
+      </HIERARCHY>
+      <ASSOCIATED TYPE='Related To' ABBR='RT'>
+        <FIELD FACET0='Transport and infrastructure' FACET_ID0='191' FREQ='0' ID='1004' NAME='term'>Advertising hoardings</FIELD>
+        <FIELD FACET0='Information and communication' FACET_ID0='321' FACET1='Business and industry' FACET_ID1='285' FREQ='0' ID='169' NAME='term'>Communications industries</FIELD>
+        <FIELD FACET0='Business and industry' FACET_ID0='285' FREQ='0' ID='2472' NAME='term'>Description of goods</FIELD>
+        <FIELD FACET0='Information and communication' FACET_ID0='321' FREQ='0' ID='168' NAME='term'>Media and the press</FIELD>
+      </ASSOCIATED>
+      <FACETS>
+        <FACET NAME='Business and industry' ID='285' />
+      </FACETS>
+      <ATTRIBUTE>
+        <FIELD NAME='A-Z Entry'>1</FIELD>
+        <FIELD NAME='Internal'>0</FIELD>
+        <FIELD NAME='Do not use for concept mapping'>0</FIELD>
+      </ATTRIBUTE>
+      <METADATA>
+      </METADATA>
+      <SYNONYMS TYPE='Use' ABBR='USE'>
+        <SYNONYM ID='8626'>Commercials (radio and TV)</SYNONYM>
+        <SYNONYM ID='8400'>Promotion (advertisements)</SYNONYM>
+        <SYNONYM ID='8624'>Radio advertising</SYNONYM>
+        <SYNONYM ID='8625'>Television advertising</SYNONYM>
+        <SYNONYM ID='5727'>adverts</SYNONYM>
+      </SYNONYMS>
+    </TERM>
+    <TERM INDEX='disp_taxonomy'>
+      <NAME>Advertising hoardings</NAME>
+      <ID>1004</ID>
+      <DISPLAY_NAME>Advertising hoardings</DISPLAY_NAME>
+      <FREQUENCY>0</FREQUENCY>
+      <PATH TYPE='Narrower Term' ABBR='NT'>
+        <FIELD FACET0='Transport and infrastructure' FACET_ID0='191' FREQ='0' ID='191' NAME='term'>Transport and infrastructure</FIELD>
+        <FIELD FACET0='Transport and infrastructure' FACET_ID0='191' FREQ='0' ID='1094' NAME='term'>Structures and installations</FIELD>
+        <FIELD FACET0='Transport and infrastructure' FACET_ID0='191' FREQ='0' ID='1004' NAME='term'>Advertising hoardings</FIELD>
+      </PATH>
+      <HIERARCHY TYPE='Broader Term' ABBR='BT' QTY='1'>
+        <FIELD FACET0='Transport and infrastructure' FACET_ID0='191' FREQ='0' ID='1094' NAME='term'>Structures and installations</FIELD>
+      </HIERARCHY>
+      <ASSOCIATED TYPE='Related To' ABBR='RT'>
+        <FIELD FACET0='Business and industry' FACET_ID0='285' FREQ='0' ID='166' NAME='term'>Advertising</FIELD>
+      </ASSOCIATED>
+      <ASSOCIATED TYPE='Related To' ABBR='RT'>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='2364' NAME='term'>Advertisement permissions</FIELD>
+      </ASSOCIATED>
+      <FACETS>
+        <FACET NAME='Transport and infrastructure' ID='191' />
+      </FACETS>
+      <ATTRIBUTE>
+        <FIELD NAME='A-Z Entry'>1</FIELD>
+        <FIELD NAME='Internal'>0</FIELD>
+        <FIELD NAME='Do not use for concept mapping'>0</FIELD>
+      </ATTRIBUTE>
+      <METADATA>
+      </METADATA>
+      <SYNONYMS TYPE='Use' ABBR='USE'>
+        <SYNONYM ID='5726'>Advertisement control on highways</SYNONYM>
+        <SYNONYM ID='5723'>Advertisement hoardings</SYNONYM>
+        <SYNONYM ID='5721'>Display advertisements and hoardings</SYNONYM>
+        <SYNONYM ID='5722'>Hoardings (advertisements)</SYNONYM>
+        <SYNONYM ID='5724'>Roundabout advertising</SYNONYM>
+        <SYNONYM ID='5725'>advertising signs</SYNONYM>
+      </SYNONYMS>
+    </TERM>
+    <TERM INDEX='disp_taxonomy'>
+      <NAME>Advice agencies</NAME>
+      <ID>2479</ID>
+      <DISPLAY_NAME>Advice agencies</DISPLAY_NAME>
+      <FREQUENCY>0</FREQUENCY>
+      <PATH TYPE='Narrower Term' ABBR='NT'>
+        <FIELD FACET0='People and organisations' FACET_ID0='2717' FREQ='0' ID='2717' NAME='term'>People and organisations</FIELD>
+        <FIELD FACET0='People and organisations' FACET_ID0='2717' FREQ='0' ID='1628' NAME='term'>Organisations</FIELD>
+        <FIELD FACET0='People and organisations' FACET_ID0='2717' FREQ='0' ID='2479' NAME='term'>Advice agencies</FIELD>
+      </PATH>
+      <HIERARCHY TYPE='Broader Term' ABBR='BT' QTY='1'>
+        <FIELD FACET0='People and organisations' FACET_ID0='2717' FREQ='0' ID='1628' NAME='term'>Organisations</FIELD>
+      </HIERARCHY>
+      <HIERARCHY TYPE='Narrower Term' ABBR='NT' QTY='2'>
+        <FIELD FACET0='People and organisations' FACET_ID0='2717' FREQ='0' ID='2480' NAME='term'>Citizens Advice Bureaux</FIELD>
+        <FIELD FACET0='People and organisations' FACET_ID0='2717' FACET1='Health, well-being and care' FACET_ID1='213' FREQ='0' ID='2708' NAME='term'>Helplines (care services)</FIELD>
+      </HIERARCHY>
+      <ASSOCIATED TYPE='Related To' ABBR='RT'>
+        <FIELD FACET0='Health, well-being and care' FACET_ID0='213' FREQ='0' ID='1586' NAME='term'>Bereavement counselling</FIELD>
+        <FIELD FACET0='Business and industry' FACET_ID0='285' FREQ='0' ID='2416' NAME='term'>Business advice services</FIELD>
+        <FIELD FACET0='Business and industry' FACET_ID0='285' FREQ='0' ID='2474' NAME='term'>Consumer advice services</FIELD>
+        <FIELD FACET0='Business and industry' FACET_ID0='285' FREQ='0' ID='1758' NAME='term'>Debt advice services</FIELD>
+        <FIELD FACET0='Public order, justice and rights' FACET_ID0='217' FREQ='0' ID='586' NAME='term'>Legal aid and advice</FIELD>
+        <FIELD FACET0='Health, well-being and care' FACET_ID0='213' FREQ='0' ID='1604' NAME='term'>Medical advice and support services</FIELD>
+        <FIELD FACET0='Employment, jobs and careers' FACET_ID0='436' FREQ='0' ID='2435' NAME='term'>Unemployment advice services</FIELD>
+      </ASSOCIATED>
+      <FACETS>
+        <FACET NAME='People and organisations' ID='2717' />
+      </FACETS>
+      <ATTRIBUTE>
+        <FIELD NAME='A-Z Entry'>1</FIELD>
+        <FIELD NAME='Internal'>0</FIELD>
+        <FIELD NAME='Do not use for concept mapping'>0</FIELD>
+      </ATTRIBUTE>
+      <METADATA>
+      </METADATA>
+      <SYNONYMS TYPE='Use' ABBR='USE'>
+        <SYNONYM ID='7691'>Advice Centres</SYNONYM>
+        <SYNONYM ID='7695'>Advice Helplines</SYNONYM>
+        <SYNONYM ID='7690'>ICIS (Independent Combined Information Service)</SYNONYM>
+      </SYNONYMS>
+    </TERM>
+    <TERM INDEX='disp_taxonomy'>
+      <NAME>After school care</NAME>
+      <ID>1548</ID>
+      <DISPLAY_NAME>After school care</DISPLAY_NAME>
+      <FREQUENCY>0</FREQUENCY>
+      <PATH TYPE='Narrower Term' ABBR='NT'>
+        <FIELD FACET0='Health, well-being and care' FACET_ID0='213' FREQ='0' ID='213' NAME='term'>Health, well-being and care</FIELD>
+        <FIELD FACET0='Health, well-being and care' FACET_ID0='213' FREQ='0' ID='163' NAME='term'>Care</FIELD>
+        <FIELD FACET0='Health, well-being and care' FACET_ID0='213' FREQ='0' ID='51' NAME='term'>Child care</FIELD>
+        <FIELD FACET0='Health, well-being and care' FACET_ID0='213' FREQ='0' ID='1548' NAME='term'>After school care</FIELD>
+      </PATH>
+      <HIERARCHY TYPE='Broader Term' ABBR='BT' QTY='1'>
+        <FIELD FACET0='Health, well-being and care' FACET_ID0='213' FREQ='0' ID='51' NAME='term'>Child care</FIELD>
+      </HIERARCHY>
+      <ASSOCIATED TYPE='Related To' ABBR='RT'>
+        <FIELD FACET0='Education and skills' FACET_ID0='138' FREQ='0' ID='648' NAME='term'>Out of school activities</FIELD>
+      </ASSOCIATED>
+      <FACETS>
+        <FACET NAME='Health, well-being and care' ID='213' />
+      </FACETS>
+      <ATTRIBUTE>
+        <FIELD NAME='A-Z Entry'>1</FIELD>
+        <FIELD NAME='Internal'>0</FIELD>
+        <FIELD NAME='Do not use for concept mapping'>0</FIELD>
+      </ATTRIBUTE>
+      <METADATA>
+      </METADATA>
+      <SYNONYMS TYPE='Use' ABBR='USE'>
+        <SYNONYM ID='6798'>Play Schemes (after school)</SYNONYM>
+        <SYNONYM ID='6793'>Playschemes (after school)</SYNONYM>
+      </SYNONYMS>
+    </TERM>
+    <TERM INDEX='disp_taxonomy'>
+      <NAME>Agenda 21 implementation</NAME>
+      <ID>836</ID>
+      <DISPLAY_NAME>Agenda 21 implementation</DISPLAY_NAME>
+      <FREQUENCY>0</FREQUENCY>
+      <PATH TYPE='Narrower Term' ABBR='NT'>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='175' NAME='term'>Environment</FIELD>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='177' NAME='term'>Environmental protection</FIELD>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='823' NAME='term'>Environmental sustainability</FIELD>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='836' NAME='term'>Agenda 21 implementation</FIELD>
+      </PATH>
+      <HIERARCHY TYPE='Broader Term' ABBR='BT' QTY='1'>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='823' NAME='term'>Environmental sustainability</FIELD>
+      </HIERARCHY>
+      <FACETS>
+        <FACET NAME='Environment' ID='175' />
+      </FACETS>
+      <ATTRIBUTE>
+        <FIELD NAME='A-Z Entry'>1</FIELD>
+        <FIELD NAME='Internal'>1</FIELD>
+        <FIELD NAME='Do not use for concept mapping'>0</FIELD>
+      </ATTRIBUTE>
+      <METADATA>
+      </METADATA>
+    </TERM>
+    <TERM INDEX='disp_taxonomy'>
+      <NAME>Air pollution</NAME>
+      <ID>2</ID>
+      <DISPLAY_NAME>Air pollution</DISPLAY_NAME>
+      <FREQUENCY>0</FREQUENCY>
+      <PATH TYPE='Narrower Term' ABBR='NT'>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='175' NAME='term'>Environment</FIELD>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='177' NAME='term'>Environmental protection</FIELD>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='454' NAME='term'>Pollution</FIELD>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='2' NAME='term'>Air pollution</FIELD>
+      </PATH>
+      <HIERARCHY TYPE='Broader Term' ABBR='BT' QTY='1'>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='454' NAME='term'>Pollution</FIELD>
+      </HIERARCHY>
+      <HIERARCHY TYPE='Narrower Term' ABBR='NT' QTY='2'>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='901' NAME='term'>Odours</FIELD>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='896' NAME='term'>Smoke emissions</FIELD>
+      </HIERARCHY>
+      <FACETS>
+        <FACET NAME='Environment' ID='175' />
+      </FACETS>
+      <ATTRIBUTE>
+        <FIELD NAME='A-Z Entry'>1</FIELD>
+        <FIELD NAME='Internal'>1</FIELD>
+        <FIELD NAME='Do not use for concept mapping'>0</FIELD>
+      </ATTRIBUTE>
+      <METADATA>
+      </METADATA>
+      <SYNONYMS TYPE='Use' ABBR='USE'>
+        <SYNONYM ID='5545'>Atmospheric pollution</SYNONYM>
+      </SYNONYMS>
+    </TERM>
+    <TERM INDEX='disp_taxonomy'>
+      <NAME>Airports</NAME>
+      <ID>190</ID>
+      <DISPLAY_NAME>Airports</DISPLAY_NAME>
+      <FREQUENCY>0</FREQUENCY>
+      <PATH TYPE='Narrower Term' ABBR='NT'>
+        <FIELD FACET0='Transport and infrastructure' FACET_ID0='191' FREQ='0' ID='191' NAME='term'>Transport and infrastructure</FIELD>
+        <FIELD FACET0='Transport and infrastructure' FACET_ID0='191' FREQ='0' ID='189' NAME='term'>Air transport</FIELD>
+        <FIELD FACET0='Transport and infrastructure' FACET_ID0='191' FREQ='0' ID='190' NAME='term'>Airports</FIELD>
+      </PATH>
+      <HIERARCHY TYPE='Broader Term' ABBR='BT' QTY='1'>
+        <FIELD FACET0='Transport and infrastructure' FACET_ID0='191' FREQ='0' ID='189' NAME='term'>Air transport</FIELD>
+      </HIERARCHY>
+      <ASSOCIATED TYPE='Related To' ABBR='RT'>
+        <FIELD FACET0='Transport and infrastructure' FACET_ID0='191' FREQ='0' ID='1094' NAME='term'>Structures and installations</FIELD>
+      </ASSOCIATED>
+      <FACETS>
+        <FACET NAME='Transport and infrastructure' ID='191' />
+      </FACETS>
+      <ATTRIBUTE>
+        <FIELD NAME='A-Z Entry'>1</FIELD>
+        <FIELD NAME='Internal'>0</FIELD>
+        <FIELD NAME='Do not use for concept mapping'>0</FIELD>
+      </ATTRIBUTE>
+      <METADATA>
+      </METADATA>
+      <SYNONYMS TYPE='Use' ABBR='USE'>
+        <SYNONYM ID='5755'>Aerodromes</SYNONYM>
+        <SYNONYM ID='5756'>Airfields</SYNONYM>
+      </SYNONYMS>
+    </TERM>
+    <TERM INDEX='disp_taxonomy'>
+      <NAME>Alarms for elderly and disabled</NAME>
+      <ID>1279</ID>
+      <DISPLAY_NAME>Alarms for elderly and disabled</DISPLAY_NAME>
+      <FREQUENCY>0</FREQUENCY>
+      <PATH TYPE='Narrower Term' ABBR='NT'>
+        <FIELD FACET0='Health, well-being and care' FACET_ID0='213' FREQ='0' ID='213' NAME='term'>Health, well-being and care</FIELD>
+        <FIELD FACET0='Health, well-being and care' FACET_ID0='213' FREQ='0' ID='1229' NAME='term'>Disability</FIELD>
+        <FIELD FACET0='Health, well-being and care' FACET_ID0='213' FREQ='0' ID='1230' NAME='term'>Equipment for disabled people</FIELD>
+        <FIELD FACET0='Public order, justice and rights' FACET_ID0='217' FACET1='Health, well-being and care' FACET_ID1='213' FREQ='0' ID='1279' NAME='term'>Alarms for elderly and disabled</FIELD>
+      </PATH>
+      <PATH TYPE='Narrower Term' ABBR='NT'>
+        <FIELD FACET0='Public order, justice and rights' FACET_ID0='217' FREQ='0' ID='217' NAME='term'>Public order, justice and rights</FIELD>
+        <FIELD FACET0='Public order, justice and rights' FACET_ID0='217' FREQ='0' ID='394' NAME='term'>Security</FIELD>
+        <FIELD FACET0='Public order, justice and rights' FACET_ID0='217' FREQ='0' ID='548' NAME='term'>Personal security</FIELD>
+        <FIELD FACET0='Public order, justice and rights' FACET_ID0='217' FACET1='Health, well-being and care' FACET_ID1='213' FREQ='0' ID='1279' NAME='term'>Alarms for elderly and disabled</FIELD>
+      </PATH>
+      <HIERARCHY TYPE='Broader Term' ABBR='BT' QTY='2'>
+        <FIELD FACET0='Health, well-being and care' FACET_ID0='213' FREQ='0' ID='1230' NAME='term'>Equipment for disabled people</FIELD>
+        <FIELD FACET0='Public order, justice and rights' FACET_ID0='217' FREQ='0' ID='548' NAME='term'>Personal security</FIELD>
+      </HIERARCHY>
+      <ASSOCIATED TYPE='Related To' ABBR='RT'>
+        <FIELD FACET0='People and organisations' FACET_ID0='2717' FREQ='0' ID='171' NAME='term'>Older people</FIELD>
+      </ASSOCIATED>
+      <ASSOCIATED TYPE='Related To' ABBR='RT'>
+        <FIELD FACET0='Health, well-being and care' FACET_ID0='213' FREQ='0' ID='1563' NAME='term'>Home care</FIELD>
+        <FIELD FACET0='Public order, justice and rights' FACET_ID0='217' FREQ='0' ID='2684' NAME='term'>Security equipment</FIELD>
+      </ASSOCIATED>
+      <FACETS>
+        <FACET NAME='Public order, justice and rights' ID='217' />
+        <FACET NAME='Health, well-being and care' ID='213' />
+      </FACETS>
+      <ATTRIBUTE>
+        <FIELD NAME='A-Z Entry'>1</FIELD>
+        <FIELD NAME='Internal'>0</FIELD>
+        <FIELD NAME='Do not use for concept mapping'>0</FIELD>
+      </ATTRIBUTE>
+      <METADATA>
+      </METADATA>
+      <SYNONYMS TYPE='Use' ABBR='USE'>
+        <SYNONYM ID='6267'>Alarm Systems (disabled people)</SYNONYM>
+        <SYNONYM ID='8112'>Emergency Alarms (sick, elderly or disabled people)</SYNONYM>
+        <SYNONYM ID='8257'>Panic Alarms (sick and disabled people)</SYNONYM>
+        <SYNONYM ID='6720'>alarms for older people</SYNONYM>
+      </SYNONYMS>
+    </TERM>
+    <TERM INDEX='disp_taxonomy'>
+      <NAME>Alcohol use and abuse</NAME>
+      <ID>192</ID>
+      <DISPLAY_NAME>Alcohol use and abuse</DISPLAY_NAME>
+      <FREQUENCY>0</FREQUENCY>
+      <PATH TYPE='Narrower Term' ABBR='NT'>
+        <FIELD FACET0='Health, well-being and care' FACET_ID0='213' FREQ='0' ID='213' NAME='term'>Health, well-being and care</FIELD>
+        <FIELD FACET0='Health, well-being and care' FACET_ID0='213' FREQ='0' ID='186' NAME='term'>Health</FIELD>
+        <FIELD FACET0='Life in the community' FACET_ID0='260' FACET1='Health, well-being and care' FACET_ID1='213' FREQ='0' ID='193' NAME='term'>Addiction</FIELD>
+        <FIELD FACET0='Life in the community' FACET_ID0='260' FACET1='Health, well-being and care' FACET_ID1='213' FREQ='0' ID='192' NAME='term'>Alcohol use and abuse</FIELD>
+      </PATH>
+      <PATH TYPE='Narrower Term' ABBR='NT'>
+        <FIELD FACET0='Life in the community' FACET_ID0='260' FREQ='0' ID='260' NAME='term'>Life in the community</FIELD>
+        <FIELD FACET0='Life in the community' FACET_ID0='260' FREQ='0' ID='1743' NAME='term'>Social issues</FIELD>
+        <FIELD FACET0='Life in the community' FACET_ID0='260' FACET1='Health, well-being and care' FACET_ID1='213' FREQ='0' ID='193' NAME='term'>Addiction</FIELD>
+        <FIELD FACET0='Life in the community' FACET_ID0='260' FACET1='Health, well-being and care' FACET_ID1='213' FREQ='0' ID='192' NAME='term'>Alcohol use and abuse</FIELD>
+      </PATH>
+      <HIERARCHY TYPE='Broader Term' ABBR='BT' QTY='1'>
+        <FIELD FACET0='Life in the community' FACET_ID0='260' FACET1='Health, well-being and care' FACET_ID1='213' FREQ='0' ID='193' NAME='term'>Addiction</FIELD>
+      </HIERARCHY>
+      <ASSOCIATED TYPE='Related To' ABBR='RT'>
+        <FIELD FACET0='Public order, justice and rights' FACET_ID0='217' FREQ='0' ID='220' NAME='term'>Antisocial behaviour and disorder</FIELD>
+        <FIELD FACET0='Health, well-being and care' FACET_ID0='213' FREQ='0' ID='194' NAME='term'>Drinks</FIELD>
+        <FIELD FACET0='Health, well-being and care' FACET_ID0='213' FREQ='0' ID='416' NAME='term'>Liquor licences</FIELD>
+      </ASSOCIATED>
+      <FACETS>
+        <FACET NAME='Life in the community' ID='260' />
+        <FACET NAME='Health, well-being and care' ID='213' />
+      </FACETS>
+      <ATTRIBUTE>
+        <FIELD NAME='A-Z Entry'>1</FIELD>
+        <FIELD NAME='Internal'>1</FIELD>
+        <FIELD NAME='Do not use for concept mapping'>0</FIELD>
+      </ATTRIBUTE>
+      <METADATA>
+      </METADATA>
+      <SYNONYMS TYPE='Use' ABBR='USE'>
+        <SYNONYM ID='4167'>Addiction (alcohol)</SYNONYM>
+        <SYNONYM ID='6294'>Alcohol Abuse</SYNONYM>
+        <SYNONYM ID='8789'>Alcohol problems</SYNONYM>
+        <SYNONYM ID='4317'>Alcoholism</SYNONYM>
+        <SYNONYM ID='7108'>Binge Drinking</SYNONYM>
+        <SYNONYM ID='7109'>Drinking (alcohol)</SYNONYM>
+        <SYNONYM ID='6295'>alcohol misuse</SYNONYM>
+        <SYNONYM ID='7110'>drink problems</SYNONYM>
+      </SYNONYMS>
+    </TERM>
+    <TERM INDEX='disp_taxonomy'>
+      <NAME>Allotments</NAME>
+      <ID>197</ID>
+      <DISPLAY_NAME>Allotments</DISPLAY_NAME>
+      <FREQUENCY>0</FREQUENCY>
+      <PATH TYPE='Narrower Term' ABBR='NT'>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='245' FREQ='0' ID='245' NAME='term'>Leisure and culture</FIELD>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='245' FREQ='0' ID='1970' NAME='term'>Hobbies and interests</FIELD>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='245' FACET1='Environment' FACET_ID1='175' FREQ='0' ID='493' NAME='term'>Gardening</FIELD>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='245' FACET1='Environment' FACET_ID1='175' FREQ='0' ID='197' NAME='term'>Allotments</FIELD>
+      </PATH>
+      <PATH TYPE='Narrower Term' ABBR='NT'>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='175' NAME='term'>Environment</FIELD>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='180' NAME='term'>Horticulture</FIELD>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='245' FACET1='Environment' FACET_ID1='175' FREQ='0' ID='493' NAME='term'>Gardening</FIELD>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='245' FACET1='Environment' FACET_ID1='175' FREQ='0' ID='197' NAME='term'>Allotments</FIELD>
+      </PATH>
+      <PATH TYPE='Narrower Term' ABBR='NT'>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='245' FREQ='0' ID='245' NAME='term'>Leisure and culture</FIELD>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='245' FREQ='0' ID='198' NAME='term'>Parks and gardens</FIELD>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='245' FACET1='Environment' FACET_ID1='175' FREQ='0' ID='197' NAME='term'>Allotments</FIELD>
+      </PATH>
+      <HIERARCHY TYPE='Broader Term' ABBR='BT' QTY='2'>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='245' FACET1='Environment' FACET_ID1='175' FREQ='0' ID='493' NAME='term'>Gardening</FIELD>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='245' FREQ='0' ID='198' NAME='term'>Parks and gardens</FIELD>
+      </HIERARCHY>
+      <FACETS>
+        <FACET NAME='Leisure and culture' ID='245' />
+        <FACET NAME='Environment' ID='175' />
+      </FACETS>
+      <ATTRIBUTE>
+        <FIELD NAME='A-Z Entry'>1</FIELD>
+        <FIELD NAME='Internal'>0</FIELD>
+        <FIELD NAME='Do not use for concept mapping'>0</FIELD>
+      </ATTRIBUTE>
+      <METADATA>
+      </METADATA>
+    </TERM>
+    <TERM INDEX='disp_taxonomy'>
+      <NAME>Ancient monuments</NAME>
+      <ID>202</ID>
+      <DISPLAY_NAME>Ancient monuments</DISPLAY_NAME>
+      <FREQUENCY>0</FREQUENCY>
+      <PATH TYPE='Narrower Term' ABBR='NT'>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='245' FREQ='0' ID='245' NAME='term'>Leisure and culture</FIELD>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='245' FREQ='0' ID='226' NAME='term'>Culture and creativity</FIELD>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='245' FREQ='0' ID='203' NAME='term'>Heritage</FIELD>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='245' FREQ='0' ID='202' NAME='term'>Ancient monuments</FIELD>
+      </PATH>
+      <HIERARCHY TYPE='Broader Term' ABBR='BT' QTY='1'>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='245' FREQ='0' ID='203' NAME='term'>Heritage</FIELD>
+      </HIERARCHY>
+      <FACETS>
+        <FACET NAME='Leisure and culture' ID='245' />
+      </FACETS>
+      <ATTRIBUTE>
+        <FIELD NAME='A-Z Entry'>1</FIELD>
+        <FIELD NAME='Internal'>0</FIELD>
+        <FIELD NAME='Do not use for concept mapping'>0</FIELD>
+      </ATTRIBUTE>
+      <METADATA>
+      </METADATA>
+      <SYNONYMS TYPE='Use' ABBR='USE'>
+        <SYNONYM ID='5658'>Standing Stones</SYNONYM>
+        <SYNONYM ID='5657'>Stone Circles</SYNONYM>
+        <SYNONYM ID='7121'>archaeological monuments</SYNONYM>
+        <SYNONYM ID='7118'>historic monuments (ancient)</SYNONYM>
+        <SYNONYM ID='4683'>monuments (ancient)</SYNONYM>
+      </SYNONYMS>
+    </TERM>
+    <TERM INDEX='disp_taxonomy'>
+      <NAME>Angling</NAME>
+      <ID>2224</ID>
+      <DISPLAY_NAME>Angling</DISPLAY_NAME>
+      <FREQUENCY>0</FREQUENCY>
+      <PATH TYPE='Narrower Term' ABBR='NT'>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='245' FREQ='0' ID='245' NAME='term'>Leisure and culture</FIELD>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='245' FREQ='0' ID='399' NAME='term'>Sports and recreation</FIELD>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='245' FREQ='0' ID='2222' NAME='term'>Field sports</FIELD>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='245' FREQ='0' ID='2224' NAME='term'>Angling</FIELD>
+      </PATH>
+      <HIERARCHY TYPE='Broader Term' ABBR='BT' QTY='1'>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='245' FREQ='0' ID='2222' NAME='term'>Field sports</FIELD>
+      </HIERARCHY>
+      <HIERARCHY TYPE='Narrower Term' ABBR='NT' QTY='3'>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='245' FREQ='0' ID='2252' NAME='term'>Fishing licences</FIELD>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='245' FREQ='0' ID='2226' NAME='term'>Fly fishing</FIELD>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='245' FREQ='0' ID='2227' NAME='term'>Sea angling</FIELD>
+      </HIERARCHY>
+      <FACETS>
+        <FACET NAME='Leisure and culture' ID='245' />
+      </FACETS>
+      <ATTRIBUTE>
+        <FIELD NAME='A-Z Entry'>1</FIELD>
+        <FIELD NAME='Internal'>0</FIELD>
+        <FIELD NAME='Do not use for concept mapping'>0</FIELD>
+      </ATTRIBUTE>
+      <METADATA>
+      </METADATA>
+      <SYNONYMS TYPE='Use' ABBR='USE'>
+        <SYNONYM ID='7242'>Fishing (sport)</SYNONYM>
+        <SYNONYM ID='7276'>Game fishing</SYNONYM>
+      </SYNONYMS>
+    </TERM>
+    <TERM INDEX='disp_taxonomy'>
+      <NAME>Animal fouling</NAME>
+      <ID>958</ID>
+      <DISPLAY_NAME>Animal fouling</DISPLAY_NAME>
+      <FREQUENCY>0</FREQUENCY>
+      <PATH TYPE='Narrower Term' ABBR='NT'>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='175' NAME='term'>Environment</FIELD>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='181' NAME='term'>Plants, animals and wildlife</FIELD>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='976' NAME='term'>Animal nuisance</FIELD>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='958' NAME='term'>Animal fouling</FIELD>
+      </PATH>
+      <PATH TYPE='Narrower Term' ABBR='NT'>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='175' NAME='term'>Environment</FIELD>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='177' NAME='term'>Environmental protection</FIELD>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='454' NAME='term'>Pollution</FIELD>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='958' NAME='term'>Animal fouling</FIELD>
+      </PATH>
+      <HIERARCHY TYPE='Broader Term' ABBR='BT' QTY='2'>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='976' NAME='term'>Animal nuisance</FIELD>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='454' NAME='term'>Pollution</FIELD>
+      </HIERARCHY>
+      <ASSOCIATED TYPE='Related To' ABBR='RT'>
+        <FIELD FACET0='Transport and infrastructure' FACET_ID0='191' FACET1='Environment' FACET_ID1='175' FREQ='0' ID='1105' NAME='term'>Dog litter bins</FIELD>
+      </ASSOCIATED>
+      <FACETS>
+        <FACET NAME='Environment' ID='175' />
+      </FACETS>
+      <ATTRIBUTE>
+        <FIELD NAME='A-Z Entry'>1</FIELD>
+        <FIELD NAME='Internal'>0</FIELD>
+        <FIELD NAME='Do not use for concept mapping'>0</FIELD>
+      </ATTRIBUTE>
+      <METADATA>
+      </METADATA>
+      <SYNONYMS TYPE='Use' ABBR='USE'>
+        <SYNONYM ID='5608'>Dog Mess</SYNONYM>
+        <SYNONYM ID='5610'>Dog Shit</SYNONYM>
+        <SYNONYM ID='5606'>Dog fouling</SYNONYM>
+        <SYNONYM ID='5609'>Dog poo</SYNONYM>
+        <SYNONYM ID='5607'>Dog&apos;s dirt</SYNONYM>
+        <SYNONYM ID='5611'>animal faeces</SYNONYM>
+        <SYNONYM ID='5612'>fouling (animals)</SYNONYM>
+      </SYNONYMS>
+    </TERM>
+    <TERM INDEX='disp_taxonomy'>
+      <NAME>Animal health</NAME>
+      <ID>205</ID>
+      <DISPLAY_NAME>Animal health</DISPLAY_NAME>
+      <FREQUENCY>0</FREQUENCY>
+      <PATH TYPE='Narrower Term' ABBR='NT'>
+        <FIELD FACET0='Health, well-being and care' FACET_ID0='213' FREQ='0' ID='213' NAME='term'>Health, well-being and care</FIELD>
+        <FIELD FACET0='Health, well-being and care' FACET_ID0='213' FACET1='Environment' FACET_ID1='175' FREQ='0' ID='205' NAME='term'>Animal health</FIELD>
+      </PATH>
+      <PATH TYPE='Narrower Term' ABBR='NT'>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='175' NAME='term'>Environment</FIELD>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='181' NAME='term'>Plants, animals and wildlife</FIELD>
+        <FIELD FACET0='Health, well-being and care' FACET_ID0='213' FACET1='Environment' FACET_ID1='175' FREQ='0' ID='205' NAME='term'>Animal health</FIELD>
+      </PATH>
+      <HIERARCHY TYPE='Broader Term' ABBR='BT' QTY='2'>
+        <FIELD FACET0='Health, well-being and care' FACET_ID0='213' FREQ='0' ID='213' NAME='term'>Health, well-being and care</FIELD>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='181' NAME='term'>Plants, animals and wildlife</FIELD>
+      </HIERARCHY>
+      <HIERARCHY TYPE='Narrower Term' ABBR='NT' QTY='6'>
+        <FIELD FACET0='Health, well-being and care' FACET_ID0='213' FACET1='Environment' FACET_ID1='175' FREQ='0' ID='272' NAME='term'>Bovine spongiform encephalopathy</FIELD>
+        <FIELD FACET0='Health, well-being and care' FACET_ID0='213' FACET1='Environment' FACET_ID1='175' FREQ='0' ID='215' NAME='term'>Foot and mouth disease</FIELD>
+        <FIELD FACET0='Health, well-being and care' FACET_ID0='213' FACET1='Environment' FACET_ID1='175' FREQ='0' ID='210' NAME='term'>Pet Travel Scheme (PETS)</FIELD>
+        <FIELD FACET0='Health, well-being and care' FACET_ID0='213' FACET1='Environment' FACET_ID1='175' FREQ='0' ID='216' NAME='term'>Tuberculosis</FIELD>
+        <FIELD FACET0='Health, well-being and care' FACET_ID0='213' FACET1='Environment' FACET_ID1='175' FREQ='0' ID='212' NAME='term'>Veterinary services</FIELD>
+        <FIELD FACET0='Health, well-being and care' FACET_ID0='213' FACET1='Environment' FACET_ID1='175' FREQ='0' ID='619' NAME='term'>Zoonoses</FIELD>
+      </HIERARCHY>
+      <ASSOCIATED TYPE='Related To' ABBR='RT'>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='174' NAME='term'>Farming</FIELD>
+      </ASSOCIATED>
+      <ASSOCIATED TYPE='Related To' ABBR='RT'>
+        <FIELD FACET0='Public order, justice and rights' FACET_ID0='217' FACET1='Environment' FACET_ID1='175' FREQ='0' ID='206' NAME='term'>Animal experimentation</FIELD>
+        <FIELD FACET0='People and organisations' FACET_ID0='2717' FREQ='0' ID='1634' NAME='term'>Animal rescue centres</FIELD>
+        <FIELD FACET0='Public order, justice and rights' FACET_ID0='217' FACET1='Environment' FACET_ID1='175' FREQ='0' ID='207' NAME='term'>Animal rights and welfare</FIELD>
+        <FIELD FACET0='Science, technology and innovation' FACET_ID0='266' FREQ='0' ID='685' NAME='term'>Epidemiology</FIELD>
+        <FIELD FACET0='Science, technology and innovation' FACET_ID0='266' FREQ='0' ID='691' NAME='term'>Veterinary science</FIELD>
+      </ASSOCIATED>
+      <FACETS>
+        <FACET NAME='Health, well-being and care' ID='213' />
+        <FACET NAME='Environment' ID='175' />
+      </FACETS>
+      <ATTRIBUTE>
+        <FIELD NAME='A-Z Entry'>1</FIELD>
+        <FIELD NAME='Internal'>0</FIELD>
+        <FIELD NAME='Do not use for concept mapping'>0</FIELD>
+      </ATTRIBUTE>
+      <METADATA>
+      </METADATA>
+      <SYNONYMS TYPE='Use' ABBR='USE'>
+        <SYNONYM ID='4387'>Animal disease</SYNONYM>
+        <SYNONYM ID='4170'>Contagious Diseases (animal)</SYNONYM>
+        <SYNONYM ID='4392'>Disease (animals)</SYNONYM>
+        <SYNONYM ID='4169'>Infectious diseases (animal)</SYNONYM>
+        <SYNONYM ID='6500'>Notifiable diseases (animals)</SYNONYM>
+        <SYNONYM ID='4393'>Scrapie</SYNONYM>
+        <SYNONYM ID='4394'>Swine fever</SYNONYM>
+        <SYNONYM ID='4395'>Vaccines for animals</SYNONYM>
+        <SYNONYM ID='4390'>brucellosis</SYNONYM>
+        <SYNONYM ID='4391'>classical swine fever</SYNONYM>
+      </SYNONYMS>
+    </TERM>
+    <TERM INDEX='disp_taxonomy'>
+      <NAME>Animal licences</NAME>
+      <ID>2495</ID>
+      <DISPLAY_NAME>Animal licences</DISPLAY_NAME>
+      <FREQUENCY>0</FREQUENCY>
+      <PATH TYPE='Narrower Term' ABBR='NT'>
+        <FIELD FACET0='Business and industry' FACET_ID0='285' FREQ='0' ID='285' NAME='term'>Business and industry</FIELD>
+        <FIELD FACET0='Business and industry' FACET_ID0='285' FREQ='0' ID='167' NAME='term'>Business practice and regulation</FIELD>
+        <FIELD FACET0='Business and industry' FACET_ID0='285' FREQ='0' ID='294' NAME='term'>Regulation and deregulation</FIELD>
+        <FIELD FACET0='Business and industry' FACET_ID0='285' FREQ='0' ID='2488' NAME='term'>Business licences</FIELD>
+        <FIELD FACET0='Business and industry' FACET_ID0='285' FREQ='0' ID='2495' NAME='term'>Animal licences</FIELD>
+      </PATH>
+      <HIERARCHY TYPE='Broader Term' ABBR='BT' QTY='1'>
+        <FIELD FACET0='Business and industry' FACET_ID0='285' FREQ='0' ID='2488' NAME='term'>Business licences</FIELD>
+      </HIERARCHY>
+      <HIERARCHY TYPE='Narrower Term' ABBR='NT' QTY='8'>
+        <FIELD FACET0='Public order, justice and rights' FACET_ID0='217' FACET1='Business and industry' FACET_ID1='285' FACET2='Environment' FACET_ID2='175' FREQ='0' ID='963' NAME='term'>Animal boarding licences</FIELD>
+        <FIELD FACET0='Business and industry' FACET_ID0='285' FREQ='0' ID='2721' NAME='term'>Animal movement licences</FIELD>
+        <FIELD FACET0='Business and industry' FACET_ID0='285' FACET1='Environment' FACET_ID1='175' FREQ='0' ID='2500' NAME='term'>Dangerous animal licences</FIELD>
+        <FIELD FACET0='Business and industry' FACET_ID0='285' FREQ='0' ID='989' NAME='term'>Dog breeding licences</FIELD>
+        <FIELD FACET0='Business and industry' FACET_ID0='285' FREQ='0' ID='2499' NAME='term'>Performing animal licences</FIELD>
+        <FIELD FACET0='Business and industry' FACET_ID0='285' FREQ='0' ID='2498' NAME='term'>Pet shop licences</FIELD>
+        <FIELD FACET0='Business and industry' FACET_ID0='285' FREQ='0' ID='2497' NAME='term'>Riding establishments licences</FIELD>
+        <FIELD FACET0='Business and industry' FACET_ID0='285' FREQ='0' ID='2496' NAME='term'>Zoo licences</FIELD>
+      </HIERARCHY>
+      <ASSOCIATED TYPE='Related To' ABBR='RT'>
+        <FIELD FACET0='Public order, justice and rights' FACET_ID0='217' FACET1='Environment' FACET_ID1='175' FREQ='0' ID='206' NAME='term'>Animal experimentation</FIELD>
+        <FIELD FACET0='Public order, justice and rights' FACET_ID0='217' FACET1='Environment' FACET_ID1='175' FREQ='0' ID='207' NAME='term'>Animal rights and welfare</FIELD>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='992' NAME='term'>Grazing licences</FIELD>
+      </ASSOCIATED>
+      <FACETS>
+        <FACET NAME='Business and industry' ID='285' />
+      </FACETS>
+      <ATTRIBUTE>
+        <FIELD NAME='A-Z Entry'>1</FIELD>
+        <FIELD NAME='Internal'>0</FIELD>
+        <FIELD NAME='Do not use for concept mapping'>0</FIELD>
+      </ATTRIBUTE>
+      <METADATA>
+      </METADATA>
+      <SYNONYMS TYPE='Use' ABBR='USE'>
+        <SYNONYM ID='7760'>Animal Welfare licences</SYNONYM>
+        <SYNONYM ID='7759'>Rare animal licences</SYNONYM>
+      </SYNONYMS>
+    </TERM>
+    <TERM INDEX='disp_taxonomy'>
+      <NAME>Animal nuisance</NAME>
+      <ID>976</ID>
+      <DISPLAY_NAME>Animal nuisance</DISPLAY_NAME>
+      <FREQUENCY>0</FREQUENCY>
+      <PATH TYPE='Narrower Term' ABBR='NT'>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='175' NAME='term'>Environment</FIELD>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='181' NAME='term'>Plants, animals and wildlife</FIELD>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='976' NAME='term'>Animal nuisance</FIELD>
+      </PATH>
+      <HIERARCHY TYPE='Broader Term' ABBR='BT' QTY='1'>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='181' NAME='term'>Plants, animals and wildlife</FIELD>
+      </HIERARCHY>
+      <HIERARCHY TYPE='Narrower Term' ABBR='NT' QTY='2'>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='958' NAME='term'>Animal fouling</FIELD>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='955' NAME='term'>Barking dogs</FIELD>
+      </HIERARCHY>
+      <ASSOCIATED TYPE='Related To' ABBR='RT'>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='491' NAME='term'>Pests and pest control</FIELD>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='953' NAME='term'>Stray animals</FIELD>
+      </ASSOCIATED>
+      <ASSOCIATED TYPE='Related To' ABBR='RT'>
+        <FIELD FACET0='Public order, justice and rights' FACET_ID0='217' FREQ='0' ID='2624' NAME='term'>Nuisance</FIELD>
+      </ASSOCIATED>
+      <FACETS>
+        <FACET NAME='Environment' ID='175' />
+      </FACETS>
+      <ATTRIBUTE>
+        <FIELD NAME='A-Z Entry'>1</FIELD>
+        <FIELD NAME='Internal'>0</FIELD>
+        <FIELD NAME='Do not use for concept mapping'>0</FIELD>
+      </ATTRIBUTE>
+      <METADATA>
+      </METADATA>
+      <SYNONYMS TYPE='Use' ABBR='USE'>
+        <SYNONYM ID='6893'>Animal nuisances</SYNONYM>
+        <SYNONYM ID='5672'>Nuisance (animals)</SYNONYM>
+      </SYNONYMS>
+    </TERM>
+    <TERM INDEX='disp_taxonomy'>
+      <NAME>Animal rights and welfare</NAME>
+      <ID>207</ID>
+      <DISPLAY_NAME>Animal rights and welfare</DISPLAY_NAME>
+      <FREQUENCY>0</FREQUENCY>
+      <PATH TYPE='Narrower Term' ABBR='NT'>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='175' NAME='term'>Environment</FIELD>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='181' NAME='term'>Plants, animals and wildlife</FIELD>
+        <FIELD FACET0='Public order, justice and rights' FACET_ID0='217' FACET1='Environment' FACET_ID1='175' FREQ='0' ID='207' NAME='term'>Animal rights and welfare</FIELD>
+      </PATH>
+      <PATH TYPE='Narrower Term' ABBR='NT'>
+        <FIELD FACET0='Public order, justice and rights' FACET_ID0='217' FREQ='0' ID='217' NAME='term'>Public order, justice and rights</FIELD>
+        <FIELD FACET0='Public order, justice and rights' FACET_ID0='217' FACET1='Environment' FACET_ID1='175' FREQ='0' ID='207' NAME='term'>Animal rights and welfare</FIELD>
+      </PATH>
+      <HIERARCHY TYPE='Broader Term' ABBR='BT' QTY='2'>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='181' NAME='term'>Plants, animals and wildlife</FIELD>
+        <FIELD FACET0='Public order, justice and rights' FACET_ID0='217' FREQ='0' ID='217' NAME='term'>Public order, justice and rights</FIELD>
+      </HIERARCHY>
+      <HIERARCHY TYPE='Narrower Term' ABBR='NT' QTY='5'>
+        <FIELD FACET0='Public order, justice and rights' FACET_ID0='217' FACET1='Environment' FACET_ID1='175' FREQ='0' ID='206' NAME='term'>Animal experimentation</FIELD>
+        <FIELD FACET0='Public order, justice and rights' FACET_ID0='217' FACET1='Environment' FACET_ID1='175' FREQ='0' ID='959' NAME='term'>Animal housing</FIELD>
+        <FIELD FACET0='Public order, justice and rights' FACET_ID0='217' FACET1='Leisure and culture' FACET_ID1='245' FACET2='Environment' FACET_ID2='175' FREQ='0' ID='218' NAME='term'>Hunting</FIELD>
+        <FIELD FACET0='Public order, justice and rights' FACET_ID0='217' FACET1='Environment' FACET_ID1='175' FREQ='0' ID='2703' NAME='term'>Microchipping</FIELD>
+        <FIELD FACET0='Public order, justice and rights' FACET_ID0='217' FACET1='Environment' FACET_ID1='175' FREQ='0' ID='977' NAME='term'>Pet care</FIELD>
+      </HIERARCHY>
+      <ASSOCIATED TYPE='Related To' ABBR='RT'>
+        <FIELD FACET0='Health, well-being and care' FACET_ID0='213' FACET1='Environment' FACET_ID1='175' FREQ='0' ID='205' NAME='term'>Animal health</FIELD>
+        <FIELD FACET0='Business and industry' FACET_ID0='285' FREQ='0' ID='141' NAME='term'>Meat and livestock industries</FIELD>
+      </ASSOCIATED>
+      <ASSOCIATED TYPE='Related To' ABBR='RT'>
+        <FIELD FACET0='Business and industry' FACET_ID0='285' FREQ='0' ID='2495' NAME='term'>Animal licences</FIELD>
+        <FIELD FACET0='People and organisations' FACET_ID0='2717' FREQ='0' ID='1633' NAME='term'>Animal welfare organisations</FIELD>
+        <FIELD FACET0='Government, politics and public administration' FACET_ID0='323' FREQ='0' ID='2568' NAME='term'>Pressure groups</FIELD>
+      </ASSOCIATED>
+      <FACETS>
+        <FACET NAME='Public order, justice and rights' ID='217' />
+        <FACET NAME='Environment' ID='175' />
+      </FACETS>
+      <ATTRIBUTE>
+        <FIELD NAME='A-Z Entry'>1</FIELD>
+        <FIELD NAME='Internal'>0</FIELD>
+        <FIELD NAME='Do not use for concept mapping'>0</FIELD>
+      </ATTRIBUTE>
+      <METADATA>
+      </METADATA>
+      <SYNONYMS TYPE='Use' ABBR='USE'>
+        <SYNONYM ID='4397'>Animal Welfare</SYNONYM>
+        <SYNONYM ID='4398'>Welfare (animals)</SYNONYM>
+      </SYNONYMS>
+    </TERM>
+    <TERM INDEX='disp_taxonomy'>
+      <NAME>Animals</NAME>
+      <ID>911</ID>
+      <DISPLAY_NAME>Animals</DISPLAY_NAME>
+      <FREQUENCY>0</FREQUENCY>
+      <PATH TYPE='Narrower Term' ABBR='NT'>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='175' NAME='term'>Environment</FIELD>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='181' NAME='term'>Plants, animals and wildlife</FIELD>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='911' NAME='term'>Animals</FIELD>
+      </PATH>
+      <HIERARCHY TYPE='Broader Term' ABBR='BT' QTY='1'>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='181' NAME='term'>Plants, animals and wildlife</FIELD>
+      </HIERARCHY>
+      <HIERARCHY TYPE='Narrower Term' ABBR='NT' QTY='19'>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='927' NAME='term'>Amphibians</FIELD>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='2065' NAME='term'>Animal collections</FIELD>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='914' NAME='term'>Badgers</FIELD>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='915' NAME='term'>Bats</FIELD>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='928' NAME='term'>Birds</FIELD>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='918' NAME='term'>Cats</FIELD>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='924' NAME='term'>Cattle</FIELD>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='954' NAME='term'>Dangerous animals</FIELD>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='913' NAME='term'>Dogs</FIELD>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='917' NAME='term'>Dolphins</FIELD>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='920' NAME='term'>Donkeys</FIELD>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='923' NAME='term'>Guinea pigs</FIELD>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='922' NAME='term'>Hamsters</FIELD>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='919' NAME='term'>Horses</FIELD>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='912' NAME='term'>Pets</FIELD>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='921' NAME='term'>Rabbits</FIELD>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='925' NAME='term'>Reptiles</FIELD>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='953' NAME='term'>Stray animals</FIELD>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='916' NAME='term'>Whales</FIELD>
+      </HIERARCHY>
+      <ASSOCIATED TYPE='Related To' ABBR='RT'>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='878' NAME='term'>Disposal of dead animals</FIELD>
+        <FIELD FACET0='Science, technology and innovation' FACET_ID0='266' FREQ='0' ID='693' NAME='term'>Zoology</FIELD>
+      </ASSOCIATED>
+      <FACETS>
+        <FACET NAME='Environment' ID='175' />
+      </FACETS>
+      <ATTRIBUTE>
+        <FIELD NAME='A-Z Entry'>1</FIELD>
+        <FIELD NAME='Internal'>0</FIELD>
+        <FIELD NAME='Do not use for concept mapping'>0</FIELD>
+      </ATTRIBUTE>
+      <METADATA>
+      </METADATA>
+      <SYNONYMS TYPE='Use' ABBR='USE'>
+        <SYNONYM ID='5614'>Circus animals</SYNONYM>
+        <SYNONYM ID='5615'>Farm Animals</SYNONYM>
+        <SYNONYM ID='5613'>Performing Animals</SYNONYM>
+        <SYNONYM ID='5604'>Wild animals</SYNONYM>
+        <SYNONYM ID='5620'>Zoo Animals</SYNONYM>
+        <SYNONYM ID='5624'>livestock</SYNONYM>
+      </SYNONYMS>
+    </TERM>
+    <TERM INDEX='disp_taxonomy'>
+      <NAME>Ant control</NAME>
+      <ID>906</ID>
+      <DISPLAY_NAME>Ant control</DISPLAY_NAME>
+      <FREQUENCY>0</FREQUENCY>
+      <PATH TYPE='Narrower Term' ABBR='NT'>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='175' NAME='term'>Environment</FIELD>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='181' NAME='term'>Plants, animals and wildlife</FIELD>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='491' NAME='term'>Pests and pest control</FIELD>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='906' NAME='term'>Ant control</FIELD>
+      </PATH>
+      <HIERARCHY TYPE='Broader Term' ABBR='BT' QTY='1'>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='491' NAME='term'>Pests and pest control</FIELD>
+      </HIERARCHY>
+      <ASSOCIATED TYPE='Related To' ABBR='RT'>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='905' NAME='term'>Insect control</FIELD>
+      </ASSOCIATED>
+      <FACETS>
+        <FACET NAME='Environment' ID='175' />
+      </FACETS>
+      <ATTRIBUTE>
+        <FIELD NAME='A-Z Entry'>1</FIELD>
+        <FIELD NAME='Internal'>0</FIELD>
+        <FIELD NAME='Do not use for concept mapping'>0</FIELD>
+      </ATTRIBUTE>
+      <METADATA>
+      </METADATA>
+      <SYNONYMS TYPE='Use' ABBR='USE'>
+        <SYNONYM ID='8224'>ants (control)</SYNONYM>
+      </SYNONYMS>
+    </TERM>
+    <TERM INDEX='disp_taxonomy'>
+      <NAME>Archaeology</NAME>
+      <ID>224</ID>
+      <DISPLAY_NAME>Archaeology</DISPLAY_NAME>
+      <FREQUENCY>0</FREQUENCY>
+      <PATH TYPE='Narrower Term' ABBR='NT'>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='245' FREQ='0' ID='245' NAME='term'>Leisure and culture</FIELD>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='245' FREQ='0' ID='226' NAME='term'>Culture and creativity</FIELD>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='245' FREQ='0' ID='203' NAME='term'>Heritage</FIELD>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='245' FREQ='0' ID='224' NAME='term'>Archaeology</FIELD>
+      </PATH>
+      <PATH TYPE='Narrower Term' ABBR='NT'>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='245' FREQ='0' ID='245' NAME='term'>Leisure and culture</FIELD>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='245' FREQ='0' ID='1970' NAME='term'>Hobbies and interests</FIELD>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='245' FREQ='0' ID='2021' NAME='term'>History</FIELD>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='245' FREQ='0' ID='224' NAME='term'>Archaeology</FIELD>
+      </PATH>
+      <HIERARCHY TYPE='Broader Term' ABBR='BT' QTY='2'>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='245' FREQ='0' ID='203' NAME='term'>Heritage</FIELD>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='245' FREQ='0' ID='2021' NAME='term'>History</FIELD>
+      </HIERARCHY>
+      <HIERARCHY TYPE='Narrower Term' ABBR='NT' QTY='5'>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='245' FREQ='0' ID='2062' NAME='term'>Archaeological services</FIELD>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='245' FREQ='0' ID='972' NAME='term'>Industrial archaeology</FIELD>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='245' FREQ='0' ID='973' NAME='term'>Marine archaeology</FIELD>
+        <FIELD FACET0='Science, technology and innovation' FACET_ID0='266' FACET1='Leisure and culture' FACET_ID1='245' FREQ='0' ID='2734' NAME='term'>Palaeontology</FIELD>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='245' FREQ='0' ID='2736' NAME='term'>Portable antiquities</FIELD>
+      </HIERARCHY>
+      <FACETS>
+        <FACET NAME='Leisure and culture' ID='245' />
+      </FACETS>
+      <ATTRIBUTE>
+        <FIELD NAME='A-Z Entry'>1</FIELD>
+        <FIELD NAME='Internal'>0</FIELD>
+        <FIELD NAME='Do not use for concept mapping'>0</FIELD>
+      </ATTRIBUTE>
+      <METADATA>
+      </METADATA>
+      <SYNONYMS TYPE='Use' ABBR='USE'>
+        <SYNONYM ID='5651'>Archaeological sites</SYNONYM>
+        <SYNONYM ID='7062'>Archeology</SYNONYM>
+        <SYNONYM ID='5654'>Buried treasure</SYNONYM>
+        <SYNONYM ID='5656'>Excavations (archaeological)</SYNONYM>
+        <SYNONYM ID='5652'>digs (archaeological)</SYNONYM>
+        <SYNONYM ID='5653'>treasure trove</SYNONYM>
+      </SYNONYMS>
+    </TERM>
+    <TERM INDEX='disp_taxonomy'>
+      <NAME>Architecture</NAME>
+      <ID>225</ID>
+      <DISPLAY_NAME>Architecture</DISPLAY_NAME>
+      <FREQUENCY>0</FREQUENCY>
+      <PATH TYPE='Narrower Term' ABBR='NT'>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='245' FREQ='0' ID='245' NAME='term'>Leisure and culture</FIELD>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='245' FREQ='0' ID='226' NAME='term'>Culture and creativity</FIELD>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='245' FREQ='0' ID='225' NAME='term'>Architecture</FIELD>
+      </PATH>
+      <HIERARCHY TYPE='Broader Term' ABBR='BT' QTY='1'>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='245' FREQ='0' ID='226' NAME='term'>Culture and creativity</FIELD>
+      </HIERARCHY>
+      <ASSOCIATED TYPE='Related To' ABBR='RT'>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='245' FREQ='0' ID='203' NAME='term'>Heritage</FIELD>
+      </ASSOCIATED>
+      <ASSOCIATED TYPE='Related To' ABBR='RT'>
+        <FIELD FACET0='Business and industry' FACET_ID0='285' FREQ='0' ID='227' NAME='term'>Building and construction</FIELD>
+        <FIELD FACET0='Science, technology and innovation' FACET_ID0='266' FREQ='0' ID='678' NAME='term'>Engineering</FIELD>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='245' FREQ='0' ID='2059' NAME='term'>Interior design</FIELD>
+      </ASSOCIATED>
+      <FACETS>
+        <FACET NAME='Leisure and culture' ID='245' />
+      </FACETS>
+      <ATTRIBUTE>
+        <FIELD NAME='A-Z Entry'>1</FIELD>
+        <FIELD NAME='Internal'>0</FIELD>
+        <FIELD NAME='Do not use for concept mapping'>0</FIELD>
+      </ATTRIBUTE>
+      <METADATA>
+      </METADATA>
+      <SYNONYMS TYPE='Use' ABBR='USE'>
+        <SYNONYM ID='5402'>Building Design</SYNONYM>
+        <SYNONYM ID='5403'>Design (buildings)</SYNONYM>
+        <SYNONYM ID='7451'>Design Guide (buildings)</SYNONYM>
+      </SYNONYMS>
+    </TERM>
+    <TERM INDEX='disp_taxonomy'>
+      <NAME>Archives</NAME>
+      <ID>228</ID>
+      <DISPLAY_NAME>Archives</DISPLAY_NAME>
+      <FREQUENCY>0</FREQUENCY>
+      <PATH TYPE='Narrower Term' ABBR='NT'>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='245' FREQ='0' ID='245' NAME='term'>Leisure and culture</FIELD>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='245' FREQ='0' ID='226' NAME='term'>Culture and creativity</FIELD>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='245' FREQ='0' ID='203' NAME='term'>Heritage</FIELD>
+        <FIELD FACET0='Information and communication' FACET_ID0='321' FACET1='Leisure and culture' FACET_ID1='245' FREQ='0' ID='228' NAME='term'>Archives</FIELD>
+      </PATH>
+      <PATH TYPE='Narrower Term' ABBR='NT'>
+        <FIELD FACET0='Information and communication' FACET_ID0='321' FREQ='0' ID='321' NAME='term'>Information and communication</FIELD>
+        <FIELD FACET0='Information and communication' FACET_ID0='321' FREQ='0' ID='2288' NAME='term'>Library and information services</FIELD>
+        <FIELD FACET0='Information and communication' FACET_ID0='321' FACET1='Leisure and culture' FACET_ID1='245' FREQ='0' ID='228' NAME='term'>Archives</FIELD>
+      </PATH>
+      <HIERARCHY TYPE='Broader Term' ABBR='BT' QTY='2'>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='245' FREQ='0' ID='203' NAME='term'>Heritage</FIELD>
+        <FIELD FACET0='Information and communication' FACET_ID0='321' FREQ='0' ID='2288' NAME='term'>Library and information services</FIELD>
+      </HIERARCHY>
+      <HIERARCHY TYPE='Narrower Term' ABBR='NT' QTY='1'>
+        <FIELD FACET0='Information and communication' FACET_ID0='321' FACET1='Leisure and culture' FACET_ID1='245' FREQ='0' ID='2285' NAME='term'>Diocesan records</FIELD>
+      </HIERARCHY>
+      <ASSOCIATED TYPE='Related To' ABBR='RT'>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='245' FREQ='0' ID='2021' NAME='term'>History</FIELD>
+        <FIELD FACET0='Information and communication' FACET_ID0='321' FREQ='0' ID='2985' NAME='term'>Information</FIELD>
+        <FIELD FACET0='Information and communication' FACET_ID0='321' FREQ='0' ID='3011' NAME='term'>Records</FIELD>
+        <FIELD FACET0='Information and communication' FACET_ID0='321' FACET1='Government, politics and public administration' FACET_ID1='323' FACET2='Business and industry' FACET_ID2='285' FREQ='0' ID='2594' NAME='term'>Records offices</FIELD>
+      </ASSOCIATED>
+      <FACETS>
+        <FACET NAME='Information and communication' ID='321' />
+        <FACET NAME='Leisure and culture' ID='245' />
+      </FACETS>
+      <ATTRIBUTE>
+        <FIELD NAME='A-Z Entry'>1</FIELD>
+        <FIELD NAME='Internal'>1</FIELD>
+        <FIELD NAME='Do not use for concept mapping'>0</FIELD>
+      </ATTRIBUTE>
+      <METADATA>
+      </METADATA>
+      <SYNONYMS TYPE='Use' ABBR='USE'>
+        <SYNONYM ID='4610'>Family History archives</SYNONYM>
+        <SYNONYM ID='7350'>Historical Records</SYNONYM>
+        <SYNONYM ID='4739'>Local history archives</SYNONYM>
+        <SYNONYM ID='4661'>genealogy archives</SYNONYM>
+      </SYNONYMS>
+    </TERM>
+    <TERM INDEX='disp_taxonomy'>
+      <NAME>Arts and entertainment venues</NAME>
+      <ID>1883</ID>
+      <DISPLAY_NAME>Arts and entertainment venues</DISPLAY_NAME>
+      <FREQUENCY>0</FREQUENCY>
+      <PATH TYPE='Narrower Term' ABBR='NT'>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='245' FREQ='0' ID='245' NAME='term'>Leisure and culture</FIELD>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='245' FREQ='0' ID='1883' NAME='term'>Arts and entertainment venues</FIELD>
+      </PATH>
+      <HIERARCHY TYPE='Broader Term' ABBR='BT' QTY='1'>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='245' FREQ='0' ID='245' NAME='term'>Leisure and culture</FIELD>
+      </HIERARCHY>
+      <HIERARCHY TYPE='Narrower Term' ABBR='NT' QTY='13'>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='245' FREQ='0' ID='1895' NAME='term'>Amusement arcades</FIELD>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='245' FREQ='0' ID='1887' NAME='term'>Arts centres</FIELD>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='245' FREQ='0' ID='1904' NAME='term'>Bingo halls</FIELD>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='245' FREQ='0' ID='1897' NAME='term'>Casinos</FIELD>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='245' FREQ='0' ID='1884' NAME='term'>Cinemas</FIELD>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='245' FREQ='0' ID='1889' NAME='term'>Circuses</FIELD>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='245' FREQ='0' ID='1886' NAME='term'>Concert halls</FIELD>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='245' FREQ='0' ID='1896' NAME='term'>Fairgrounds</FIELD>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='245' FREQ='0' ID='244' NAME='term'>Museums and galleries</FIELD>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='245' FREQ='0' ID='1898' NAME='term'>Nightclubs</FIELD>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='245' FREQ='0' ID='1899' NAME='term'>Planetariums</FIELD>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='245' FREQ='0' ID='1888' NAME='term'>Rehearsal space</FIELD>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='245' FREQ='0' ID='1885' NAME='term'>Theatres</FIELD>
+      </HIERARCHY>
+      <ASSOCIATED TYPE='Related To' ABBR='RT'>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='830' NAME='term'>Buildings</FIELD>
+        <FIELD FACET0='Life in the community' FACET_ID0='260' FREQ='0' ID='1716' NAME='term'>Wedding venues</FIELD>
+      </ASSOCIATED>
+      <ASSOCIATED TYPE='Related To' ABBR='RT'>
+        <FIELD FACET0='Environment' FACET_ID0='175' FREQ='0' ID='2386' NAME='term'>Conference venues</FIELD>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='245' FREQ='0' ID='1951' NAME='term'>Entertainment and events</FIELD>
+        <FIELD FACET0='Transport and infrastructure' FACET_ID0='191' FREQ='0' ID='1900' NAME='term'>Piers</FIELD>
+      </ASSOCIATED>
+      <FACETS>
+        <FACET NAME='Leisure and culture' ID='245' />
+      </FACETS>
+      <ATTRIBUTE>
+        <FIELD NAME='A-Z Entry'>1</FIELD>
+        <FIELD NAME='Internal'>0</FIELD>
+        <FIELD NAME='Do not use for concept mapping'>0</FIELD>
+      </ATTRIBUTE>
+      <METADATA>
+      </METADATA>
+      <SYNONYMS TYPE='Use' ABBR='USE'>
+        <SYNONYM ID='7010'>Arts Venues</SYNONYM>
+        <SYNONYM ID='7011'>Entertainment Venues</SYNONYM>
+      </SYNONYMS>
+    </TERM>
+    <TERM INDEX='disp_taxonomy'>
+      <NAME>Arts development</NAME>
+      <ID>1882</ID>
+      <DISPLAY_NAME>Arts development</DISPLAY_NAME>
+      <FREQUENCY>0</FREQUENCY>
+      <PATH TYPE='Narrower Term' ABBR='NT'>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='245' FREQ='0' ID='245' NAME='term'>Leisure and culture</FIELD>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='245' FREQ='0' ID='226' NAME='term'>Culture and creativity</FIELD>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='245' FREQ='0' ID='1881' NAME='term'>Arts administration</FIELD>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='245' FREQ='0' ID='1882' NAME='term'>Arts development</FIELD>
+      </PATH>
+      <HIERARCHY TYPE='Broader Term' ABBR='BT' QTY='1'>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='245' FREQ='0' ID='1881' NAME='term'>Arts administration</FIELD>
+      </HIERARCHY>
+      <HIERARCHY TYPE='Narrower Term' ABBR='NT' QTY='1'>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='245' FREQ='0' ID='1877' NAME='term'>Literature development</FIELD>
+      </HIERARCHY>
+      <FACETS>
+        <FACET NAME='Leisure and culture' ID='245' />
+      </FACETS>
+      <ATTRIBUTE>
+        <FIELD NAME='A-Z Entry'>1</FIELD>
+        <FIELD NAME='Internal'>0</FIELD>
+        <FIELD NAME='Do not use for concept mapping'>0</FIELD>
+      </ATTRIBUTE>
+      <METADATA>
+      </METADATA>
+      <SYNONYMS TYPE='Use' ABBR='USE'>
+        <SYNONYM ID='7009'>arts promotion</SYNONYM>
+      </SYNONYMS>
+    </TERM>
+    <TERM INDEX='disp_taxonomy'>
+      <NAME>Asbestos</NAME>
+      <ID>48</ID>
+      <DISPLAY_NAME>Asbestos</DISPLAY_NAME>
+      <FREQUENCY>0</FREQUENCY>
+      <PATH TYPE='Narrower Term' ABBR='NT'>
+        <FIELD FACET0='Health, well-being and care' FACET_ID0='213' FREQ='0' ID='213' NAME='term'>Health, well-being and care</FIELD>
+        <FIELD FACET0='Health, well-being and care' FACET_ID0='213' FREQ='0' ID='470' NAME='term'>Safety</FIELD>
+        <FIELD FACET0='Health, well-being and care' FACET_ID0='213' FREQ='0' ID='505' NAME='term'>Hazardous substances</FIELD>
+        <FIELD FACET0='Health, well-being and care' FACET_ID0='213' FREQ='0' ID='48' NAME='term'>Asbestos</FIELD>
+      </PATH>
+      <HIERARCHY TYPE='Broader Term' ABBR='BT' QTY='1'>
+        <FIELD FACET0='Health, well-being and care' FACET_ID0='213' FREQ='0' ID='505' NAME='term'>Hazardous substances</FIELD>
+      </HIERARCHY>
+      <FACETS>
+        <FACET NAME='Health, well-being and care' ID='213' />
+      </FACETS>
+      <ATTRIBUTE>
+        <FIELD NAME='A-Z Entry'>1</FIELD>
+        <FIELD NAME='Internal'>1</FIELD>
+        <FIELD NAME='Do not use for concept mapping'>0</FIELD>
+      </ATTRIBUTE>
+      <METADATA>
+      </METADATA>
+    </TERM>
+    <TERM INDEX='disp_taxonomy'>
+      <NAME>Attendance and truancy</NAME>
+      <ID>765</ID>
+      <DISPLAY_NAME>Attendance and truancy</DISPLAY_NAME>
+      <FREQUENCY>0</FREQUENCY>
+      <PATH TYPE='Narrower Term' ABBR='NT'>
+        <FIELD FACET0='Education and skills' FACET_ID0='138' FREQ='0' ID='138' NAME='term'>Education and skills</FIELD>
+        <FIELD FACET0='Education and skills' FACET_ID0='138' FREQ='0' ID='440' NAME='term'>Schools</FIELD>
+        <FIELD FACET0='Education and skills' FACET_ID0='138' FREQ='0' ID='282' NAME='term'>School welfare, behaviour and attendance</FIELD>
+        <FIELD FACET0='Education and skills' FACET_ID0='138' FREQ='0' ID='765' NAME='term'>Attendance and truancy</FIELD>
+      </PATH>
+      <HIERARCHY TYPE='Broader Term' ABBR='BT' QTY='1'>
+        <FIELD FACET0='Education and skills' FACET_ID0='138' FREQ='0' ID='282' NAME='term'>School welfare, behaviour and attendance</FIELD>
+      </HIERARCHY>
+      <ASSOCIATED TYPE='Related To' ABBR='RT'>
+        <FIELD FACET0='Education and skills' FACET_ID0='138' FREQ='0' ID='462' NAME='term'>Exclusion from school</FIELD>
+      </ASSOCIATED>
+      <FACETS>
+        <FACET NAME='Education and skills' ID='138' />
+      </FACETS>
+      <ATTRIBUTE>
+        <FIELD NAME='A-Z Entry'>1</FIELD>
+        <FIELD NAME='Internal'>0</FIELD>
+        <FIELD NAME='Do not use for concept mapping'>0</FIELD>
+      </ATTRIBUTE>
+      <METADATA>
+      </METADATA>
+      <SYNONYMS TYPE='Use' ABBR='USE'>
+        <SYNONYM ID='4292'>Absence From School</SYNONYM>
+        <SYNONYM ID='8392'>Absence reporting (schoolchildren)</SYNONYM>
+        <SYNONYM ID='5231'>Presence at school</SYNONYM>
+        <SYNONYM ID='5230'>School attendance</SYNONYM>
+        <SYNONYM ID='5232'>Schools attendance policy</SYNONYM>
+        <SYNONYM ID='8417'>Sickness absence from school</SYNONYM>
+        <SYNONYM ID='4850'>Truancy</SYNONYM>
+      </SYNONYMS>
+    </TERM>
+  </TERMS>
+</SEMAPHORE>
+

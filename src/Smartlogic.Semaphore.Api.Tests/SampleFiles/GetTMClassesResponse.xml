@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<response>
+  <Classes count="34">
+    <Class Name="Generic_ID" count_static="3080" count_templated="0" />
+    <Class Name="Generic" count_static="3080" count_templated="0" />
+    <Class Name="Generic_RAW" count_static="3080" count_templated="0" />
+	<Class Name="TEXTMINE_Test" count_static="3080" count_templated="0" />
+	<Class Name="TEXTMINE_Test2" count_static="3080" count_templated="0" />
+  </Classes>
+</response>

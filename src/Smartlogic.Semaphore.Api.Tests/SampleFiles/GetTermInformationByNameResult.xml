@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SEMAPHORE>
+	<PARAMETERS>
+		<PARAMETER NAME='TBDB'>disp_taxonomy</PARAMETER>
+		<PARAMETER NAME='SERVICE'>term</PARAMETER>
+		<PARAMETER NAME='TEMPLATE'>service.xml</PARAMETER>
+		<PARAMETER NAME='TERM'>Buildings</PARAMETER>
+	</PARAMETERS>
+	<TERMS>
+		<TERM SRC='1' INDEX='disp_taxonomy' RANK='0' PERCENTAGE='77' WEIGHT='13.1635'>
+			<NAME>Buildings</NAME>
+			<ID>OMITERMO2262</ID>
+			<DISPLAY_NAME>Buildings</DISPLAY_NAME>
+			<FREQUENCY>0</FREQUENCY>
+			<STATUS>Approved</STATUS>
+			<PATH TYPE='Narrower Term' ABBR='NT'>
+				<FIELD FACET0='Environment' FACET_ID0='OMITERMO499' FREQ='0' ID='OMITERMO499' NAME='term'>Environment</FIELD>
+				<FIELD FACET0='Environment' FACET_ID0='OMITERMO499' FREQ='0' ID='OMITERMO496' NAME='term'>Land and premises</FIELD>
+				<FIELD FACET0='Environment' FACET_ID0='OMITERMO499' FREQ='0' ID='OMITERMO2262' NAME='term'>Buildings</FIELD>
+			</PATH>
+			<HIERARCHY TYPE='Broader Term' ABBR='BT' QTY='1'>
+				<FIELD FACET0='Environment' FACET_ID0='OMITERMO499' FREQ='0' ID='OMITERMO496' NAME='term'>Land and premises</FIELD>
+			</HIERARCHY>
+			<HIERARCHY TYPE='Narrower Term' ABBR='NT' QTY='9'>
+				<FIELD FACET0='Health, well-being and care' FACET_ID0='OMITERMO557' FACET1='Environment' FACET_ID1='OMITERMO499' FREQ='0' ID='OMITERMO3543' NAME='term'>Accessible buildings</FIELD>
+				<FIELD FACET0='Environment' FACET_ID0='OMITERMO499' FREQ='0' ID='OMITERMO2263' NAME='term'>Building alterations</FIELD>
+				<FIELD FACET0='Government, politics and public administration' FACET_ID0='OMITERMO760' FACET1='Business and industry' FACET_ID1='OMITERMO692' FACET2='Environment' FACET_ID2='OMITERMO499' FREQ='0' ID='OMITERMO2285' NAME='term'>Building maintenance</FIELD>
+				<FIELD FACET0='Environment' FACET_ID0='OMITERMO499' FREQ='0' ID='OMITERMO4661' NAME='term'>Council buildings</FIELD>
+				<FIELD FACET0='Transport and infrastructure' FACET_ID0='OMITERMO521' FACET1='Environment' FACET_ID1='OMITERMO499' FREQ='0' ID='OMITERMO2264' NAME='term'>Dangerous structures</FIELD>
+				<FIELD FACET0='Environment' FACET_ID0='OMITERMO499' FREQ='0' ID='OMITERMO2265' NAME='term'>Demolition (buildings)</FIELD>
+				<FIELD FACET0='Environment' FACET_ID0='OMITERMO499' FREQ='0' ID='OMITERMO2266' NAME='term'>Extensions to buildings</FIELD>
+				<FIELD FACET0='Environment' FACET_ID0='OMITERMO499' FREQ='0' ID='OMITERMO2761' NAME='term'>Garages (vehicle storage)</FIELD>
+				<FIELD FACET0='Leisure and culture' FACET_ID0='OMITERMO616' FACET1='Environment' FACET_ID1='OMITERMO499' FREQ='0' ID='OMITERMO1165' NAME='term'>Listed buildings</FIELD>
+			</HIERARCHY>
+			<ASSOCIATED TYPE='Related To' ABBR='RT'>
+				<FIELD FACET0='Leisure and culture' FACET_ID0='OMITERMO616' FREQ='0' ID='OMITERMO4956' NAME='term'>Arts and entertainment venues</FIELD>
+				<FIELD FACET0='Housing' FACET_ID0='OMITERMO460' FREQ='0' ID='OMITERMO460' NAME='term'>Housing</FIELD>
+				<FIELD FACET0='Environment' FACET_ID0='OMITERMO499' FREQ='0' ID='OMITERMO1468' NAME='term'>Non-residential property</FIELD>
+				<FIELD FACET0='Public order, justice and rights' FACET_ID0='OMITERMO564' FREQ='0' ID='OMITERMO933' NAME='term'>Prisons</FIELD>
+				<FIELD FACET0='Transport and infrastructure' FACET_ID0='OMITERMO521' FREQ='0' ID='OMITERMO3076' NAME='term'>Structures and installations</FIELD>
+			</ASSOCIATED>
+			<FACETS>
+				<FACET NAME='Environment' ID='OMITERMO499' />
+			</FACETS>
+			<ATTRIBUTE>
+				<FIELD NAME='A-Z Entry'>1</FIELD>
+				<FIELD NAME='Internal'>1</FIELD>
+				<FIELD NAME='Do not use for concept mapping'>0</FIELD>
+			</ATTRIBUTE>
+			<METADATA>
+			</METADATA>
+		</TERM>
+	</TERMS>
+</SEMAPHORE>

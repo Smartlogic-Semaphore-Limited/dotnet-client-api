@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="SEMAPHORE">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="PARAMETERS">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="PARAMETER">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute name="NAME" type="xs:string" use="required" />
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="OM_STRUCTURE">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TERM_CLASSES" type="xs:string" />
+              <xs:element name="TERM_FACETS">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element maxOccurs="unbounded" name="FIELD">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute name="FACET0" type="xs:string" use="required" />
+                            <xs:attribute name="FACET_ID0" type="xs:string" use="required" />
+                            <xs:attribute name="FREQ" type="xs:unsignedByte" use="required" />
+                            <xs:attribute name="ID" type="xs:string" use="required" />
+                            <xs:attribute name="NAME" type="xs:string" use="required" />
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="TERM_ATTRIBUTES">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element maxOccurs="unbounded" name="TERM_ATTRIBUTE">
+                      <xs:complexType>
+                        <xs:attribute name="ID" type="xs:unsignedByte" use="required" />
+                        <xs:attribute name="NAME" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="TERM_NOTES">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element maxOccurs="unbounded" name="TERM_NOTE">
+                      <xs:complexType>
+                        <xs:attribute name="ID" type="xs:unsignedByte" use="required" />
+                        <xs:attribute name="NAME" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="TERM_METADATA">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element maxOccurs="unbounded" name="METADATA_DEF">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element maxOccurs="unbounded" name="VALUE_DEF">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute name="ID" type="xs:unsignedByte" use="required" />
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="ID" type="xs:unsignedByte" use="required" />
+                        <xs:attribute name="NAME" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="EQUIVALENCE_RELATIONS">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="RELATION_DEF">
+                      <xs:complexType>
+                        <xs:attribute name="ID" type="xs:unsignedByte" use="required" />
+                        <xs:attribute name="NAME" type="xs:string" use="required" />
+                        <xs:attribute name="REV_NAME" type="xs:string" use="required" />
+                        <xs:attribute name="ABRV" type="xs:string" use="required" />
+                        <xs:attribute name="REV_ABRV" type="xs:string" use="required" />
+                        <xs:attribute name="SYMMETRIC" type="xs:boolean" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="HIERARCHICAL_RELATIONS">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="RELATION_DEF">
+                      <xs:complexType>
+                        <xs:attribute name="ID" type="xs:unsignedByte" use="required" />
+                        <xs:attribute name="NAME" type="xs:string" use="required" />
+                        <xs:attribute name="REV_NAME" type="xs:string" use="required" />
+                        <xs:attribute name="ABRV" type="xs:string" use="required" />
+                        <xs:attribute name="REV_ABRV" type="xs:string" use="required" />
+                        <xs:attribute name="SYMMETRIC" type="xs:boolean" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="ASSOCIATIVE_RELATIONS">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="RELATION_DEF">
+                      <xs:complexType>
+                        <xs:attribute name="ID" type="xs:unsignedByte" use="required" />
+                        <xs:attribute name="NAME" type="xs:string" use="required" />
+                        <xs:attribute name="REV_NAME" type="xs:string" use="required" />
+                        <xs:attribute name="ABRV" type="xs:string" use="required" />
+                        <xs:attribute name="REV_ABRV" type="xs:string" use="required" />
+                        <xs:attribute name="SYMMETRIC" type="xs:boolean" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="USERS">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element maxOccurs="unbounded" name="USER_DEF">
+                      <xs:complexType>
+                        <xs:attribute name="ID" type="xs:unsignedInt" use="required" />
+                        <xs:attribute name="NAME" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="MODELS">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MODEL">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="NAME" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

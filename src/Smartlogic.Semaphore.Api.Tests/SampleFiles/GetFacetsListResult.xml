@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SEMAPHORE>
+  <PARAMETERS>
+    <PARAMETER NAME='TBDB'>disp_taxonomy</PARAMETER>
+    <PARAMETER NAME='SERVICE'>facetslist</PARAMETER>
+  </PARAMETERS>
+  <FACETS_LIST>
+    <FACET ID='OMITERMO439' NAME='Education and skills'/>
+    <FACET ID='OMITERMO460' NAME='Housing'/>
+    <FACET ID='OMITERMO499' NAME='Environment'/>
+    <FACET ID='OMITERMO521' NAME='Transport and infrastructure'/>
+    <FACET ID='OMITERMO557' NAME='Health, well-being and care'/>
+    <FACET ID='OMITERMO564' NAME='Public order, justice and rights'/>
+    <FACET ID='OMITERMO616' NAME='Leisure and culture'/>
+    <FACET ID='OMITERMO642' NAME='Life in the community'/>
+    <FACET ID='OMITERMO652' NAME='Science, technology and innovation'/>
+    <FACET ID='OMITERMO6999' NAME='People and organisations'/>
+    <FACET ID='OMITERMO692' NAME='Business and industry'/>
+    <FACET ID='OMITERMO726' NAME='Economics and finance'/>
+    <FACET ID='OMITERMO758' NAME='Information and communication'/>
+    <FACET ID='OMITERMO760' NAME='Government, politics and public administration'/>
+    <FACET ID='OMITERMO911' NAME='International affairs and defence'/>
+    <FACET ID='OMITERMO981' NAME='Employment, jobs and careers'/>
+  </FACETS_LIST>
+</SEMAPHORE>

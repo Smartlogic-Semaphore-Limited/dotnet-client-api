@@ -1,0 +1,584 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SEMAPHORE>
+  <PARAMETERS>
+    <PARAMETER NAME='TBDB'>disp_taxonomy</PARAMETER>
+    <PARAMETER NAME='SERVICE'>browse</PARAMETER>
+    <PARAMETER NAME='TEMPLATE'>service.xml</PARAMETER>
+  </PARAMETERS>
+  <TERMS>
+    <TERM INDEX='disp_taxonomy'>
+      <NAME>Business and industry</NAME>
+      <ID>OMITERMO692</ID>
+      <DISPLAY_NAME>Business and industry</DISPLAY_NAME>
+      <FREQUENCY>0</FREQUENCY>
+      <STATUS>Approved</STATUS>
+      <HIERARCHY TYPE='Narrower Term' ABBR='NT' QTY='7'>
+        <FIELD FACET0='People and organisations' FACET_ID0='OMITERMO6999' FACET1='Business and industry' FACET_ID1='OMITERMO692' FREQ='0' ID='OMITERMO6024' NAME='term'>Business people</FIELD>
+        <FIELD FACET0='Business and industry' FACET_ID0='OMITERMO692' FREQ='0' ID='OMITERMO488' NAME='term'>Business practice and regulation</FIELD>
+        <FIELD FACET0='Business and industry' FACET_ID0='OMITERMO692' FREQ='0' ID='OMITERMO685' NAME='term'>Business sectors</FIELD>
+        <FIELD FACET0='Business and industry' FACET_ID0='OMITERMO692' FACET1='People and organisations' FACET_ID1='OMITERMO6999' FREQ='0' ID='OMITERMO51' NAME='term'>Companies</FIELD>
+        <FIELD FACET0='Business and industry' FACET_ID0='OMITERMO692' FREQ='0' ID='OMITERMO693' NAME='term'>Consumer affairs</FIELD>
+        <FIELD FACET0='Business and industry' FACET_ID0='OMITERMO692' FACET1='Environment' FACET_ID1='OMITERMO499' FREQ='0' ID='OMITERMO500' NAME='term'>Energy and fuel</FIELD>
+        <FIELD FACET0='Business and industry' FACET_ID0='OMITERMO692' FREQ='0' ID='OMITERMO694' NAME='term'>International trade</FIELD>
+      </HIERARCHY>
+      <FACETS>
+        <FACET NAME='Business and industry' ID='OMITERMO692' />
+      </FACETS>
+      <ATTRIBUTE>
+        <FIELD NAME='A-Z Entry'>1</FIELD>
+        <FIELD NAME='Internal'>0</FIELD>
+        <FIELD NAME='Do not use for concept mapping'>0</FIELD>
+      </ATTRIBUTE>
+      <METADATA>
+      </METADATA>
+      <SYNONYMS TYPE='Use' ABBR='USE'>
+        <SYNONYM ID='OMITERMO6916'>Commercial activities and companies</SYNONYM>
+        <SYNONYM ID='OMITERMO1652'>Industry</SYNONYM>
+      </SYNONYMS>
+    </TERM>
+    <TERM INDEX='disp_taxonomy'>
+      <NAME>Economics and finance</NAME>
+      <ID>OMITERMO726</ID>
+      <DISPLAY_NAME>Economics and finance</DISPLAY_NAME>
+      <FREQUENCY>0</FREQUENCY>
+      <STATUS>Approved</STATUS>
+      <HIERARCHY TYPE='Narrower Term' ABBR='NT' QTY='13'>
+        <FIELD FACET0='Economics and finance' FACET_ID0='OMITERMO726' FREQ='0' ID='OMITERMO722' NAME='term'>Capital and financial markets</FIELD>
+        <FIELD FACET0='Economics and finance' FACET_ID0='OMITERMO726' FREQ='0' ID='OMITERMO7508' NAME='term'>Currencies and exchange rates</FIELD>
+        <FIELD FACET0='Economics and finance' FACET_ID0='OMITERMO726' FREQ='0' ID='OMITERMO968' NAME='term'>Economic development</FIELD>
+        <FIELD FACET0='Economics and finance' FACET_ID0='OMITERMO726' FREQ='0' ID='OMITERMO7627' NAME='term'>Economic policy</FIELD>
+        <FIELD FACET0='International affairs and defence' FACET_ID0='OMITERMO911' FACET1='Economics and finance' FACET_ID1='OMITERMO726' FREQ='0' ID='OMITERMO727' NAME='term'>Euro and EMU</FIELD>
+        <FIELD FACET0='Government, politics and public administration' FACET_ID0='OMITERMO760' FACET1='Business and industry' FACET_ID1='OMITERMO692' FACET2='Economics and finance' FACET_ID2='OMITERMO726' FREQ='0' ID='OMITERMO978' NAME='term'>Investment</FIELD>
+        <FIELD FACET0='Economics and finance' FACET_ID0='OMITERMO726' FREQ='0' ID='OMITERMO57' NAME='term'>Labour market</FIELD>
+        <FIELD FACET0='Economics and finance' FACET_ID0='OMITERMO726' FREQ='0' ID='OMITERMO466' NAME='term'>Market competition</FIELD>
+        <FIELD FACET0='Economics and finance' FACET_ID0='OMITERMO726' FREQ='0' ID='OMITERMO979' NAME='term'>Nationalisation and privatisation</FIELD>
+        <FIELD FACET0='Economics and finance' FACET_ID0='OMITERMO726' FREQ='0' ID='OMITERMO980' NAME='term'>Personal finance</FIELD>
+        <FIELD FACET0='Economics and finance' FACET_ID0='OMITERMO726' FREQ='0' ID='OMITERMO683' NAME='term'>Public finance</FIELD>
+        <FIELD FACET0='Economics and finance' FACET_ID0='OMITERMO726' FREQ='0' ID='OMITERMO729' NAME='term'>Tax</FIELD>
+        <FIELD FACET0='Economics and finance' FACET_ID0='OMITERMO726' FREQ='0' ID='OMITERMO973' NAME='term'>UK economy</FIELD>
+      </HIERARCHY>
+      <FACETS>
+        <FACET NAME='Economics and finance' ID='OMITERMO726' />
+      </FACETS>
+      <ATTRIBUTE>
+        <FIELD NAME='A-Z Entry'>0</FIELD>
+        <FIELD NAME='Internal'>1</FIELD>
+        <FIELD NAME='Do not use for concept mapping'>0</FIELD>
+      </ATTRIBUTE>
+      <METADATA>
+      </METADATA>
+      <SYNONYMS TYPE='Use' ABBR='USE'>
+        <SYNONYM ID='OMITERMO400'>Finance</SYNONYM>
+      </SYNONYMS>
+    </TERM>
+    <TERM INDEX='disp_taxonomy'>
+      <NAME>Education and skills</NAME>
+      <ID>OMITERMO439</ID>
+      <DISPLAY_NAME>Education and skills</DISPLAY_NAME>
+      <FREQUENCY>0</FREQUENCY>
+      <STATUS>Approved</STATUS>
+      <HIERARCHY TYPE='Narrower Term' ABBR='NT' QTY='9'>
+        <FIELD FACET0='Education and skills' FACET_ID0='OMITERMO439' FREQ='0' ID='OMITERMO483' NAME='term'>Adult and community education</FIELD>
+        <FIELD FACET0='Education and skills' FACET_ID0='OMITERMO439' FREQ='0' ID='OMITERMO7625' NAME='term'>Educational policy</FIELD>
+        <FIELD FACET0='Education and skills' FACET_ID0='OMITERMO439' FREQ='0' ID='OMITERMO984' NAME='term'>Further and higher education</FIELD>
+        <FIELD FACET0='Education and skills' FACET_ID0='OMITERMO439' FREQ='0' ID='OMITERMO1599' NAME='term'>Learning and teaching methods</FIELD>
+        <FIELD FACET0='Education and skills' FACET_ID0='OMITERMO439' FREQ='0' ID='OMITERMO985' NAME='term'>Pre-school learning</FIELD>
+        <FIELD FACET0='Education and skills' FACET_ID0='OMITERMO439' FREQ='0' ID='OMITERMO986' NAME='term'>Schools</FIELD>
+        <FIELD FACET0='Education and skills' FACET_ID0='OMITERMO439' FREQ='0' ID='OMITERMO2056' NAME='term'>Skills and competences</FIELD>
+        <FIELD FACET0='Education and skills' FACET_ID0='OMITERMO439' FREQ='0' ID='OMITERMO1379' NAME='term'>Special educational needs and additional support</FIELD>
+        <FIELD FACET0='Education and skills' FACET_ID0='OMITERMO439' FACET1='Government, politics and public administration' FACET_ID1='OMITERMO760' FACET2='Business and industry' FACET_ID2='OMITERMO692' FREQ='0' ID='OMITERMO1584' NAME='term'>Workplace training and development</FIELD>
+      </HIERARCHY>
+      <ASSOCIATED TYPE='Related To' ABBR='RT'>
+        <FIELD FACET0='Employment, jobs and careers' FACET_ID0='OMITERMO981' FREQ='0' ID='OMITERMO169' NAME='term'>Careers and career development</FIELD>
+        <FIELD FACET0='Life in the community' FACET_ID0='OMITERMO642' FACET1='Employment, jobs and careers' FACET_ID1='OMITERMO981' FREQ='0' ID='OMITERMO492' NAME='term'>Equal opportunities and diversity</FIELD>
+        <FIELD FACET0='Health, well-being and care' FACET_ID0='OMITERMO557' FREQ='0' ID='OMITERMO955' NAME='term'>Health education</FIELD>
+        <FIELD FACET0='Information and communication' FACET_ID0='OMITERMO758' FACET1='Leisure and culture' FACET_ID1='OMITERMO616' FREQ='0' ID='OMITERMO581' NAME='term'>Libraries</FIELD>
+      </ASSOCIATED>
+      <FACETS>
+        <FACET NAME='Education and skills' ID='OMITERMO439' />
+      </FACETS>
+      <ATTRIBUTE>
+        <FIELD NAME='A-Z Entry'>1</FIELD>
+        <FIELD NAME='Internal'>1</FIELD>
+        <FIELD NAME='Do not use for concept mapping'>0</FIELD>
+      </ATTRIBUTE>
+      <METADATA>
+      </METADATA>
+      <SYNONYMS TYPE='Use' ABBR='USE'>
+        <SYNONYM ID='OMITERMO2106'>Education and learning</SYNONYM>
+        <SYNONYM ID='OMITERMO2107'>classes (education and training)</SYNONYM>
+        <SYNONYM ID='OMITERMO2108'>studying</SYNONYM>
+      </SYNONYMS>
+    </TERM>
+    <TERM INDEX='disp_taxonomy'>
+      <NAME>Employment, jobs and careers</NAME>
+      <ID>OMITERMO981</ID>
+      <DISPLAY_NAME>Employment, jobs and careers</DISPLAY_NAME>
+      <FREQUENCY>0</FREQUENCY>
+      <STATUS>Approved</STATUS>
+      <HIERARCHY TYPE='Narrower Term' ABBR='NT' QTY='15'>
+        <FIELD FACET0='Employment, jobs and careers' FACET_ID0='OMITERMO981' FREQ='0' ID='OMITERMO169' NAME='term'>Careers and career development</FIELD>
+        <FIELD FACET0='Employment, jobs and careers' FACET_ID0='OMITERMO981' FREQ='0' ID='OMITERMO2145' NAME='term'>Child employment</FIELD>
+        <FIELD FACET0='Employment, jobs and careers' FACET_ID0='OMITERMO981' FACET1='Business and industry' FACET_ID1='OMITERMO692' FREQ='0' ID='OMITERMO6127' NAME='term'>Employment regulations</FIELD>
+        <FIELD FACET0='Government, politics and public administration' FACET_ID0='OMITERMO760' FACET1='Employment, jobs and careers' FACET_ID1='OMITERMO981' FACET2='Business and industry' FACET_ID2='OMITERMO692' FREQ='0' ID='OMITERMO982' NAME='term'>Employment relations</FIELD>
+        <FIELD FACET0='Public order, justice and rights' FACET_ID0='OMITERMO564' FACET1='Employment, jobs and careers' FACET_ID1='OMITERMO981' FREQ='0' ID='OMITERMO6097' NAME='term'>Employment rights</FIELD>
+        <FIELD FACET0='Government, politics and public administration' FACET_ID0='OMITERMO760' FACET1='Employment, jobs and careers' FACET_ID1='OMITERMO981' FACET2='Business and industry' FACET_ID2='OMITERMO692' FREQ='0' ID='OMITERMO7285' NAME='term'>Employment terms and conditions</FIELD>
+        <FIELD FACET0='Life in the community' FACET_ID0='OMITERMO642' FACET1='Employment, jobs and careers' FACET_ID1='OMITERMO981' FREQ='0' ID='OMITERMO492' NAME='term'>Equal opportunities and diversity</FIELD>
+        <FIELD FACET0='Employment, jobs and careers' FACET_ID0='OMITERMO981' FREQ='0' ID='OMITERMO7970' NAME='term'>Graduate employment</FIELD>
+        <FIELD FACET0='Employment, jobs and careers' FACET_ID0='OMITERMO981' FACET1='Business and industry' FACET_ID1='OMITERMO692' FREQ='0' ID='OMITERMO456' NAME='term'>Health and safety at work</FIELD>
+        <FIELD FACET0='Employment, jobs and careers' FACET_ID0='OMITERMO981' FREQ='0' ID='OMITERMO6007' NAME='term'>Self employment</FIELD>
+        <FIELD FACET0='Employment, jobs and careers' FACET_ID0='OMITERMO981' FREQ='0' ID='OMITERMO7308' NAME='term'>Temporary employment</FIELD>
+        <FIELD FACET0='Government, politics and public administration' FACET_ID0='OMITERMO760' FACET1='Employment, jobs and careers' FACET_ID1='OMITERMO981' FACET2='Business and industry' FACET_ID2='OMITERMO692' FREQ='0' ID='OMITERMO286' NAME='term'>Termination of employment</FIELD>
+        <FIELD FACET0='Employment, jobs and careers' FACET_ID0='OMITERMO981' FREQ='0' ID='OMITERMO468' NAME='term'>Unemployment and jobseeking</FIELD>
+        <FIELD FACET0='Life in the community' FACET_ID0='OMITERMO642' FACET1='Employment, jobs and careers' FACET_ID1='OMITERMO981' FREQ='0' ID='OMITERMO763' NAME='term'>Volunteering</FIELD>
+        <FIELD FACET0='Employment, jobs and careers' FACET_ID0='OMITERMO981' FREQ='0' ID='OMITERMO7975' NAME='term'>Youth employment</FIELD>
+      </HIERARCHY>
+      <ASSOCIATED TYPE='Related To' ABBR='RT'>
+        <FIELD FACET0='Business and industry' FACET_ID0='OMITERMO692' FREQ='0' ID='OMITERMO488' NAME='term'>Business practice and regulation</FIELD>
+        <FIELD FACET0='Government, politics and public administration' FACET_ID0='OMITERMO760' FACET1='Business and industry' FACET_ID1='OMITERMO692' FREQ='0' ID='OMITERMO5916' NAME='term'>Human resource management</FIELD>
+        <FIELD FACET0='Business and industry' FACET_ID0='OMITERMO692' FREQ='0' ID='OMITERMO6619' NAME='term'>Job creation</FIELD>
+        <FIELD FACET0='Government, politics and public administration' FACET_ID0='OMITERMO760' FACET1='Business and industry' FACET_ID1='OMITERMO692' FREQ='0' ID='OMITERMO7303' NAME='term'>Job mobility</FIELD>
+      </ASSOCIATED>
+      <FACETS>
+        <FACET NAME='Employment, jobs and careers' ID='OMITERMO981' />
+      </FACETS>
+      <ATTRIBUTE>
+        <FIELD NAME='A-Z Entry'>1</FIELD>
+        <FIELD NAME='Internal'>1</FIELD>
+        <FIELD NAME='Do not use for concept mapping'>0</FIELD>
+      </ATTRIBUTE>
+      <METADATA>
+      </METADATA>
+      <SYNONYMS TYPE='Use' ABBR='USE'>
+        <SYNONYM ID='OMITERMO6126'>Employing People</SYNONYM>
+        <SYNONYM ID='OMITERMO6095'>Employment</SYNONYM>
+        <SYNONYM ID='OMITERMO6094'>Jobs and careers</SYNONYM>
+      </SYNONYMS>
+    </TERM>
+    <TERM INDEX='disp_taxonomy'>
+      <NAME>Environment</NAME>
+      <ID>OMITERMO499</ID>
+      <DISPLAY_NAME>Environment</DISPLAY_NAME>
+      <FREQUENCY>0</FREQUENCY>
+      <STATUS>Approved</STATUS>
+      <HIERARCHY TYPE='Narrower Term' ABBR='NT' QTY='12'>
+        <FIELD FACET0='Environment' FACET_ID0='OMITERMO499' FREQ='0' ID='OMITERMO2647' NAME='term'>Built environment</FIELD>
+        <FIELD FACET0='Business and industry' FACET_ID0='OMITERMO692' FACET1='Environment' FACET_ID1='OMITERMO499' FREQ='0' ID='OMITERMO500' NAME='term'>Energy and fuel</FIELD>
+        <FIELD FACET0='Environment' FACET_ID0='OMITERMO499' FREQ='0' ID='OMITERMO501' NAME='term'>Environmental protection</FIELD>
+        <FIELD FACET0='Environment' FACET_ID0='OMITERMO499' FREQ='0' ID='OMITERMO498' NAME='term'>Farming</FIELD>
+        <FIELD FACET0='Environment' FACET_ID0='OMITERMO499' FREQ='0' ID='OMITERMO502' NAME='term'>Fisheries and aquaculture</FIELD>
+        <FIELD FACET0='Environment' FACET_ID0='OMITERMO499' FREQ='0' ID='OMITERMO503' NAME='term'>Forestry</FIELD>
+        <FIELD FACET0='Environment' FACET_ID0='OMITERMO499' FREQ='0' ID='OMITERMO504' NAME='term'>Horticulture</FIELD>
+        <FIELD FACET0='Environment' FACET_ID0='OMITERMO499' FREQ='0' ID='OMITERMO496' NAME='term'>Land and premises</FIELD>
+        <FIELD FACET0='Environment' FACET_ID0='OMITERMO499' FREQ='0' ID='OMITERMO1541' NAME='term'>Mineral resources</FIELD>
+        <FIELD FACET0='Environment' FACET_ID0='OMITERMO499' FREQ='0' ID='OMITERMO505' NAME='term'>Plants, animals and wildlife</FIELD>
+        <FIELD FACET0='Environment' FACET_ID0='OMITERMO499' FREQ='0' ID='OMITERMO506' NAME='term'>Waste management</FIELD>
+        <FIELD FACET0='Environment' FACET_ID0='OMITERMO499' FREQ='0' ID='OMITERMO507' NAME='term'>Water resources</FIELD>
+      </HIERARCHY>
+      <FACETS>
+        <FACET NAME='Environment' ID='OMITERMO499' />
+      </FACETS>
+      <ATTRIBUTE>
+        <FIELD NAME='A-Z Entry'>1</FIELD>
+        <FIELD NAME='Internal'>1</FIELD>
+        <FIELD NAME='Do not use for concept mapping'>0</FIELD>
+      </ATTRIBUTE>
+      <METADATA>
+      </METADATA>
+      <SYNONYMS TYPE='Use' ABBR='USE'>
+        <SYNONYM ID='OMITERMO6998'>Natural Resources</SYNONYM>
+      </SYNONYMS>
+    </TERM>
+    <TERM INDEX='disp_taxonomy'>
+      <NAME>Government, politics and public administration</NAME>
+      <ID>OMITERMO760</ID>
+      <DISPLAY_NAME>Government, politics and public administration</DISPLAY_NAME>
+      <FREQUENCY>0</FREQUENCY>
+      <STATUS>Approved</STATUS>
+      <HIERARCHY TYPE='Narrower Term' ABBR='NT' QTY='11'>
+        <FIELD FACET0='Government, politics and public administration' FACET_ID0='OMITERMO760' FREQ='0' ID='OMITERMO711' NAME='term'>Central government</FIELD>
+        <FIELD FACET0='Government, politics and public administration' FACET_ID0='OMITERMO760' FREQ='0' ID='OMITERMO791' NAME='term'>Civil Service</FIELD>
+        <FIELD FACET0='Government, politics and public administration' FACET_ID0='OMITERMO760' FREQ='0' ID='OMITERMO840' NAME='term'>Constitution</FIELD>
+        <FIELD FACET0='Government, politics and public administration' FACET_ID0='OMITERMO760' FREQ='0' ID='OMITERMO839' NAME='term'>Democracy and elections</FIELD>
+        <FIELD FACET0='Government, politics and public administration' FACET_ID0='OMITERMO760' FREQ='0' ID='OMITERMO934' NAME='term'>Devolved administrations</FIELD>
+        <FIELD FACET0='Government, politics and public administration' FACET_ID0='OMITERMO760' FREQ='0' ID='OMITERMO656' NAME='term'>Honours system</FIELD>
+        <FIELD FACET0='Government, politics and public administration' FACET_ID0='OMITERMO760' FREQ='0' ID='OMITERMO6786' NAME='term'>Local government</FIELD>
+        <FIELD FACET0='Government, politics and public administration' FACET_ID0='OMITERMO760' FREQ='0' ID='OMITERMO1572' NAME='term'>Policy making</FIELD>
+        <FIELD FACET0='Government, politics and public administration' FACET_ID0='OMITERMO760' FREQ='0' ID='OMITERMO1132' NAME='term'>Politics</FIELD>
+        <FIELD FACET0='Government, politics and public administration' FACET_ID0='OMITERMO760' FREQ='0' ID='OMITERMO476' NAME='term'>Public administration</FIELD>
+        <FIELD FACET0='Government, politics and public administration' FACET_ID0='OMITERMO760' FREQ='0' ID='OMITERMO1130' NAME='term'>Regional policy</FIELD>
+      </HIERARCHY>
+      <FACETS>
+        <FACET NAME='Government, politics and public administration' ID='OMITERMO760' />
+      </FACETS>
+      <ATTRIBUTE>
+        <FIELD NAME='A-Z Entry'>0</FIELD>
+        <FIELD NAME='Internal'>1</FIELD>
+        <FIELD NAME='Do not use for concept mapping'>0</FIELD>
+      </ATTRIBUTE>
+      <METADATA>
+      </METADATA>
+      <SYNONYMS TYPE='Use' ABBR='USE'>
+        <SYNONYM ID='OMITERMO7045'>Council, government and democracy</SYNONYM>
+      </SYNONYMS>
+    </TERM>
+    <TERM INDEX='disp_taxonomy'>
+      <NAME>Health, well-being and care</NAME>
+      <ID>OMITERMO557</ID>
+      <DISPLAY_NAME>Health, well-being and care</DISPLAY_NAME>
+      <FREQUENCY>0</FREQUENCY>
+      <STATUS>Approved</STATUS>
+      <HIERARCHY TYPE='Narrower Term' ABBR='NT' QTY='13'>
+        <FIELD FACET0='Health, well-being and care' FACET_ID0='OMITERMO557' FACET1='Environment' FACET_ID1='OMITERMO499' FREQ='0' ID='OMITERMO538' NAME='term'>Animal health</FIELD>
+        <FIELD FACET0='Health, well-being and care' FACET_ID0='OMITERMO557' FREQ='0' ID='OMITERMO638' NAME='term'>Benefits</FIELD>
+        <FIELD FACET0='Health, well-being and care' FACET_ID0='OMITERMO557' FREQ='0' ID='OMITERMO481' NAME='term'>Care</FIELD>
+        <FIELD FACET0='Health, well-being and care' FACET_ID0='OMITERMO557' FREQ='0' ID='OMITERMO3873' NAME='term'>Cosmetic treatments</FIELD>
+        <FIELD FACET0='Health, well-being and care' FACET_ID0='OMITERMO557' FREQ='0' ID='OMITERMO3471' NAME='term'>Disability</FIELD>
+        <FIELD FACET0='Health, well-being and care' FACET_ID0='OMITERMO557' FREQ='0' ID='OMITERMO445' NAME='term'>Family planning</FIELD>
+        <FIELD FACET0='Health, well-being and care' FACET_ID0='OMITERMO557' FREQ='0' ID='OMITERMO628' NAME='term'>Food and drink</FIELD>
+        <FIELD FACET0='Health, well-being and care' FACET_ID0='OMITERMO557' FREQ='0' ID='OMITERMO514' NAME='term'>Health</FIELD>
+        <FIELD FACET0='People and organisations' FACET_ID0='OMITERMO6999' FACET1='Health, well-being and care' FACET_ID1='OMITERMO557' FREQ='0' ID='OMITERMO536' NAME='term'>Health and social care professionals</FIELD>
+        <FIELD FACET0='Health, well-being and care' FACET_ID0='OMITERMO557' FREQ='0' ID='OMITERMO1506' NAME='term'>Health care</FIELD>
+        <FIELD FACET0='Health, well-being and care' FACET_ID0='OMITERMO557' FREQ='0' ID='OMITERMO531' NAME='term'>National Health Service (NHS)</FIELD>
+        <FIELD FACET0='Health, well-being and care' FACET_ID0='OMITERMO557' FREQ='0' ID='OMITERMO1084' NAME='term'>Nutrition</FIELD>
+        <FIELD FACET0='Health, well-being and care' FACET_ID0='OMITERMO557' FREQ='0' ID='OMITERMO1058' NAME='term'>Safety</FIELD>
+      </HIERARCHY>
+      <FACETS>
+        <FACET NAME='Health, well-being and care' ID='OMITERMO557' />
+      </FACETS>
+      <ATTRIBUTE>
+        <FIELD NAME='A-Z Entry'>0</FIELD>
+        <FIELD NAME='Internal'>1</FIELD>
+        <FIELD NAME='Do not use for concept mapping'>0</FIELD>
+      </ATTRIBUTE>
+      <METADATA>
+      </METADATA>
+      <SYNONYMS TYPE='Use' ABBR='USE'>
+        <SYNONYM ID='OMITERMO7076'>Health And Social Care</SYNONYM>
+        <SYNONYM ID='OMITERMO6995'>Well-being</SYNONYM>
+      </SYNONYMS>
+    </TERM>
+    <TERM INDEX='disp_taxonomy'>
+      <NAME>Housing</NAME>
+      <ID>OMITERMO460</ID>
+      <DISPLAY_NAME>Housing</DISPLAY_NAME>
+      <FREQUENCY>0</FREQUENCY>
+      <STATUS>Approved</STATUS>
+      <HIERARCHY TYPE='Narrower Term' ABBR='NT' QTY='15'>
+        <FIELD FACET0='Housing' FACET_ID0='OMITERMO460' FACET1='Government, politics and public administration' FACET_ID1='OMITERMO760' FACET2='Economics and finance' FACET_ID2='OMITERMO726' FACET3='Business and industry' FACET_ID3='OMITERMO692' FREQ='0' ID='OMITERMO3274' NAME='term'>Home insurance</FIELD>
+        <FIELD FACET0='Housing' FACET_ID0='OMITERMO460' FREQ='0' ID='OMITERMO228' NAME='term'>Home ownership</FIELD>
+        <FIELD FACET0='Housing' FACET_ID0='OMITERMO460' FACET1='Life in the community' FACET_ID1='OMITERMO642' FREQ='0' ID='OMITERMO1170' NAME='term'>Homelessness</FIELD>
+        <FIELD FACET0='Housing' FACET_ID0='OMITERMO460' FREQ='0' ID='OMITERMO3283' NAME='term'>Houseboats</FIELD>
+        <FIELD FACET0='Housing' FACET_ID0='OMITERMO460' FREQ='0' ID='OMITERMO1835' NAME='term'>Houses in multiple occupation</FIELD>
+        <FIELD FACET0='Housing' FACET_ID0='OMITERMO460' FREQ='0' ID='OMITERMO4733' NAME='term'>Housing advice services</FIELD>
+        <FIELD FACET0='Housing' FACET_ID0='OMITERMO460' FREQ='0' ID='OMITERMO3303' NAME='term'>Housing finance</FIELD>
+        <FIELD FACET0='Housing' FACET_ID0='OMITERMO460' FREQ='0' ID='OMITERMO342' NAME='term'>Housing repairs and renovation</FIELD>
+        <FIELD FACET0='Housing' FACET_ID0='OMITERMO460' FREQ='0' ID='OMITERMO3300' NAME='term'>Housing surveys</FIELD>
+        <FIELD FACET0='Housing' FACET_ID0='OMITERMO460' FREQ='0' ID='OMITERMO3284' NAME='term'>Mobile homes</FIELD>
+        <FIELD FACET0='Housing' FACET_ID0='OMITERMO460' FREQ='0' ID='OMITERMO3201' NAME='term'>Rented housing</FIELD>
+        <FIELD FACET0='Housing' FACET_ID0='OMITERMO460' FACET1='Health, well-being and care' FACET_ID1='OMITERMO557' FREQ='0' ID='OMITERMO163' NAME='term'>Residential homes</FIELD>
+        <FIELD FACET0='Housing' FACET_ID0='OMITERMO460' FREQ='0' ID='OMITERMO341' NAME='term'>Social housing</FIELD>
+        <FIELD FACET0='Housing' FACET_ID0='OMITERMO460' FREQ='0' ID='OMITERMO3250' NAME='term'>Temporary accommodation</FIELD>
+        <FIELD FACET0='Housing' FACET_ID0='OMITERMO460' FREQ='0' ID='OMITERMO3285' NAME='term'>Unoccupied property (housing)</FIELD>
+      </HIERARCHY>
+      <ASSOCIATED TYPE='Related To' ABBR='RT'>
+        <FIELD FACET0='Environment' FACET_ID0='OMITERMO499' FREQ='0' ID='OMITERMO2262' NAME='term'>Buildings</FIELD>
+        <FIELD FACET0='Environment' FACET_ID0='OMITERMO499' FREQ='0' ID='OMITERMO2761' NAME='term'>Garages (vehicle storage)</FIELD>
+        <FIELD FACET0='Public order, justice and rights' FACET_ID0='OMITERMO564' FREQ='0' ID='OMITERMO3279' NAME='term'>Home security</FIELD>
+        <FIELD FACET0='People and organisations' FACET_ID0='OMITERMO6999' FACET1='Business and industry' FACET_ID1='OMITERMO692' FREQ='0' ID='OMITERMO6043' NAME='term'>Key workers</FIELD>
+        <FIELD FACET0='Life in the community' FACET_ID0='OMITERMO642' FREQ='0' ID='OMITERMO642' NAME='term'>Life in the community</FIELD>
+        <FIELD FACET0='Environment' FACET_ID0='OMITERMO499' FREQ='0' ID='OMITERMO2220' NAME='term'>Residential planning</FIELD>
+        <FIELD FACET0='People and organisations' FACET_ID0='OMITERMO6999' FREQ='0' ID='OMITERMO4551' NAME='term'>Residents associations</FIELD>
+      </ASSOCIATED>
+      <FACETS>
+        <FACET NAME='Housing' ID='OMITERMO460' />
+      </FACETS>
+      <ATTRIBUTE>
+        <FIELD NAME='A-Z Entry'>1</FIELD>
+        <FIELD NAME='Internal'>0</FIELD>
+        <FIELD NAME='Do not use for concept mapping'>0</FIELD>
+      </ATTRIBUTE>
+      <METADATA>
+      </METADATA>
+      <SYNONYMS TYPE='Use' ABBR='USE'>
+        <SYNONYM ID='OMITERMO459'>Accommodation (housing)</SYNONYM>
+        <SYNONYM ID='OMITERMO3319'>Finding a Home</SYNONYM>
+        <SYNONYM ID='OMITERMO1478'>Real Estate (residential)</SYNONYM>
+        <SYNONYM ID='OMITERMO3320'>overcrowded dwellings</SYNONYM>
+        <SYNONYM ID='OMITERMO230'>property (housing)</SYNONYM>
+      </SYNONYMS>
+    </TERM>
+    <TERM INDEX='disp_taxonomy'>
+      <NAME>Information and communication</NAME>
+      <ID>OMITERMO758</ID>
+      <DISPLAY_NAME>Information and communication</DISPLAY_NAME>
+      <FREQUENCY>0</FREQUENCY>
+      <STATUS>Approved</STATUS>
+      <HIERARCHY TYPE='Narrower Term' ABBR='NT' QTY='12'>
+        <FIELD FACET0='Information and communication' FACET_ID0='OMITERMO758' FREQ='0' ID='OMITERMO4467' NAME='term'>Communication</FIELD>
+        <FIELD FACET0='Information and communication' FACET_ID0='OMITERMO758' FACET1='Business and industry' FACET_ID1='OMITERMO692' FREQ='0' ID='OMITERMO490' NAME='term'>Communications industries</FIELD>
+        <FIELD FACET0='Information and communication' FACET_ID0='OMITERMO758' FREQ='0' ID='OMITERMO7817' NAME='term'>Information</FIELD>
+        <FIELD FACET0='Information and communication' FACET_ID0='OMITERMO758' FACET1='Science, technology and innovation' FACET_ID1='OMITERMO652' FREQ='0' ID='OMITERMO822' NAME='term'>Information and communication technology</FIELD>
+        <FIELD FACET0='Information and communication' FACET_ID0='OMITERMO758' FACET1='Government, politics and public administration' FACET_ID1='OMITERMO760' FACET2='Business and industry' FACET_ID2='OMITERMO692' FREQ='0' ID='OMITERMO1526' NAME='term'>Information management</FIELD>
+        <FIELD FACET0='Information and communication' FACET_ID0='OMITERMO758' FREQ='0' ID='OMITERMO855' NAME='term'>Intellectual property</FIELD>
+        <FIELD FACET0='Information and communication' FACET_ID0='OMITERMO758' FREQ='0' ID='OMITERMO7801' NAME='term'>Internal communications</FIELD>
+        <FIELD FACET0='Information and communication' FACET_ID0='OMITERMO758' FACET1='Government, politics and public administration' FACET_ID1='OMITERMO760' FACET2='Business and industry' FACET_ID2='OMITERMO692' FREQ='0' ID='OMITERMO7654' NAME='term'>Knowledge management</FIELD>
+        <FIELD FACET0='Information and communication' FACET_ID0='OMITERMO758' FREQ='0' ID='OMITERMO5733' NAME='term'>Library and information services</FIELD>
+        <FIELD FACET0='Information and communication' FACET_ID0='OMITERMO758' FREQ='0' ID='OMITERMO489' NAME='term'>Media and the press</FIELD>
+        <FIELD FACET0='Information and communication' FACET_ID0='OMITERMO758' FREQ='0' ID='OMITERMO901' NAME='term'>Privacy and data protection</FIELD>
+        <FIELD FACET0='Information and communication' FACET_ID0='OMITERMO758' FACET1='Government, politics and public administration' FACET_ID1='OMITERMO760' FACET2='Business and industry' FACET_ID2='OMITERMO692' FREQ='0' ID='OMITERMO1576' NAME='term'>Public relations</FIELD>
+      </HIERARCHY>
+      <FACETS>
+        <FACET NAME='Information and communication' ID='OMITERMO758' />
+      </FACETS>
+      <ATTRIBUTE>
+        <FIELD NAME='A-Z Entry'>0</FIELD>
+        <FIELD NAME='Internal'>1</FIELD>
+        <FIELD NAME='Do not use for concept mapping'>0</FIELD>
+      </ATTRIBUTE>
+      <METADATA>
+      </METADATA>
+      <SYNONYMS TYPE='Use' ABBR='USE'>
+        <SYNONYM ID='OMITERMO757'>Censorship</SYNONYM>
+      </SYNONYMS>
+    </TERM>
+    <TERM INDEX='disp_taxonomy'>
+      <NAME>International affairs and defence</NAME>
+      <ID>OMITERMO911</ID>
+      <DISPLAY_NAME>International affairs and defence</DISPLAY_NAME>
+      <FREQUENCY>0</FREQUENCY>
+      <STATUS>Approved</STATUS>
+      <HIERARCHY TYPE='Narrower Term' ABBR='NT' QTY='10'>
+        <FIELD FACET0='International affairs and defence' FACET_ID0='OMITERMO911' FREQ='0' ID='OMITERMO597' NAME='term'>Defence</FIELD>
+        <FIELD FACET0='International affairs and defence' FACET_ID0='OMITERMO911' FREQ='0' ID='OMITERMO848' NAME='term'>Embassies and consulates</FIELD>
+        <FIELD FACET0='International affairs and defence' FACET_ID0='OMITERMO911' FREQ='0' ID='OMITERMO6918' NAME='term'>European affairs</FIELD>
+        <FIELD FACET0='Public order, justice and rights' FACET_ID0='OMITERMO564' FACET1='International affairs and defence' FACET_ID1='OMITERMO911' FREQ='0' ID='OMITERMO884' NAME='term'>Extradition</FIELD>
+        <FIELD FACET0='International affairs and defence' FACET_ID0='OMITERMO911' FREQ='0' ID='OMITERMO977' NAME='term'>Foreign policy</FIELD>
+        <FIELD FACET0='International affairs and defence' FACET_ID0='OMITERMO911' FREQ='0' ID='OMITERMO622' NAME='term'>Immigration and nationality</FIELD>
+        <FIELD FACET0='International affairs and defence' FACET_ID0='OMITERMO911' FREQ='0' ID='OMITERMO511' NAME='term'>International development and aid</FIELD>
+        <FIELD FACET0='International affairs and defence' FACET_ID0='OMITERMO911' FACET1='People and organisations' FACET_ID1='OMITERMO6999' FREQ='0' ID='OMITERMO815' NAME='term'>International organisations</FIELD>
+        <FIELD FACET0='International affairs and defence' FACET_ID0='OMITERMO911' FREQ='0' ID='OMITERMO648' NAME='term'>International relations</FIELD>
+        <FIELD FACET0='International affairs and defence' FACET_ID0='OMITERMO911' FREQ='0' ID='OMITERMO976' NAME='term'>Overseas conflict</FIELD>
+      </HIERARCHY>
+      <FACETS>
+        <FACET NAME='International affairs and defence' ID='OMITERMO911' />
+      </FACETS>
+      <ATTRIBUTE>
+        <FIELD NAME='A-Z Entry'>0</FIELD>
+        <FIELD NAME='Internal'>0</FIELD>
+        <FIELD NAME='Do not use for concept mapping'>0</FIELD>
+      </ATTRIBUTE>
+      <METADATA>
+      </METADATA>
+    </TERM>
+    <TERM INDEX='disp_taxonomy'>
+      <NAME>Leisure and culture</NAME>
+      <ID>OMITERMO616</ID>
+      <DISPLAY_NAME>Leisure and culture</DISPLAY_NAME>
+      <FREQUENCY>0</FREQUENCY>
+      <STATUS>Approved</STATUS>
+      <HIERARCHY TYPE='Narrower Term' ABBR='NT' QTY='12'>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='OMITERMO616' FREQ='0' ID='OMITERMO4956' NAME='term'>Arts and entertainment venues</FIELD>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='OMITERMO616' FREQ='0' ID='OMITERMO4526' NAME='term'>Children&apos;s activities</FIELD>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='OMITERMO616' FREQ='0' ID='OMITERMO578' NAME='term'>Culture and creativity</FIELD>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='OMITERMO616' FREQ='0' ID='OMITERMO5047' NAME='term'>Entertainment and events</FIELD>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='OMITERMO616' FREQ='0' ID='OMITERMO1093' NAME='term'>Gambling and lotteries</FIELD>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='OMITERMO616' FREQ='0' ID='OMITERMO5070' NAME='term'>Hobbies and interests</FIELD>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='OMITERMO616' FREQ='0' ID='OMITERMO529' NAME='term'>Parks and gardens</FIELD>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='OMITERMO616' FREQ='0' ID='OMITERMO5577' NAME='term'>Sports administration</FIELD>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='OMITERMO616' FREQ='0' ID='OMITERMO896' NAME='term'>Sports and recreation</FIELD>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='OMITERMO616' FREQ='0' ID='OMITERMO1678' NAME='term'>Sports and recreation facilities</FIELD>
+        <FIELD FACET0='Business and industry' FACET_ID0='OMITERMO692' FACET1='Leisure and culture' FACET_ID1='OMITERMO616' FREQ='0' ID='OMITERMO462' NAME='term'>Tourism</FIELD>
+        <FIELD FACET0='Leisure and culture' FACET_ID0='OMITERMO616' FREQ='0' ID='OMITERMO4527' NAME='term'>Young people&apos;s activities</FIELD>
+      </HIERARCHY>
+      <FACETS>
+        <FACET NAME='Leisure and culture' ID='OMITERMO616' />
+      </FACETS>
+      <ATTRIBUTE>
+        <FIELD NAME='A-Z Entry'>1</FIELD>
+        <FIELD NAME='Internal'>0</FIELD>
+        <FIELD NAME='Do not use for concept mapping'>0</FIELD>
+      </ATTRIBUTE>
+      <METADATA>
+      </METADATA>
+      <SYNONYMS TYPE='Use' ABBR='USE'>
+        <SYNONYM ID='OMITERMO6651'>Arts and entertainment</SYNONYM>
+        <SYNONYM ID='OMITERMO5746'>Arts, recreation and travel</SYNONYM>
+      </SYNONYMS>
+    </TERM>
+    <TERM INDEX='disp_taxonomy'>
+      <NAME>Life in the community</NAME>
+      <ID>OMITERMO642</ID>
+      <DISPLAY_NAME>Life in the community</DISPLAY_NAME>
+      <FREQUENCY>0</FREQUENCY>
+      <STATUS>Approved</STATUS>
+      <HIERARCHY TYPE='Narrower Term' ABBR='NT' QTY='13'>
+        <FIELD FACET0='Life in the community' FACET_ID0='OMITERMO642' FREQ='0' ID='OMITERMO4705' NAME='term'>Community development</FIELD>
+        <FIELD FACET0='Life in the community' FACET_ID0='OMITERMO642' FREQ='0' ID='OMITERMO4651' NAME='term'>Community facilities</FIELD>
+        <FIELD FACET0='Life in the community' FACET_ID0='OMITERMO642' FACET1='Economics and finance' FACET_ID1='OMITERMO726' FREQ='0' ID='OMITERMO6286' NAME='term'>Community grants</FIELD>
+        <FIELD FACET0='Life in the community' FACET_ID0='OMITERMO642' FREQ='0' ID='OMITERMO4611' NAME='term'>Life events</FIELD>
+        <FIELD FACET0='Life in the community' FACET_ID0='OMITERMO642' FREQ='0' ID='OMITERMO6572' NAME='term'>Meetings</FIELD>
+        <FIELD FACET0='Life in the community' FACET_ID0='OMITERMO642' FREQ='0' ID='OMITERMO1026' NAME='term'>Minority groups</FIELD>
+        <FIELD FACET0='Life in the community' FACET_ID0='OMITERMO642' FREQ='0' ID='OMITERMO658' NAME='term'>Population and migration</FIELD>
+        <FIELD FACET0='Life in the community' FACET_ID0='OMITERMO642' FREQ='0' ID='OMITERMO771' NAME='term'>Religion</FIELD>
+        <FIELD FACET0='Life in the community' FACET_ID0='OMITERMO642' FREQ='0' ID='OMITERMO865' NAME='term'>Rural communities</FIELD>
+        <FIELD FACET0='Life in the community' FACET_ID0='OMITERMO642' FREQ='0' ID='OMITERMO4702' NAME='term'>Social issues</FIELD>
+        <FIELD FACET0='Life in the community' FACET_ID0='OMITERMO642' FREQ='0' ID='OMITERMO4779' NAME='term'>Twin towns and villages</FIELD>
+        <FIELD FACET0='Life in the community' FACET_ID0='OMITERMO642' FREQ='0' ID='OMITERMO671' NAME='term'>Urban communities</FIELD>
+        <FIELD FACET0='Life in the community' FACET_ID0='OMITERMO642' FACET1='Employment, jobs and careers' FACET_ID1='OMITERMO981' FREQ='0' ID='OMITERMO763' NAME='term'>Volunteering</FIELD>
+      </HIERARCHY>
+      <ASSOCIATED TYPE='Related To' ABBR='RT'>
+        <FIELD FACET0='Housing' FACET_ID0='OMITERMO460' FREQ='0' ID='OMITERMO460' NAME='term'>Housing</FIELD>
+        <FIELD FACET0='Public order, justice and rights' FACET_ID0='OMITERMO564' FACET1='Health, well-being and care' FACET_ID1='OMITERMO557' FREQ='0' ID='OMITERMO4775' NAME='term'>Neighbourhood watch</FIELD>
+      </ASSOCIATED>
+      <FACETS>
+        <FACET NAME='Life in the community' ID='OMITERMO642' />
+      </FACETS>
+      <ATTRIBUTE>
+        <FIELD NAME='A-Z Entry'>1</FIELD>
+        <FIELD NAME='Internal'>0</FIELD>
+        <FIELD NAME='Do not use for concept mapping'>0</FIELD>
+      </ATTRIBUTE>
+      <METADATA>
+      </METADATA>
+      <SYNONYMS TYPE='Use' ABBR='USE'>
+        <SYNONYM ID='OMITERMO4698'>Communities</SYNONYM>
+        <SYNONYM ID='OMITERMO4699'>Community and living</SYNONYM>
+        <SYNONYM ID='OMITERMO4750'>Neighbourhoods</SYNONYM>
+        <SYNONYM ID='OMITERMO4697'>People, communities and living</SYNONYM>
+      </SYNONYMS>
+    </TERM>
+    <TERM INDEX='disp_taxonomy'>
+      <NAME>People and organisations</NAME>
+      <ID>OMITERMO6999</ID>
+      <DISPLAY_NAME>People and organisations</DISPLAY_NAME>
+      <FREQUENCY>0</FREQUENCY>
+      <STATUS>Approved</STATUS>
+      <HIERARCHY TYPE='Narrower Term' ABBR='NT' QTY='7'>
+        <FIELD FACET0='People and organisations' FACET_ID0='OMITERMO6999' FREQ='0' ID='OMITERMO7800' NAME='term'>Committees</FIELD>
+        <FIELD FACET0='People and organisations' FACET_ID0='OMITERMO6999' FREQ='0' ID='OMITERMO4373' NAME='term'>Organisations</FIELD>
+        <FIELD FACET0='People and organisations' FACET_ID0='OMITERMO6999' FREQ='0' ID='OMITERMO6620' NAME='term'>Partnerships</FIELD>
+        <FIELD FACET0='People and organisations' FACET_ID0='OMITERMO6999' FREQ='0' ID='OMITERMO937' NAME='term'>People</FIELD>
+        <FIELD FACET0='People and organisations' FACET_ID0='OMITERMO6999' FREQ='0' ID='OMITERMO4421' NAME='term'>Social and support groups</FIELD>
+        <FIELD FACET0='People and organisations' FACET_ID0='OMITERMO6999' FREQ='0' ID='OMITERMO7855' NAME='term'>Stakeholders</FIELD>
+        <FIELD FACET0='People and organisations' FACET_ID0='OMITERMO6999' FREQ='0' ID='OMITERMO4720' NAME='term'>Voluntary sector</FIELD>
+      </HIERARCHY>
+      <FACETS>
+        <FACET NAME='People and organisations' ID='OMITERMO6999' />
+      </FACETS>
+      <ATTRIBUTE>
+        <FIELD NAME='A-Z Entry'>0</FIELD>
+        <FIELD NAME='Internal'>1</FIELD>
+        <FIELD NAME='Do not use for concept mapping'>0</FIELD>
+      </ATTRIBUTE>
+      <METADATA>
+      </METADATA>
+    </TERM>
+    <TERM INDEX='disp_taxonomy'>
+      <NAME>Public order, justice and rights</NAME>
+      <ID>OMITERMO564</ID>
+      <DISPLAY_NAME>Public order, justice and rights</DISPLAY_NAME>
+      <FREQUENCY>0</FREQUENCY>
+      <STATUS>Approved</STATUS>
+      <HIERARCHY TYPE='Narrower Term' ABBR='NT' QTY='10'>
+        <FIELD FACET0='Public order, justice and rights' FACET_ID0='OMITERMO564' FACET1='Environment' FACET_ID1='OMITERMO499' FREQ='0' ID='OMITERMO542' NAME='term'>Animal rights and welfare</FIELD>
+        <FIELD FACET0='Public order, justice and rights' FACET_ID0='OMITERMO564' FREQ='0' ID='OMITERMO775' NAME='term'>Civil and human rights</FIELD>
+        <FIELD FACET0='Public order, justice and rights' FACET_ID0='OMITERMO564' FACET1='Business and industry' FACET_ID1='OMITERMO692' FREQ='0' ID='OMITERMO6258' NAME='term'>Consumer rights</FIELD>
+        <FIELD FACET0='Public order, justice and rights' FACET_ID0='OMITERMO564' FREQ='0' ID='OMITERMO6711' NAME='term'>Crime and law enforcement</FIELD>
+        <FIELD FACET0='Public order, justice and rights' FACET_ID0='OMITERMO564' FREQ='0' ID='OMITERMO532' NAME='term'>Emergencies</FIELD>
+        <FIELD FACET0='Public order, justice and rights' FACET_ID0='OMITERMO564' FACET1='Employment, jobs and careers' FACET_ID1='OMITERMO981' FREQ='0' ID='OMITERMO6097' NAME='term'>Employment rights</FIELD>
+        <FIELD FACET0='Public order, justice and rights' FACET_ID0='OMITERMO564' FREQ='0' ID='OMITERMO607' NAME='term'>Firearms</FIELD>
+        <FIELD FACET0='Public order, justice and rights' FACET_ID0='OMITERMO564' FREQ='0' ID='OMITERMO790' NAME='term'>Justice system</FIELD>
+        <FIELD FACET0='Public order, justice and rights' FACET_ID0='OMITERMO564' FREQ='0' ID='OMITERMO885' NAME='term'>Law</FIELD>
+        <FIELD FACET0='Public order, justice and rights' FACET_ID0='OMITERMO564' FREQ='0' ID='OMITERMO886' NAME='term'>Security</FIELD>
+      </HIERARCHY>
+      <FACETS>
+        <FACET NAME='Public order, justice and rights' ID='OMITERMO564' />
+      </FACETS>
+      <ATTRIBUTE>
+        <FIELD NAME='A-Z Entry'>0</FIELD>
+        <FIELD NAME='Internal'>1</FIELD>
+        <FIELD NAME='Do not use for concept mapping'>0</FIELD>
+      </ATTRIBUTE>
+      <METADATA>
+      </METADATA>
+      <SYNONYMS TYPE='Use' ABBR='USE'>
+        <SYNONYM ID='OMITERMO7121'>Policing and public safety</SYNONYM>
+      </SYNONYMS>
+    </TERM>
+    <TERM INDEX='disp_taxonomy'>
+      <NAME>Science, technology and innovation</NAME>
+      <ID>OMITERMO652</ID>
+      <DISPLAY_NAME>Science, technology and innovation</DISPLAY_NAME>
+      <FREQUENCY>0</FREQUENCY>
+      <STATUS>Approved</STATUS>
+      <HIERARCHY TYPE='Narrower Term' ABBR='NT' QTY='12'>
+        <FIELD FACET0='Science, technology and innovation' FACET_ID0='OMITERMO652' FREQ='0' ID='OMITERMO1710' NAME='term'>Astronomy and space</FIELD>
+        <FIELD FACET0='Science, technology and innovation' FACET_ID0='OMITERMO652' FREQ='0' ID='OMITERMO1711' NAME='term'>Biology and applied life sciences</FIELD>
+        <FIELD FACET0='Science, technology and innovation' FACET_ID0='OMITERMO652' FREQ='0' ID='OMITERMO650' NAME='term'>Biotechnology</FIELD>
+        <FIELD FACET0='Science, technology and innovation' FACET_ID0='OMITERMO652' FREQ='0' ID='OMITERMO1712' NAME='term'>Chemistry and biochemistry</FIELD>
+        <FIELD FACET0='Science, technology and innovation' FACET_ID0='OMITERMO652' FREQ='0' ID='OMITERMO1713' NAME='term'>Engineering</FIELD>
+        <FIELD FACET0='Science, technology and innovation' FACET_ID0='OMITERMO652' FREQ='0' ID='OMITERMO1714' NAME='term'>Environmental and earth sciences</FIELD>
+        <FIELD FACET0='Science, technology and innovation' FACET_ID0='OMITERMO652' FREQ='0' ID='OMITERMO1715' NAME='term'>Forensic science</FIELD>
+        <FIELD FACET0='Information and communication' FACET_ID0='OMITERMO758' FACET1='Science, technology and innovation' FACET_ID1='OMITERMO652' FREQ='0' ID='OMITERMO822' NAME='term'>Information and communication technology</FIELD>
+        <FIELD FACET0='Science, technology and innovation' FACET_ID0='OMITERMO652' FREQ='0' ID='OMITERMO5784' NAME='term'>Mathematics</FIELD>
+        <FIELD FACET0='Science, technology and innovation' FACET_ID0='OMITERMO652' FREQ='0' ID='OMITERMO1717' NAME='term'>Physics</FIELD>
+        <FIELD FACET0='Science, technology and innovation' FACET_ID0='OMITERMO652' FREQ='0' ID='OMITERMO1718' NAME='term'>Psychology</FIELD>
+        <FIELD FACET0='Science, technology and innovation' FACET_ID0='OMITERMO652' FREQ='0' ID='OMITERMO544' NAME='term'>Research and development</FIELD>
+      </HIERARCHY>
+      <FACETS>
+        <FACET NAME='Science, technology and innovation' ID='OMITERMO652' />
+      </FACETS>
+      <ATTRIBUTE>
+        <FIELD NAME='A-Z Entry'>0</FIELD>
+        <FIELD NAME='Internal'>0</FIELD>
+        <FIELD NAME='Do not use for concept mapping'>0</FIELD>
+      </ATTRIBUTE>
+      <METADATA>
+      </METADATA>
+      <SYNONYMS TYPE='Use' ABBR='USE'>
+        <SYNONYM ID='OMITERMO1210'>Innovation</SYNONYM>
+        <SYNONYM ID='OMITERMO1418'>Technology</SYNONYM>
+      </SYNONYMS>
+    </TERM>
+    <TERM INDEX='disp_taxonomy'>
+      <NAME>Transport and infrastructure</NAME>
+      <ID>OMITERMO521</ID>
+      <DISPLAY_NAME>Transport and infrastructure</DISPLAY_NAME>
+      <FREQUENCY>0</FREQUENCY>
+      <STATUS>Approved</STATUS>
+      <HIERARCHY TYPE='Narrower Term' ABBR='NT' QTY='11'>
+        <FIELD FACET0='Transport and infrastructure' FACET_ID0='OMITERMO521' FREQ='0' ID='OMITERMO517' NAME='term'>Air transport</FIELD>
+        <FIELD FACET0='Transport and infrastructure' FACET_ID0='OMITERMO521' FREQ='0' ID='OMITERMO4267' NAME='term'>Community transport</FIELD>
+        <FIELD FACET0='Transport and infrastructure' FACET_ID0='OMITERMO521' FREQ='0' ID='OMITERMO1807' NAME='term'>Commuting</FIELD>
+        <FIELD FACET0='Transport and infrastructure' FACET_ID0='OMITERMO521' FREQ='0' ID='OMITERMO753' NAME='term'>Freight transport</FIELD>
+        <FIELD FACET0='Transport and infrastructure' FACET_ID0='OMITERMO521' FREQ='0' ID='OMITERMO1374' NAME='term'>Public transport</FIELD>
+        <FIELD FACET0='Transport and infrastructure' FACET_ID0='OMITERMO521' FREQ='0' ID='OMITERMO441' NAME='term'>Road transport</FIELD>
+        <FIELD FACET0='Transport and infrastructure' FACET_ID0='OMITERMO521' FREQ='0' ID='OMITERMO2996' NAME='term'>Roads and highways</FIELD>
+        <FIELD FACET0='Transport and infrastructure' FACET_ID0='OMITERMO521' FREQ='0' ID='OMITERMO3076' NAME='term'>Structures and installations</FIELD>
+        <FIELD FACET0='Health, well-being and care' FACET_ID0='OMITERMO557' FACET1='Transport and infrastructure' FACET_ID1='OMITERMO521' FREQ='0' ID='OMITERMO3539' NAME='term'>Transport for disabled people</FIELD>
+        <FIELD FACET0='Transport and infrastructure' FACET_ID0='OMITERMO521' FREQ='0' ID='OMITERMO3142' NAME='term'>Transport planning</FIELD>
+        <FIELD FACET0='Transport and infrastructure' FACET_ID0='OMITERMO521' FREQ='0' ID='OMITERMO2886' NAME='term'>Water transport</FIELD>
+      </HIERARCHY>
+      <ASSOCIATED TYPE='Related To' ABBR='RT'>
+        <FIELD FACET0='Science, technology and innovation' FACET_ID0='OMITERMO652' FREQ='0' ID='OMITERMO1751' NAME='term'>Civil engineering</FIELD>
+        <FIELD FACET0='Health, well-being and care' FACET_ID0='OMITERMO557' FREQ='0' ID='OMITERMO3792' NAME='term'>Hospital transport</FIELD>
+        <FIELD FACET0='Education and skills' FACET_ID0='OMITERMO439' FREQ='0' ID='OMITERMO1377' NAME='term'>School transport</FIELD>
+        <FIELD FACET0='Business and industry' FACET_ID0='OMITERMO692' FACET1='Leisure and culture' FACET_ID1='OMITERMO616' FREQ='0' ID='OMITERMO462' NAME='term'>Tourism</FIELD>
+      </ASSOCIATED>
+      <FACETS>
+        <FACET NAME='Transport and infrastructure' ID='OMITERMO521' />
+      </FACETS>
+      <ATTRIBUTE>
+        <FIELD NAME='A-Z Entry'>0</FIELD>
+        <FIELD NAME='Internal'>0</FIELD>
+        <FIELD NAME='Do not use for concept mapping'>0</FIELD>
+      </ATTRIBUTE>
+      <METADATA>
+      </METADATA>
+      <SYNONYMS TYPE='Use' ABBR='USE'>
+        <SYNONYM ID='OMITERMO1442'>Travel (transport)</SYNONYM>
+      </SYNONYMS>
+    </TERM>
+  </TERMS>
+</SEMAPHORE>

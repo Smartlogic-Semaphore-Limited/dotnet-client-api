@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SEMAPHORE>
+	<PARAMETERS>
+		<PARAMETER NAME='TBDB'>disp_taxonomy</PARAMETER>
+		<PARAMETER NAME='SERVICE'>prefix</PARAMETER>
+		<PARAMETER NAME='TEMPLATE'>service.xml</PARAMETER>
+		<PARAMETER NAME='TERM_PREFIX'>fis</PARAMETER>
+	</PARAMETERS>
+	<TERM_HINTS>
+		<TERM_HINT NAME='Fisheries and aquaculture' ID='OMITERMO502' INDEX='disp_taxonomy' WEIGHT='14'>
+			<FACET NAME='Environment' ID='OMITERMO499'/>
+			<HINT NATURE='PT' ID='OMITERMO502'><EM>Fis</EM>heries and aquaculture</HINT>
+		</TERM_HINT>
+		<TERM_HINT NAME='Fishing licences' ID='OMITERMO5620' INDEX='disp_taxonomy' WEIGHT='14'>
+			<FACET NAME='Leisure and culture' ID='OMITERMO616'/>
+			<HINT NATURE='PT' ID='OMITERMO5620'><EM>Fis</EM>hing licences</HINT>
+		</TERM_HINT>
+		<TERM_HINT NAME='Fish (food)' ID='OMITERMO6843' INDEX='disp_taxonomy' WEIGHT='14'>
+			<FACET NAME='Health, well-being and care' ID='OMITERMO557'/>
+			<HINT NATURE='PT' ID='OMITERMO6843'><EM>Fis</EM>h (food)</HINT>
+		</TERM_HINT>
+		<TERM_HINT NAME='Fishes' ID='OMITERMO1063' INDEX='disp_taxonomy' WEIGHT='14'>
+			<FACET NAME='Environment' ID='OMITERMO499'/>
+			<HINT NATURE='PT' ID='OMITERMO1063'><EM>Fis</EM>hes</HINT>
+		</TERM_HINT>
+		<TERM_HINT NAME='Fly fishing' ID='OMITERMO5559' INDEX='disp_taxonomy' WEIGHT='11'>
+			<FACET NAME='Leisure and culture' ID='OMITERMO616'/>
+			<HINT NATURE='PT' ID='OMITERMO5559'>Fly <EM>fis</EM>hing</HINT>
+		</TERM_HINT>
+		<TERM_HINT NAME='Common Fisheries Policy' ID='OMITERMO813' INDEX='disp_taxonomy' WEIGHT='11'>
+			<FACET NAME='Environment' ID='OMITERMO499'/>
+			<FACET NAME='International affairs and defence' ID='OMITERMO911'/>
+			<HINT NATURE='PT' ID='OMITERMO813'>Common <EM>Fis</EM>heries Policy</HINT>
+		</TERM_HINT>
+		<TERM_HINT NAME='Aquariums' ID='OMITERMO5276' INDEX='disp_taxonomy' WEIGHT='5'>
+			<FACET NAME='Environment' ID='OMITERMO499'/>
+			<HINT NATURE='NPT' ID='OMITERMO5280'><EM>Fis</EM>h Collections</HINT>
+		</TERM_HINT>
+		<TERM_HINT NAME='Angling' ID='OMITERMO5556' INDEX='disp_taxonomy' WEIGHT='3.5'>
+			<FACET NAME='Leisure and culture' ID='OMITERMO616'/>
+			<HINT NATURE='NPT' ID='OMITERMO5558'><EM>Fis</EM>hing (sport)</HINT>
+			<HINT NATURE='NPT' ID='OMITERMO5619'>Game <EM>fis</EM>hing</HINT>
+		</TERM_HINT>
+	</TERM_HINTS>
+</SEMAPHORE>
