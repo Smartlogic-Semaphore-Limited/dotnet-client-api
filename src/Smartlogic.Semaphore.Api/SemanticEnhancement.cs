@@ -21,18 +21,13 @@ namespace Smartlogic.Semaphore.Api
     /// </summary>
     public class SemanticEnhancement : LoggingProxyBase
     {
-        /// <summary>
-        ///     The _server URL
-        /// </summary>
+        private readonly string _apiKey;
         private readonly Uri _serverUrl;
-
-        /// <summary>
-        ///     The _timeout
-        /// </summary>
         private readonly int _timeout;
 
         /// <summary>
-        ///     Constructs a SearchEnhancement class for use with communicating with a particular instance of Search Enhancement Server
+        ///     Constructs a SearchEnhancement class for use with communicating with a particular instance of Search Enhancement
+        ///     Server
         /// </summary>
         /// <param name="webServiceTimeout">An integer representing the number of seconds to wait before timing out</param>
         /// <param name="serverUrl">
@@ -43,31 +38,23 @@ namespace Smartlogic.Semaphore.Api
         [Obsolete("Use contructor that accepts ILogger to capture logging information instead.")]
         public SemanticEnhancement(int webServiceTimeout, Uri serverUrl)
         {
-            if (serverUrl == null) throw new ArgumentException("Missing server Url", "serverUrl");
+            if (serverUrl == null) throw new ArgumentException("Missing server Url", nameof(serverUrl));
             if (webServiceTimeout <= 0)
-                throw new ArgumentException("Web service timeout must be greater than 0",
-                                            "webServiceTimeout");
-            if (webServiceTimeout > int.MaxValue / 1000)
+                throw new ArgumentException("Web service timeout must be greater than 0", nameof(webServiceTimeout));
+            if (webServiceTimeout > int.MaxValue/1000)
                 throw new ArgumentException(
-                    "Web service timeout must be less than " + Int16.MaxValue / 1000,
-                    "webServiceTimeout");
+                    "Web service timeout must be less than " + short.MaxValue/1000,
+                    nameof(webServiceTimeout));
             if (!serverUrl.IsAbsoluteUri)
-                throw new ArgumentException("Server Url must be an absolute Uri", "serverUrl");
+                throw new ArgumentException("Server Url must be an absolute Uri", nameof(serverUrl));
 
             _serverUrl = serverUrl;
             _timeout = webServiceTimeout;
         }
 
         /// <summary>
-        ///     Gets or sets a value indicating whether exceptions should be thown or serialized and returned as XML.
-        /// </summary>
-        /// <value>
-        ///     <c>true</c> if exceptions should be thrown; otherwise, <c>false</c>.
-        /// </value>
-        public bool ThrowExceptions { get; set; }
-
-        /// <summary>
-        ///     Constructs a SearchEnhancement class for use with communicating with a particular instance of Search Enhancement Server
+        ///     Constructs a SearchEnhancement class for use with communicating with a particular instance of Search Enhancement
+        ///     Server
         /// </summary>
         /// <param name="webServiceTimeout">An integer representing the number of seconds to wait before timing out</param>
         /// <param name="serverUrl">
@@ -79,35 +66,53 @@ namespace Smartlogic.Semaphore.Api
         public SemanticEnhancement(int webServiceTimeout, Uri serverUrl, ILogger logger)
             : base(logger)
         {
-            if (serverUrl == null) throw new ArgumentException("Missing server Url", "serverUrl");
-            if (logger == null) throw new ArgumentNullException("logger");
+            if (serverUrl == null) throw new ArgumentException("Missing server Url", nameof(serverUrl));
+            if (logger == null) throw new ArgumentNullException(nameof(logger));
             if (webServiceTimeout <= 0)
                 throw new ArgumentException("Web service timeout must be greater than 0",
-                                            "webServiceTimeout");
-            if (webServiceTimeout > int.MaxValue / 1000)
+                    nameof(webServiceTimeout));
+            if (webServiceTimeout > int.MaxValue/1000)
                 throw new ArgumentException(
-                    "Web service timeout must be less than " + Int16.MaxValue / 1000,
-                    "webServiceTimeout");
+                    "Web service timeout must be less than " + short.MaxValue/1000,
+                    nameof(webServiceTimeout));
             if (!serverUrl.IsAbsoluteUri)
-                throw new ArgumentException("Server Url must be an absolute Uri", "serverUrl");
+                throw new ArgumentException("Server Url must be an absolute Uri", nameof(serverUrl));
 
             _serverUrl = serverUrl;
             _timeout = webServiceTimeout;
         }
 
+        public SemanticEnhancement(string apiKey, int webServiceTimeout, Uri serverUrl, ILogger logger) : this(webServiceTimeout, serverUrl, logger)
+        {
+            if (string.IsNullOrEmpty(apiKey)) throw new ArgumentException("Missing apikey", nameof(apiKey));
+            _apiKey = apiKey;
+        }
+
         /// <summary>
-        ///     This service returns a list of all terms in the model that have an attribute of “A-Z Entry” set, whose first letter is the letter
+        ///     Gets or sets a value indicating whether exceptions should be thown or serialized and returned as XML.
+        /// </summary>
+        /// <value>
+        ///     <c>true</c> if exceptions should be thrown; otherwise, <c>false</c>.
+        /// </value>
+        public bool ThrowExceptions { get; set; }
+
+        /// <summary>
+        ///     This service returns a list of all terms in the model that have an attribute of “A-Z Entry” set, whose first letter
+        ///     is the letter
         ///     specified as a parameter (or all letters if “all” is specified).
         /// </summary>
         /// <param name="taxonomyIndex">The name of the index to be searched</param>
-        /// <param name="query">The first letter of all terms required or “all” if all A-Z terms are required. If this value is null 'all' is assumed</param>
+        /// <param name="query">
+        ///     The first letter of all terms required or “all” if all A-Z terms are required. If this value is
+        ///     null 'all' is assumed
+        /// </param>
         /// <returns>
         ///     <see cref="XmlDocument" /> containing matching terms
         /// </returns>
         /// <exception cref="System.ArgumentNullException">taxonomyIndex</exception>
         public IXPathNavigable GetAtoZInformation(string taxonomyIndex, string query)
         {
-            if (taxonomyIndex == null) throw new ArgumentNullException("taxonomyIndex");
+            if (taxonomyIndex == null) throw new ArgumentNullException(nameof(taxonomyIndex));
             if (query == null) query = "all";
 
             var oDoc = new XmlDocument();
@@ -127,7 +132,7 @@ namespace Smartlogic.Semaphore.Api
             {
                 WriteException(oX);
                 if (ThrowExceptions) throw;
-                oDoc.LoadXml(string.Format("<Error><Message>{0}</Message></Error>", oX.Message));
+                oDoc.LoadXml($"<Error><Message>{oX.Message}</Message></Error>");
             }
             return oDoc;
         }
@@ -147,10 +152,10 @@ namespace Smartlogic.Semaphore.Api
         /// <exception cref="System.ArgumentNullException">taxonomyIndex</exception>
         [Obsolete("Use method with explicit stopCMStage parameter")]
         public IXPathNavigable GetConceptMap(string taxonomyIndex,
-                                             string facet,
-                                             string filter,
-                                             string keywords,
-                                             bool bestMatch)
+            string facet,
+            string filter,
+            string keywords,
+            bool bestMatch)
         {
             if (bestMatch)
                 return GetConceptMap(taxonomyIndex, facet, filter, keywords, -1);
@@ -164,20 +169,20 @@ namespace Smartlogic.Semaphore.Api
         /// <param name="facet">The name of a particular facet to be searched. If empty, terms from all facets will be returned</param>
         /// <param name="filter">An optional additional filter string used to filter the taxonomy being queried</param>
         /// <param name="keywords">The keywords to be matched</param>
-        /// <param name="stopCmStage">the CM stop stage (stop_cm_after_stage), or no value sent to SES if lt 0.
-        ///    
+        /// <param name="stopCmStage">
+        ///     the CM stop stage (stop_cm_after_stage), or no value sent to SES if lt 0.
         /// </param>
         /// <returns>An XML document containing the suggested terms</returns>
         /// <exception cref="System.ArgumentNullException">taxonomyIndex</exception>
         public IXPathNavigable GetConceptMap(string taxonomyIndex,
-                                             string facet,
-                                             string filter,
-                                             string keywords,
-                                             int stopCmStage)
+            string facet,
+            string filter,
+            string keywords,
+            int stopCmStage)
         {
             if (string.IsNullOrEmpty(taxonomyIndex))
-                throw new ArgumentNullException("taxonomyIndex");
-            if (string.IsNullOrEmpty(keywords)) throw new ArgumentNullException("keywords");
+                throw new ArgumentNullException(nameof(taxonomyIndex));
+            if (string.IsNullOrEmpty(keywords)) throw new ArgumentNullException(nameof(keywords));
             var oDoc = new XmlDocument();
 
             var sb = new StringBuilder(_serverUrl.ToString());
@@ -190,7 +195,7 @@ namespace Smartlogic.Semaphore.Api
 
             if (stopCmStage >= 0 && stopCmStage < 3)
             {
-                sb.Append(String.Format("&stop_cm_after_stage={0}", stopCmStage));
+                sb.Append($"&stop_cm_after_stage={stopCmStage}");
             }
 
             try
@@ -202,7 +207,7 @@ namespace Smartlogic.Semaphore.Api
             {
                 WriteException(oX);
                 if (ThrowExceptions) throw;
-                oDoc.LoadXml(string.Format("<Error><Message>{0}</Message></Error>", oX.Message));
+                oDoc.LoadXml($"<Error><Message>{oX.Message}</Message></Error>");
             }
             return oDoc;
         }
@@ -216,21 +221,18 @@ namespace Smartlogic.Semaphore.Api
         public Dictionary<string, string> GetFacetsList(string taxonomyIndex)
         {
             var facets = new Dictionary<string, string>();
-            var req =
-                new Uri(_serverUrl +
-                        string.Format("?TBDB={0}&TEMPLATE=service.xml&SERVICE=facetslist",
-                                      HttpUtility.UrlEncode(taxonomyIndex)));
+            var req = new Uri($"{_serverUrl}?TBDB={HttpUtility.UrlEncode(taxonomyIndex)}&TEMPLATE=service.xml&SERVICE=facetslist");
             WriteLow("SES Request: " + req, null);
 
-            var oRequest = (HttpWebRequest)WebRequest.Create(req);
-            oRequest.Method = "GET";
-            oRequest.Timeout = (_timeout * 1000);
+            var webRequest = AuthenticatedRequestBuilder.Build(req, _apiKey, Logger);
+            webRequest.Method = "GET";
+            webRequest.Timeout = _timeout*1000;
 
             try
             {
                 var oStop = new Stopwatch();
                 oStop.Start();
-                var oResponse = (HttpWebResponse)oRequest.GetResponse();
+                var oResponse = (HttpWebResponse) webRequest.GetResponse();
                 oStop.Stop();
 
                 WriteLow(
@@ -240,30 +242,27 @@ namespace Smartlogic.Semaphore.Api
                     oStop.Elapsed.Milliseconds);
 
                 var facetsList = new List<KeyValuePair<string, string>>();
-                Stream result = oResponse.GetResponseStream();
+                var result = oResponse.GetResponseStream();
                 if (result != null)
                     using (var oReader = new StreamReader(result))
                     {
                         var xDoc = new XmlDocument();
                         xDoc.LoadXml(oReader.ReadToEnd());
-                        XmlNodeList nodeList = xDoc.SelectNodes("//FACET");
+                        var nodeList = xDoc.SelectNodes("//FACET");
 
                         if (nodeList == null || nodeList.Count == 0)
                         {
-                            throw new SemaphoreConnectionException(string.Format(
-                                "No facets retrieved for {0} from {1}",
-                                taxonomyIndex,
-                                oRequest.RequestUri.AbsolutePath));
+                            throw new SemaphoreConnectionException($"No facets retrieved for {taxonomyIndex} from {webRequest.RequestUri.AbsolutePath}");
                         }
 
                         // ReSharper disable LoopCanBeConvertedToQuery
                         foreach (XmlNode node in nodeList)
-                        // ReSharper restore LoopCanBeConvertedToQuery
+                            // ReSharper restore LoopCanBeConvertedToQuery
                         {
                             if (node.Attributes == null) continue;
 
-                            string id = node.Attributes["ID"].InnerText.Trim();
-                            string name = node.Attributes["NAME"].InnerText.Trim();
+                            var id = node.Attributes["ID"].InnerText.Trim();
+                            var name = node.Attributes["NAME"].InnerText.Trim();
                             facetsList.Add(new KeyValuePair<string, string>(id, name));
                         }
                     }
@@ -286,18 +285,22 @@ namespace Smartlogic.Semaphore.Api
         }
 
         /// <summary>
-        ///     This service returns a list of all terms in the model that have an attribute of “A-Z Entry” set, whose first letter is the letter
+        ///     This service returns a list of all terms in the model that have an attribute of “A-Z Entry” set, whose first letter
+        ///     is the letter
         ///     specified as a parameter (or all letters if “all” is specified).
         /// </summary>
         /// <param name="taxonomyIndex">The name of the index to be searched</param>
-        /// <param name="query">The first letter of all terms required or “all” if all A-Z terms are required. If this value is null 'all' is assumed</param>
+        /// <param name="query">
+        ///     The first letter of all terms required or “all” if all A-Z terms are required. If this value is
+        ///     null 'all' is assumed
+        /// </param>
         /// <returns>
         ///     <see cref="XmlDocument" /> containing matching terms
         /// </returns>
         /// <exception cref="System.ArgumentNullException">taxonomyIndex</exception>
         public TermInformationResponse GetJsonAtoZInformation(string taxonomyIndex, string query)
         {
-            if (taxonomyIndex == null) throw new ArgumentNullException("taxonomyIndex");
+            if (taxonomyIndex == null) throw new ArgumentNullException(nameof(taxonomyIndex));
             if (query == null) query = "all";
 
             string result;
@@ -336,10 +339,10 @@ namespace Smartlogic.Semaphore.Api
         /// <returns>A JSON document containing the suggested terms</returns>
         /// <exception cref="System.ArgumentNullException">taxonomyIndex</exception>
         public TermInformationResponse GetJsonConceptMap(string taxonomyIndex,
-                                                    string facet,
-                                                    string filter,
-                                                    string keywords,
-                                                    bool bestMatch)
+            string facet,
+            string filter,
+            string keywords,
+            bool bestMatch)
         {
             if (bestMatch)
                 return GetJsonConceptMap(taxonomyIndex, facet, filter, keywords, -1);
@@ -353,19 +356,20 @@ namespace Smartlogic.Semaphore.Api
         /// <param name="facet">The name of a particular facet to be searched. If empty, terms from all facets will be returned</param>
         /// <param name="filter">An optional additional filter string used to filter the taxonomy being queried</param>
         /// <param name="keywords">The keywords to be matched</param>
-        /// <param name="stopCmStage">the CM stop stage (stop_cm_after_stage), or no value sent to SES if lt 0.
+        /// <param name="stopCmStage">
+        ///     the CM stop stage (stop_cm_after_stage), or no value sent to SES if lt 0.
         /// </param>
         /// <returns>A JSON document containing the suggested terms</returns>
         /// <exception cref="System.ArgumentNullException">taxonomyIndex</exception>
         public TermInformationResponse GetJsonConceptMap(string taxonomyIndex,
-                                                    string facet,
-                                                    string filter,
-                                                    string keywords,
-                                                    int stopCmStage)
+            string facet,
+            string filter,
+            string keywords,
+            int stopCmStage)
         {
             if (string.IsNullOrEmpty(taxonomyIndex))
-                throw new ArgumentNullException("taxonomyIndex");
-            if (string.IsNullOrEmpty(keywords)) throw new ArgumentNullException("keywords");
+                throw new ArgumentNullException(nameof(taxonomyIndex));
+            if (string.IsNullOrEmpty(keywords)) throw new ArgumentNullException(nameof(keywords));
 
             var sb = new StringBuilder(_serverUrl.ToString());
             sb.Append("?TBDB=");
@@ -377,7 +381,7 @@ namespace Smartlogic.Semaphore.Api
 
             if (stopCmStage >= 0 && stopCmStage < 3)
             {
-                sb.Append(String.Format("&stop_cm_after_stage={0}", stopCmStage));
+                sb.Append($"&stop_cm_after_stage={stopCmStage}");
             }
 
             string result;
@@ -409,14 +413,14 @@ namespace Smartlogic.Semaphore.Api
         /// <returns>An XML document containing the suggested terms</returns>
         /// <exception cref="System.ArgumentNullException">taxonomyIndex</exception>
         public SearchResponse GetJsonModelSearchResults(string taxonomyIndex,
-                                                        string facet,
-                                                        string filter,
-                                                        string keywords,
-                                                        bool bestMatch)
+            string facet,
+            string filter,
+            string keywords,
+            bool bestMatch)
         {
             if (string.IsNullOrEmpty(taxonomyIndex))
-                throw new ArgumentNullException("taxonomyIndex");
-            if (string.IsNullOrEmpty(keywords)) throw new ArgumentNullException("keywords");
+                throw new ArgumentNullException(nameof(taxonomyIndex));
+            if (string.IsNullOrEmpty(keywords)) throw new ArgumentNullException(nameof(keywords));
 
             string result;
             var sb = new StringBuilder(_serverUrl.ToString());
@@ -458,19 +462,19 @@ namespace Smartlogic.Semaphore.Api
         /// <returns>RelatedTermsResponse.</returns>
         /// <exception cref="System.ArgumentNullException">taxonomyIndex</exception>
         public BrowseResponse GetJsonRelatedTerms(string taxonomyIndex,
-                                                        string facet,
-                                                        string filter,
-                                                        string termId,
-                                                        string relationship)
+            string facet,
+            string filter,
+            string termId,
+            string relationship)
         {
             if (string.IsNullOrEmpty(taxonomyIndex))
-                throw new ArgumentNullException("taxonomyIndex");
-            if (string.IsNullOrEmpty(termId)) throw new ArgumentNullException("termId");
-            if (string.IsNullOrEmpty(relationship)) throw new ArgumentNullException("relationship");
+                throw new ArgumentNullException(nameof(taxonomyIndex));
+            if (string.IsNullOrEmpty(termId)) throw new ArgumentNullException(nameof(termId));
+            if (string.IsNullOrEmpty(relationship)) throw new ArgumentNullException(nameof(relationship));
 
             string result;
 
-            string query = BuildBrowseQueryString(taxonomyIndex, facet, filter, termId, relationship, true);
+            var query = BuildBrowseQueryString(taxonomyIndex, facet, filter, termId, relationship, true);
 
             try
             {
@@ -498,10 +502,9 @@ namespace Smartlogic.Semaphore.Api
         public BrowseResponse GetJsonRootTerms(string taxonomyIndex, string facet, string filter)
         {
             if (string.IsNullOrEmpty(taxonomyIndex))
-                throw new ArgumentNullException("taxonomyIndex");
+                throw new ArgumentNullException(nameof(taxonomyIndex));
 
-
-            string result = BrowseTerms(taxonomyIndex, facet, filter, string.Empty, true);
+            var result = BrowseTerms(taxonomyIndex, facet, filter, string.Empty, true);
 
             return BrowseResponse.FromJsonString(result);
         }
@@ -516,15 +519,15 @@ namespace Smartlogic.Semaphore.Api
         /// <returns>BrowseResponse.</returns>
         /// <exception cref="System.ArgumentNullException">taxonomyIndex</exception>
         public BrowseResponse GetJsonTermById(string taxonomyIndex,
-                                              string facet,
-                                              string filter,
-                                              string termId)
+            string facet,
+            string filter,
+            string termId)
         {
             if (string.IsNullOrEmpty(taxonomyIndex))
-                throw new ArgumentNullException("taxonomyIndex");
-            if (string.IsNullOrEmpty(termId)) throw new ArgumentNullException("termId");
+                throw new ArgumentNullException(nameof(taxonomyIndex));
+            if (string.IsNullOrEmpty(termId)) throw new ArgumentNullException(nameof(termId));
 
-            string result = BrowseTerms(taxonomyIndex, facet, filter, termId, true);
+            var result = BrowseTerms(taxonomyIndex, facet, filter, termId, true);
 
             return BrowseResponse.FromJsonString(result);
         }
@@ -541,30 +544,32 @@ namespace Smartlogic.Semaphore.Api
         /// <exception cref="SemaphoreConnectionException"></exception>
         [Obsolete("Use overloaded method with optional language parameter")]
         public TermInformationResponse GetJsonTermInformation(string taxonomyIndex,
-                                                              string facet,
-                                                              string filter,
-                                                              string delimitedIds)
+            string facet,
+            string filter,
+            string delimitedIds)
         {
             return GetJsonTermInformation(taxonomyIndex, facet, filter, delimitedIds, null);
         }
 
-        /// <summary> 
-        ///     Returns term information for a collection of term identifiers 
-        /// </summary> 
-        /// <param name="taxonomyIndex">The name of the index to be searched</param> 
-        /// <param name="facet">The name of a particular facet to be searched. If empty, terms from all facets will be returned</param> 
-        /// <param name="filter">An optional additional filter string used to filter the taxonomy being queried</param> 
-        /// <param name="delimitedIds">A semi-colon(;) delimited list of identifiers for which information is required</param> 
-        /// <param name="language">An optional language string</param> 
-        /// <returns></returns> 
-        /// <exception cref="SemaphoreConnectionException"></exception> 
-        public TermInformationResponse GetJsonTermInformation(string taxonomyIndex, string facet,
-                                                              string filter,
-                                                              string delimitedIds, string language)
+        /// <summary>
+        ///     Returns term information for a collection of term identifiers
+        /// </summary>
+        /// <param name="taxonomyIndex">The name of the index to be searched</param>
+        /// <param name="facet">The name of a particular facet to be searched. If empty, terms from all facets will be returned</param>
+        /// <param name="filter">An optional additional filter string used to filter the taxonomy being queried</param>
+        /// <param name="delimitedIds">A semi-colon(;) delimited list of identifiers for which information is required</param>
+        /// <param name="language">An optional language string</param>
+        /// <returns></returns>
+        /// <exception cref="SemaphoreConnectionException"></exception>
+        public TermInformationResponse GetJsonTermInformation(string taxonomyIndex,
+            string facet,
+            string filter,
+            string delimitedIds,
+            string language)
         {
             if (string.IsNullOrEmpty(taxonomyIndex))
-                throw new ArgumentNullException("taxonomyIndex");
-            if (string.IsNullOrEmpty(delimitedIds)) throw new ArgumentNullException("delimitedIds");
+                throw new ArgumentNullException(nameof(taxonomyIndex));
+            if (string.IsNullOrEmpty(delimitedIds)) throw new ArgumentNullException(nameof(delimitedIds));
 
             string result;
             var sb = new StringBuilder(_serverUrl.ToString());
@@ -606,8 +611,8 @@ namespace Smartlogic.Semaphore.Api
         public TermInformationResponse GetJsonTermInformationByName(string taxonomyIndex, string termName)
         {
             if (string.IsNullOrEmpty(taxonomyIndex))
-                throw new ArgumentNullException("taxonomyIndex");
-            if (string.IsNullOrEmpty(termName)) throw new ArgumentNullException("termName");
+                throw new ArgumentNullException(nameof(taxonomyIndex));
+            if (string.IsNullOrEmpty(termName)) throw new ArgumentNullException(nameof(termName));
 
             var sb = new StringBuilder(_serverUrl.ToString());
             sb.Append("?TBDB=");
@@ -642,14 +647,14 @@ namespace Smartlogic.Semaphore.Api
         /// <returns>PrefixResponse.</returns>
         /// <exception cref="System.ArgumentNullException">taxonomyIndex</exception>
         public PrefixResponse GetJsonTermListByPrefix(string taxonomyIndex,
-                                                      string facet,
-                                                      string filter,
-                                                      string prefix,
-                                                      int? maxResults)
+            string facet,
+            string filter,
+            string prefix,
+            int? maxResults)
         {
             if (string.IsNullOrEmpty(taxonomyIndex))
-                throw new ArgumentNullException("taxonomyIndex");
-            if (string.IsNullOrEmpty(prefix)) throw new ArgumentNullException("prefix");
+                throw new ArgumentNullException(nameof(taxonomyIndex));
+            if (string.IsNullOrEmpty(prefix)) throw new ArgumentNullException(nameof(prefix));
 
             var sb = new StringBuilder(_serverUrl.ToString());
             sb.Append("?TBDB=");
@@ -695,14 +700,14 @@ namespace Smartlogic.Semaphore.Api
         /// <returns>An XML document containing the suggested terms</returns>
         /// <exception cref="System.ArgumentNullException">taxonomyIndex</exception>
         public IXPathNavigable GetModelSearchResults(string taxonomyIndex,
-                                                     string facet,
-                                                     string filter,
-                                                     string keywords,
-                                                     bool bestMatch)
+            string facet,
+            string filter,
+            string keywords,
+            bool bestMatch)
         {
             if (string.IsNullOrEmpty(taxonomyIndex))
-                throw new ArgumentNullException("taxonomyIndex");
-            if (string.IsNullOrEmpty(keywords)) throw new ArgumentNullException("keywords");
+                throw new ArgumentNullException(nameof(taxonomyIndex));
+            if (string.IsNullOrEmpty(keywords)) throw new ArgumentNullException(nameof(keywords));
             var oDoc = new XmlDocument();
 
             var sb = new StringBuilder(_serverUrl.ToString());
@@ -727,7 +732,7 @@ namespace Smartlogic.Semaphore.Api
             {
                 WriteException(oX);
                 if (ThrowExceptions) throw;
-                oDoc.LoadXml(string.Format("<Error><Message>{0}</Message></Error>", oX.Message));
+                oDoc.LoadXml($"<Error><Message>{oX.Message}</Message></Error>");
             }
             return oDoc;
         }
@@ -744,37 +749,39 @@ namespace Smartlogic.Semaphore.Api
         /// <exception cref="System.ArgumentNullException">taxonomyIndex</exception>
         [Obsolete("Use overloaded method with optional language parameter")]
         public XDocument GetRelatedTermsAsXDoc(string taxonomyIndex,
-                                               string facet,
-                                               string filter,
-                                               string termId,
-                                               string relationship)
+            string facet,
+            string filter,
+            string termId,
+            string relationship)
         {
             return GetRelatedTermsAsXDoc(taxonomyIndex, facet, filter, termId, relationship, null);
         }
 
-        /// <summary> 
-        ///     Returns details of terms related to a configured term 
-        /// </summary> 
-        /// <param name="taxonomyIndex">The name of the index to be searched</param> 
-        /// <param name="facet">The name of a particular facet to be searched. If empty, terms from all facets will be returned</param> 
-        /// <param name="filter">An optional additional filter string used to filter the taxonomy being queried</param> 
-        /// <param name="termId">The identifier of the term for which information is required</param> 
-        /// <param name="relationship">The relationship type. For example: NT=Narrower Term, BT=Broader Term</param> 
-        /// <param name="language"></param> 
-        /// <returns></returns> 
-        public XDocument GetRelatedTermsAsXDoc(string taxonomyIndex, string facet, string filter,
-                                               string termId,
-                                               string relationship,
+        /// <summary>
+        ///     Returns details of terms related to a configured term
+        /// </summary>
+        /// <param name="taxonomyIndex">The name of the index to be searched</param>
+        /// <param name="facet">The name of a particular facet to be searched. If empty, terms from all facets will be returned</param>
+        /// <param name="filter">An optional additional filter string used to filter the taxonomy being queried</param>
+        /// <param name="termId">The identifier of the term for which information is required</param>
+        /// <param name="relationship">The relationship type. For example: NT=Narrower Term, BT=Broader Term</param>
+        /// <param name="language"></param>
+        /// <returns></returns>
+        public XDocument GetRelatedTermsAsXDoc(string taxonomyIndex,
+            string facet,
+            string filter,
+            string termId,
+            string relationship,
             string language)
         {
             if (string.IsNullOrEmpty(taxonomyIndex))
-                throw new ArgumentNullException("taxonomyIndex");
-            if (string.IsNullOrEmpty(termId)) throw new ArgumentNullException("termId");
-            if (string.IsNullOrEmpty(relationship)) throw new ArgumentNullException("relationship");
+                throw new ArgumentNullException(nameof(taxonomyIndex));
+            if (string.IsNullOrEmpty(termId)) throw new ArgumentNullException(nameof(termId));
+            if (string.IsNullOrEmpty(relationship)) throw new ArgumentNullException(nameof(relationship));
 
             XDocument oDoc;
 
-            string query = BuildBrowseQueryString(taxonomyIndex, facet, filter, termId, relationship, false, language);
+            var query = BuildBrowseQueryString(taxonomyIndex, facet, filter, termId, relationship, false, language);
 
             try
             {
@@ -786,8 +793,7 @@ namespace Smartlogic.Semaphore.Api
                 WriteException(oX);
                 if (ThrowExceptions) throw;
                 oDoc =
-                    XDocument.Parse(string.Format("<Error><Message>{0}</Message></Error>",
-                                                  oX.Message));
+                    XDocument.Parse($"<Error><Message>{oX.Message}</Message></Error>");
             }
             return oDoc;
         }
@@ -809,20 +815,20 @@ namespace Smartlogic.Semaphore.Api
             return GetRootTerms(taxonomyIndex, facet, filter, null);
         }
 
-        /// <summary> 
-        ///     Use to return details of the root terms for a configured taxonomy 
-        /// </summary> 
-        /// <param name="taxonomyIndex">The name of the index to be searched</param> 
-        /// <param name="facet">The name of a particular facet to be searched. If empty, terms from all facets will be returned</param> 
-        /// <param name="filter">An optional additional filter string used to filter the taxonomy being queried</param> 
-        /// <param name="language"></param> 
-        /// <returns> 
-        ///     <see cref="XmlDocument" /> containing root terms 
-        /// </returns> 
+        /// <summary>
+        ///     Use to return details of the root terms for a configured taxonomy
+        /// </summary>
+        /// <param name="taxonomyIndex">The name of the index to be searched</param>
+        /// <param name="facet">The name of a particular facet to be searched. If empty, terms from all facets will be returned</param>
+        /// <param name="filter">An optional additional filter string used to filter the taxonomy being queried</param>
+        /// <param name="language"></param>
+        /// <returns>
+        ///     <see cref="XmlDocument" /> containing root terms
+        /// </returns>
         public IXPathNavigable GetRootTerms(string taxonomyIndex, string facet, string filter, string language)
         {
             if (string.IsNullOrEmpty(taxonomyIndex))
-                throw new ArgumentNullException("taxonomyIndex");
+                throw new ArgumentNullException(nameof(taxonomyIndex));
 
             var oDoc = new XmlDocument();
 
@@ -847,22 +853,22 @@ namespace Smartlogic.Semaphore.Api
             return GetRootTermsAsXDoc(taxonomyIndex, facet, filter, null);
         }
 
-        /// <summary> 
-        ///     Use to return details of the root terms for a configured taxonomy 
-        /// </summary> 
-        /// <param name="taxonomyIndex">The name of the index to be searched</param> 
-        /// <param name="facet">The name of a particular facet to be searched. If empty, terms from all facets will be returned</param> 
-        /// <param name="filter">An optional additional filter string used to filter the taxonomy being queried</param> 
-        /// <param name="language">An optional parameter denoting the language variant to be returned</param> 
-        /// <returns> 
-        ///     <see cref="XDocument" /> containing root terms 
-        /// </returns> 
+        /// <summary>
+        ///     Use to return details of the root terms for a configured taxonomy
+        /// </summary>
+        /// <param name="taxonomyIndex">The name of the index to be searched</param>
+        /// <param name="facet">The name of a particular facet to be searched. If empty, terms from all facets will be returned</param>
+        /// <param name="filter">An optional additional filter string used to filter the taxonomy being queried</param>
+        /// <param name="language">An optional parameter denoting the language variant to be returned</param>
+        /// <returns>
+        ///     <see cref="XDocument" /> containing root terms
+        /// </returns>
         public XDocument GetRootTermsAsXDoc(string taxonomyIndex, string facet, string filter, string language)
         {
             if (string.IsNullOrEmpty(taxonomyIndex))
-                throw new ArgumentNullException("taxonomyIndex");
+                throw new ArgumentNullException(nameof(taxonomyIndex));
 
-            XDocument oDoc = XDocument.Parse(BrowseTerms(taxonomyIndex, facet, filter, string.Empty, false, language));
+            var oDoc = XDocument.Parse(BrowseTerms(taxonomyIndex, facet, filter, string.Empty, false, language));
 
             return oDoc;
         }
@@ -877,10 +883,10 @@ namespace Smartlogic.Semaphore.Api
         /// <exception cref="ArgumentNullException"></exception>
         public Structure GetStructure(string taxonomyIndex)
         {
-            if (taxonomyIndex == null) throw new ArgumentNullException("taxonomyIndex");
+            if (taxonomyIndex == null) throw new ArgumentNullException(nameof(taxonomyIndex));
 
             var restUri =
-                new Uri(_serverUrl + (_serverUrl.ToString().EndsWith("/") ? String.Empty : "/") +
+                new Uri(_serverUrl + (_serverUrl.ToString().EndsWith("/") ? string.Empty : "/") +
                         taxonomyIndex);
 
             try
@@ -909,43 +915,42 @@ namespace Smartlogic.Semaphore.Api
             var req = new Uri(_serverUrl + "?TEMPLATE=service.xml&SERVICE=modelslist");
             WriteLow("SES Request: " + req, null);
 
-            var oRequest = (HttpWebRequest)WebRequest.Create(req);
+            var oRequest = AuthenticatedRequestBuilder.Build(req, _apiKey, Logger);
             oRequest.Method = "GET";
-            oRequest.Timeout = (_timeout * 1000);
+            oRequest.Timeout = _timeout*1000;
 
             try
             {
                 var oStop = new Stopwatch();
                 oStop.Start();
-                var oResponse = (HttpWebResponse)oRequest.GetResponse();
+                var oResponse = (HttpWebResponse) oRequest.GetResponse();
                 oStop.Stop();
 
                 WriteLow("Response received from SES. Time elapsed {0}:{1}.{2}",
-                         oStop.Elapsed.Minutes,
-                         oStop.Elapsed.Seconds.ToString(CultureInfo.InvariantCulture).PadLeft(2, '0'),
-                         oStop.Elapsed.Milliseconds);
+                    oStop.Elapsed.Minutes,
+                    oStop.Elapsed.Seconds.ToString(CultureInfo.InvariantCulture).PadLeft(2, '0'),
+                    oStop.Elapsed.Milliseconds);
 
-                Stream result = oResponse.GetResponseStream();
+                var result = oResponse.GetResponseStream();
                 if (result != null)
                     using (var oReader = new StreamReader(result))
                     {
                         var xDoc = new XmlDocument();
                         xDoc.LoadXml(oReader.ReadToEnd());
-                        XmlNodeList nodeList = xDoc.SelectNodes("//MODEL");
+                        var nodeList = xDoc.SelectNodes("//MODEL");
 
                         if (nodeList == null || nodeList.Count == 0)
                         {
                             throw new SemaphoreConnectionException(
-                                string.Format("No Models retrieved from {0}",
-                                              oRequest.RequestUri.AbsolutePath));
+                                $"No Models retrieved from {oRequest.RequestUri.AbsolutePath}");
                         }
 
                         // ReSharper disable LoopCanBeConvertedToQuery
                         foreach (XmlNode node in nodeList)
-                        // ReSharper restore LoopCanBeConvertedToQuery
+                            // ReSharper restore LoopCanBeConvertedToQuery
                         {
-                            XmlNode name = node.SelectSingleNode("NAME");
-                            indices.Add(name != null ? name.InnerText.Trim() : node.InnerText.Trim());
+                            var name = node.SelectSingleNode("NAME");
+                            indices.Add(name?.InnerText.Trim() ?? node.InnerText.Trim());
                         }
                     }
                 oResponse.Close();
@@ -970,28 +975,31 @@ namespace Smartlogic.Semaphore.Api
         /// <exception cref="System.ArgumentNullException">taxonomyIndex</exception>
         [Obsolete("Use overloaded method with optional language parameter")]
         public IXPathNavigable GetTermById(string taxonomyIndex,
-                                           string facet,
-                                           string filter,
-                                           string termId)
+            string facet,
+            string filter,
+            string termId)
         {
             return GetTermById(taxonomyIndex, facet, filter, termId, null);
         }
 
-        /// <summary> 
-        ///     Returns information for a particular term specified by ID 
-        /// </summary> 
-        /// <param name="taxonomyIndex">The name of the index to be searched</param> 
-        /// <param name="facet">The name of a particular facet to be searched. If empty, terms from all facets will be returned</param> 
-        /// <param name="filter">An optional additional filter string used to filter the taxonomy being queried</param> 
-        /// <param name="termId"></param> 
-        /// <param name="language">An optional parameter denoting the language variant to be returned</param> 
-        /// <returns>XmlDocument containing term information</returns> 
-        public IXPathNavigable GetTermById(string taxonomyIndex, string facet, string filter,
-                                           string termId, string language)
+        /// <summary>
+        ///     Returns information for a particular term specified by ID
+        /// </summary>
+        /// <param name="taxonomyIndex">The name of the index to be searched</param>
+        /// <param name="facet">The name of a particular facet to be searched. If empty, terms from all facets will be returned</param>
+        /// <param name="filter">An optional additional filter string used to filter the taxonomy being queried</param>
+        /// <param name="termId"></param>
+        /// <param name="language">An optional parameter denoting the language variant to be returned</param>
+        /// <returns>XmlDocument containing term information</returns>
+        public IXPathNavigable GetTermById(string taxonomyIndex,
+            string facet,
+            string filter,
+            string termId,
+            string language)
         {
             if (string.IsNullOrEmpty(taxonomyIndex))
-                throw new ArgumentNullException("taxonomyIndex");
-            if (string.IsNullOrEmpty(termId)) throw new ArgumentNullException("termId");
+                throw new ArgumentNullException(nameof(taxonomyIndex));
+            if (string.IsNullOrEmpty(termId)) throw new ArgumentNullException(nameof(termId));
 
             var oDoc = new XmlDocument();
 
@@ -1001,8 +1009,10 @@ namespace Smartlogic.Semaphore.Api
         }
 
         [Obsolete("Use overloaded method with optional language parameter")]
-        public XDocument GetTermByIdAsXDoc(string taxonomyIndex, string facet, string filter,
-                                           string termId)
+        public XDocument GetTermByIdAsXDoc(string taxonomyIndex,
+            string facet,
+            string filter,
+            string termId)
         {
             return GetTermByIdAsXDoc(taxonomyIndex, facet, filter, termId, null);
         }
@@ -1020,16 +1030,16 @@ namespace Smartlogic.Semaphore.Api
         /// </returns>
         /// <exception cref="System.ArgumentNullException">taxonomyIndex</exception>
         public XDocument GetTermByIdAsXDoc(string taxonomyIndex,
-                                           string facet,
-                                           string filter,
-                                           string termId,
+            string facet,
+            string filter,
+            string termId,
             string language)
         {
             if (string.IsNullOrEmpty(taxonomyIndex))
-                throw new ArgumentNullException("taxonomyIndex");
-            if (string.IsNullOrEmpty(termId)) throw new ArgumentNullException("termId");
+                throw new ArgumentNullException(nameof(taxonomyIndex));
+            if (string.IsNullOrEmpty(termId)) throw new ArgumentNullException(nameof(termId));
 
-            XDocument oDoc = XDocument.Parse(BrowseTerms(taxonomyIndex, facet, filter, termId, false, language));
+            var oDoc = XDocument.Parse(BrowseTerms(taxonomyIndex, facet, filter, termId, false, language));
 
             return oDoc;
         }
@@ -1045,13 +1055,13 @@ namespace Smartlogic.Semaphore.Api
         /// <exception cref="System.ArgumentNullException">taxonomyIndex</exception>
         /// <exception cref="SemaphoreConnectionException"></exception>
         public IXPathNavigable GetTermInformationByIds(string taxonomyIndex,
-                                                       string facet,
-                                                       string filter,
-                                                       string delimitedIds)
+            string facet,
+            string filter,
+            string delimitedIds)
         {
             if (string.IsNullOrEmpty(taxonomyIndex))
-                throw new ArgumentNullException("taxonomyIndex");
-            if (string.IsNullOrEmpty(delimitedIds)) throw new ArgumentNullException("delimitedIds");
+                throw new ArgumentNullException(nameof(taxonomyIndex));
+            if (string.IsNullOrEmpty(delimitedIds)) throw new ArgumentNullException(nameof(delimitedIds));
             var oDoc = new XmlDocument();
 
             var sb = new StringBuilder(_serverUrl.ToString());
@@ -1071,7 +1081,7 @@ namespace Smartlogic.Semaphore.Api
             {
                 WriteException(oX);
                 if (ThrowExceptions) throw;
-                oDoc.LoadXml(string.Format("<Error><Message>{0}</Message></Error>", oX.Message));
+                oDoc.LoadXml($"<Error><Message>{oX.Message}</Message></Error>");
             }
             return oDoc;
         }
@@ -1086,8 +1096,8 @@ namespace Smartlogic.Semaphore.Api
         public IXPathNavigable GetTermInformationByName(string taxonomyIndex, string termName)
         {
             if (string.IsNullOrEmpty(taxonomyIndex))
-                throw new ArgumentNullException("taxonomyIndex");
-            if (string.IsNullOrEmpty(termName)) throw new ArgumentNullException("termName");
+                throw new ArgumentNullException(nameof(taxonomyIndex));
+            if (string.IsNullOrEmpty(termName)) throw new ArgumentNullException(nameof(termName));
             var oDoc = new XmlDocument();
 
             var sb = new StringBuilder(_serverUrl.ToString());
@@ -1107,7 +1117,7 @@ namespace Smartlogic.Semaphore.Api
             {
                 WriteException(oX);
                 if (ThrowExceptions) throw;
-                oDoc.LoadXml(string.Format("<Error><Message>{0}</Message></Error>", oX.Message));
+                oDoc.LoadXml($"<Error><Message>{oX.Message}</Message></Error>");
             }
             return oDoc;
         }
@@ -1127,14 +1137,14 @@ namespace Smartlogic.Semaphore.Api
         /// <exception cref="System.ArgumentNullException">taxonomyIndex</exception>
         /// <exception cref="SemaphoreConnectionException"></exception>
         public IXPathNavigable GetTermListByPrefix(string taxonomyIndex,
-                                                   string facet,
-                                                   string filter,
-                                                   string prefix,
-                                                   int? maxResults)
+            string facet,
+            string filter,
+            string prefix,
+            int? maxResults)
         {
             if (string.IsNullOrEmpty(taxonomyIndex))
-                throw new ArgumentNullException("taxonomyIndex");
-            if (string.IsNullOrEmpty(prefix)) throw new ArgumentNullException("prefix");
+                throw new ArgumentNullException(nameof(taxonomyIndex));
+            if (string.IsNullOrEmpty(prefix)) throw new ArgumentNullException(nameof(prefix));
 
             var oDoc = new XmlDocument();
 
@@ -1161,7 +1171,7 @@ namespace Smartlogic.Semaphore.Api
             {
                 WriteException(oX);
                 if (ThrowExceptions) throw;
-                oDoc.LoadXml(string.Format("<Error><Message>{0}</Message></Error>", oX.Message));
+                oDoc.LoadXml($"<Error><Message>{oX.Message}</Message></Error>");
             }
             return oDoc;
         }
@@ -1178,43 +1188,42 @@ namespace Smartlogic.Semaphore.Api
             var req = new Uri(_serverUrl + "?TEMPLATE=service.xml&SERVICE=versions");
             WriteLow("SES Request: " + req, null);
 
-            var oRequest = (HttpWebRequest)WebRequest.Create(req);
+            var oRequest = AuthenticatedRequestBuilder.Build(req, _apiKey, Logger);
             oRequest.Method = "GET";
-            oRequest.Timeout = (_timeout * 1000);
+            oRequest.Timeout = _timeout*1000;
 
             try
             {
                 var oStop = new Stopwatch();
                 oStop.Start();
-                var oResponse = (HttpWebResponse)oRequest.GetResponse();
+                var oResponse = (HttpWebResponse) oRequest.GetResponse();
                 oStop.Stop();
 
                 WriteLow("Response received from SES. Time elapsed {0}:{1}.{2}",
-                         oStop.Elapsed.Minutes,
-                         oStop.Elapsed.Seconds.ToString(CultureInfo.InvariantCulture).PadLeft(2, '0'),
-                         oStop.Elapsed.Milliseconds);
+                    oStop.Elapsed.Minutes,
+                    oStop.Elapsed.Seconds.ToString(CultureInfo.InvariantCulture).PadLeft(2, '0'),
+                    oStop.Elapsed.Milliseconds);
 
-                Stream result = oResponse.GetResponseStream();
+                var result = oResponse.GetResponseStream();
                 if (result != null)
                     using (var oReader = new StreamReader(result))
                     {
                         var xDoc = new XmlDocument();
                         xDoc.LoadXml(oReader.ReadToEnd());
-                        XmlNodeList nodeList =
+                        var nodeList =
                             xDoc.SelectNodes("//MAIN_VERSIONS/VERSION[@NAME='SES build']");
 
                         if (nodeList == null || nodeList.Count == 0)
                         {
                             throw new SemaphoreConnectionException(
-                                string.Format("No version retrieved from {0}",
-                                              oRequest.RequestUri.AbsolutePath));
+                                $"No version retrieved from {oRequest.RequestUri.AbsolutePath}");
                         }
 
                         foreach (XmlNode node in nodeList)
                         {
-                            if (node.Attributes != null && node.Attributes["REVISION"] != null)
+                            if (node.Attributes?["REVISION"] != null)
                             {
-                                string revision = node.Attributes["REVISION"].Value;
+                                var revision = node.Attributes["REVISION"].Value;
                                 revision = revision.Replace("Semaphore ", "");
                                 revision = revision.Replace(" - Semantic Enhancement Server ", "-");
 
@@ -1272,14 +1281,16 @@ namespace Smartlogic.Semaphore.Api
         /// <param name="useJson">
         ///     if set to <c>true</c> [use json].
         /// </param>
+        /// <param name="language"></param>
         /// <returns>System.String.</returns>
         private string BrowseTerms(string taxonomyIndex,
-                                   string facet,
-                                   string filter,
-                                   string termId,
-                                   bool useJson = false, string language = "")
+            string facet,
+            string filter,
+            string termId,
+            bool useJson = false,
+            string language = "")
         {
-            string query = BuildBrowseQueryString(taxonomyIndex, facet, filter, termId, null, useJson, language);
+            var query = BuildBrowseQueryString(taxonomyIndex, facet, filter, termId, null, useJson, language);
 
             try
             {
@@ -1294,7 +1305,7 @@ namespace Smartlogic.Semaphore.Api
                 {
                     return "{\"Error\":{\"Message\":\"" + oX.Message + "\"}}";
                 }
-                return string.Format("<Error><Message>{0}</Message></Error>", oX.Message);
+                return $"<Error><Message>{oX.Message}</Message></Error>";
             }
         }
 
@@ -1310,14 +1321,16 @@ namespace Smartlogic.Semaphore.Api
         /// <param name="useJson">
         ///     if set to <c>true</c> [use json].
         /// </param>
+        /// <param name="language"></param>
         /// <returns>System.String.</returns>
         /// <exception cref="SemaphoreConnectionException">Ontology Server URL not configured</exception>
         private string BuildBrowseQueryString(string taxonomyIndex,
-                                              string facet,
-                                              string filter,
-                                              string termId,
-                                              string hiertype,
-                                              bool useJson = false, string language = "")
+            string facet,
+            string filter,
+            string termId,
+            string hiertype,
+            bool useJson = false,
+            string language = "")
         {
             if (_serverUrl == null)
                 throw new SemaphoreConnectionException("Ontology Server URL not configured");
@@ -1363,26 +1376,24 @@ namespace Smartlogic.Semaphore.Api
         /// <exception cref="SemaphoreConnectionException"></exception>
         private string GetServerResponse(Uri serverWithQuery)
         {
-            var oRequest = (HttpWebRequest)WebRequest.Create(serverWithQuery);
+            var oRequest = AuthenticatedRequestBuilder.Build(serverWithQuery, _apiKey, Logger);
             oRequest.Method = "GET";
-            oRequest.Timeout = _timeout * 1000;
+            oRequest.Timeout = _timeout*1000;
 
             try
             {
-                var oResponse = (HttpWebResponse)oRequest.GetResponse();
+                var oResponse = (HttpWebResponse) oRequest.GetResponse();
 
-                var status = (int)oResponse.StatusCode;
+                var status = (int) oResponse.StatusCode;
                 if (status >= 400)
                 {
-                    throw new SemaphoreConnectionException(string.Format("{0}: {1}",
-                                                                         status,
-                                                                         oResponse.StatusDescription));
+                    throw new SemaphoreConnectionException($"{status}: {oResponse.StatusDescription}");
                 }
 
                 if (oResponse.StatusCode == HttpStatusCode.OK)
                 {
-                    string sResponse = string.Empty;
-                    Stream s = oResponse.GetResponseStream();
+                    var sResponse = string.Empty;
+                    var s = oResponse.GetResponseStream();
                     if (s != null)
                         using (var oReader = new StreamReader(s, Encoding.GetEncoding("utf-8")))
                         {
@@ -1410,25 +1421,23 @@ namespace Smartlogic.Semaphore.Api
         /// <exception cref="SemaphoreConnectionException"></exception>
         private T GetServerResponse<T>(Uri serverWithQuery) where T : class
         {
-            var oRequest = (HttpWebRequest)WebRequest.Create(serverWithQuery);
+            var oRequest = AuthenticatedRequestBuilder.Build(serverWithQuery, _apiKey, Logger);
             oRequest.Method = "GET";
-            oRequest.Timeout = _timeout * 1000;
+            oRequest.Timeout = _timeout*1000;
             var serializer = new XmlSerializer(typeof(T));
             try
             {
-                var oResponse = (HttpWebResponse)oRequest.GetResponse();
+                var oResponse = (HttpWebResponse) oRequest.GetResponse();
 
-                var status = (int)oResponse.StatusCode;
+                var status = (int) oResponse.StatusCode;
                 if (status >= 400)
                 {
-                    throw new SemaphoreConnectionException(string.Format("{0}: {1}",
-                                                                         status,
-                                                                         oResponse.StatusDescription));
+                    throw new SemaphoreConnectionException($"{status}: {oResponse.StatusDescription}");
                 }
 
                 if (oResponse.StatusCode == HttpStatusCode.OK)
                 {
-                    Stream s = oResponse.GetResponseStream();
+                    var s = oResponse.GetResponseStream();
                     if (s != null)
                     {
                         var result = serializer.Deserialize(s) as T;
@@ -1465,7 +1474,7 @@ namespace Smartlogic.Semaphore.Api
             /// <returns>System.Int32.</returns>
             public int Compare(KeyValuePair<string, string> x, KeyValuePair<string, string> y)
             {
-                return String.CompareOrdinal(x.Value, y.Value);
+                return string.CompareOrdinal(x.Value, y.Value);
             }
 
             #endregion

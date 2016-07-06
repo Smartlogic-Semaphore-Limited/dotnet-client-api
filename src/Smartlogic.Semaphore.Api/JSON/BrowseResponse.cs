@@ -1,20 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using Newtonsoft.Json;
 
 namespace Smartlogic.Semaphore.Api.JSON
 {
     /// <summary>
-    /// Class BrowseResponse
+    ///     Class BrowseResponse
     /// </summary>
-    
     public class BrowseResponse
     {
         /// <summary>
-        /// Gets or sets the parameters.
+        ///     Gets or sets the parameters.
         /// </summary>
         /// <value>The parameters.</value>
         /// <remarks></remarks>
@@ -22,7 +17,7 @@ namespace Smartlogic.Semaphore.Api.JSON
         public Dictionary<string, string> Parameters { get; set; }
 
         /// <summary>
-        /// Gets or sets the terms.
+        ///     Gets or sets the terms.
         /// </summary>
         /// <value>The terms.</value>
         /// <remarks></remarks>
@@ -31,7 +26,7 @@ namespace Smartlogic.Semaphore.Api.JSON
 
 
         /// <summary>
-        /// Gets or sets the terms.
+        ///     Gets or sets the terms.
         /// </summary>
         /// <value>The terms.</value>
         /// <remarks></remarks>
@@ -39,7 +34,7 @@ namespace Smartlogic.Semaphore.Api.JSON
         public List<TermContainer> BrowseTerms { get; set; }
 
         /// <summary>
-        /// Deserializes an object from a JSON string.
+        ///     Deserializes an object from a JSON string.
         /// </summary>
         /// <param name="value">The value.</param>
         /// <returns></returns>
@@ -50,7 +45,7 @@ namespace Smartlogic.Semaphore.Api.JSON
         }
 
         /// <summary>
-        /// Serializes an oject to a JSON string.
+        ///     Serializes an oject to a JSON string.
         /// </summary>
         /// <returns></returns>
         /// <remarks></remarks>

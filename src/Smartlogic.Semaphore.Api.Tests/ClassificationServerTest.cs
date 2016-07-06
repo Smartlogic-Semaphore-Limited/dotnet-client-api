@@ -1,13 +1,16 @@
-﻿using System;
+﻿using Smartlogic.Semaphore.Api;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Net.Fakes;
 using System.Reflection;
 using System.Text;
 using KellermanSoftware.CompareNetObjects;
+using Microsoft.QualityTools.Testing.Fakes;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Smartlogic.Semaphore.Api.Tests
@@ -63,7 +66,7 @@ namespace Smartlogic.Semaphore.Api.Tests
             try
             {
                 serverUrl = new Uri("http://myurl");
-                webServiceTimeout = int.MaxValue/1000 + 1;
+                webServiceTimeout = int.MaxValue / 1000 + 1;
                 var target = new ClassificationServer(webServiceTimeout, serverUrl, logger);
             }
             catch (Exception ex)
@@ -122,7 +125,7 @@ namespace Smartlogic.Semaphore.Api.Tests
             try
             {
                 serverUrl = new Uri("http://myurl");
-                webServiceTimeout = int.MaxValue/1000 + 1;
+                webServiceTimeout = int.MaxValue / 1000 + 1;
                 var target = new ClassificationServer(webServiceTimeout, serverUrl);
             }
             catch (Exception ex)
@@ -593,6 +596,240 @@ namespace Smartlogic.Semaphore.Api.Tests
             {
                 CopyTo(input, ms, 4096);
                 return ms.ToArray();
+            }
+        }
+
+        [TestMethod(), TestCategory("CS")]
+        public void ClassificationServer_ApiKeyTest()
+        {
+            var url = "https://myserver9/bapi/svc/89c018e5-cbdb-48c7-b620-ee0f2c335226/";
+            var apiKey = "9F9SwG+M6IzmwM/nmVoQdA==";
+
+            var logger = new TestLogger();
+            bool tokenRequested = false;
+
+            using (ShimsContext.Create())
+            {
+                var csResponse = Assembly.GetExecutingAssembly().GetManifestResourceStream("Smartlogic.Semaphore.Api.Tests.SampleFiles.GetClassificationClassesResponse.xml");
+                var fakeCSResponse = new ShimHttpWebResponse
+                {
+                    GetResponseStream = () => csResponse,
+                    StatusCodeGet = () => HttpStatusCode.OK,
+                    Close = () => { }
+                };
+
+                var tokenResponse = Assembly.GetExecutingAssembly().GetManifestResourceStream("Smartlogic.Semaphore.Api.Tests.SampleFiles.TokenResponse.json");
+                var fakeTokenResponse = new ShimHttpWebResponse
+                {
+                    GetResponseStream = () => tokenResponse,
+                    StatusCodeGet = () => HttpStatusCode.OK,
+                    Close = () => { }
+                };
+
+
+                var tokenRequestStream = new MemoryStream();
+                tokenRequestStream.Seek(0, SeekOrigin.Begin);
+                var csRequestStream = new MemoryStream();
+                csRequestStream.Seek(0, SeekOrigin.Begin);
+
+                var tokenRequest = (HttpWebRequest)WebRequest.Create("https://myserver9/token");
+                var shimTokenRequest = new ShimHttpWebRequest(tokenRequest)
+                {
+                    GetRequestStream = () => tokenRequestStream,
+                    GetResponse = () => fakeTokenResponse
+                };
+
+                var csRequest = (HttpWebRequest)WebRequest.Create($"{url}?operation=LISTRULENETCLASSES");
+                var shimCSRequest = new ShimHttpWebRequest(csRequest)
+                {
+                    GetRequestStream = () => csRequestStream,
+                    GetResponse = () => fakeCSResponse
+                };
+
+                ShimWebRequest.CreateUri = (serverUri) =>
+                {
+                    if (serverUri.ToString() == "https://myserver9/token")
+                    {
+                        tokenRequested = true;
+                        shimTokenRequest.RequestUriGet = () => serverUri;
+                        return shimTokenRequest;
+                    }
+                    if (serverUri.ToString() == $"{url}?operation=LISTRULENETCLASSES")
+                    {
+                        shimCSRequest.RequestUriGet = () => serverUri;
+                        return shimCSRequest;
+                    }
+                    return null;
+                };
+
+
+                var cs = new ClassificationServer(apiKey, 120, new Uri(url), logger);
+
+                var expected = new Collection<string> { "Generic_ID", "Generic", "Generic_RAW" };
+
+                var actual = cs.GetClassificationClasses();
+
+                Assert.IsTrue(tokenRequested, "Access token was not requested");
+                
+                var expectedTokenRequest = Encoding.UTF8.GetString(ReadFully(Assembly.GetExecutingAssembly().GetManifestResourceStream("Smartlogic.Semaphore.Api.Tests.SampleFiles.TokenRequest.txt")));
+
+                var actualTokenRequest = Encoding.UTF8.GetString(tokenRequestStream.GetBuffer());
+
+                Assert.IsNotNull(csRequest.Headers[HttpRequestHeader.Authorization],"Authorization header was not set"); 
+                Assert.AreEqual(csRequest.Headers[HttpRequestHeader.Authorization],"bearer someverylongbase64encodedaccesstoken", "authorization header was set to an unexpected value");
+
+                Assert.AreEqual(expectedTokenRequest, actualTokenRequest, "Generated token request does not match expected request");
+                CollectionAssert.AreEqual(expected, actual, "Actual does not contain expected class");
+            }
+        }
+
+        [TestMethod(), TestCategory("CS")]
+        public void ClassificationServer_ApiKey_CacheTest()
+        {
+            var url = "https://myserver10/bapi/svc/89c018e5-cbdb-48c7-b620-ee0f2c335226/";
+            var apiKey = "cachetestkey";
+
+            var logger = new TestLogger();
+            int tokenRequestCount = 0;
+
+            using (ShimsContext.Create())
+            {
+                var fakeCSResponse = new ShimHttpWebResponse
+                {
+                    GetResponseStream = () => Assembly.GetExecutingAssembly().GetManifestResourceStream("Smartlogic.Semaphore.Api.Tests.SampleFiles.GetClassificationClassesResponse.xml"),
+                    StatusCodeGet = () => HttpStatusCode.OK,
+                    Close = () => { }
+                };
+                
+                var fakeTokenResponse = new ShimHttpWebResponse
+                {
+                    GetResponseStream = () => Assembly.GetExecutingAssembly().GetManifestResourceStream("Smartlogic.Semaphore.Api.Tests.SampleFiles.TokenResponse.json"),
+                    StatusCodeGet = () => HttpStatusCode.OK,
+                    Close = () => { }
+                };
+
+
+                var tokenRequestStream = new MemoryStream();
+                tokenRequestStream.Seek(0, SeekOrigin.Begin);
+                var csRequestStream = new MemoryStream();
+                csRequestStream.Seek(0, SeekOrigin.Begin);
+
+                var tokenRequest = (HttpWebRequest)WebRequest.Create("https://myserver10/token");
+                var shimTokenRequest = new ShimHttpWebRequest(tokenRequest)
+                {
+                    GetRequestStream = () => tokenRequestStream,
+                    GetResponse = () => fakeTokenResponse
+                };
+
+                var csRequest = (HttpWebRequest)WebRequest.Create($"{url}?operation=LISTRULENETCLASSES");
+                var shimCSRequest = new ShimHttpWebRequest(csRequest)
+                {
+                    GetRequestStream = () => csRequestStream,
+                    GetResponse = () => fakeCSResponse
+                };
+
+                ShimWebRequest.CreateUri = (serverUri) =>
+                {
+                    if (serverUri.ToString() == "https://myserver10/token")
+                    {
+                        tokenRequestCount++;
+                        shimTokenRequest.RequestUriGet = () => serverUri;
+                        return shimTokenRequest;
+                    }
+                    if (serverUri.ToString() == $"{url}?operation=LISTRULENETCLASSES")
+                    {
+                        shimCSRequest.RequestUriGet = () => serverUri;
+                        return shimCSRequest;
+                    }
+                    return null;
+                };
+
+
+                var cs = new ClassificationServer(apiKey, 120, new Uri(url), logger);
+
+                var expected = new Collection<string> { "Generic_ID", "Generic", "Generic_RAW" };
+
+                var actual = cs.GetClassificationClasses();
+                var actual2 = cs.GetClassificationClasses();
+
+                Assert.AreEqual(1, tokenRequestCount, "Access token was not cached");
+            }
+        }
+
+        [TestMethod(), TestCategory("CS")]
+        public void ClassificationServer_ApiKey_CacheExpiryTest()
+        {
+            var url = "https://myserver11/bapi/svc/89c018e5-cbdb-48c7-b620-ee0f2c335226/";
+            var apiKey = "expirytestkey";
+
+            var logger = new TestLogger();
+            int tokenRequestCount = 0;
+
+            using (ShimsContext.Create())
+            {
+                var fakeCSResponse = new ShimHttpWebResponse
+                {
+                    GetResponseStream = () => Assembly.GetExecutingAssembly().GetManifestResourceStream("Smartlogic.Semaphore.Api.Tests.SampleFiles.GetClassificationClassesResponse.xml"),
+                    StatusCodeGet = () => HttpStatusCode.OK,
+                    Close = () => { }
+                };
+
+                var fakeTokenResponse = new ShimHttpWebResponse
+                {
+                    GetResponseStream = () => Assembly.GetExecutingAssembly().GetManifestResourceStream("Smartlogic.Semaphore.Api.Tests.SampleFiles.TokenResponseExpired.json"),
+                    StatusCodeGet = () => HttpStatusCode.OK,
+                    Close = () => { }
+                };
+
+
+                MemoryStream tokenRequestStream;
+                var csRequestStream = new MemoryStream();
+                csRequestStream.Seek(0, SeekOrigin.Begin);
+
+                var tokenRequest = (HttpWebRequest)WebRequest.Create("https://myserver11/token");
+                var shimTokenRequest = new ShimHttpWebRequest(tokenRequest)
+                {
+                    GetRequestStream = () =>
+                    {
+                        tokenRequestStream = new MemoryStream();
+                        tokenRequestStream.Seek(0, SeekOrigin.Begin);
+                        return tokenRequestStream;
+                    },
+                    GetResponse = () => fakeTokenResponse
+                };
+
+                var csRequest = (HttpWebRequest)WebRequest.Create($"{url}?operation=LISTRULENETCLASSES");
+                var shimCSRequest = new ShimHttpWebRequest(csRequest)
+                {
+                    GetRequestStream = () => csRequestStream,
+                    GetResponse = () => fakeCSResponse
+                };
+
+                ShimWebRequest.CreateUri = (serverUri) =>
+                {
+                    if (serverUri.ToString() == "https://myserver11/token")
+                    {
+                        tokenRequestCount++;
+                        shimTokenRequest.RequestUriGet = () => serverUri;
+                        return shimTokenRequest;
+                    }
+                    if (serverUri.ToString() == $"{url}?operation=LISTRULENETCLASSES")
+                    {
+                        shimCSRequest.RequestUriGet = () => serverUri;
+                        return shimCSRequest;
+                    }
+                    return null;
+                };
+
+
+                var cs = new ClassificationServer(apiKey, 120, new Uri(url), logger);
+
+                var expected = new Collection<string> { "Generic_ID", "Generic", "Generic_RAW" };
+
+                var actual = cs.GetClassificationClasses();
+                var actual2 = cs.GetClassificationClasses();
+
+                Assert.AreEqual(2, tokenRequestCount, "Access token cache was not refreshed");
             }
         }
     }

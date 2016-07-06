@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
-using System.Linq;
-using System.Text;
-using Newtonsoft.Json;
-
-namespace Smartlogic.Semaphore.Api.JSON
+﻿namespace Smartlogic.Semaphore.Api.JSON
 {
     ///// <summary>
     ///// Class RelatedTermsResponse

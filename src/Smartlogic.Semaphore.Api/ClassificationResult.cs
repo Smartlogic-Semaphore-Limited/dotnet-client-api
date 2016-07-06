@@ -9,11 +9,10 @@ namespace Smartlogic.Semaphore.Api
 {
     public class ClassificationResult
     {
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        private readonly XmlDocument _results;
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)] private readonly XmlDocument _results;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ClassificationResult"/> class.
+        ///     Initializes a new instance of the <see cref="ClassificationResult" /> class.
         /// </summary>
         /// <param name="results">The results.</param>
         /// <remarks></remarks>
@@ -24,62 +23,53 @@ namespace Smartlogic.Semaphore.Api
         }
 
         /// <summary>
-        /// Gets the response.
+        ///     Gets the response.
         /// </summary>
         /// <remarks></remarks>
-        public XmlDocument Response
-        {
-            get
-            {
-                return _results;
-            }
-        }
+        public XmlDocument Response => _results;
 
         /// <summary>
-        /// Returns a list of classifications for all classes
+        ///     Returns a list of classifications for all classes
         /// </summary>
         /// <returns></returns>
         /// <exception cref="ArgumentException"></exception>
-        ///   
         /// <exception cref="ClassificationException"></exception>
         /// <remarks></remarks>
         public IEnumerable<ClassificationItem> GetClassifications()
         {
             var results = new List<ClassificationItem>();
 
-            XmlNodeList oIDs = _results.SelectNodes(string.Format(".//STRUCTUREDDOCUMENT/META[@score]"));
+            var oIDs = _results.SelectNodes(".//STRUCTUREDDOCUMENT/META[@score]");
             if (oIDs != null && oIDs.Count > 0)
             {
-                for (int c = 0; c < oIDs.Count; c++)
+                for (var c = 0; c < oIDs.Count; c++)
                 {
-                    var element = ((XmlElement)oIDs[c]);
-                    string value = element.GetAttribute("value");
-                    string classname = element.GetAttribute("name");
-                    float score = float.Parse(element.GetAttribute("score"), CultureInfo.InvariantCulture.NumberFormat);
+                    var element = (XmlElement) oIDs[c];
+                    var value = element.GetAttribute("value");
+                    var classname = element.GetAttribute("name");
+                    var score = float.Parse(element.GetAttribute("score"), CultureInfo.InvariantCulture.NumberFormat);
 
                     if (element.HasAttribute("id"))
                     {
-                        string id = element.GetAttribute("id");
-                        results.Add(new ClassificationItem(classname,value, score, id));
+                        var id = element.GetAttribute("id");
+                        results.Add(new ClassificationItem(classname, value, score, id));
                     }
                     else
                     {
-                        results.Add(new ClassificationItem(classname,value, score));
+                        results.Add(new ClassificationItem(classname, value, score));
                     }
-
                 }
             }
 
-            return results.OrderByDescending(r=>r.Score);
+            return results.OrderByDescending(r => r.Score);
         }
 
         /// <summary>
-        /// Returns a list of classifications for a particular class
+        ///     Returns a list of classifications for a particular class
         /// </summary>
         /// <param name="className">Name of the class.</param>
         /// <returns></returns>
         /// <exception cref="ArgumentException"></exception>
-        ///   
         /// <exception cref="ClassificationException"></exception>
         /// <remarks></remarks>
         public IEnumerable<ClassificationItem> GetClassifications(string className)
@@ -87,31 +77,30 @@ namespace Smartlogic.Semaphore.Api
             if (string.IsNullOrEmpty(className)) return GetClassifications();
 
             var oResults = new List<ClassificationItem>();
-            
-            XmlNodeList oIDs =
-                _results.SelectNodes(string.Format(".//STRUCTUREDDOCUMENT/META[@name='{0}' and @score]",
-                                                    className.Trim()));
+
+            var oIDs =
+                _results.SelectNodes($".//STRUCTUREDDOCUMENT/META[@name='{className.Trim()}' and @score]");
 
             // If we have results we can use, return them
             if (oIDs != null && oIDs.Count > 0)
             {
-                for (int c = 0; c < oIDs.Count; c++)
+                for (var c = 0; c < oIDs.Count; c++)
                 {
-                    var element = ((XmlElement)oIDs[c]);
-                    string value = element.GetAttribute("value");
-                    string classname = element.GetAttribute("name");
-                    float score = float.Parse(element.GetAttribute("score"), CultureInfo.InvariantCulture.NumberFormat);
+                    var element = (XmlElement) oIDs[c];
+                    var value = element.GetAttribute("value");
+                    var classname = element.GetAttribute("name");
+                    var score = float.Parse(element.GetAttribute("score"), CultureInfo.InvariantCulture.NumberFormat);
 
                     if (element.HasAttribute("id"))
                     {
-                        string id = element.GetAttribute("id");
+                        var id = element.GetAttribute("id");
                         var item = new ClassificationItem(classname, value, score, id);
-                        if(!oResults.Contains(item))oResults.Add(item);
+                        if (!oResults.Contains(item)) oResults.Add(item);
                     }
                     else
                     {
                         var item = new ClassificationItem(classname, value, score);
-                        if(!oResults.Contains(item))oResults.Add(item);
+                        if (!oResults.Contains(item)) oResults.Add(item);
                     }
                 }
             }
@@ -120,23 +109,20 @@ namespace Smartlogic.Semaphore.Api
                 // else do we have a response? If no, log an error
                 if (_results.DocumentElement != null)
                 {
-                    XmlNode oResponse = _results.DocumentElement.SelectSingleNode("STRUCTUREDDOCUMENT");
-                    XmlNode oError = _results.DocumentElement.SelectSingleNode("error");
+                    var oResponse = _results.DocumentElement.SelectSingleNode("STRUCTUREDDOCUMENT");
+                    var oError = _results.DocumentElement.SelectSingleNode("error");
 
                     if ((oResponse == null) && (oError == null))
                     {
                         throw new ClassificationException("Get Classifications: No Response received");
                     }
 
-                    if (oError != null)
-                    {
-                        // else if check and log if there is an error.
-                        if (oError.Attributes != null)
-                            throw new ClassificationException(oError.Attributes["id"].Value + " : " + oError.InnerText);
-                    }
+                    // else if check and log if there is an error.
+                    if (oError?.Attributes != null)
+                        throw new ClassificationException(oError.Attributes["id"].Value + " : " + oError.InnerText);
                 }
             }
-            return oResults.OrderByDescending(r=>r.Score);
+            return oResults.OrderByDescending(r => r.Score);
         }
     }
 }

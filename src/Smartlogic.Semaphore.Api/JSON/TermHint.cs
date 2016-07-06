@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
 using Newtonsoft.Json;
 
 namespace Smartlogic.Semaphore.Api.JSON
@@ -7,7 +6,6 @@ namespace Smartlogic.Semaphore.Api.JSON
     /// <summary>
     ///     Class TermHint
     /// </summary>
-    
     public class TermHint
     {
         /// <summary>
@@ -27,7 +25,7 @@ namespace Smartlogic.Semaphore.Api.JSON
         public string Id { get; set; }
 
         /// <summary>
-        /// Gets or sets the index.
+        ///     Gets or sets the index.
         /// </summary>
         /// <value>The index.</value>
         [JsonProperty("index")]

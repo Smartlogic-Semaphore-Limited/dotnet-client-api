@@ -1,62 +1,45 @@
-﻿using System;
-
-namespace Smartlogic.Semaphore.Api
+﻿namespace Smartlogic.Semaphore.Api
 {
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <remarks></remarks>
     public class ClassificationItem
     {
-        /// <summary>
-        /// 
-        /// </summary>
-        private readonly float _score;
-        /// <summary>
-        /// 
-        /// </summary>
-        private readonly string _value;
-        /// <summary>
-        /// 
-        /// </summary>
-        private readonly string _id;
-        /// <summary>
-        /// 
-        /// </summary>
         private readonly string _classname;
+        private readonly string _id;
+        private readonly float _score;
+        private readonly string _value;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ClassificationItem"/> class.
+        ///     Initializes a new instance of the <see cref="ClassificationItem" /> class.
         /// </summary>
         /// <param name="classname">The classname.</param>
         /// <param name="value">The value.</param>
         /// <param name="score">The score.</param>
         /// <remarks></remarks>
-        public ClassificationItem(string classname,string value, float score)
+        public ClassificationItem(string classname, string value, float score)
         {
             _classname = classname;
             _value = value;
             _id = Value;
             _score = score;
         }
+
         /// <summary>
-        /// Initializes a new instance of the <see cref="ClassificationItem"/> class.
+        ///     Initializes a new instance of the <see cref="ClassificationItem" /> class.
         /// </summary>
         /// <param name="classname">The classname.</param>
         /// <param name="value">The value.</param>
         /// <param name="score">The score.</param>
         /// <param name="id">The id.</param>
         /// <remarks></remarks>
-        public ClassificationItem(string classname,string value, float score, string id)
+        public ClassificationItem(string classname, string value, float score, string id)
         {
             _classname = classname;
             _value = value;
-            _id=id;
+            _id = id;
             _score = score;
         }
 
         /// <summary>
-        /// Gets the id.
+        ///     Gets the id.
         /// </summary>
         /// <remarks></remarks>
         public string Id
@@ -65,7 +48,7 @@ namespace Smartlogic.Semaphore.Api
         }
 
         /// <summary>
-        /// Gets the value.
+        ///     Gets the value.
         /// </summary>
         /// <remarks></remarks>
         public string Value
@@ -74,7 +57,7 @@ namespace Smartlogic.Semaphore.Api
         }
 
         /// <summary>
-        /// Gets the name of the class.
+        ///     Gets the name of the class.
         /// </summary>
         /// <remarks></remarks>
         public string ClassName
@@ -83,7 +66,7 @@ namespace Smartlogic.Semaphore.Api
         }
 
         /// <summary>
-        /// Gets the score.
+        ///     Gets the score.
         /// </summary>
         /// <remarks></remarks>
         public float Score
@@ -92,7 +75,7 @@ namespace Smartlogic.Semaphore.Api
         }
 
         /// <summary>
-        /// Determines whether the specified <see cref="System.Object" /> is equal to this instance.
+        ///     Determines whether the specified <see cref="System.Object" /> is equal to this instance.
         /// </summary>
         /// <param name="obj">The object to compare with the current object.</param>
         /// <returns><c>true</c> if the specified <see cref="System.Object" /> is equal to this instance; otherwise, <c>false</c>.</returns>
@@ -104,7 +87,7 @@ namespace Smartlogic.Semaphore.Api
         }
 
         /// <summary>
-        /// Equalses the specified other.
+        ///     Equalses the specified other.
         /// </summary>
         /// <param name="other">The other.</param>
         /// <returns><c>true</c> if XXXX, <c>false</c> otherwise</returns>
@@ -116,14 +99,14 @@ namespace Smartlogic.Semaphore.Api
         }
 
         /// <summary>
-        /// Returns a hash code for this instance.
+        ///     Returns a hash code for this instance.
         /// </summary>
         /// <returns>A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.</returns>
         public override int GetHashCode()
         {
             unchecked
             {
-                int result = _score.GetHashCode();
+                var result = _score.GetHashCode();
                 result = (result*397) ^ (_value != null ? _value.GetHashCode() : 0);
                 result = (result*397) ^ (_id != null ? _id.GetHashCode() : 0);
                 result = (result*397) ^ (_classname != null ? _classname.GetHashCode() : 0);

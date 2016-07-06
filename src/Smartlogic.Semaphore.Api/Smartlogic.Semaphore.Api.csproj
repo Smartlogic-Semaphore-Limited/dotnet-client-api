@@ -54,11 +54,14 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArticleType.cs" />
+    <Compile Include="AuthenticatedRequestBuilder.cs" />
     <Compile Include="ClassificationLanguage.cs" />
     <Compile Include="ClassificationOptions.cs" />
     <Compile Include="ILogger.cs" />
@@ -79,6 +82,7 @@
     <Compile Include="JSON\TermContainer.cs" />
     <Compile Include="JSON\TermHint.cs" />
     <Compile Include="JSON\TermInformationResponse.cs" />
+    <Compile Include="JSON\TokenResponse.cs" />
     <Compile Include="LoggingProxyBase.cs" />
     <Compile Include="Schemas\Structure\Structure.designer.cs" />
     <Compile Include="SemanticEnhancement.cs" />

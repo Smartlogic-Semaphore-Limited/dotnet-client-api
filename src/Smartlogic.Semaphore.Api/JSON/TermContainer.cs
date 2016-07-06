@@ -1,17 +1,14 @@
-﻿using System.Diagnostics.CodeAnalysis;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Smartlogic.Semaphore.Api.JSON
 {
     /// <summary>
-    /// 
     /// </summary>
     /// <remarks></remarks>
-    
     public class TermContainer
     {
         /// <summary>
-        /// Gets or sets the term.
+        ///     Gets or sets the term.
         /// </summary>
         /// <value>The term.</value>
         /// <remarks></remarks>

@@ -5,10 +5,13 @@ using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
+using System.Net;
+using System.Net.Fakes;
 using System.Reflection;
 using System.Xml.Linq;
 using System.Xml.Serialization;
 using KellermanSoftware.CompareNetObjects;
+using Microsoft.QualityTools.Testing.Fakes;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json;
 using Smartlogic.Semaphore.Api.JSON;
@@ -70,18 +73,18 @@ namespace Smartlogic.Semaphore.Api.Tests
                 var target = ctx.Server;
 
                 var actual = target.GetAtoZInformation(TAXONOMY_INDEX, query);
-                
+
                 var nav = actual.CreateNavigator();
                 if (nav == null) throw new Exception("Unable to create navigator");
                 var actualDoc = XDocument.Parse(nav.OuterXml);
 
                 Assert.IsNotNull(actual);
-                
+
                 var isError = actualDoc.Descendants("Error").Any();
                 Assert.IsTrue(isError, "No error message was returned");
             }
         }
-        
+
         [TestMethod, TestCategory("SES")]
         public void GetConceptMapTest()
         {
@@ -877,6 +880,84 @@ namespace Smartlogic.Semaphore.Api.Tests
             }
 #pragma warning restore CS0618 // Type or member is obsolete
             // ReSharper restore UnusedVariable
+        }
+
+        [TestMethod, TestCategory("CS")]
+        public void SES_ApiKeyTest()
+        {
+            var url = "https://myserver9/bapi/svc/89c018e5-cbdb-48c7-b620-ee0f2c335226/";
+            var apiKey = "9F9SwG+M6IzmwM/nmVoQdA==";
+            const string query = "A";
+
+            var logger = new TestLogger();
+            var tokenRequested = false;
+
+            using (ShimsContext.Create())
+            {
+                var sesResponse = Assembly.GetExecutingAssembly().GetManifestResourceStream("Smartlogic.Semaphore.Api.Tests.SampleFiles.GetJsonAZResponse.json");
+                var fakeCSResponse = new ShimHttpWebResponse
+                {
+                    GetResponseStream = () => sesResponse,
+                    StatusCodeGet = () => HttpStatusCode.OK,
+                    Close = () => { }
+                };
+
+                var tokenResponse = Assembly.GetExecutingAssembly().GetManifestResourceStream("Smartlogic.Semaphore.Api.Tests.SampleFiles.TokenResponse.json");
+                var fakeTokenResponse = new ShimHttpWebResponse
+                {
+                    GetResponseStream = () => tokenResponse,
+                    StatusCodeGet = () => HttpStatusCode.OK,
+                    Close = () => { }
+                };
+
+
+                var tokenRequestStream = new MemoryStream();
+                tokenRequestStream.Seek(0, SeekOrigin.Begin);
+                var csRequestStream = new MemoryStream();
+                csRequestStream.Seek(0, SeekOrigin.Begin);
+
+                var tokenRequest = (HttpWebRequest) WebRequest.Create("https://myserver9/token");
+                var shimTokenRequest = new ShimHttpWebRequest(tokenRequest)
+                {
+                    GetRequestStream = () => tokenRequestStream,
+                    GetResponse = () => fakeTokenResponse
+                };
+
+                var sesRequest = (HttpWebRequest) WebRequest.Create($"{url}?TBDB={TAXONOMY_INDEX}&TEMPLATE=service.json&SERVICE=az&AZ={query}");
+                var shimCSRequest = new ShimHttpWebRequest(sesRequest)
+                {
+                    GetRequestStream = () => csRequestStream,
+                    GetResponse = () => fakeCSResponse
+                };
+
+                ShimWebRequest.CreateUri = serverUri =>
+                {
+                    if (serverUri.ToString() == "https://myserver9/token")
+                    {
+                        tokenRequested = true;
+                        shimTokenRequest.RequestUriGet = () => serverUri;
+                        return shimTokenRequest;
+                    }
+                    if (serverUri.ToString() == $"{url}?TBDB={TAXONOMY_INDEX}&TEMPLATE=service.json&SERVICE=az&AZ={query}")
+                    {
+                        shimCSRequest.RequestUriGet = () => serverUri;
+                        return shimCSRequest;
+                    }
+                    return null;
+                };
+
+
+                var target = new SemanticEnhancement(apiKey, 120, new Uri(url), logger);
+
+                target.GetJsonAtoZInformation(TAXONOMY_INDEX, query);
+
+                Assert.IsTrue(tokenRequested, "Access token was not requested");
+
+                Assert.IsNotNull(sesRequest.Headers[HttpRequestHeader.Authorization], "Authorization header was not set");
+                Assert.AreEqual(sesRequest.Headers[HttpRequestHeader.Authorization],
+                    "bearer someverylongbase64encodedaccesstoken",
+                    "authorization header was set to an unexpected value");
+            }
         }
 
 

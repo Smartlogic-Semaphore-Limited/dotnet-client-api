@@ -51,8 +51,6 @@ namespace Smartlogic.Semaphore.Api.Tests
             RequestStream.Seek(0, SeekOrigin.Begin);
             ShimHttpWebRequest.AllInstances.GetRequestStream = foo => RequestStream;
             ShimHttpWebRequest.AllInstances.RequestUriGet = foo => expectedUri;
-
-
         }
 
         public ClassificationServer Server { get; }

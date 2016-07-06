@@ -132,7 +132,9 @@
     <EmbeddedResource Include="SampleFiles\GetJsonTermListByPrefixResult.json" />
     <None Include="packages.config" />
     <EmbeddedResource Include="SampleFiles\GetJsonAZResponse.json" />
+    <EmbeddedResource Include="SampleFiles\TokenResponse.json" />
     <None Include="SampleFiles\SesSchema.dtd" />
+    <EmbeddedResource Include="SampleFiles\TokenResponseExpired.json" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="SampleFiles\HttpPost_CSTestRequest.txt" />
@@ -207,6 +209,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="SampleFiles\EmptyXml.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SampleFiles\TokenRequest.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

@@ -1,0 +1,8 @@
+﻿{
+    "access_token": "someverylongbase64encodedaccesstoken",
+    "token_type": "bearer",
+    "expires_in": 1209600,
+    "userName": "someuser@smartlogic.com",
+    ".issued": "Wed, 06 Jul 2016 09:09:47 GMT",
+    ".expires": "Wed, 04 Jul 2029 09:09:47 GMT"
+}
