@@ -886,7 +886,7 @@ namespace Smartlogic.Semaphore.Api.Tests
         public void SES_ApiKeyTest()
         {
             var url = "https://myserver9/bapi/svc/89c018e5-cbdb-48c7-b620-ee0f2c335226/";
-            var apiKey = "9F9SwG+M6IzmwM/nmVoQdA==";
+            var apiKey = "sesrequestapikey";
             const string query = "A";
 
             var logger = new TestLogger();
