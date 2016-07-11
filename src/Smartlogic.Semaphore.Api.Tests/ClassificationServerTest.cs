@@ -19,6 +19,14 @@ namespace Smartlogic.Semaphore.Api.Tests
     [ExcludeFromCodeCoverage]
     public class ClassificationServerTest
     {
+
+        [TestMethod, TestCategory("CS"), ExpectedException(typeof(ArgumentException))]
+        public void CS_InvalidApiKeyTest()
+        {
+            var logger = new TestLogger();
+            var ses = new ClassificationServer(120, new Uri("http://someserver"), logger, "non-base64apikey");
+        }
+
         [TestMethod, TestCategory("CS")]
         public void ClassificationServerConstructorTest()
         {
@@ -663,7 +671,7 @@ namespace Smartlogic.Semaphore.Api.Tests
                 };
 
 
-                var cs = new ClassificationServer(apiKey, 120, new Uri(url), logger);
+                var cs = new ClassificationServer(120, new Uri(url), logger, apiKey);
 
                 var expected = new Collection<string> { "Generic_ID", "Generic", "Generic_RAW" };
 
@@ -745,7 +753,7 @@ namespace Smartlogic.Semaphore.Api.Tests
                 };
 
 
-                var cs = new ClassificationServer(apiKey, 120, new Uri(url), logger);
+                var cs = new ClassificationServer(120, new Uri(url), logger, apiKey);
 
                 var expected = new Collection<string> { "Generic_ID", "Generic", "Generic_RAW" };
 
@@ -760,7 +768,7 @@ namespace Smartlogic.Semaphore.Api.Tests
         public void ClassificationServer_ApiKey_CacheExpiryTest()
         {
             var url = "https://myserver11/bapi/svc/89c018e5-cbdb-48c7-b620-ee0f2c335226/";
-            var apiKey = "expirytestkey";
+            var apiKey = "c29tZWFwaWtleQ==";
 
             var logger = new TestLogger();
             int tokenRequestCount = 0;
@@ -822,7 +830,7 @@ namespace Smartlogic.Semaphore.Api.Tests
                 };
 
 
-                var cs = new ClassificationServer(apiKey, 120, new Uri(url), logger);
+                var cs = new ClassificationServer(120, new Uri(url), logger, apiKey);
 
                 var expected = new Collection<string> { "Generic_ID", "Generic", "Generic_RAW" };
 

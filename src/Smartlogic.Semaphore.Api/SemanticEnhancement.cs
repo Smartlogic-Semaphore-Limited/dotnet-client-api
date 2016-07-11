@@ -5,6 +5,7 @@ using System.Globalization;
 using System.IO;
 using System.Net;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Xml;
 using System.Xml.Linq;
@@ -82,9 +83,16 @@ namespace Smartlogic.Semaphore.Api
             _timeout = webServiceTimeout;
         }
 
-        public SemanticEnhancement(string apiKey, int webServiceTimeout, Uri serverUrl, ILogger logger) : this(webServiceTimeout, serverUrl, logger)
+        public SemanticEnhancement(int webServiceTimeout, Uri serverUrl, ILogger logger, string apiKey="") : this(webServiceTimeout, serverUrl, logger)
         {
-            if (string.IsNullOrEmpty(apiKey)) throw new ArgumentException("Missing apikey", nameof(apiKey));
+            if (!string.IsNullOrEmpty(apiKey))
+            {
+                var regex = new Regex("^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4})$");
+                if (!regex.IsMatch(apiKey))
+                {
+                    throw new ArgumentException("apikey is invalid", nameof(apiKey));
+                }
+            }
             _apiKey = apiKey;
         }
 

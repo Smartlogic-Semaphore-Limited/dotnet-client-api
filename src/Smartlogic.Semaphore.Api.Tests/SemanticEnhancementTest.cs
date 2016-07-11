@@ -882,7 +882,14 @@ namespace Smartlogic.Semaphore.Api.Tests
             // ReSharper restore UnusedVariable
         }
 
-        [TestMethod, TestCategory("CS")]
+        [TestMethod, TestCategory("SES"), ExpectedException(typeof(ArgumentException))]
+        public void SES_InvalidApiKeyTest()
+        {
+            var logger = new TestLogger();
+            var ses = new SemanticEnhancement(120, new Uri("http://someserver"), logger, "non-base64apikey");
+        }
+
+        [TestMethod, TestCategory("SES")]
         public void SES_ApiKeyTest()
         {
             var url = "https://myserver9/bapi/svc/89c018e5-cbdb-48c7-b620-ee0f2c335226/";
@@ -947,7 +954,7 @@ namespace Smartlogic.Semaphore.Api.Tests
                 };
 
 
-                var target = new SemanticEnhancement(apiKey, 120, new Uri(url), logger);
+                var target = new SemanticEnhancement(120, new Uri(url), logger, apiKey);
 
                 target.GetJsonAtoZInformation(TAXONOMY_INDEX, query);
 
