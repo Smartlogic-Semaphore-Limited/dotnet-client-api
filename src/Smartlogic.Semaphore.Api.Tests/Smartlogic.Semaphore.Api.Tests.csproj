@@ -135,6 +135,7 @@
     <EmbeddedResource Include="SampleFiles\TokenResponse.json" />
     <None Include="SampleFiles\SesSchema.dtd" />
     <EmbeddedResource Include="SampleFiles\TokenResponseExpired.json" />
+    <EmbeddedResource Include="SampleFiles\TokenErrorResponse.json" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="SampleFiles\HttpPost_CSTestRequest.txt" />

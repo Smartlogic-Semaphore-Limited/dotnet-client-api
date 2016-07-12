@@ -82,6 +82,7 @@
     <Compile Include="JSON\TermContainer.cs" />
     <Compile Include="JSON\TermHint.cs" />
     <Compile Include="JSON\TermInformationResponse.cs" />
+    <Compile Include="JSON\TokenErrorResponse.cs" />
     <Compile Include="JSON\TokenResponse.cs" />
     <Compile Include="LoggingProxyBase.cs" />
     <Compile Include="Schemas\Structure\Structure.designer.cs" />

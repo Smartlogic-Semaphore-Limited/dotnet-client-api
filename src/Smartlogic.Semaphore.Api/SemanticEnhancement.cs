@@ -42,9 +42,9 @@ namespace Smartlogic.Semaphore.Api
             if (serverUrl == null) throw new ArgumentException("Missing server Url", nameof(serverUrl));
             if (webServiceTimeout <= 0)
                 throw new ArgumentException("Web service timeout must be greater than 0", nameof(webServiceTimeout));
-            if (webServiceTimeout > int.MaxValue/1000)
+            if (webServiceTimeout > int.MaxValue / 1000)
                 throw new ArgumentException(
-                    "Web service timeout must be less than " + short.MaxValue/1000,
+                    "Web service timeout must be less than " + short.MaxValue / 1000,
                     nameof(webServiceTimeout));
             if (!serverUrl.IsAbsoluteUri)
                 throw new ArgumentException("Server Url must be an absolute Uri", nameof(serverUrl));
@@ -72,9 +72,9 @@ namespace Smartlogic.Semaphore.Api
             if (webServiceTimeout <= 0)
                 throw new ArgumentException("Web service timeout must be greater than 0",
                     nameof(webServiceTimeout));
-            if (webServiceTimeout > int.MaxValue/1000)
+            if (webServiceTimeout > int.MaxValue / 1000)
                 throw new ArgumentException(
-                    "Web service timeout must be less than " + short.MaxValue/1000,
+                    "Web service timeout must be less than " + short.MaxValue / 1000,
                     nameof(webServiceTimeout));
             if (!serverUrl.IsAbsoluteUri)
                 throw new ArgumentException("Server Url must be an absolute Uri", nameof(serverUrl));
@@ -83,7 +83,7 @@ namespace Smartlogic.Semaphore.Api
             _timeout = webServiceTimeout;
         }
 
-        public SemanticEnhancement(int webServiceTimeout, Uri serverUrl, ILogger logger, string apiKey="") : this(webServiceTimeout, serverUrl, logger)
+        public SemanticEnhancement(int webServiceTimeout, Uri serverUrl, ILogger logger, string apiKey = "") : this(webServiceTimeout, serverUrl, logger)
         {
             if (!string.IsNullOrEmpty(apiKey))
             {
@@ -97,10 +97,10 @@ namespace Smartlogic.Semaphore.Api
         }
 
         /// <summary>
-        ///     Gets or sets a value indicating whether exceptions should be thown or serialized and returned as XML.
+        ///     Gets or sets a value indicating whether exceptions should be thown or serialized and returned as XML or JSON. The default value is false (ie. serialize exceptions).
         /// </summary>
         /// <value>
-        ///     <c>true</c> if exceptions should be thrown; otherwise, <c>false</c>.
+        ///     <c>true</c> if exceptions should be thrown; otherwise, <c>false</c>. 
         /// </value>
         public bool ThrowExceptions { get; set; }
 
@@ -234,13 +234,13 @@ namespace Smartlogic.Semaphore.Api
 
             var webRequest = AuthenticatedRequestBuilder.Build(req, _apiKey, Logger);
             webRequest.Method = "GET";
-            webRequest.Timeout = _timeout*1000;
+            webRequest.Timeout = _timeout * 1000;
 
             try
             {
                 var oStop = new Stopwatch();
                 oStop.Start();
-                var oResponse = (HttpWebResponse) webRequest.GetResponse();
+                var oResponse = (HttpWebResponse)webRequest.GetResponse();
                 oStop.Stop();
 
                 WriteLow(
@@ -265,7 +265,7 @@ namespace Smartlogic.Semaphore.Api
 
                         // ReSharper disable LoopCanBeConvertedToQuery
                         foreach (XmlNode node in nodeList)
-                            // ReSharper restore LoopCanBeConvertedToQuery
+                        // ReSharper restore LoopCanBeConvertedToQuery
                         {
                             if (node.Attributes == null) continue;
 
@@ -606,7 +606,7 @@ namespace Smartlogic.Semaphore.Api
                 if (ThrowExceptions) throw;
                 result = "{\"Error\":{\"Message\":\"" + oX.Message + "\"}}";
             }
-            return JsonConvert.DeserializeObject<TermInformationResponse>(result);
+            return TermInformationResponse.FromJsonString(result);
         }
 
         /// <summary>
@@ -925,13 +925,13 @@ namespace Smartlogic.Semaphore.Api
 
             var oRequest = AuthenticatedRequestBuilder.Build(req, _apiKey, Logger);
             oRequest.Method = "GET";
-            oRequest.Timeout = _timeout*1000;
+            oRequest.Timeout = _timeout * 1000;
 
             try
             {
                 var oStop = new Stopwatch();
                 oStop.Start();
-                var oResponse = (HttpWebResponse) oRequest.GetResponse();
+                var oResponse = (HttpWebResponse)oRequest.GetResponse();
                 oStop.Stop();
 
                 WriteLow("Response received from SES. Time elapsed {0}:{1}.{2}",
@@ -955,7 +955,7 @@ namespace Smartlogic.Semaphore.Api
 
                         // ReSharper disable LoopCanBeConvertedToQuery
                         foreach (XmlNode node in nodeList)
-                            // ReSharper restore LoopCanBeConvertedToQuery
+                        // ReSharper restore LoopCanBeConvertedToQuery
                         {
                             var name = node.SelectSingleNode("NAME");
                             indices.Add(name?.InnerText.Trim() ?? node.InnerText.Trim());
@@ -1196,56 +1196,37 @@ namespace Smartlogic.Semaphore.Api
             var req = new Uri(_serverUrl + "?TEMPLATE=service.xml&SERVICE=versions");
             WriteLow("SES Request: " + req, null);
 
-            var oRequest = AuthenticatedRequestBuilder.Build(req, _apiKey, Logger);
-            oRequest.Method = "GET";
-            oRequest.Timeout = _timeout*1000;
-
             try
             {
-                var oStop = new Stopwatch();
-                oStop.Start();
-                var oResponse = (HttpWebResponse) oRequest.GetResponse();
-                oStop.Stop();
 
-                WriteLow("Response received from SES. Time elapsed {0}:{1}.{2}",
-                    oStop.Elapsed.Minutes,
-                    oStop.Elapsed.Seconds.ToString(CultureInfo.InvariantCulture).PadLeft(2, '0'),
-                    oStop.Elapsed.Milliseconds);
+                var xDoc = new XmlDocument();
+                xDoc.LoadXml(GetServerResponse(req));
+                var nodeList =
+                    xDoc.SelectNodes("//MAIN_VERSIONS/VERSION[@NAME='SES build']");
 
-                var result = oResponse.GetResponseStream();
-                if (result != null)
-                    using (var oReader = new StreamReader(result))
+                if (nodeList == null || nodeList.Count == 0)
+                {
+                    throw new SemaphoreConnectionException(
+                        $"No version retrieved from {req}");
+                }
+
+                foreach (XmlNode node in nodeList)
+                {
+                    if (node.Attributes?["REVISION"] != null)
                     {
-                        var xDoc = new XmlDocument();
-                        xDoc.LoadXml(oReader.ReadToEnd());
-                        var nodeList =
-                            xDoc.SelectNodes("//MAIN_VERSIONS/VERSION[@NAME='SES build']");
+                        var revision = node.Attributes["REVISION"].Value;
+                        revision = revision.Replace("Semaphore ", "");
+                        revision = revision.Replace(" - Semantic Enhancement Server ", "-");
 
-                        if (nodeList == null || nodeList.Count == 0)
+                        response = new Version(revision.Replace("-r", "."));
+                        if (response.Revision <= 0)
                         {
-                            throw new SemaphoreConnectionException(
-                                $"No version retrieved from {oRequest.RequestUri.AbsolutePath}");
+                            //Make sure the revision is in the correct column (ie. if version is 3.5 r 12345, make it 3.5.0.12345 as opposed to 3.5.12345.0)
+                            response = new Version(response.Major, response.Minor, 0, response.Build);
                         }
-
-                        foreach (XmlNode node in nodeList)
-                        {
-                            if (node.Attributes?["REVISION"] != null)
-                            {
-                                var revision = node.Attributes["REVISION"].Value;
-                                revision = revision.Replace("Semaphore ", "");
-                                revision = revision.Replace(" - Semantic Enhancement Server ", "-");
-
-                                response = new Version(revision.Replace("-r", "."));
-                                if (response.Revision <= 0)
-                                {
-                                    //Make sure the revision is in the correct column (ie. if version is 3.5 r 12345, make it 3.5.0.12345 as opposed to 3.5.12345.0)
-                                    response = new Version(response.Major, response.Minor, 0, response.Build);
-                                }
-                                break;
-                            }
-                        }
+                        break;
                     }
-                oResponse.Close();
+                }
             }
             catch (Exception ex)
             {
@@ -1386,13 +1367,13 @@ namespace Smartlogic.Semaphore.Api
         {
             var oRequest = AuthenticatedRequestBuilder.Build(serverWithQuery, _apiKey, Logger);
             oRequest.Method = "GET";
-            oRequest.Timeout = _timeout*1000;
+            oRequest.Timeout = _timeout * 1000;
 
             try
             {
-                var oResponse = (HttpWebResponse) oRequest.GetResponse();
+                var oResponse = (HttpWebResponse)oRequest.GetResponse();
 
-                var status = (int) oResponse.StatusCode;
+                var status = (int)oResponse.StatusCode;
                 if (status >= 400)
                 {
                     throw new SemaphoreConnectionException($"{status}: {oResponse.StatusDescription}");
@@ -1431,13 +1412,13 @@ namespace Smartlogic.Semaphore.Api
         {
             var oRequest = AuthenticatedRequestBuilder.Build(serverWithQuery, _apiKey, Logger);
             oRequest.Method = "GET";
-            oRequest.Timeout = _timeout*1000;
+            oRequest.Timeout = _timeout * 1000;
             var serializer = new XmlSerializer(typeof(T));
             try
             {
-                var oResponse = (HttpWebResponse) oRequest.GetResponse();
+                var oResponse = (HttpWebResponse)oRequest.GetResponse();
 
-                var status = (int) oResponse.StatusCode;
+                var status = (int)oResponse.StatusCode;
                 if (status >= 400)
                 {
                     throw new SemaphoreConnectionException($"{status}: {oResponse.StatusDescription}");

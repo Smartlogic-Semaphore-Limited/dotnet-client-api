@@ -967,7 +967,82 @@ namespace Smartlogic.Semaphore.Api.Tests
             }
         }
 
+        [TestMethod, TestCategory("SES"),ExpectedException(typeof(SemaphoreConnectionException))]
+        public void SES_UnableToGetTokenTest()
+        {
+            var url = "https://myserver9/bapi/svc/89c018e5-cbdb-48c7-b620-ee0f2c335226/";
+            var apiKey = "somedodgyaccesstoken";
+            const string query = "A";
 
+            var logger = new TestLogger();
+            var tokenRequested = false;
+
+            using (ShimsContext.Create())
+            {
+                var sesResponse = Assembly.GetExecutingAssembly().GetManifestResourceStream("Smartlogic.Semaphore.Api.Tests.SampleFiles.GetJsonAZResponse.json");
+                var fakeCSResponse = new ShimHttpWebResponse
+                {
+                    GetResponseStream = () => sesResponse,
+                    StatusCodeGet = () => HttpStatusCode.OK,
+                    Close = () => { }
+                };
+
+                var tokenResponse = Assembly.GetExecutingAssembly().GetManifestResourceStream("Smartlogic.Semaphore.Api.Tests.SampleFiles.TokenErrorResponse.json");
+                var fakeTokenResponse = new ShimHttpWebResponse
+                {
+                    GetResponseStream = () => tokenResponse,
+                    StatusCodeGet = () => HttpStatusCode.BadRequest,
+                    Close = () => { }
+                };
+
+
+                var tokenRequestStream = new MemoryStream();
+                tokenRequestStream.Seek(0, SeekOrigin.Begin);
+                var csRequestStream = new MemoryStream();
+                csRequestStream.Seek(0, SeekOrigin.Begin);
+
+                var tokenRequest = (HttpWebRequest)WebRequest.Create("https://myserver9/token");
+                var shimTokenRequest = new ShimHttpWebRequest(tokenRequest)
+                {
+                    GetRequestStream = () => tokenRequestStream,
+                    GetResponse = () => { throw new WebException("foo", null, WebExceptionStatus.UnknownError, fakeTokenResponse); }
+                };
+
+                var sesRequest = (HttpWebRequest)WebRequest.Create($"{url}?TBDB={TAXONOMY_INDEX}&TEMPLATE=service.json&SERVICE=az&AZ={query}");
+                var shimCSRequest = new ShimHttpWebRequest(sesRequest)
+                {
+                    GetRequestStream = () => csRequestStream,
+                    GetResponse = () => fakeCSResponse
+                };
+
+                ShimWebRequest.CreateUri = serverUri =>
+                {
+                    if (serverUri.ToString() == "https://myserver9/token")
+                    {
+                        tokenRequested = true;
+                        shimTokenRequest.RequestUriGet = () => serverUri;
+                        return shimTokenRequest;
+                    }
+                    if (serverUri.ToString() == $"{url}?TBDB={TAXONOMY_INDEX}&TEMPLATE=service.json&SERVICE=az&AZ={query}")
+                    {
+                        shimCSRequest.RequestUriGet = () => serverUri;
+                        return shimCSRequest;
+                    }
+                    return null;
+                };
+
+
+                var target = new SemanticEnhancement(120, new Uri(url), logger, apiKey)
+                {
+                    ThrowExceptions = true
+                };
+
+                target.GetJsonAtoZInformation(TAXONOMY_INDEX, query);
+
+                Assert.IsTrue(tokenRequested, "Access token was not requested");
+            }
+        }
+        
         private static T DeserializeResource<T>(string resourceName) where T : class
         {
             var serializer = new XmlSerializer(typeof(T));
