@@ -9,7 +9,7 @@
     <projectUrl>https://github.com/Smartlogic-Semaphore-Limited/dotnet-client-api</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
-    <releaseNotes>Beta release of authorization functions neccesary for connection to OAuth secured endpoints. </releaseNotes>
+    <releaseNotes>Added additional authorization functions neccesary for connection to OAuth secured endpoints. </releaseNotes>
     <copyright>Copyright 2016</copyright>
     <tags>Classification NLP C#</tags>
   </metadata>
