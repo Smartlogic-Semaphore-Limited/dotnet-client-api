@@ -10,13 +10,37 @@ using Smartlogic.Semaphore.Api.JSON;
 
 namespace Smartlogic.Semaphore.Api
 {
-    static class AuthenticatedRequestBuilder
+    internal sealed class AuthenticatedRequestBuilder
     {
-        private static readonly Dictionary<string, TokenResponse> keyCache = new Dictionary<string, TokenResponse>();
+        private static volatile AuthenticatedRequestBuilder _instance;
+        private static readonly object syncRoot = new object();
 
-        public static HttpWebRequest Build(Uri serverUrl, string apiKey, ILogger logger)
+        private readonly Dictionary<string, TokenResponse> _keyCache = new Dictionary<string, TokenResponse>();
+
+        private AuthenticatedRequestBuilder()
         {
-            var request = (HttpWebRequest)WebRequest.Create(serverUrl);
+        }
+
+        public static AuthenticatedRequestBuilder Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    lock (syncRoot)
+                    {
+                        if (_instance == null)
+                            _instance = new AuthenticatedRequestBuilder();
+                    }
+                }
+
+                return _instance;
+            }
+        }
+
+        public HttpWebRequest Build(Uri serverUrl, string apiKey, ILogger logger)
+        {
+            var request = (HttpWebRequest) WebRequest.Create(serverUrl);
 
             if (!string.IsNullOrEmpty(apiKey))
             {
@@ -30,20 +54,20 @@ namespace Smartlogic.Semaphore.Api
             return request;
         }
 
-        private static void AddAuthenticationHeaders(HttpWebRequest request, string apiKey, ILogger logger)
+        private void AddAuthenticationHeaders(HttpWebRequest request, string apiKey, ILogger logger)
         {
             logger.WriteLow("Adding authentication header");
 
-            if (!keyCache.Keys.Contains(apiKey) || keyCache[apiKey].Expires <= DateTime.UtcNow)
+            if (!_keyCache.Keys.Contains(apiKey) || _keyCache[apiKey].Expires <= DateTime.UtcNow)
             {
                 var baseUrl = request.RequestUri.GetLeftPart(UriPartial.Authority);
-                var httpWebRequest = (HttpWebRequest)WebRequest.Create(new Uri($"{baseUrl}/token"));
+                var httpWebRequest = (HttpWebRequest) WebRequest.Create(new Uri($"{baseUrl}/token"));
                 httpWebRequest.Method = "POST";
                 httpWebRequest.ContentType = "application/x-www-form-urlencoded";
                 string postData = $"grant_type=apikey&key={HttpUtility.UrlEncode(apiKey)}";
-                byte[] byteArray = Encoding.UTF8.GetBytes(postData);
+                var byteArray = Encoding.UTF8.GetBytes(postData);
                 httpWebRequest.ContentLength = byteArray.Length;
-                Stream dataStream = httpWebRequest.GetRequestStream();
+                var dataStream = httpWebRequest.GetRequestStream();
                 dataStream.Write(byteArray, 0, byteArray.Length);
                 dataStream.Close();
 
@@ -53,15 +77,15 @@ namespace Smartlogic.Semaphore.Api
 
                 try
                 {
-                    httpWebResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+                    httpWebResponse = (HttpWebResponse) httpWebRequest.GetResponse();
                 }
                 catch (WebException ex)
                 {
                     logger.WriteLow("Access token request returned {0}", ex.Message);
-                    httpWebResponse = (HttpWebResponse)ex.Response;
+                    httpWebResponse = (HttpWebResponse) ex.Response;
                     if (httpWebResponse.StatusCode == HttpStatusCode.BadRequest)
                     {
-                        var errorResponse = httpWebResponse.DeserializeJsonResponse<TokenErrorResponse>();
+                        var errorResponse = DeserializeJsonResponse<TokenErrorResponse>(httpWebResponse);
                         throw new SemaphoreConnectionException($"{errorResponse.Error}: {errorResponse.Description}", ex);
                     }
                     throw new SemaphoreConnectionException($"{ex.Status}: {ex.Message}", ex);
@@ -69,16 +93,16 @@ namespace Smartlogic.Semaphore.Api
 
                 if (httpWebResponse.StatusCode == HttpStatusCode.OK)
                 {
-                    var tokenResponse = httpWebResponse.DeserializeJsonResponse<TokenResponse>();
-                    if (keyCache.ContainsKey(apiKey))
+                    var tokenResponse = DeserializeJsonResponse<TokenResponse>(httpWebResponse);
+                    if (_keyCache.ContainsKey(apiKey))
                     {
                         logger.WriteLow("Updating access token cache");
-                        keyCache[apiKey] = tokenResponse;
+                        _keyCache[apiKey] = tokenResponse;
                     }
                     else
                     {
                         logger.WriteLow("Adding entry to access token cache");
-                        keyCache.Add(apiKey, tokenResponse);
+                        _keyCache.Add(apiKey, tokenResponse);
                     }
                 }
             }
@@ -88,11 +112,11 @@ namespace Smartlogic.Semaphore.Api
             }
 
             logger.WriteLow("Adding 'Authorization' header with access token");
-            var bearer = $"bearer {keyCache[apiKey].AccessToken}";
+            var bearer = $"bearer {_keyCache[apiKey].AccessToken}";
             request.Headers.Add(HttpRequestHeader.Authorization, bearer);
         }
 
-        private static T DeserializeJsonResponse<T>(this HttpWebResponse httpWebResponse)
+        private T DeserializeJsonResponse<T>(HttpWebResponse httpWebResponse)
         {
             var sResponse = string.Empty;
             using (var s = httpWebResponse.GetResponseStream())
@@ -106,5 +130,4 @@ namespace Smartlogic.Semaphore.Api
             }
         }
     }
-
 }

@@ -10,7 +10,6 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Xml;
 
-
 namespace Smartlogic.Semaphore.Api
 {
     /// <summary>
@@ -18,10 +17,11 @@ namespace Smartlogic.Semaphore.Api
     /// </summary>
     public class ClassificationServer : LoggingProxyBase
     {
+        private const int WEBSERVICE_TIMEOUT_DEFAULT = 120;
+        private readonly string _apiKey;
         private readonly Uri _serverUrl;
         private readonly int _timeout;
-        private readonly string _apiKey;
-        
+
         /// <summary>
         ///     A proxy class used for communicating with an instance of Semaphore Classification Server
         /// </summary>
@@ -30,18 +30,19 @@ namespace Smartlogic.Semaphore.Api
         ///     An absolute <see cref="Uri" /> indicating the Classification Server endpoint
         /// </param>
         /// <exception cref="ArgumentException"></exception>
-        [Obsolete("Use contructor that accepts ILogger to capture logging information instead.")]
-        public ClassificationServer(int webServiceTimeout, Uri serverUrl)
+        public ClassificationServer(int webServiceTimeout, Uri serverUrl) : this(webServiceTimeout, serverUrl, new DefaultTraceLogger())
         {
-            if (serverUrl == null) throw new ArgumentException("Missing server Url", nameof(serverUrl));
-            if (webServiceTimeout <= 0) throw new ArgumentException("Web service timeout must be greater than 0", nameof(webServiceTimeout));
-            if (webServiceTimeout > int.MaxValue / 1000)
-                throw new ArgumentException("Web service timeout must be less than " + short.MaxValue / 1000, nameof(webServiceTimeout));
-            if (!serverUrl.IsAbsoluteUri) throw new ArgumentException("Server Url must be an absolute Uri", nameof(serverUrl));
+        }
 
-            _serverUrl = serverUrl;
-            _timeout = webServiceTimeout;
-            BoundaryString = Guid.NewGuid().ToString().Replace("-", "");
+        /// <summary>
+        ///     A proxy class used for communicating with an instance of Semaphore Classification Server
+        /// </summary>
+        /// <param name="serverUrl">
+        ///     An absolute <see cref="Uri" /> indicating the Classification Server endpoint
+        /// </param>
+        /// <exception cref="ArgumentException"></exception>
+        public ClassificationServer(Uri serverUrl) : this(WEBSERVICE_TIMEOUT_DEFAULT, serverUrl, new DefaultTraceLogger())
+        {
         }
 
         /// <summary>
@@ -59,8 +60,8 @@ namespace Smartlogic.Semaphore.Api
             if (serverUrl == null) throw new ArgumentException("Missing server Url", nameof(serverUrl));
             if (logger == null) throw new ArgumentNullException(nameof(logger));
             if (webServiceTimeout <= 0) throw new ArgumentException("Web service timeout must be greater than 0", nameof(webServiceTimeout));
-            if (webServiceTimeout > int.MaxValue / 1000)
-                throw new ArgumentException("Web service timeout must be less than " + short.MaxValue / 1000, nameof(webServiceTimeout));
+            if (webServiceTimeout > int.MaxValue/1000)
+                throw new ArgumentException("Web service timeout must be less than " + short.MaxValue/1000, nameof(webServiceTimeout));
             if (!serverUrl.IsAbsoluteUri) throw new ArgumentException("Server Url must be an absolute Uri", nameof(serverUrl));
 
             _serverUrl = serverUrl;
@@ -68,7 +69,19 @@ namespace Smartlogic.Semaphore.Api
             BoundaryString = Guid.NewGuid().ToString().Replace("-", "");
         }
 
-        public ClassificationServer(int webServiceTimeout, Uri serverUrl, ILogger logger, string apiKey="") : this(webServiceTimeout, serverUrl, logger)
+        /// <summary>
+        ///     Constructs a SearchEnhancement class for use with communicating with a particular instance of Search Enhancement
+        ///     Server
+        /// </summary>
+        /// <param name="webServiceTimeout">An integer representing the number of seconds to wait before timing out</param>
+        /// <param name="serverUrl">
+        ///     An absolute <see cref="Uri" /> indicating the Search Enhancement Server endpoint
+        /// </param>
+        /// <param name="logger"></param>
+        /// <param name="apiKey">An optional apikey string used for connecting to OAuth 2.0 secured services</param>
+        /// <exception cref="System.ArgumentException">Missing server Url;serverUrl</exception>
+        /// <exception cref="ArgumentException"></exception>
+        public ClassificationServer(int webServiceTimeout, Uri serverUrl, ILogger logger, string apiKey = "") : this(webServiceTimeout, serverUrl, logger)
         {
             if (!string.IsNullOrEmpty(apiKey))
             {
@@ -81,6 +94,10 @@ namespace Smartlogic.Semaphore.Api
             _apiKey = apiKey;
         }
 
+        /// <summary>
+        ///     The BoundaryString used for delimiting multi-part form messages sent to Classification Server. A default value is
+        ///     generated automatically although this property allows the default to be overriden if a specific value is required.
+        /// </summary>
         public string BoundaryString { get; set; }
 
         /// <summary>
@@ -182,16 +199,16 @@ namespace Smartlogic.Semaphore.Api
         public Collection<string> GetClassificationClasses()
         {
             var csClasses = new Collection<string>();
-            var request = AuthenticatedRequestBuilder.Build(new Uri(_serverUrl + "?operation=LISTRULENETCLASSES"), _apiKey, Logger);
+            var request = AuthenticatedRequestBuilder.Instance.Build(new Uri(_serverUrl + "?operation=LISTRULENETCLASSES"), _apiKey, Logger);
             WriteLow("CS Request: " + request.RequestUri, null);
             request.Method = "GET";
-            request.Timeout = _timeout * 1000;
+            request.Timeout = _timeout*1000;
 
             try
             {
                 var oStop = new Stopwatch();
                 oStop.Start();
-                var oResponse = (HttpWebResponse)request.GetResponse();
+                var oResponse = (HttpWebResponse) request.GetResponse();
                 oStop.Stop();
 
                 WriteLow("Response received from CS. Time elapsed {0}:{1}.{2}",
@@ -242,24 +259,21 @@ namespace Smartlogic.Semaphore.Api
         public Collection<ClassificationLanguage> GetLanguages()
         {
             var languages = new Collection<ClassificationLanguage>();
-            var request = AuthenticatedRequestBuilder.Build(new Uri(_serverUrl + "?operation=listlanguages"), _apiKey, Logger);
+            var request = AuthenticatedRequestBuilder.Instance.Build(new Uri(_serverUrl + "?operation=listlanguages"), _apiKey, Logger);
             WriteLow("CS Request: " + request.RequestUri, null);
 
             request.Method = "GET";
-            request.Timeout = _timeout * 1000;
+            request.Timeout = _timeout*1000;
 
             try
             {
                 var oStop = new Stopwatch();
                 oStop.Start();
-                var oResponse = (HttpWebResponse)request.GetResponse();
+                var oResponse = (HttpWebResponse) request.GetResponse();
                 oStop.Stop();
 
                 WriteLow(
-                    string.Format("Response received from CS. Time elapsed {0}:{1}.{2}",
-                        oStop.Elapsed.Minutes,
-                        oStop.Elapsed.Seconds.ToString(CultureInfo.InvariantCulture).PadLeft(2, '0').PadLeft(2, '0'),
-                        oStop.Elapsed.Milliseconds),
+                    $"Response received from CS. Time elapsed {oStop.Elapsed.Minutes}:{oStop.Elapsed.Seconds.ToString(CultureInfo.InvariantCulture).PadLeft(2, '0').PadLeft(2, '0')}.{oStop.Elapsed.Milliseconds}",
                     null);
 
                 var stream = oResponse.GetResponseStream();
@@ -269,7 +283,7 @@ namespace Smartlogic.Semaphore.Api
                         var xDoc = new XmlDocument();
                         xDoc.LoadXml(oReader.ReadToEnd());
                         var top = xDoc.SelectSingleNode("//languages");
-                        if (top != null && top.Attributes != null)
+                        if (top?.Attributes != null)
                         {
                             var type = top.Attributes["type"].Value;
                             var nodeList = xDoc.SelectNodes("//language");
@@ -333,16 +347,16 @@ namespace Smartlogic.Semaphore.Api
         public Collection<string> GetTextMiningClasses()
         {
             var csClasses = new Collection<string>();
-            var request = AuthenticatedRequestBuilder.Build(new Uri(_serverUrl + "?operation=LISTRULENETCLASSES"), _apiKey, Logger);
+            var request = AuthenticatedRequestBuilder.Instance.Build(new Uri(_serverUrl + "?operation=LISTRULENETCLASSES"), _apiKey, Logger);
             WriteLow("CS Request: " + request.RequestUri, null);
             request.Method = "GET";
-            request.Timeout = _timeout * 1000;
+            request.Timeout = _timeout*1000;
 
             try
             {
                 var oStop = new Stopwatch();
                 oStop.Start();
-                var oResponse = (HttpWebResponse)request.GetResponse();
+                var oResponse = (HttpWebResponse) request.GetResponse();
                 oStop.Stop();
 
                 WriteLow("Response received from CS. Time elapsed {0}:{1}.{2}",
@@ -360,8 +374,7 @@ namespace Smartlogic.Semaphore.Api
 
                         if (nodeList == null || nodeList.Count == 0)
                         {
-                            throw new SemaphoreConnectionException(string.Format("No Classes retrieved from {0}",
-                                request.RequestUri.AbsolutePath));
+                            throw new SemaphoreConnectionException($"No Classes retrieved from {request.RequestUri.AbsolutePath}");
                         }
 
                         foreach (XmlNode node in nodeList)
@@ -394,16 +407,16 @@ namespace Smartlogic.Semaphore.Api
         public Version GetVersion()
         {
             var result = new Version();
-            var request =AuthenticatedRequestBuilder.Build(new Uri(_serverUrl + "?operation=version"), _apiKey, Logger);
+            var request = AuthenticatedRequestBuilder.Instance.Build(new Uri(_serverUrl + "?operation=version"), _apiKey, Logger);
             WriteLow("CS Request: " + request.RequestUri, null);
             request.Method = "GET";
-            request.Timeout = _timeout * 1000;
+            request.Timeout = _timeout*1000;
 
             try
             {
                 var oStop = new Stopwatch();
                 oStop.Start();
-                var oResponse = (HttpWebResponse)request.GetResponse();
+                var oResponse = (HttpWebResponse) request.GetResponse();
                 oStop.Stop();
 
                 WriteLow("Response received from CS. Time elapsed {0}:{1}.{2}",
@@ -468,16 +481,14 @@ namespace Smartlogic.Semaphore.Api
             string altBody,
             ClassificationOptions options)
         {
-            if (metaValues == null) throw new ArgumentException("Missing metaValues", "metaValues");
-            if (document != null && string.IsNullOrEmpty(fileName)) throw new ArgumentException("Documents must have an associated filename", "fileName");
+            if (metaValues == null) throw new ArgumentException("Missing metaValues", nameof(metaValues));
+            if (document != null && string.IsNullOrEmpty(fileName)) throw new ArgumentException("Documents must have an associated filename", nameof(fileName));
             if (document == null && !string.IsNullOrEmpty(fileName))
                 throw new ArgumentException("Filename parameter should not be set unless an associated document is passed via the document parameter",
-                    "document");
+                    nameof(document));
 
             WriteLow(
-                string.Format("Calling TextMining API (Binary). Item Title={0}, FileName={1}",
-                    title,
-                    fileName),
+                $"Calling TextMining API (Binary). Item Title={title}, FileName={fileName}",
                 null);
 
             var oFrmFields =
@@ -543,21 +554,20 @@ namespace Smartlogic.Semaphore.Api
         }
 
 
-
         [SuppressMessage("Microsoft.Usage", "CA2202",
             Justification = "Using statement handles multiple Dispose appropriately")]
         private ClassificationResult PerformWebClassify(Dictionary<string, string> formFields, IEnumerable<FileUpload> files)
-        {   
+        {
             var sBoundary = BoundaryString;
             const string newLine = "\r\n";
 
             WriteLow($"Classifying data using server Url={_serverUrl}", null);
 
-            var request = AuthenticatedRequestBuilder.Build(_serverUrl, _apiKey, Logger);
+            var request = AuthenticatedRequestBuilder.Instance.Build(_serverUrl, _apiKey, Logger);
 
             request.ContentType = $"multipart/form-data; boundary={sBoundary}";
             request.Method = "POST";
-            request.Timeout = _timeout * 1000;
+            request.Timeout = _timeout*1000;
 
             try
             {
@@ -608,7 +618,7 @@ namespace Smartlogic.Semaphore.Api
 
                         request.ContentLength = oMs.Length;
 
-                        WriteLow(string.Format("Sending {0} bytes", oMs.Length), null);
+                        WriteLow($"Sending {oMs.Length} bytes", null);
 
                         using (var s = request.GetRequestStream())
                         {
@@ -626,7 +636,7 @@ namespace Smartlogic.Semaphore.Api
                 {
                     var oStop = new Stopwatch();
                     oStop.Start();
-                    oResponse = (HttpWebResponse)request.GetResponse();
+                    oResponse = (HttpWebResponse) request.GetResponse();
                     oStop.Stop();
                     WriteLow("Response received from CS. Time elapsed M: {0} S: {1} MS: {2}",
                         oStop.Elapsed.Minutes,
@@ -643,16 +653,16 @@ namespace Smartlogic.Semaphore.Api
                     if (oWeX.Status == WebExceptionStatus.Timeout)
                     {
                         WriteError("Timeout Exception occurred. Timeout setting: {0}", _timeout);
-                        throw new TimeoutException(string.Format("Call to Classification server timed out after {0} seconds", _timeout), oWeX);
+                        throw new TimeoutException($"Call to Classification server timed out after {_timeout} seconds", oWeX);
                     }
 
                     WriteException(oWeX);
                     //throw;
-                    oResponse = (HttpWebResponse)oWeX.Response;
+                    oResponse = (HttpWebResponse) oWeX.Response;
                     if (oResponse == null) throw; //Re-throw the original exception (TimeOut)
                 }
                 WriteLow(
-                    string.Format("API Response Code={0}", oResponse.StatusCode),
+                    $"API Response Code={oResponse.StatusCode}",
                     null);
 
                 ClassificationResult oParser = null;
@@ -688,8 +698,6 @@ namespace Smartlogic.Semaphore.Api
                 throw;
             }
         }
-
-       
 
         #region Nested type: FileUpload
 

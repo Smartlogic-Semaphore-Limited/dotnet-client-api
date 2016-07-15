@@ -24,8 +24,7 @@
     <WarningLevel>4</WarningLevel>
     <RunCodeAnalysis>false</RunCodeAnalysis>
     <CodeAnalysisRuleSet>BasicCorrectnessRules.ruleset</CodeAnalysisRuleSet>
-    <DocumentationFile>
-    </DocumentationFile>
+    <DocumentationFile>bin\debug\Smartlogic.Semaphore.Api.XML</DocumentationFile>
     <UseVSHostingProcess>true</UseVSHostingProcess>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
@@ -36,8 +35,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>
-    </DocumentationFile>
+    <DocumentationFile>bin\release\Smartlogic.Semaphore.Api.XML</DocumentationFile>
     <Prefer32Bit>false</Prefer32Bit>
     <CodeAnalysisRuleSet>BasicCorrectnessRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
@@ -64,6 +62,7 @@
     <Compile Include="AuthenticatedRequestBuilder.cs" />
     <Compile Include="ClassificationLanguage.cs" />
     <Compile Include="ClassificationOptions.cs" />
+    <Compile Include="DefaultTraceLogger.cs" />
     <Compile Include="ILogger.cs" />
     <Compile Include="Internals.cs" />
     <Compile Include="JSON\ConceptMapResponse.cs" />

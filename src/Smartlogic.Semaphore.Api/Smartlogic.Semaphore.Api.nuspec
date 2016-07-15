@@ -9,7 +9,10 @@
     <projectUrl>https://github.com/Smartlogic-Semaphore-Limited/dotnet-client-api</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
-    <releaseNotes>Added additional authorization functions neccesary for connection to OAuth secured endpoints. </releaseNotes>
+    <releaseNotes>
+      v 1.1.3 - Added XML Documentation. Added default ILogger implementation.
+      v 1.1.2 - Added additional authorization functions neccesary for connection to OAuth secured endpoints.
+    </releaseNotes>
     <copyright>Copyright 2016</copyright>
     <tags>Classification NLP C#</tags>
   </metadata>

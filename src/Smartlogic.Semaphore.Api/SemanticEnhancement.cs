@@ -22,9 +22,23 @@ namespace Smartlogic.Semaphore.Api
     /// </summary>
     public class SemanticEnhancement : LoggingProxyBase
     {
+        private const int WEBSERVICE_TIMEOUT_DEFAULT = 120;
         private readonly string _apiKey;
         private readonly Uri _serverUrl;
         private readonly int _timeout;
+
+        /// <summary>
+        ///     Constructs a SearchEnhancement class for use with communicating with a particular instance of Search Enhancement
+        ///     Server
+        /// </summary>
+        /// <param name="serverUrl">
+        ///     An absolute <see cref="Uri" /> indicating the Search Enhancement Server endpoint
+        /// </param>
+        /// <exception cref="System.ArgumentException">Missing server Url;serverUrl</exception>
+        /// <exception cref="ArgumentException"></exception>
+        public SemanticEnhancement(Uri serverUrl) : this(WEBSERVICE_TIMEOUT_DEFAULT, serverUrl, new DefaultTraceLogger())
+        {
+        }
 
         /// <summary>
         ///     Constructs a SearchEnhancement class for use with communicating with a particular instance of Search Enhancement
@@ -36,21 +50,8 @@ namespace Smartlogic.Semaphore.Api
         /// </param>
         /// <exception cref="System.ArgumentException">Missing server Url;serverUrl</exception>
         /// <exception cref="ArgumentException"></exception>
-        [Obsolete("Use contructor that accepts ILogger to capture logging information instead.")]
-        public SemanticEnhancement(int webServiceTimeout, Uri serverUrl)
+        public SemanticEnhancement(int webServiceTimeout, Uri serverUrl) : this(webServiceTimeout, serverUrl, new DefaultTraceLogger())
         {
-            if (serverUrl == null) throw new ArgumentException("Missing server Url", nameof(serverUrl));
-            if (webServiceTimeout <= 0)
-                throw new ArgumentException("Web service timeout must be greater than 0", nameof(webServiceTimeout));
-            if (webServiceTimeout > int.MaxValue / 1000)
-                throw new ArgumentException(
-                    "Web service timeout must be less than " + short.MaxValue / 1000,
-                    nameof(webServiceTimeout));
-            if (!serverUrl.IsAbsoluteUri)
-                throw new ArgumentException("Server Url must be an absolute Uri", nameof(serverUrl));
-
-            _serverUrl = serverUrl;
-            _timeout = webServiceTimeout;
         }
 
         /// <summary>
@@ -72,9 +73,9 @@ namespace Smartlogic.Semaphore.Api
             if (webServiceTimeout <= 0)
                 throw new ArgumentException("Web service timeout must be greater than 0",
                     nameof(webServiceTimeout));
-            if (webServiceTimeout > int.MaxValue / 1000)
+            if (webServiceTimeout > int.MaxValue/1000)
                 throw new ArgumentException(
-                    "Web service timeout must be less than " + short.MaxValue / 1000,
+                    "Web service timeout must be less than " + short.MaxValue/1000,
                     nameof(webServiceTimeout));
             if (!serverUrl.IsAbsoluteUri)
                 throw new ArgumentException("Server Url must be an absolute Uri", nameof(serverUrl));
@@ -83,6 +84,18 @@ namespace Smartlogic.Semaphore.Api
             _timeout = webServiceTimeout;
         }
 
+        /// <summary>
+        ///     Constructs a SearchEnhancement class for use with communicating with a particular instance of Search Enhancement
+        ///     Server
+        /// </summary>
+        /// <param name="webServiceTimeout">An integer representing the number of seconds to wait before timing out</param>
+        /// <param name="serverUrl">
+        ///     An absolute <see cref="Uri" /> indicating the Search Enhancement Server endpoint
+        /// </param>
+        /// <param name="logger"></param>
+        /// <param name="apiKey">An optional apikey string used for connecting to OAuth 2.0 secured services</param>
+        /// <exception cref="System.ArgumentException">Missing server Url;serverUrl</exception>
+        /// <exception cref="ArgumentException"></exception>
         public SemanticEnhancement(int webServiceTimeout, Uri serverUrl, ILogger logger, string apiKey = "") : this(webServiceTimeout, serverUrl, logger)
         {
             if (!string.IsNullOrEmpty(apiKey))
@@ -97,10 +110,11 @@ namespace Smartlogic.Semaphore.Api
         }
 
         /// <summary>
-        ///     Gets or sets a value indicating whether exceptions should be thown or serialized and returned as XML or JSON. The default value is false (ie. serialize exceptions).
+        ///     Gets or sets a value indicating whether exceptions should be thown or serialized and returned as XML or JSON. The
+        ///     default value is false (ie. serialize exceptions).
         /// </summary>
         /// <value>
-        ///     <c>true</c> if exceptions should be thrown; otherwise, <c>false</c>. 
+        ///     <c>true</c> if exceptions should be thrown; otherwise, <c>false</c>.
         /// </value>
         public bool ThrowExceptions { get; set; }
 
@@ -232,15 +246,15 @@ namespace Smartlogic.Semaphore.Api
             var req = new Uri($"{_serverUrl}?TBDB={HttpUtility.UrlEncode(taxonomyIndex)}&TEMPLATE=service.xml&SERVICE=facetslist");
             WriteLow("SES Request: " + req, null);
 
-            var webRequest = AuthenticatedRequestBuilder.Build(req, _apiKey, Logger);
+            var webRequest = AuthenticatedRequestBuilder.Instance.Build(req, _apiKey, Logger);
             webRequest.Method = "GET";
-            webRequest.Timeout = _timeout * 1000;
+            webRequest.Timeout = _timeout*1000;
 
             try
             {
                 var oStop = new Stopwatch();
                 oStop.Start();
-                var oResponse = (HttpWebResponse)webRequest.GetResponse();
+                var oResponse = (HttpWebResponse) webRequest.GetResponse();
                 oStop.Stop();
 
                 WriteLow(
@@ -265,7 +279,7 @@ namespace Smartlogic.Semaphore.Api
 
                         // ReSharper disable LoopCanBeConvertedToQuery
                         foreach (XmlNode node in nodeList)
-                        // ReSharper restore LoopCanBeConvertedToQuery
+                            // ReSharper restore LoopCanBeConvertedToQuery
                         {
                             if (node.Attributes == null) continue;
 
@@ -923,15 +937,15 @@ namespace Smartlogic.Semaphore.Api
             var req = new Uri(_serverUrl + "?TEMPLATE=service.xml&SERVICE=modelslist");
             WriteLow("SES Request: " + req, null);
 
-            var oRequest = AuthenticatedRequestBuilder.Build(req, _apiKey, Logger);
+            var oRequest = AuthenticatedRequestBuilder.Instance.Build(req, _apiKey, Logger);
             oRequest.Method = "GET";
-            oRequest.Timeout = _timeout * 1000;
+            oRequest.Timeout = _timeout*1000;
 
             try
             {
                 var oStop = new Stopwatch();
                 oStop.Start();
-                var oResponse = (HttpWebResponse)oRequest.GetResponse();
+                var oResponse = (HttpWebResponse) oRequest.GetResponse();
                 oStop.Stop();
 
                 WriteLow("Response received from SES. Time elapsed {0}:{1}.{2}",
@@ -955,7 +969,7 @@ namespace Smartlogic.Semaphore.Api
 
                         // ReSharper disable LoopCanBeConvertedToQuery
                         foreach (XmlNode node in nodeList)
-                        // ReSharper restore LoopCanBeConvertedToQuery
+                            // ReSharper restore LoopCanBeConvertedToQuery
                         {
                             var name = node.SelectSingleNode("NAME");
                             indices.Add(name?.InnerText.Trim() ?? node.InnerText.Trim());
@@ -1016,6 +1030,17 @@ namespace Smartlogic.Semaphore.Api
             return oDoc;
         }
 
+        /// <summary>
+        ///     Returns information for a particular term specified by ID
+        /// </summary>
+        /// <param name="taxonomyIndex">The name of the index to be searched</param>
+        /// <param name="facet">The name of a particular facet to be searched. If empty, terms from all facets will be returned</param>
+        /// <param name="filter">An optional additional filter string used to filter the taxonomy being queried</param>
+        /// <param name="termId">The identifier of the term for which information is required</param>
+        /// <returns>
+        ///     <see cref="XDocument" /> containing term information
+        /// </returns>
+        /// <exception cref="System.ArgumentNullException">taxonomyIndex</exception>
         [Obsolete("Use overloaded method with optional language parameter")]
         public XDocument GetTermByIdAsXDoc(string taxonomyIndex,
             string facet,
@@ -1198,7 +1223,6 @@ namespace Smartlogic.Semaphore.Api
 
             try
             {
-
                 var xDoc = new XmlDocument();
                 xDoc.LoadXml(GetServerResponse(req));
                 var nodeList =
@@ -1365,15 +1389,15 @@ namespace Smartlogic.Semaphore.Api
         /// <exception cref="SemaphoreConnectionException"></exception>
         private string GetServerResponse(Uri serverWithQuery)
         {
-            var oRequest = AuthenticatedRequestBuilder.Build(serverWithQuery, _apiKey, Logger);
+            var oRequest = AuthenticatedRequestBuilder.Instance.Build(serverWithQuery, _apiKey, Logger);
             oRequest.Method = "GET";
-            oRequest.Timeout = _timeout * 1000;
+            oRequest.Timeout = _timeout*1000;
 
             try
             {
-                var oResponse = (HttpWebResponse)oRequest.GetResponse();
+                var oResponse = (HttpWebResponse) oRequest.GetResponse();
 
-                var status = (int)oResponse.StatusCode;
+                var status = (int) oResponse.StatusCode;
                 if (status >= 400)
                 {
                     throw new SemaphoreConnectionException($"{status}: {oResponse.StatusDescription}");
@@ -1410,15 +1434,15 @@ namespace Smartlogic.Semaphore.Api
         /// <exception cref="SemaphoreConnectionException"></exception>
         private T GetServerResponse<T>(Uri serverWithQuery) where T : class
         {
-            var oRequest = AuthenticatedRequestBuilder.Build(serverWithQuery, _apiKey, Logger);
+            var oRequest = AuthenticatedRequestBuilder.Instance.Build(serverWithQuery, _apiKey, Logger);
             oRequest.Method = "GET";
-            oRequest.Timeout = _timeout * 1000;
+            oRequest.Timeout = _timeout*1000;
             var serializer = new XmlSerializer(typeof(T));
             try
             {
-                var oResponse = (HttpWebResponse)oRequest.GetResponse();
+                var oResponse = (HttpWebResponse) oRequest.GetResponse();
 
-                var status = (int)oResponse.StatusCode;
+                var status = (int) oResponse.StatusCode;
                 if (status >= 400)
                 {
                     throw new SemaphoreConnectionException($"{status}: {oResponse.StatusDescription}");
