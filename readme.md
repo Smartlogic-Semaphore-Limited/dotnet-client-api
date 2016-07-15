@@ -5,15 +5,17 @@
 ###Install from NuGet
 Although you can certainly clone this repo and build your own binaries, it's also possible to use a pre-compiled version from NuGet by following these steps:
 
-1. In Visual Studio, from the Tools menu select Library Package Manager and then click Package Manager Console.
+1. In __Visual Studio__, from the **Tools** menu select **Library Package Manager** and then click **Package Manager Console**.
 
-2. In the Package Manager Console window that is displayed simply type:
+2. In the __Package Manager Console__ window that is displayed simply type:
 
 ```
 install-package Smartlogic.Semaphore.Api
 ```
 
-and you're done!
+and you're done! 
+
+For more info see [Smartlogic.Semaphore.Api on NuGet](https://www.nuget.org/packages/Smartlogic.Semaphore.Api)
 
 ###An example Console Application that classifies a document using C# #
 
