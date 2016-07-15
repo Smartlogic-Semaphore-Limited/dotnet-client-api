@@ -1,8 +1,21 @@
 ![VSO build status](https://smartlogicvso.visualstudio.com/_apis/public/build/definitions/86c4d2f5-f6a1-49ee-80ea-892ba9863df0/14/badge)
 
-Smartlogic Semaphore Client Api for use with Microsoft .Net Framework applications
+#Smartlogic Semaphore .Net Client Api
 
-An example Console Application that classifies a document using C#
+###Install from NuGet
+Although you can certainly clone this repo and build your own binaries, it's also possible to use a pre-compiled version from NuGet by following these steps:
+
+1. In Visual Studio, from the Tools menu select Library Package Manager and then click Package Manager Console.
+
+2. In the Package Manager Console window that is displayed simply type:
+
+```
+install-package Smartlogic.Semaphore.Api
+```
+
+and you're done!
+
+###An example Console Application that classifies a document using C# #
 
 ```
 using System;
