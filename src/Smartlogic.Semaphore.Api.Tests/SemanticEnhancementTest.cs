@@ -487,6 +487,34 @@ namespace Smartlogic.Semaphore.Api.Tests
             }
         }
 
+
+        [TestMethod, TestCategory("SES")]
+        public void GetRootTermsAsXdocTest_WithHierarchy()
+        {
+            const string resource = "Smartlogic.Semaphore.Api.Tests.SampleFiles.GetRootTermsResult.xml";
+            var expectedUri =
+                new Uri($"http://myserver/?TBDB={TAXONOMY_INDEX}&TEMPLATE=service.xml&SERVICE=browse&ID=&HIERTYPE=FOO");
+
+            var expectedString = GetExpectedString(resource);
+
+            using (var ctx = new ShimSESConversationContext(resource, expectedUri))
+            {
+                var target = ctx.Server;
+
+                var actualDoc = target.GetRootTermsAsXDoc(TAXONOMY_INDEX, _facet, _filter, "","FOO");
+
+                var expected = XDocument.Parse(expectedString);
+
+                Assert.IsNotNull(actualDoc);
+
+                Assert.IsTrue(XNode.DeepEquals(expected, actualDoc));
+
+                var isError = actualDoc.Descendants("Error").Any();
+                Assert.IsFalse(isError,
+                    "The request was not correctly generated. An error was thrown when reading the response.");
+            }
+        }
+
         [TestMethod, TestCategory("SES")]
         public void GetRootTermsTest()
         {
@@ -509,6 +537,37 @@ namespace Smartlogic.Semaphore.Api.Tests
                 var actualDoc = XDocument.Parse(nav.OuterXml);
 
                 Assert.IsNotNull(actual);
+             
+                Assert.IsTrue(XNode.DeepEquals(expected, actualDoc));
+
+                var isError = actualDoc.Descendants("Error").Any();
+                Assert.IsFalse(isError,
+                    "The request was not correctly generated. An error was thrown when reading the response.");
+            }
+        }
+
+        [TestMethod, TestCategory("SES")]
+        public void GetRootTermsTest_WithHierarchy()
+        {
+            const string resource = "Smartlogic.Semaphore.Api.Tests.SampleFiles.GetRootTermsResult.xml";
+            var expectedUri =
+                new Uri($"http://myserver/?TBDB={TAXONOMY_INDEX + "1"}&TEMPLATE=service.xml&SERVICE=browse&ID=&HIERTYPE=FOO");
+
+            var expectedString = GetExpectedString(resource);
+
+            using (var ctx = new ShimSESConversationContext(resource, expectedUri))
+            {
+                var target = ctx.Server;
+
+                var actual = target.GetRootTerms(TAXONOMY_INDEX + "1", _facet, _filter, "","FOO");
+
+                var expected = XDocument.Parse(expectedString);
+
+                var nav = actual.CreateNavigator();
+                if (nav == null) throw new Exception("Unable to create navigator");
+                var actualDoc = XDocument.Parse(nav.OuterXml);
+
+                Assert.IsNotNull(actual);
 
                 Assert.IsTrue(XNode.DeepEquals(expected, actualDoc));
 
@@ -517,6 +576,7 @@ namespace Smartlogic.Semaphore.Api.Tests
                     "The request was not correctly generated. An error was thrown when reading the response.");
             }
         }
+
 
         [TestMethod, TestCategory("SES")]
         public void GetStructureTest()
@@ -723,7 +783,7 @@ namespace Smartlogic.Semaphore.Api.Tests
         {
             var expected = new Version(3, 4, 0, 43843);
             const string resource = "Smartlogic.Semaphore.Api.Tests.SampleFiles.GetVersionsResult.xml";
-            var expectedUri = new Uri("http://myserver4/?TEMPLATE=service.xml&SERVICE=versions");
+            var expectedUri = new Uri("http://myserver/?TEMPLATE=service.xml&SERVICE=versions");
 
             using (var ctx = new ShimSESConversationContext(resource, expectedUri))
             {

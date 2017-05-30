@@ -859,6 +859,30 @@ namespace Smartlogic.Semaphore.Api
             return oDoc;
         }
 
+
+        /// <summary>
+        ///     Use to return details of the root terms for a configured taxonomy
+        /// </summary>
+        /// <param name="taxonomyIndex">The name of the index to be searched</param>
+        /// <param name="facet">The name of a particular facet to be searched. If empty, terms from all facets will be returned</param>
+        /// <param name="filter">An optional additional filter string used to filter the taxonomy being queried</param>
+        /// <param name="language">The language specific version of the index to use</param>
+        /// <param name="hierType">The child relationship type</param>
+        /// <returns>
+        ///     <see cref="XmlDocument" /> containing root terms
+        /// </returns>
+        public IXPathNavigable GetRootTerms(string taxonomyIndex, string facet, string filter, string language, string hierType)
+        {
+            if (string.IsNullOrEmpty(taxonomyIndex))
+                throw new ArgumentNullException(nameof(taxonomyIndex));
+
+            var oDoc = new XmlDocument();
+
+            oDoc.LoadXml(BrowseTerms(taxonomyIndex, facet, filter, string.Empty, false, language, hierType));
+
+            return oDoc;
+        }
+
         /// <summary>
         ///     Use to return details of the root terms for a configured taxonomy
         /// </summary>
@@ -894,6 +918,29 @@ namespace Smartlogic.Semaphore.Api
 
             return oDoc;
         }
+
+
+         /// <summary>
+        ///     Use to return details of the root terms for a configured taxonomy
+        /// </summary>
+        /// <param name="taxonomyIndex">The name of the index to be searched</param>
+        /// <param name="facet">The name of a particular facet to be searched. If empty, terms from all facets will be returned</param>
+        /// <param name="filter">An optional additional filter string used to filter the taxonomy being queried</param>
+        /// <param name="language">An optional parameter denoting the language variant to be returned</param>
+        ///  /// <param name="hierType">The child relationship type</param>
+        /// <returns>
+        ///     <see cref="XDocument" /> containing root terms
+        /// </returns>
+        public XDocument GetRootTermsAsXDoc(string taxonomyIndex, string facet, string filter, string language, string hierType)
+        {
+            if (string.IsNullOrEmpty(taxonomyIndex))
+                throw new ArgumentNullException(nameof(taxonomyIndex));
+
+            var oDoc = XDocument.Parse(BrowseTerms(taxonomyIndex, facet, filter, string.Empty, false, language,hierType));
+
+            return oDoc;
+        }
+
 
         /// <summary>
         ///     Returns an xml document that describes the structure of the model.
@@ -1295,15 +1342,17 @@ namespace Smartlogic.Semaphore.Api
         ///     if set to <c>true</c> [use json].
         /// </param>
         /// <param name="language"></param>
+        /// <param name="hierType"></param>
         /// <returns>System.String.</returns>
         private string BrowseTerms(string taxonomyIndex,
             string facet,
             string filter,
             string termId,
             bool useJson = false,
-            string language = "")
+            string language = "",
+            string hierType=null)
         {
-            var query = BuildBrowseQueryString(taxonomyIndex, facet, filter, termId, null, useJson, language);
+            var query = BuildBrowseQueryString(taxonomyIndex, facet, filter, termId, hierType, useJson, language);
 
             try
             {

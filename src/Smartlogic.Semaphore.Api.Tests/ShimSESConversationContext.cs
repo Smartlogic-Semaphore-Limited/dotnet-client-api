@@ -13,7 +13,7 @@ namespace Smartlogic.Semaphore.Api.Tests
     {
         private const int WEB_SERVICE_TIMEOUT = 30;
         private static readonly ILogger logger = new TestLogger();
-        private readonly Uri _serverUrl = new Uri("http://myserver2");
+        private readonly Uri _serverUrl = new Uri("http://myserver");
         private readonly IDisposable _wrappedContext;
 
         public ShimSESConversationContext(string responseResourceName = "", Uri expectedUri = null, string serverUrl = "")
@@ -36,7 +36,17 @@ namespace Smartlogic.Semaphore.Api.Tests
             else
             {
                 var testResponse = Assembly.GetExecutingAssembly().GetManifestResourceStream(responseResourceName);
-                ShimHttpWebRequest.AllInstances.GetResponse = foo => fakeResponse;
+                ShimHttpWebRequest.AllInstances.GetResponse = foo =>
+                {
+                    if (foo.Address == expectedUri)
+                    {
+                        return fakeResponse;
+                    }
+                    else
+                    {
+                        throw new WebException($"Unexpected URI. Expected {expectedUri} got {foo.Address}");
+                    }
+                };
                 fakeResponse.GetResponseStream = () => testResponse;
             }
             fakeResponse.StatusCodeGet = () => HttpStatusCode.OK;
