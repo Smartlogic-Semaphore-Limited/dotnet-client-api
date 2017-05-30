@@ -98,6 +98,7 @@
     <None Include="Schemas\Structure\Structure.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Smartlogic.Semaphore.Api.nuspec" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Schemas\Structure\Structure.xml" />
