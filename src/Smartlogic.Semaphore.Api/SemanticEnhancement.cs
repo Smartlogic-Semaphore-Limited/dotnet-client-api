@@ -538,12 +538,14 @@ namespace Smartlogic.Semaphore.Api
         /// <param name="facet">The facet.</param>
         /// <param name="filter">The filter.</param>
         /// <param name="termId">The term id.</param>
+        /// <param name="rows">The number of rows.</param>
         /// <returns>BrowseResponse.</returns>
         /// <exception cref="System.ArgumentNullException">taxonomyIndex</exception>
         public BrowseResponse GetJsonTermById(string taxonomyIndex,
             string facet,
             string filter,
-            string termId)
+            string termId,
+            int? rows = null)
         {
             if (string.IsNullOrEmpty(taxonomyIndex))
                 throw new ArgumentNullException(nameof(taxonomyIndex));
@@ -1343,6 +1345,7 @@ namespace Smartlogic.Semaphore.Api
         /// </param>
         /// <param name="language"></param>
         /// <param name="hierType"></param>
+        /// <param name="rows">The number of rows.</param>
         /// <returns>System.String.</returns>
         private string BrowseTerms(string taxonomyIndex,
             string facet,
@@ -1350,9 +1353,10 @@ namespace Smartlogic.Semaphore.Api
             string termId,
             bool useJson = false,
             string language = "",
-            string hierType=null)
+            string hierType = null,
+            int? rows = null)
         {
-            var query = BuildBrowseQueryString(taxonomyIndex, facet, filter, termId, hierType, useJson, language);
+            var query = BuildBrowseQueryString(taxonomyIndex, facet, filter, termId, hierType, useJson, language, rows);
 
             try
             {
@@ -1392,7 +1396,8 @@ namespace Smartlogic.Semaphore.Api
             string termId,
             string hiertype,
             bool useJson = false,
-            string language = "")
+            string language = "",
+            int? rows = null)
         {
             if (_serverUrl == null)
                 throw new SemaphoreConnectionException("Ontology Server URL not configured");
@@ -1423,6 +1428,12 @@ namespace Smartlogic.Semaphore.Api
                 sb.Append(HttpUtility.UrlEncode(language));
                 sb.Append("&LANGUAGE=");
                 sb.Append(HttpUtility.UrlEncode(language));
+            }
+
+            if (rows != null)
+            {
+                sb.Append("&ROWS=");
+                sb.Append(rows.Value.ToString());
             }
 
             AddFacetAndFiler(facet, filter, sb);
