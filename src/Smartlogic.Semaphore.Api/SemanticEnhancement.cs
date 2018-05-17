@@ -551,7 +551,7 @@ namespace Smartlogic.Semaphore.Api
                 throw new ArgumentNullException(nameof(taxonomyIndex));
             if (string.IsNullOrEmpty(termId)) throw new ArgumentNullException(nameof(termId));
 
-            var result = BrowseTerms(taxonomyIndex, facet, filter, termId, true);
+            var result = BrowseTerms(taxonomyIndex, facet, filter, termId, true, "", "", rows);
 
             return BrowseResponse.FromJsonString(result);
         }
@@ -1353,7 +1353,7 @@ namespace Smartlogic.Semaphore.Api
             string termId,
             bool useJson = false,
             string language = "",
-            string hierType = null,
+            string hierType = "",
             int? rows = null)
         {
             var query = BuildBrowseQueryString(taxonomyIndex, facet, filter, termId, hierType, useJson, language, rows);
@@ -1388,6 +1388,7 @@ namespace Smartlogic.Semaphore.Api
         ///     if set to <c>true</c> [use json].
         /// </param>
         /// <param name="language"></param>
+        /// <param name="rows">The number of rows.</param>
         /// <returns>System.String.</returns>
         /// <exception cref="SemaphoreConnectionException">Ontology Server URL not configured</exception>
         private string BuildBrowseQueryString(string taxonomyIndex,
