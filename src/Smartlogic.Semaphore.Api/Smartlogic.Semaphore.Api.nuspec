@@ -10,7 +10,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
     <releaseNotes>
-      v 1.1.5 - Made it possible to set number of terms to download.
+      v 1.1.6 - Made it possible to set number of terms to download.
       v 1.1.4 - Added methods to support making SES requests for root terms for a specific hierarchical relationship.
       v 1.1.3 - Added XML Documentation. Added default ILogger implementation.
       v 1.1.2 - Added additional authorization functions neccesary for connection to OAuth secured endpoints.
