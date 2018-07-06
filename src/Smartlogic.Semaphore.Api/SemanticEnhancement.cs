@@ -519,14 +519,15 @@ namespace Smartlogic.Semaphore.Api
         /// <param name="taxonomyIndex">Index of the taxonomy.</param>
         /// <param name="facet">The facet.</param>
         /// <param name="filter">The filter.</param>
+        /// <param name="lang">The language.</param>
         /// <returns>BrowseResponse.</returns>
         /// <exception cref="System.ArgumentNullException">taxonomyIndex</exception>
-        public BrowseResponse GetJsonRootTerms(string taxonomyIndex, string facet, string filter)
+        public BrowseResponse GetJsonRootTerms(string taxonomyIndex, string facet, string filter, string lang = "")
         {
             if (string.IsNullOrEmpty(taxonomyIndex))
                 throw new ArgumentNullException(nameof(taxonomyIndex));
 
-            var result = BrowseTerms(taxonomyIndex, facet, filter, string.Empty, true);
+            var result = BrowseTerms(taxonomyIndex, facet, filter, string.Empty, true, lang);
 
             return BrowseResponse.FromJsonString(result);
         }
@@ -538,6 +539,7 @@ namespace Smartlogic.Semaphore.Api
         /// <param name="facet">The facet.</param>
         /// <param name="filter">The filter.</param>
         /// <param name="termId">The term id.</param>
+        /// <param name="lang">The language.</param>
         /// <param name="rows">The number of rows.</param>
         /// <returns>BrowseResponse.</returns>
         /// <exception cref="System.ArgumentNullException">taxonomyIndex</exception>
@@ -545,13 +547,14 @@ namespace Smartlogic.Semaphore.Api
             string facet,
             string filter,
             string termId,
+            string lang = "",
             int? rows = null)
         {
             if (string.IsNullOrEmpty(taxonomyIndex))
                 throw new ArgumentNullException(nameof(taxonomyIndex));
             if (string.IsNullOrEmpty(termId)) throw new ArgumentNullException(nameof(termId));
 
-            var result = BrowseTerms(taxonomyIndex, facet, filter, termId, true, "", "", rows);
+            var result = BrowseTerms(taxonomyIndex, facet, filter, termId, true, lang, "", rows);
 
             return BrowseResponse.FromJsonString(result);
         }
@@ -1387,7 +1390,7 @@ namespace Smartlogic.Semaphore.Api
         /// <param name="useJson">
         ///     if set to <c>true</c> [use json].
         /// </param>
-        /// <param name="language"></param>
+        /// <param name="language">The language.</param>
         /// <param name="rows">The number of rows.</param>
         /// <returns>System.String.</returns>
         /// <exception cref="SemaphoreConnectionException">Ontology Server URL not configured</exception>
