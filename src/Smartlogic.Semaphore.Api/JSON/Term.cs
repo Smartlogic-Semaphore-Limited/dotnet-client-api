@@ -26,6 +26,12 @@ namespace Smartlogic.Semaphore.Api.JSON
         public string Class { get; set; }
 
         /// <summary>
+        /// Gets or sets the deprecated field.
+        /// </summary>
+        [JsonProperty("deprecated")]
+        public bool IsDeprecated { get; set; }
+
+        /// <summary>
         ///     Gets or sets the node.
         /// </summary>
         /// <value>The node.</value>
