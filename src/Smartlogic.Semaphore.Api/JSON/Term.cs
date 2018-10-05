@@ -76,7 +76,7 @@ namespace Smartlogic.Semaphore.Api.JSON
         /// <value>The metadata.</value>
         /// <remarks></remarks>
         [JsonProperty("metadata")]
-        public Dictionary<string, string> Metadata { get; set; }
+        public Dictionary<string, object> Metadata { get; set; }
 
         /// <summary>
         ///     Gets or sets the custom properties.
