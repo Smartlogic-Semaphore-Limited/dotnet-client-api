@@ -967,14 +967,15 @@ namespace Smartlogic.Semaphore.Api
             {
                 WriteLow("SES Request: {0}", restUri);
                 var response = GetServerResponse<Schemas.Structure.Semaphore>(restUri);
-                return response.Structure;
+                return response?.Structure;
             }
             catch (Exception oX)
             {
                 WriteException(oX);
                 if (ThrowExceptions) throw;
-                throw;
             }
+
+            return null;
         }
 
         /// <summary>
