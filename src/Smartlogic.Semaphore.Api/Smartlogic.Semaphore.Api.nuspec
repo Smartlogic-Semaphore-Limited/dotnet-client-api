@@ -10,7 +10,8 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
     <releaseNotes>
-      v 1.1.10 - Fixed incorrect exception handling. Patched potential null reference exception.
+	    v 1.1.10 - Fixed incorrect exception handling. Patched potential null reference exception.
+      v 1.1.9 - Added suport to changes in SES output after 4.1.29 version with backward compatibility.
       v 1.1.8 - Added support for term deprecated field in SES output.
       v 1.1.7 - Modified methods for getting terms, so that they support choosing a language.
       v 1.1.6 - Made it possible to set number of terms to download.
