@@ -65,6 +65,43 @@ namespace Smartlogic.Semaphore.Api
         }
 
         /// <summary>
+        ///     Returns a list of classifications for all classes
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="ArgumentException"></exception>
+        /// <exception cref="ClassificationException"></exception>
+        /// <remarks></remarks>
+        public IEnumerable<NestingClassificationItem> GetNestingClassifications()
+        {
+            var results = new List<NestingClassificationItem>();
+
+            var oIDs = _results.SelectNodes(".//STRUCTUREDDOCUMENT/META[@score]");
+            if (oIDs != null && oIDs.Count > 0)
+            {
+                for (var c = 0; c < oIDs.Count; c++)
+                {
+                    var element = (XmlElement)oIDs[c];
+                    var value = element.GetAttribute("value");
+                    var classname = element.GetAttribute("name");
+                    var score = float.Parse(element.GetAttribute("score"), CultureInfo.InvariantCulture.NumberFormat);
+
+                    if (element.HasAttribute("id"))
+                    {
+                        var id = element.GetAttribute("id");
+                        results.Add(new NestingClassificationItem(classname, value, score, id, element));
+                    }
+                    else
+                    {
+                        results.Add(new NestingClassificationItem(classname, value, score, element));
+                    }
+                }
+            }
+
+            return results.OrderByDescending(r => r.Score);
+        }
+
+
+        /// <summary>
         ///     Returns a list of classifications for a particular class
         /// </summary>
         /// <param name="className">Name of the class.</param>
