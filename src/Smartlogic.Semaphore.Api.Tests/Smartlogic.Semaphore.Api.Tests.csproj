@@ -114,6 +114,9 @@
     <EmbeddedResource Include="SampleFiles\CSTestResponse.xml" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="SampleFiles\CSTestResponseNesting.xml" />
+  </ItemGroup>
+  <ItemGroup>
     <Fakes Include="Fakes\Smartlogic.Semaphore.Api.fakes" />
     <Fakes Include="Fakes\System.fakes">
       <SubType>Designer</SubType>

@@ -1,6 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Text;
 using System.Xml;
 
 namespace Smartlogic.Semaphore.Api
@@ -37,7 +39,7 @@ namespace Smartlogic.Semaphore.Api
                     if (childNode.Name.Equals("META"))
                     {
                         var value = childNode.GetAttribute("value");
-                        string id = childNode.GetAttribute("name");
+                        string id = childNode.GetAttribute("value");
                         if ((id == null) || (id.Trim().Length == 0)) id = value;
 
                         var classname = childNode.GetAttribute("name");
@@ -61,6 +63,27 @@ namespace Smartlogic.Semaphore.Api
         public IEnumerable<NestingClassificationItem> Children
         {
             get { return _childClassificationItems.ToArray(); }
+        }
+
+
+        /// <summary>
+        ///     Output the item as an indented string
+        /// </summary>
+        /// <remarks></remarks>
+        override
+        public string ToString()
+        {
+            StringBuilder StringBuilder = new StringBuilder();
+            this.Append(StringBuilder, "");
+            return StringBuilder.ToString();
+        }
+
+        private void Append(StringBuilder StringBuilder, string Indent)
+        {
+            StringBuilder.Append(Indent).Append("Class Name:").Append(ClassName).Append("  ID:").Append(Id).Append("  Value:").Append(Value).Append("  Score:").Append(Score).Append("\n");
+            foreach (NestingClassificationItem Child in Children) {
+                Child.Append(StringBuilder, Indent + "    ");
+            }
         }
     }
 }

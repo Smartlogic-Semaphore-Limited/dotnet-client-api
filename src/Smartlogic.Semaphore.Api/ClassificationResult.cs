@@ -65,7 +65,7 @@ namespace Smartlogic.Semaphore.Api
         }
 
         /// <summary>
-        ///     Returns a list of classifications for all classes
+        ///     Returns a list of nesting classifications for all classes
         /// </summary>
         /// <returns></returns>
         /// <exception cref="ArgumentException"></exception>
@@ -73,7 +73,7 @@ namespace Smartlogic.Semaphore.Api
         /// <remarks></remarks>
         public IEnumerable<NestingClassificationItem> GetNestingClassifications()
         {
-            var results = new List<NestingClassificationItem>();
+            var oResults = new List<NestingClassificationItem>();
 
             var oIDs = _results.SelectNodes(".//STRUCTUREDDOCUMENT/META[@score]");
             if (oIDs != null && oIDs.Count > 0)
@@ -88,16 +88,33 @@ namespace Smartlogic.Semaphore.Api
                     if (element.HasAttribute("id"))
                     {
                         var id = element.GetAttribute("id");
-                        results.Add(new NestingClassificationItem(classname, value, score, id, element));
+                        oResults.Add(new NestingClassificationItem(classname, value, score, id, element));
                     }
                     else
                     {
-                        results.Add(new NestingClassificationItem(classname, value, score, element));
+                        oResults.Add(new NestingClassificationItem(classname, value, score, element));
                     }
                 }
             }
+            else
+            {
+                // else do we have a response? If no, log an error
+                if (_results.DocumentElement != null)
+                {
+                    var oResponse = _results.DocumentElement.SelectSingleNode("STRUCTUREDDOCUMENT");
+                    var oError = _results.DocumentElement.SelectSingleNode("error");
 
-            return results.OrderByDescending(r => r.Score);
+                    if ((oResponse == null) && (oError == null))
+                    {
+                        throw new ClassificationException("Get Classifications: No Response received");
+                    }
+
+                    // else if check and log if there is an error.
+                    if (oError?.Attributes != null)
+                        throw new ClassificationException(oError.Attributes["id"].Value + " : " + oError.InnerText);
+                }
+            }
+            return oResults.OrderByDescending(r => r.Score);
         }
 
 
