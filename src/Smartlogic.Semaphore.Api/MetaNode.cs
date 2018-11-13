@@ -7,15 +7,15 @@ using System.Xml;
 
 namespace Smartlogic.Semaphore.Api
 {
-    public class NestingClassificationItem : ClassificationItem 
+    public class MetaNode : ClassificationItem 
     {
-        private LinkedList<NestingClassificationItem> _childClassificationItems;
+        private LinkedList<MetaNode> _childNodes;
 
         /// <summary>
         ///     Construct the object if an id is provide.
         /// </summary>
         /// <remarks></remarks>
-        public NestingClassificationItem(string classname, string value, float score, string id, XmlElement element) : base(classname, value, score, id)
+        public MetaNode(string classname, string value, float score, string id, XmlElement element) : base(classname, value, score, id)
         {
             addChildren(element);
         }
@@ -24,14 +24,14 @@ namespace Smartlogic.Semaphore.Api
         ///     Construct the object if no id is provide.
         /// </summary>
         /// <remarks></remarks>
-        public NestingClassificationItem(string classname, string value, float score, XmlElement element) : base(classname, value, score)
+        public MetaNode(string classname, string value, float score, XmlElement element) : base(classname, value, score)
         {
             addChildren(element);
         }
 
         private void addChildren(XmlElement element)
         {
-            _childClassificationItems = new LinkedList<NestingClassificationItem>();
+            _childNodes = new LinkedList<MetaNode>();
             XmlNodeList childNodes = element.ChildNodes;
             if ((childNodes != null) && (childNodes.Count > 0)) {
                 foreach (XmlElement childNode in childNodes)
@@ -50,7 +50,7 @@ namespace Smartlogic.Semaphore.Api
                         {
                             score = float.Parse(scoreString, CultureInfo.InvariantCulture.NumberFormat);
                         }
-                        _childClassificationItems.AddLast(new NestingClassificationItem(classname, value, score, id, childNode));
+                        _childNodes.AddLast(new MetaNode(classname, value, score, id, childNode));
                     }
                 }
             }
@@ -60,9 +60,9 @@ namespace Smartlogic.Semaphore.Api
         ///     Gets the meta items nesting within this one.
         /// </summary>
         /// <remarks></remarks>
-        public IEnumerable<NestingClassificationItem> Children
+        public IEnumerable<MetaNode> Children
         {
-            get { return _childClassificationItems.ToArray(); }
+            get { return _childNodes.ToArray(); }
         }
 
 
@@ -81,7 +81,7 @@ namespace Smartlogic.Semaphore.Api
         private void Append(StringBuilder StringBuilder, string Indent)
         {
             StringBuilder.Append(Indent).Append("Class Name:").Append(ClassName).Append("  ID:").Append(Id).Append("  Value:").Append(Value).Append("  Score:").Append(Score).Append("\n");
-            foreach (NestingClassificationItem Child in Children) {
+            foreach (MetaNode Child in Children) {
                 Child.Append(StringBuilder, Indent + "    ");
             }
         }

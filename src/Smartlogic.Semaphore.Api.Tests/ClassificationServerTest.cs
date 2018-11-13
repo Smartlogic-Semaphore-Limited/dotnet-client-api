@@ -357,7 +357,7 @@ namespace Smartlogic.Semaphore.Api.Tests
         }
 
         [TestMethod, TestCategory("CS")]
-        public void ClassifyTestNesting_Happy()
+        public void ClassifyTestMetaNode_Happy()
         {
             var options = new ClassificationOptions
             {
@@ -398,31 +398,31 @@ namespace Smartlogic.Semaphore.Api.Tests
                     "Generated result does not contain expected elements");
 
                 Assert.AreEqual(22,
-                    actual.GetNestingClassifications().Count(),
+                    actual.GetMetaNodes().Count(),
                     "Generated result does not contain expected elements");
 
-                NestingClassificationItem thirdItem = actual.GetNestingClassifications().ToArray<NestingClassificationItem>()[2];
+                MetaNode thirdItem = actual.GetMetaNodes().ToArray<MetaNode>()[2];
                 Assert.AreEqual("FactExtraction-Example", thirdItem.ClassName, "thirdItem ClassName");
                 Assert.AreEqual("", thirdItem.Value, "thirdItem Value");
                 Assert.AreEqual("", thirdItem.Id, "thirdItem Id");
                 Assert.AreEqual(1.0f, thirdItem.Score, "thirdItem Score");
                 Assert.AreEqual(1, thirdItem.Children.Count(), "thirdItem Children.Count");
 
-                NestingClassificationItem child1 = thirdItem.Children.First();
+                MetaNode child1 = thirdItem.Children.First();
                 Assert.AreEqual("Doc 1", child1.ClassName, "child1 ClassName");
                 Assert.AreEqual("", child1.Value, "child1 Value");
                 Assert.AreEqual("", child1.Id, "child1 Id");
                 Assert.AreEqual(1.0f, child1.Score, "child1 Score");
                 Assert.AreEqual(1, child1.Children.Count(), "child1 Children.Count");
 
-                NestingClassificationItem child2 = child1.Children.First();
+                MetaNode child2 = child1.Children.First();
                 Assert.AreEqual("DF1", child2.ClassName, "child2 ClassName");
                 Assert.AreEqual("", child2.Value, "child2 Value");
                 Assert.AreEqual("", child2.Id, "child2 Id");
                 Assert.AreEqual(1.0f, child2.Score, "child2 Score");
                 Assert.AreEqual(3, child2.Children.Count(), "child2 Children.Count");
 
-                NestingClassificationItem child3 = child2.Children.ToArray()[2];
+                MetaNode child3 = child2.Children.ToArray()[2];
                 Assert.AreEqual("group ID", child3.ClassName, "child3 ClassName");
                 Assert.AreEqual("a4ee6a2f-5b50-4fa5-a238-3ad827667448::::DF1", child3.Value, "child3 Value");
                 Assert.AreEqual("a4ee6a2f-5b50-4fa5-a238-3ad827667448::::DF1", child3.Id, "child3 Id");

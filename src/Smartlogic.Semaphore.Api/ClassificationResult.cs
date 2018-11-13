@@ -71,9 +71,9 @@ namespace Smartlogic.Semaphore.Api
         /// <exception cref="ArgumentException"></exception>
         /// <exception cref="ClassificationException"></exception>
         /// <remarks></remarks>
-        public IEnumerable<NestingClassificationItem> GetNestingClassifications()
+        public IEnumerable<MetaNode> GetMetaNodes()
         {
-            var oResults = new List<NestingClassificationItem>();
+            var oResults = new List<MetaNode>();
 
             var oIDs = _results.SelectNodes(".//STRUCTUREDDOCUMENT/META[@score]");
             if (oIDs != null && oIDs.Count > 0)
@@ -88,11 +88,11 @@ namespace Smartlogic.Semaphore.Api
                     if (element.HasAttribute("id"))
                     {
                         var id = element.GetAttribute("id");
-                        oResults.Add(new NestingClassificationItem(classname, value, score, id, element));
+                        oResults.Add(new MetaNode(classname, value, score, id, element));
                     }
                     else
                     {
-                        oResults.Add(new NestingClassificationItem(classname, value, score, element));
+                        oResults.Add(new MetaNode(classname, value, score, element));
                     }
                 }
             }
