@@ -10,6 +10,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
     <releaseNotes>
+      v 1.1.12 - Enabled retrieval of nested meta nodes.
       v 1.1.11 - Upgraded Framework and libraries.
       v 1.1.10 - Fixed incorrect exception handling. Patched potential null reference exception.
       v 1.1.9 - Added suport to changes in SES output after 4.1.29 version with backward compatibility.
