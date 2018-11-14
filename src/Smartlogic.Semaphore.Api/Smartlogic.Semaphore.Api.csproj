@@ -83,6 +83,7 @@
     <Compile Include="JSON\TokenErrorResponse.cs" />
     <Compile Include="JSON\TokenResponse.cs" />
     <Compile Include="LoggingProxyBase.cs" />
+    <Compile Include="MetaNode.cs" />
     <Compile Include="Schemas\Structure\Structure.designer.cs" />
     <Compile Include="SemanticEnhancement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
