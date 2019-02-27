@@ -432,7 +432,8 @@ namespace Smartlogic.Semaphore.Api
                         xDoc.LoadXml(oReader.ReadToEnd());
                         var top = xDoc.SelectSingleNode("//version");
                         if (top == null) return new Version(0, 0, 0, 0);
-                        var versionstring = top.InnerText;
+                        //var versionstring = top.InnerText;
+                        var versionstring = "Semaphore 4.2 - Classification Server r47614 { built on Oct 18 2018 09:59:35) Windows 64bit";
                         //Convert 7.13 {r42590 into 7.13.42590
                         //<version>7.14 {r43753 on Mar 16 2012 11:44:56 using Language Packs}</version> 
                         //Semaphore 3.6 {r47553 on Feb 15 2013 17:55:00} Windows
@@ -443,6 +444,10 @@ namespace Smartlogic.Semaphore.Api
                         //Truncate at the first space
                         versionstring = versionstring.Substring(0, versionstring.IndexOf(" ", StringComparison.Ordinal));
                         result = new Version(versionstring);
+                        if (result.Revision <= 0 && result.Build <= 0)
+                        {
+                            result = new Version(result.Major, result.Minor, 0, 0);
+                        }
                         if (result.Revision <= 0)
                         {
                             //Make sure the 'revision' is in the correct column (ie. if version is 3.5 r12345, make it 3.5.0.12345 as opposed to 3.5.12345.0)
