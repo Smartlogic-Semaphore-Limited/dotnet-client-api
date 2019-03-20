@@ -432,8 +432,7 @@ namespace Smartlogic.Semaphore.Api
                         xDoc.LoadXml(oReader.ReadToEnd());
                         var top = xDoc.SelectSingleNode("//version");
                         if (top == null) return new Version(0, 0, 0, 0);
-                        //var versionstring = top.InnerText;
-                        var versionstring = "Semaphore 4.2 - Classification Server r47614 { built on Oct 18 2018 09:59:35) Windows 64bit";
+                        var versionstring = top.InnerText;
                         //Convert 7.13 {r42590 into 7.13.42590
                         //<version>7.14 {r43753 on Mar 16 2012 11:44:56 using Language Packs}</version> 
                         //Semaphore 3.6 {r47553 on Feb 15 2013 17:55:00} Windows
