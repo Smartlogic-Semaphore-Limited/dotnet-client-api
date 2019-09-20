@@ -1278,13 +1278,19 @@ namespace Smartlogic.Semaphore.Api
             {
                 var xDoc = new XmlDocument();
                 xDoc.LoadXml(GetServerResponse(req));
-                var nodeList =
-                    xDoc.SelectNodes("//MAIN_VERSIONS/VERSION[@NAME='SES version']");
+                var isOldVersionFormat = false;
+                var nodeList = xDoc.SelectNodes("//MAIN_VERSIONS/VERSION[@NAME='SES version']");
 
                 if (nodeList == null || nodeList.Count == 0)
                 {
-                    throw new SemaphoreConnectionException(
-                        $"No version retrieved from {req}");
+                    nodeList = xDoc.SelectNodes("//MAIN_VERSIONS/VERSION[@NAME='SES build']");
+                    if (nodeList == null || nodeList.Count == 0)
+                    {
+                        throw new SemaphoreConnectionException(
+                            $"No version retrieved from {req}");
+                    }
+
+                    isOldVersionFormat = true;
                 }
 
                 foreach (XmlNode node in nodeList)
@@ -1292,14 +1298,30 @@ namespace Smartlogic.Semaphore.Api
                     if (node.Attributes?["REVISION"] != null)
                     {
                         var revision = node.Attributes["REVISION"].Value;
-                        var index = revision.IndexOf("-", StringComparison.Ordinal);
-                        var versionTrimmed = revision;
-                        if (index > 0)
+                        if (isOldVersionFormat)
                         {
-                            versionTrimmed = revision.Substring(0, index).Trim();
-                        }
+                            revision = revision.Replace("Semaphore ", "");
+                            revision = revision.Replace(" - Semantic Enhancement Server ", "-");
 
-                        response = new Version(versionTrimmed);
+                            response = new Version(revision.Replace("-r", "."));
+                            if (response.Revision <= 0)
+                            {
+                                //Make sure the revision is in the correct column (ie. if version is 3.5 r 12345, make it 3.5.0.12345 as opposed to 3.5.12345.0)
+                                response = new Version(response.Major, response.Minor, 0, response.Build);
+                            }
+                        }
+                        else
+                        {
+                            var index = revision.IndexOf("-", StringComparison.Ordinal);
+                            var versionTrimmed = revision;
+                            if (index > 0)
+                            {
+                                versionTrimmed = revision.Substring(0, index).Trim();
+                            }
+
+                            response = new Version(versionTrimmed);
+                        }
+                        
                         break;
                     }
                 }
