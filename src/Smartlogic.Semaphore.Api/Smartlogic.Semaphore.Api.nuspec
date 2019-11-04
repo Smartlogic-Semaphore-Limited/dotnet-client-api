@@ -10,6 +10,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
     <releaseNotes>
+      v 1.1.14 - Migrated to .NET Standard
       v 1.1.13 - Changed the way the SES version is obtained.
       v 1.1.12 - Enabled retrieval of nested meta nodes.
       v 1.1.11 - Upgraded Framework and libraries.
