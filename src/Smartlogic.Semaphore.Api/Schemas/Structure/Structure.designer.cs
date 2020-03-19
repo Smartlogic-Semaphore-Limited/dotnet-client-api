@@ -1,7 +1,7 @@
 
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Xml.Serialization;
 
@@ -9,8 +9,8 @@ using System.Xml.Serialization;
 namespace Smartlogic.Semaphore.Api.Schemas.Structure
 {
     [XmlType(AnonymousType = true)]
-    [XmlRoot(ElementName = "SEMAPHORE",Namespace="",IsNullable = false)]
-    
+    [XmlRoot(ElementName = "SEMAPHORE", Namespace = "", IsNullable = false)]
+
     public partial class Semaphore
     {
         private List<Parameter> pARAMETERSField;
@@ -23,7 +23,7 @@ namespace Smartlogic.Semaphore.Api.Schemas.Structure
             this.pARAMETERSField = new List<Parameter>();
         }
 
-        [XmlArray("PARAMETERS", Order = 0)]
+        [XmlArray("PARAMETERS")]
         [XmlArrayItem("PARAMETER", IsNullable = false)]
         public List<Parameter> Parameters
         {
@@ -37,7 +37,7 @@ namespace Smartlogic.Semaphore.Api.Schemas.Structure
             }
         }
 
-        [XmlElement("OM_STRUCTURE", Order = 1)]
+        [XmlElement("OM_STRUCTURE")]
         public Structure Structure
         {
             get
@@ -53,7 +53,7 @@ namespace Smartlogic.Semaphore.Api.Schemas.Structure
     }
 
     [XmlType(AnonymousType = true)]
-    
+
     public partial class Parameter
     {
 
@@ -67,7 +67,7 @@ namespace Smartlogic.Semaphore.Api.Schemas.Structure
 
     [XmlType(AnonymousType = true)]
     [XmlRoot(ElementName = "OM_STRUCTURE", Namespace = "", IsNullable = false)]
-    
+
     public partial class Structure
     {
         private List<Field> _facets;
@@ -77,8 +77,20 @@ namespace Smartlogic.Semaphore.Api.Schemas.Structure
         private List<RelationDefinition> _equivalence;
         private List<RelationDefinition> _hierarchicalRelations;
         private List<RelationDefinition> _associativeRelations;
-        private List<User> _users;
         private List<TermClass> _classes;
+        private IndexMetadata iNDEX_METADATAField;
+
+        public Structure()
+        {
+            this._associativeRelations = new List<RelationDefinition>();
+            this._hierarchicalRelations = new List<RelationDefinition>();
+            this._equivalence = new List<RelationDefinition>();
+            this._metadata = new List<SettingDefinition>();
+            this._notes = new List<Note>();
+            this._attributes = new List<Attribute>();
+            this._facets = new List<Field>();
+            this._classes = new List<TermClass>();
+        }
 
         public static Structure FromXmlString(string value)
         {
@@ -97,7 +109,7 @@ namespace Smartlogic.Semaphore.Api.Schemas.Structure
 
         public string ToXmlString()
         {
-            var Serializer = new XmlSerializer(typeof (Structure));
+            var Serializer = new XmlSerializer(typeof(Structure));
 
             StreamReader streamReader = null;
             MemoryStream memoryStream = null;
@@ -122,7 +134,14 @@ namespace Smartlogic.Semaphore.Api.Schemas.Structure
             }
         }
 
-        [XmlArray("TERM_CLASSES", Order = 0)]
+        [XmlElement("INDEX_METADATA")]
+        public IndexMetadata IndexMetadata
+        {
+            get { return this.iNDEX_METADATAField; }
+            set { this.iNDEX_METADATAField = value; }
+        }
+
+        [XmlArray("TERM_CLASSES")]
         [XmlArrayItem("TERM_CLASS", IsNullable = false)]
         public List<TermClass> Classes
         {
@@ -130,20 +149,7 @@ namespace Smartlogic.Semaphore.Api.Schemas.Structure
             set { _classes = value; }
         }
 
-        public Structure()
-        {
-            this._users = new List<User>();
-            this._associativeRelations = new List<RelationDefinition>();
-            this._hierarchicalRelations = new List<RelationDefinition>();
-            this._equivalence = new List<RelationDefinition>();
-            this._metadata = new List<SettingDefinition>();
-            this._notes = new List<Note>();
-            this._attributes = new List<Attribute>();
-            this._facets = new List<Field>();
-            this._classes = new List<TermClass>();
-        }
-
-        [XmlArray("TERM_FACETS", Order = 1)]
+        [XmlArray("TERM_FACETS")]
         [XmlArrayItem("FIELD", IsNullable = false)]
         public List<Field> Facets
         {
@@ -157,7 +163,7 @@ namespace Smartlogic.Semaphore.Api.Schemas.Structure
             }
         }
 
-        [XmlArray("TERM_ATTRIBUTES", Order = 2)]
+        [XmlArray("TERM_ATTRIBUTES")]
         [XmlArrayItem("TERM_ATTRIBUTE", IsNullable = false)]
         public List<Attribute> Attributes
         {
@@ -171,7 +177,7 @@ namespace Smartlogic.Semaphore.Api.Schemas.Structure
             }
         }
 
-        [XmlArray("TERM_NOTES", Order = 3)]
+        [XmlArray("TERM_NOTES")]
         [XmlArrayItem("TERM_NOTE", IsNullable = false)]
         public List<Note> Notes
         {
@@ -185,7 +191,7 @@ namespace Smartlogic.Semaphore.Api.Schemas.Structure
             }
         }
 
-        [XmlArray("TERM_METADATA", Order = 4)]
+        [XmlArray("TERM_METADATA")]
         [XmlArrayItem("METADATA_DEF", IsNullable = false)]
         public List<SettingDefinition> Settings
         {
@@ -199,7 +205,7 @@ namespace Smartlogic.Semaphore.Api.Schemas.Structure
             }
         }
 
-        [XmlArray("EQUIVALENCE_RELATIONS", Order = 5)]
+        [XmlArray("EQUIVALENCE_RELATIONS")]
         [XmlArrayItem("RELATION_DEF", IsNullable = false)]
         public List<RelationDefinition> EquivalenceRelations
         {
@@ -213,7 +219,7 @@ namespace Smartlogic.Semaphore.Api.Schemas.Structure
             }
         }
 
-        [XmlArray("HIERARCHICAL_RELATIONS", Order = 6)]
+        [XmlArray("HIERARCHICAL_RELATIONS")]
         [XmlArrayItem("RELATION_DEF", IsNullable = false)]
         public List<RelationDefinition> HierarchicalRelations
         {
@@ -227,7 +233,7 @@ namespace Smartlogic.Semaphore.Api.Schemas.Structure
             }
         }
 
-        [XmlArray("ASSOCIATIVE_RELATIONS", Order = 7)]
+        [XmlArray("ASSOCIATIVE_RELATIONS")]
         [XmlArrayItem("RELATION_DEF", IsNullable = false)]
         public List<RelationDefinition> AssociativeRelations
         {
@@ -240,25 +246,11 @@ namespace Smartlogic.Semaphore.Api.Schemas.Structure
                 this._associativeRelations = value;
             }
         }
-
-        [XmlArray("USERS", Order = 8)]
-        [XmlArrayItem("USER_DEF", IsNullable = false)]
-        public List<User> Users
-        {
-            get
-            {
-                return this._users;
-            }
-            set
-            {
-                this._users = value;
-            }
-        }
     }
 
     [DebuggerDisplay("ID:{ID}, Value:{Value}")]
     [XmlType(AnonymousType = true)]
-    
+
     public partial class Field
     {
         [XmlAttribute()]
@@ -269,9 +261,18 @@ namespace Smartlogic.Semaphore.Api.Schemas.Structure
 
     }
 
+    [XmlType(AnonymousType = true)]
+
+    public partial class PublishDate
+    {
+        [XmlText()]
+        public DateTime Value { get; set; }
+
+    }
+
     [DebuggerDisplay("ID:{ID}, Value:{Value}")]
     [XmlType(AnonymousType = true)]
-    
+
     public partial class TermClass
     {
         [XmlAttribute()]
@@ -284,7 +285,7 @@ namespace Smartlogic.Semaphore.Api.Schemas.Structure
 
     [XmlType(AnonymousType = true)]
     [DebuggerDisplay("ID:{ID}, Name:{Name}")]
-    
+
     public partial class Attribute
     {
         [XmlAttribute()]
@@ -297,7 +298,7 @@ namespace Smartlogic.Semaphore.Api.Schemas.Structure
 
     [XmlType(AnonymousType = true)]
     [DebuggerDisplay("ID:{ID}, Name:{Name}")]
-    
+
     public partial class Note
     {
 
@@ -310,8 +311,29 @@ namespace Smartlogic.Semaphore.Api.Schemas.Structure
     }
 
     [XmlType(AnonymousType = true)]
+    [XmlRoot(ElementName = "INDEX_METADATA", Namespace = "")]
+
+    public partial class IndexMetadata
+    {
+        private PublishDate pUBLISH_DATEField;
+
+        [XmlElement("PUBLISH_DATE")]
+        public PublishDate PublishDate
+        {
+            get
+            {
+                return this.pUBLISH_DATEField;
+            }
+            set
+            {
+                this.pUBLISH_DATEField = value;
+            }
+        }
+    }
+
+    [XmlType(AnonymousType = true)]
     [DebuggerDisplay("ID:{ID}, Name:{Name}")]
-    
+
     public partial class SettingDefinition
     {
 
@@ -329,7 +351,7 @@ namespace Smartlogic.Semaphore.Api.Schemas.Structure
             this.vALUE_DEFField = new List<SettingValue>();
         }
 
-        [XmlElement("VALUE_DEF", Order = 0)]
+        [XmlElement("VALUE_DEF")]
         public List<SettingValue> Values
         {
             get
@@ -345,7 +367,7 @@ namespace Smartlogic.Semaphore.Api.Schemas.Structure
 
     [XmlType(AnonymousType = true)]
     [DebuggerDisplay("ID:{ID}, Value:{Value}")]
-    
+
     public partial class SettingValue
     {
 
@@ -359,7 +381,7 @@ namespace Smartlogic.Semaphore.Api.Schemas.Structure
 
     [XmlType(AnonymousType = true)]
     [DebuggerDisplay("ID:{ID}, Name:{Name}")]
-    
+
     public partial class RelationDefinition
     {
 
@@ -380,19 +402,6 @@ namespace Smartlogic.Semaphore.Api.Schemas.Structure
 
         [XmlAttribute("SYMMETRIC")]
         public bool IsSymmetric { get; set; }
-
-    }
-
-
-    [XmlType(AnonymousType = true)]
-    
-    public partial class User
-    {
-        [XmlAttribute()]
-        public string ID { get; set; }
-
-        [XmlAttribute("NAME")]
-        public string Name { get; set; }
 
     }
 }

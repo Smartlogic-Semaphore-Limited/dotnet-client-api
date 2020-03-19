@@ -9,8 +9,8 @@
     <PackageId>Smartlogic.Semaphore.Api</PackageId>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>Smartlogic Semaphore Ltd</Authors>
-    <AssemblyVersion>1.1.14.0</AssemblyVersion>
-    <Version>1.1.14</Version>
+    <AssemblyVersion>1.1.15.0</AssemblyVersion>
+    <Version>1.1.15</Version>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
