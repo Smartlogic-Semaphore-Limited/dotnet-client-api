@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Xml;
 using System.Xml.Serialization;
 
 #pragma warning disable 1591
@@ -78,7 +79,7 @@ namespace Smartlogic.Semaphore.Api.Schemas.Structure
         private List<RelationDefinition> _hierarchicalRelations;
         private List<RelationDefinition> _associativeRelations;
         private List<TermClass> _classes;
-        private IndexMetadata iNDEX_METADATAField;
+        private XmlNode iNDEX_METADATAField;
 
         public Structure()
         {
@@ -134,8 +135,8 @@ namespace Smartlogic.Semaphore.Api.Schemas.Structure
             }
         }
 
-        [XmlElement("INDEX_METADATA")]
-        public IndexMetadata IndexMetadata
+        [XmlAnyElement("INDEX_METADATA")]
+        public XmlNode IndexMetadata
         {
             get { return this.iNDEX_METADATAField; }
             set { this.iNDEX_METADATAField = value; }
@@ -248,6 +249,14 @@ namespace Smartlogic.Semaphore.Api.Schemas.Structure
         }
     }
 
+    [XmlType(AnonymousType = true)]
+
+    public partial class Metadata
+    {
+        [XmlAnyElement]
+        public List<XmlNode> Nodes { get; set; }
+    }
+
     [DebuggerDisplay("ID:{ID}, Value:{Value}")]
     [XmlType(AnonymousType = true)]
 
@@ -261,14 +270,6 @@ namespace Smartlogic.Semaphore.Api.Schemas.Structure
 
     }
 
-    [XmlType(AnonymousType = true)]
-
-    public partial class PublishDate
-    {
-        [XmlText()]
-        public DateTime Value { get; set; }
-
-    }
 
     [DebuggerDisplay("ID:{ID}, Value:{Value}")]
     [XmlType(AnonymousType = true)]
@@ -309,30 +310,6 @@ namespace Smartlogic.Semaphore.Api.Schemas.Structure
         public string Name { get; set; }
 
     }
-
-    [XmlType(AnonymousType = true)]
-    [XmlRoot(ElementName = "INDEX_METADATA", Namespace = "")]
-
-    public partial class IndexMetadata
-    {
-        private PublishDate pUBLISH_DATEField;
-
-        [XmlElement("PUBLISH_DATE")]
-        public PublishDate PublishDate
-        {
-            get
-            {
-                return this.pUBLISH_DATEField;
-            }
-            set
-            {
-                this.pUBLISH_DATEField = value;
-            }
-        }
-    }
-
-    [XmlType(AnonymousType = true)]
-    [DebuggerDisplay("ID:{ID}, Name:{Name}")]
 
     public partial class SettingDefinition
     {
