@@ -10,6 +10,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
     <releaseNotes>
+      v 1.1.15 - Adjustments to accomodate Semaphore 5's SES schema change.
       v 1.1.14 - Migrated to .NET Standard
       v 1.1.13 - Changed the way the SES version is obtained.
       v 1.1.12 - Enabled retrieval of nested meta nodes.
@@ -23,7 +24,7 @@
       v 1.1.3 - Added XML Documentation. Added default ILogger implementation.
       v 1.1.2 - Added additional authorization functions necessary for connection to OAuth secured endpoints.
     </releaseNotes>
-    <copyright>Copyright 2017</copyright>
+    <copyright>Copyright 2020</copyright>
     <tags>Classification NLP C#</tags>
   </metadata>
 </package>
