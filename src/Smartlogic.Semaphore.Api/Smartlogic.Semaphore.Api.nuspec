@@ -10,6 +10,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
     <releaseNotes>
+      v 1.1.16 - Migrated back to .NET Framework
       v 1.1.15 - Adjustments to accomodate Semaphore 5's SES schema change.
       v 1.1.14 - Migrated to .NET Standard
       v 1.1.13 - Changed the way the SES version is obtained.
