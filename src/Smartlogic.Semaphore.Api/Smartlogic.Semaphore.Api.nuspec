@@ -10,6 +10,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
     <releaseNotes>
+      v 1.1.18 - Lowered required version of Newtonsoft.Json library
       v 1.1.17 - Made Newtonsoft.Json dependency private
       v 1.1.16 - Migrated back to .NET Framework
       v 1.1.15 - Adjustments to accomodate Semaphore 5's SES schema change.
