@@ -1267,9 +1267,9 @@ namespace Smartlogic.Semaphore.Api
         /// </summary>
         /// <returns>Version.</returns>
         /// <exception cref="SemaphoreConnectionException"></exception>
-        public Version GetVersion()
+        public string GetVersion()
         {
-            Version response = null;
+            string response = null;
 
             var req = new Uri(_serverUrl + "?TEMPLATE=service.xml&SERVICE=versions");
             WriteLow("SES Request: " + req, null);
@@ -1303,23 +1303,18 @@ namespace Smartlogic.Semaphore.Api
                             revision = revision.Replace("Semaphore ", "");
                             revision = revision.Replace(" - Semantic Enhancement Server ", "-");
 
-                            response = new Version(revision.Replace("-r", "."));
-                            if (response.Revision <= 0)
+                            var version = new Version(revision.Replace("-r", "."));
+                            if (version.Revision <= 0)
                             {
                                 //Make sure the revision is in the correct column (ie. if version is 3.5 r 12345, make it 3.5.0.12345 as opposed to 3.5.12345.0)
-                                response = new Version(response.Major, response.Minor, 0, response.Build);
+                                version = new Version(version.Major, version.Minor, 0, version.Build);
                             }
+
+                            response = version.ToString();
                         }
                         else
                         {
-                            var index = revision.IndexOf("-", StringComparison.Ordinal);
-                            var versionTrimmed = revision;
-                            if (index > 0)
-                            {
-                                versionTrimmed = revision.Substring(0, index).Trim();
-                            }
-
-                            response = new Version(versionTrimmed);
+                            response = revision;
                         }
                         
                         break;
