@@ -404,9 +404,9 @@ namespace Smartlogic.Semaphore.Api
         /// </summary>
         /// <returns></returns>
         /// <exception cref="SemaphoreConnectionException"></exception>
-        public Version GetVersion()
+        public string GetVersion()
         {
-            var result = new Version();
+            var result = "0.0.0.0";
             var request = AuthenticatedRequestBuilder.Instance.Build(new Uri(_serverUrl + "?operation=version"), _apiKey, Logger);
             WriteLow("CS Request: " + request.RequestUri, null);
             request.Method = "GET";
@@ -431,28 +431,14 @@ namespace Smartlogic.Semaphore.Api
                         var xDoc = new XmlDocument();
                         xDoc.LoadXml(oReader.ReadToEnd());
                         var top = xDoc.SelectSingleNode("//version");
-                        if (top == null) return new Version(0, 0, 0, 0);
-                        var versionstring = top.InnerText;
-                        //Convert 7.13 {r42590 into 7.13.42590
-                        //<version>7.14 {r43753 on Mar 16 2012 11:44:56 using Language Packs}</version> 
-                        //Semaphore 3.6 {r47553 on Feb 15 2013 17:55:00} Windows
-                        //Semaphore 3.6 - Classification Server r47614 { built on Feb 18 2013 17:12:57 using Language Packs} Windows
-                        versionstring = versionstring.Replace("Semaphore ", string.Empty);
-                        versionstring = versionstring.Replace(" - Classification Server r", ".");
-                        versionstring = versionstring.Replace(" {r", ".");
-                        //Truncate at the first space
-                        versionstring = versionstring.Substring(0, versionstring.IndexOf(" ", StringComparison.Ordinal));
-                        result = new Version(versionstring);
-                        if (result.Revision <= 0 && result.Build <= 0)
-                        {
-                            result = new Version(result.Major, result.Minor, 0, 0);
-                        }
-                        if (result.Revision <= 0)
-                        {
-                            //Make sure the 'revision' is in the correct column (ie. if version is 3.5 r12345, make it 3.5.0.12345 as opposed to 3.5.12345.0)
-                            result = new Version(result.Major, result.Minor, 0, result.Build);
-                        }
+                        if (top == null) return result;
+                        var versionString = top.InnerText;
+                        versionString = versionString.Replace("Semaphore ", string.Empty);
+                        var endOfVersionIndex = versionString.IndexOf(" - Classification Server", StringComparison.InvariantCulture);
+                        versionString = versionString.Substring(0, endOfVersionIndex);
+                        result = versionString;
                     }
+
                 oResponse.Close();
             }
             catch (Exception ex)
