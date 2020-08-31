@@ -10,6 +10,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
     <releaseNotes>
+      v 1.1.20 - Changed target framework to .NET Standard 2.0 again
       v 1.1.19 - Changed return type of GetVersion() methods to string
       v 1.1.18 - Lowered required version of Newtonsoft.Json library
       v 1.1.17 - Made Newtonsoft.Json dependency private
