@@ -1040,6 +1040,73 @@ namespace Smartlogic.Semaphore.Api
         }
 
         /// <summary>
+        ///     Returns a list of languages available for a model on the current Search Enhancement Server instance
+        /// </summary>
+        /// <returns>IEnumerable{System.String}.</returns>
+        /// <exception cref="SemaphoreConnectionException"></exception>
+        public IEnumerable<string> GetModelLanguageList(string taxonomyIndex)
+        {
+            var languages = new List<string>();
+
+            var req = new Uri(_serverUrl + "?TEMPLATE=service.xml&SERVICE=modelslist");
+            WriteLow("SES Request: " + req, null);
+
+            var oRequest = AuthenticatedRequestBuilder.Instance.Build(req, _apiKey, Logger);
+            oRequest.Method = "GET";
+            oRequest.Timeout = _timeout * 1000;
+
+            try
+            {
+                var oStop = new Stopwatch();
+                oStop.Start();
+                var oResponse = (HttpWebResponse)oRequest.GetResponse();
+                oStop.Stop();
+
+                WriteLow("Response received from SES. Time elapsed {0}:{1}.{2}",
+                    oStop.Elapsed.Minutes,
+                    oStop.Elapsed.Seconds.ToString(CultureInfo.InvariantCulture).PadLeft(2, '0'),
+                    oStop.Elapsed.Milliseconds);
+
+                var result = oResponse.GetResponseStream();
+                if (result != null)
+                    using (var oReader = new StreamReader(result))
+                    {
+                        var xDoc = new XmlDocument();
+                        xDoc.LoadXml(oReader.ReadToEnd());
+                        var nodeList = xDoc.SelectNodes("//MODEL");
+
+                        if (nodeList == null || nodeList.Count == 0)
+                        {
+                            throw new SemaphoreConnectionException(
+                                $"No Models retrieved from {oRequest.RequestUri.AbsolutePath}");
+                        }
+
+                        foreach (XmlNode node in nodeList)
+                        {
+                            var name = node.SelectSingleNode("NAME");
+                            string innerName = name?.InnerText.Trim() ?? name.InnerText.Trim();
+                            if (!string.Equals(innerName, taxonomyIndex)) continue;
+                            XmlNodeList languageNodes = node.SelectNodes("LANGUAGE");
+                            if (languageNodes == null) continue;
+                            foreach (XmlNode languageNode in languageNodes)
+                            {
+                                languages.Add(languageNode.InnerText.Trim());
+                            }
+                        }
+                    }
+
+                oResponse.Close();
+            }
+            catch (Exception ex)
+            {
+                WriteException(ex);
+                if (ThrowExceptions) throw;
+            }
+
+            return languages;
+        }
+
+        /// <summary>
         ///     Returns information for a particular term specified by ID
         /// </summary>
         /// <param name="taxonomyIndex">The name of the index to be searched</param>
