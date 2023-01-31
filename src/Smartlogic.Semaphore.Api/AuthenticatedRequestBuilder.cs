@@ -38,7 +38,7 @@ namespace Smartlogic.Semaphore.Api
             }
         }
 
-        public HttpWebRequest Build(Uri serverUrl, string apiKey, ILogger logger)
+        public HttpWebRequest Build(Uri serverUrl, string apiKey, ILogger logger, Guid correlationId)
         {
             var request = (HttpWebRequest) WebRequest.Create(serverUrl);
 
@@ -49,6 +49,11 @@ namespace Smartlogic.Semaphore.Api
             else
             {
                 logger.WriteLow("No authentication header required");
+            }
+
+            if (!(correlationId == default))
+            {
+                request.Headers.Add("X-Correlation_Id", correlationId.ToString());
             }
 
             return request;
