@@ -21,7 +21,6 @@ namespace Smartlogic.Semaphore.Api
         private readonly string _apiKey;
         private readonly Uri _serverUrl;
         private readonly int _timeout;
-        private readonly Guid _correlationId;
 
         /// <summary>
         ///     A proxy class used for communicating with an instance of Semaphore Classification Server
@@ -71,18 +70,18 @@ namespace Smartlogic.Semaphore.Api
         }
 
         /// <summary>
-        ///     A proxy class used for communicating with an instance of Semaphore Classification Server
+        ///     Constructs a SearchEnhancement class for use with communicating with a particular instance of Search Enhancement
+        ///     Server
         /// </summary>
         /// <param name="webServiceTimeout">An integer representing the number of seconds to wait before timing out</param>
         /// <param name="serverUrl">
-        ///     An absolute <see cref="Uri" /> indicating the Classification Server endpoint
+        ///     An absolute <see cref="Uri" /> indicating the Search Enhancement Server endpoint
         /// </param>
         /// <param name="logger"></param>
         /// <param name="apiKey">An optional apikey string used for connecting to OAuth 2.0 secured services</param>
-        /// <param name="correlationId">An optional correlationId guid used in logs for better identification</param>
         /// <exception cref="System.ArgumentException">Missing server Url;serverUrl</exception>
         /// <exception cref="ArgumentException"></exception>
-        public ClassificationServer(int webServiceTimeout, Uri serverUrl, ILogger logger, string apiKey = "", Guid correlationId = default) : this(webServiceTimeout, serverUrl, logger)
+        public ClassificationServer(int webServiceTimeout, Uri serverUrl, ILogger logger, string apiKey = "") : this(webServiceTimeout, serverUrl, logger)
         {
             if (!string.IsNullOrEmpty(apiKey))
             {
@@ -93,7 +92,6 @@ namespace Smartlogic.Semaphore.Api
                 }
             }
             _apiKey = apiKey;
-            _correlationId = correlationId;
         }
 
         /// <summary>
@@ -128,7 +126,7 @@ namespace Smartlogic.Semaphore.Api
                 throw new ArgumentException("Filename parameter should not be set unless an associated document is passed via the document parameter",
                     nameof(document));
 
-            WriteMedium("Calling Tagging API (Binary). Item Title={0}, FileName={1}", title, fileName);
+            WriteLow("Calling Tagging API (Binary). Item Title={0}, FileName={1}", title, fileName);
 
             var oFrmFields =
                 new Dictionary<string, string>
@@ -201,8 +199,8 @@ namespace Smartlogic.Semaphore.Api
         public Collection<string> GetClassificationClasses()
         {
             var csClasses = new Collection<string>();
-            var request = AuthenticatedRequestBuilder.Instance.Build(new Uri(_serverUrl + "?operation=LISTRULENETCLASSES"), _apiKey, Logger, _correlationId);
-            WriteMedium("CS Request: " + request.RequestUri, null);
+            var request = AuthenticatedRequestBuilder.Instance.Build(new Uri(_serverUrl + "?operation=LISTRULENETCLASSES"), _apiKey, Logger);
+            WriteLow("CS Request: " + request.RequestUri, null);
             request.Method = "GET";
             request.Timeout = _timeout*1000;
 
@@ -261,8 +259,8 @@ namespace Smartlogic.Semaphore.Api
         public Collection<ClassificationLanguage> GetLanguages()
         {
             var languages = new Collection<ClassificationLanguage>();
-            var request = AuthenticatedRequestBuilder.Instance.Build(new Uri(_serverUrl + "?operation=listlanguages"), _apiKey, Logger, _correlationId);
-            WriteMedium("CS Request: " + request.RequestUri, null);
+            var request = AuthenticatedRequestBuilder.Instance.Build(new Uri(_serverUrl + "?operation=listlanguages"), _apiKey, Logger);
+            WriteLow("CS Request: " + request.RequestUri, null);
 
             request.Method = "GET";
             request.Timeout = _timeout*1000;
@@ -349,8 +347,8 @@ namespace Smartlogic.Semaphore.Api
         public Collection<string> GetTextMiningClasses()
         {
             var csClasses = new Collection<string>();
-            var request = AuthenticatedRequestBuilder.Instance.Build(new Uri(_serverUrl + "?operation=LISTRULENETCLASSES"), _apiKey, Logger, _correlationId);
-            WriteMedium("CS Request: " + request.RequestUri, null);
+            var request = AuthenticatedRequestBuilder.Instance.Build(new Uri(_serverUrl + "?operation=LISTRULENETCLASSES"), _apiKey, Logger);
+            WriteLow("CS Request: " + request.RequestUri, null);
             request.Method = "GET";
             request.Timeout = _timeout*1000;
 
@@ -409,8 +407,8 @@ namespace Smartlogic.Semaphore.Api
         public string GetVersion()
         {
             var result = "0.0.0.0";
-            var request = AuthenticatedRequestBuilder.Instance.Build(new Uri(_serverUrl + "?operation=version"), _apiKey, Logger, _correlationId);
-            WriteMedium("CS Request: " + request.RequestUri, null);
+            var request = AuthenticatedRequestBuilder.Instance.Build(new Uri(_serverUrl + "?operation=version"), _apiKey, Logger);
+            WriteLow("CS Request: " + request.RequestUri, null);
             request.Method = "GET";
             request.Timeout = _timeout*1000;
 
@@ -479,7 +477,7 @@ namespace Smartlogic.Semaphore.Api
                 throw new ArgumentException("Filename parameter should not be set unless an associated document is passed via the document parameter",
                     nameof(document));
 
-            WriteMedium(
+            WriteLow(
                 $"Calling TextMining API (Binary). Item Title={title}, FileName={fileName}",
                 null);
 
@@ -553,9 +551,9 @@ namespace Smartlogic.Semaphore.Api
             var sBoundary = BoundaryString;
             const string newLine = "\r\n";
 
-            WriteMedium($"Classifying data using server Url={_serverUrl}", null);
+            WriteLow($"Classifying data using server Url={_serverUrl}", null);
 
-            var request = AuthenticatedRequestBuilder.Instance.Build(_serverUrl, _apiKey, Logger, _correlationId);
+            var request = AuthenticatedRequestBuilder.Instance.Build(_serverUrl, _apiKey, Logger);
 
             request.ContentType = $"multipart/form-data; boundary={sBoundary}";
             request.Method = "POST";
@@ -578,7 +576,7 @@ namespace Smartlogic.Semaphore.Api
                                     s,
                                     newLine,
                                     formFields[s]);
-                                WriteMedium("Added form-data: name={0}, value={1}", s, formFields[s]);
+                                WriteLow("Added form-data: name={0}, value={1}", s, formFields[s]);
                             }
                         }
 
@@ -610,7 +608,7 @@ namespace Smartlogic.Semaphore.Api
 
                         request.ContentLength = oMs.Length;
 
-                        WriteMedium($"Sending {oMs.Length} bytes", null);
+                        WriteLow($"Sending {oMs.Length} bytes", null);
 
                         using (var s = request.GetRequestStream())
                         {
@@ -622,7 +620,7 @@ namespace Smartlogic.Semaphore.Api
                     oMs.Close();
                 }
 
-                WriteMedium("Requesting the response", null);
+                WriteLow("Requesting the response", null);
                 HttpWebResponse oResponse;
                 try
                 {
@@ -653,7 +651,7 @@ namespace Smartlogic.Semaphore.Api
                     oResponse = (HttpWebResponse) oWeX.Response;
                     if (oResponse == null) throw; //Re-throw the original exception (TimeOut)
                 }
-                WriteMedium(
+                WriteLow(
                     $"API Response Code={oResponse.StatusCode}",
                     null);
 
@@ -666,10 +664,10 @@ namespace Smartlogic.Semaphore.Api
                         oParser = new ClassificationResult(oReader.ReadToEnd());
                     }
                 oResponse.Close();
-                WriteMedium("Closed response", null);
+                WriteLow("Closed response", null);
                 if (oParser != null)
                 {
-                    WriteMedium("Received response: {0}", oParser.Response.OuterXml);
+                    WriteLow("Received response: {0}", oParser.Response.OuterXml);
                 }
                 return oParser;
             }
