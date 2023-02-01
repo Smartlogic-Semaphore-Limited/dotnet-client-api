@@ -14,6 +14,7 @@ namespace Smartlogic.Semaphore.Api
     {
         private static volatile AuthenticatedRequestBuilder _instance;
         private static readonly object syncRoot = new object();
+        private readonly string _correlationIdHeaderName = "X-Correlation_Id";
 
         private readonly Dictionary<string, TokenResponse> _keyCache = new Dictionary<string, TokenResponse>();
 
@@ -38,7 +39,7 @@ namespace Smartlogic.Semaphore.Api
             }
         }
 
-        public HttpWebRequest Build(Uri serverUrl, string apiKey, ILogger logger)
+        public HttpWebRequest Build(Uri serverUrl, string apiKey, ILogger logger, Guid correlationId)
         {
             var request = (HttpWebRequest) WebRequest.Create(serverUrl);
 
@@ -49,6 +50,11 @@ namespace Smartlogic.Semaphore.Api
             else
             {
                 logger.WriteLow("No authentication header required");
+            }
+
+            if (!(correlationId == default))
+            {
+                request.Headers.Add(_correlationIdHeaderName, correlationId.ToString());
             }
 
             return request;
