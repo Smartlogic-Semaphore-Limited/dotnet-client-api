@@ -26,6 +26,7 @@ namespace Smartlogic.Semaphore.Api
         private readonly string _apiKey;
         private readonly Uri _serverUrl;
         private readonly int _timeout;
+        private readonly Guid _correlationId;
 
         /// <summary>
         ///     Constructs a SearchEnhancement class for use with communicating with a particular instance of Search Enhancement
@@ -94,9 +95,10 @@ namespace Smartlogic.Semaphore.Api
         /// </param>
         /// <param name="logger"></param>
         /// <param name="apiKey">An optional apikey string used for connecting to OAuth 2.0 secured services</param>
+        /// <param name="correlationId">An optional correlationId guid passed to SES for logging purposes to make it easier to trace a request</param>
         /// <exception cref="System.ArgumentException">Missing server Url;serverUrl</exception>
         /// <exception cref="ArgumentException"></exception>
-        public SemanticEnhancement(int webServiceTimeout, Uri serverUrl, ILogger logger, string apiKey = "") : this(webServiceTimeout, serverUrl, logger)
+        public SemanticEnhancement(int webServiceTimeout, Uri serverUrl, ILogger logger, string apiKey = "", Guid correlationId = default) : this(webServiceTimeout, serverUrl, logger)
         {
             if (!string.IsNullOrEmpty(apiKey))
             {
@@ -107,7 +109,9 @@ namespace Smartlogic.Semaphore.Api
                 }
             }
             _apiKey = apiKey;
+            _correlationId = correlationId;
         }
+
 
         /// <summary>
         ///     Gets or sets a value indicating whether exceptions should be thown or serialized and returned as XML or JSON. The
@@ -147,7 +151,7 @@ namespace Smartlogic.Semaphore.Api
 
             try
             {
-                WriteLow("SES Request: " + sb, null);
+                WriteMedium("SES Request: " + sb, null);
                 oDoc.LoadXml(GetServerResponse(new Uri(sb.ToString())));
             }
             catch (Exception oX)
@@ -222,7 +226,7 @@ namespace Smartlogic.Semaphore.Api
 
             try
             {
-                WriteLow("SES Request: " + sb, null);
+                WriteMedium("SES Request: " + sb, null);
                 oDoc.LoadXml(GetServerResponse(new Uri(sb.ToString())));
             }
             catch (Exception oX)
@@ -244,9 +248,9 @@ namespace Smartlogic.Semaphore.Api
         {
             var facets = new Dictionary<string, string>();
             var req = new Uri($"{_serverUrl}?TBDB={HttpUtility.UrlEncode(taxonomyIndex)}&TEMPLATE=service.xml&SERVICE=facetslist");
-            WriteLow("SES Request: " + req, null);
+            WriteMedium("SES Request: " + req, null);
 
-            var webRequest = AuthenticatedRequestBuilder.Instance.Build(req, _apiKey, Logger);
+            var webRequest = AuthenticatedRequestBuilder.Instance.Build(req, _apiKey, Logger, _correlationId);
             webRequest.Method = "GET";
             webRequest.Timeout = _timeout*1000;
 
@@ -335,7 +339,7 @@ namespace Smartlogic.Semaphore.Api
 
             try
             {
-                WriteLow("SES Request: " + sb, null);
+                WriteMedium("SES Request: " + sb, null);
                 result = GetServerResponse(new Uri(sb.ToString()));
             }
             catch (Exception oX)
@@ -409,7 +413,7 @@ namespace Smartlogic.Semaphore.Api
             string result;
             try
             {
-                WriteLow("SES Request: " + sb, null);
+                WriteMedium("SES Request: " + sb, null);
                 result = GetServerResponse(new Uri(sb.ToString()));
             }
             catch (Exception oX)
@@ -460,7 +464,7 @@ namespace Smartlogic.Semaphore.Api
 
             try
             {
-                WriteLow("SES Request: " + sb, null);
+                WriteMedium("SES Request: " + sb, null);
                 result = GetServerResponse(new Uri(sb.ToString()));
             }
             catch (Exception oX)
@@ -500,7 +504,7 @@ namespace Smartlogic.Semaphore.Api
 
             try
             {
-                WriteLow("SES Request: " + query, null);
+                WriteMedium("SES Request: " + query, null);
                 result = GetServerResponse(new Uri(query));
             }
             catch (Exception oX)
@@ -616,7 +620,7 @@ namespace Smartlogic.Semaphore.Api
 
             try
             {
-                WriteLow("SES Request: " + sb, null);
+                WriteMedium("SES Request: " + sb, null);
                 result = GetServerResponse(new Uri(sb.ToString()));
             }
             catch (Exception oX)
@@ -651,7 +655,7 @@ namespace Smartlogic.Semaphore.Api
             string result;
             try
             {
-                WriteLow("SES Request: " + sb, null);
+                WriteMedium("SES Request: " + sb, null);
                 result = GetServerResponse(new Uri(sb.ToString()));
             }
             catch (Exception oX)
@@ -701,7 +705,7 @@ namespace Smartlogic.Semaphore.Api
 
             try
             {
-                WriteLow("SES Request: " + sb, null);
+                WriteMedium("SES Request: " + sb, null);
                 result = GetServerResponse(new Uri(sb.ToString()));
             }
             catch (Exception oX)
@@ -752,7 +756,7 @@ namespace Smartlogic.Semaphore.Api
 
             try
             {
-                WriteLow("SES Request: " + sb, null);
+                WriteMedium("SES Request: " + sb, null);
                 oDoc.LoadXml(GetServerResponse(new Uri(sb.ToString())));
             }
             catch (Exception oX)
@@ -812,7 +816,7 @@ namespace Smartlogic.Semaphore.Api
 
             try
             {
-                WriteLow("SES Request: " + query, null);
+                WriteMedium("SES Request: " + query, null);
                 oDoc = XDocument.Parse(GetServerResponse(new Uri(query)));
             }
             catch (Exception oX)
@@ -965,7 +969,7 @@ namespace Smartlogic.Semaphore.Api
 
             try
             {
-                WriteLow("SES Request: {0}", restUri);
+                WriteMedium("SES Request: {0}", restUri);
                 var response = GetServerResponse<Schemas.Structure.Semaphore>(restUri);
                 return response?.Structure;
             }
@@ -988,9 +992,9 @@ namespace Smartlogic.Semaphore.Api
             var indices = new List<string>();
 
             var req = new Uri(_serverUrl + "?TEMPLATE=service.xml&SERVICE=modelslist");
-            WriteLow("SES Request: " + req, null);
+            WriteMedium("SES Request: " + req, null);
 
-            var oRequest = AuthenticatedRequestBuilder.Instance.Build(req, _apiKey, Logger);
+            var oRequest = AuthenticatedRequestBuilder.Instance.Build(req, _apiKey, Logger, _correlationId);
             oRequest.Method = "GET";
             oRequest.Timeout = _timeout*1000;
 
@@ -1049,9 +1053,9 @@ namespace Smartlogic.Semaphore.Api
             var languages = new List<string>();
 
             var req = new Uri(_serverUrl + "?TEMPLATE=service.xml&SERVICE=modelslist");
-            WriteLow("SES Request: " + req, null);
+            WriteMedium("SES Request: " + req, null);
 
-            var oRequest = AuthenticatedRequestBuilder.Instance.Build(req, _apiKey, Logger);
+            var oRequest = AuthenticatedRequestBuilder.Instance.Build(req, _apiKey, Logger, _correlationId);
             oRequest.Method = "GET";
             oRequest.Timeout = _timeout * 1000;
 
@@ -1227,7 +1231,7 @@ namespace Smartlogic.Semaphore.Api
 
             try
             {
-                WriteLow("SES Request: " + sb, null);
+                WriteMedium("SES Request: " + sb, null);
                 oDoc.LoadXml(GetServerResponse(new Uri(sb.ToString())));
             }
             catch (Exception oX)
@@ -1263,7 +1267,7 @@ namespace Smartlogic.Semaphore.Api
 
             try
             {
-                WriteLow("SES Request: " + sb, null);
+                WriteMedium("SES Request: " + sb, null);
                 oDoc.LoadXml(GetServerResponse(new Uri(sb.ToString())));
             }
             catch (Exception oX)
@@ -1317,7 +1321,7 @@ namespace Smartlogic.Semaphore.Api
 
             try
             {
-                WriteLow("SES Request: " + sb, null);
+                WriteMedium("SES Request: " + sb, null);
                 oDoc.LoadXml(GetServerResponse(new Uri(sb.ToString())));
             }
             catch (Exception oX)
@@ -1339,7 +1343,7 @@ namespace Smartlogic.Semaphore.Api
             string response = null;
 
             var req = new Uri(_serverUrl + "?TEMPLATE=service.xml&SERVICE=versions");
-            WriteLow("SES Request: " + req, null);
+            WriteMedium("SES Request: " + req, null);
 
             try
             {
@@ -1448,7 +1452,7 @@ namespace Smartlogic.Semaphore.Api
 
             try
             {
-                WriteLow("SES Request: " + query, null);
+                WriteMedium("SES Request: " + query, null);
                 return GetServerResponse(new Uri(query));
             }
             catch (Exception oX)
@@ -1538,10 +1542,9 @@ namespace Smartlogic.Semaphore.Api
         /// <exception cref="SemaphoreConnectionException"></exception>
         private string GetServerResponse(Uri serverWithQuery)
         {
-            var oRequest = AuthenticatedRequestBuilder.Instance.Build(serverWithQuery, _apiKey, Logger);
+            var oRequest = AuthenticatedRequestBuilder.Instance.Build(serverWithQuery, _apiKey, Logger, _correlationId);
             oRequest.Method = "GET";
             oRequest.Timeout = _timeout*1000;
-
             try
             {
                 var oResponse = (HttpWebResponse) oRequest.GetResponse();
@@ -1583,7 +1586,7 @@ namespace Smartlogic.Semaphore.Api
         /// <exception cref="SemaphoreConnectionException"></exception>
         private T GetServerResponse<T>(Uri serverWithQuery) where T : class
         {
-            var oRequest = AuthenticatedRequestBuilder.Instance.Build(serverWithQuery, _apiKey, Logger);
+            var oRequest = AuthenticatedRequestBuilder.Instance.Build(serverWithQuery, _apiKey, Logger, _correlationId);
             oRequest.Method = "GET";
             oRequest.Timeout = _timeout*1000;
             var serializer = new XmlSerializer(typeof(T));
