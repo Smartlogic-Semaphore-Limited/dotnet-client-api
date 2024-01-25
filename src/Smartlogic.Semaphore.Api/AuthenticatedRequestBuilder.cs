@@ -3,7 +3,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
+using System.Threading.Tasks;
+using System.Threading;
 using System.Web;
 using Newtonsoft.Json;
 using Smartlogic.Semaphore.Api.JSON;
@@ -60,14 +64,30 @@ namespace Smartlogic.Semaphore.Api
             return request;
         }
 
-        private void AddAuthenticationHeaders(HttpWebRequest request, string apiKey, ILogger logger)
+        public HttpClient GetAuthorizedClient(Uri serverUrl, string apiKey, ILogger logger, Guid correlationId)
         {
-            logger.WriteLow("Adding authentication header");
+            var client = new HttpClient();
+            client.BaseAddress = serverUrl;
+            if (!string.IsNullOrEmpty(apiKey))
+            {
+                AddAuthenticationHeaders(client, apiKey, logger);
+            }
+            else
+            {
+                logger.WriteLow("No authentication header required");
+            }
+            if (!(correlationId == default))
+            {
+                client.DefaultRequestHeaders.Add(_correlationIdHeaderName, correlationId.ToString());
+            }
+            return client;
+        }
 
+        private void GetTokenFromApiKey(string baseUrl, string apiKey, ILogger logger)
+        {
             if (!_keyCache.Keys.Contains(apiKey) || _keyCache[apiKey].Expires <= DateTime.UtcNow)
             {
-                var baseUrl = request.RequestUri.GetLeftPart(UriPartial.Authority);
-                var httpWebRequest = (HttpWebRequest) WebRequest.Create(new Uri($"{baseUrl}/token"));
+                var httpWebRequest = (HttpWebRequest)WebRequest.Create(new Uri($"{baseUrl}/token"));
                 httpWebRequest.Method = "POST";
                 httpWebRequest.ContentType = "application/x-www-form-urlencoded";
                 string postData = $"grant_type=apikey&key={HttpUtility.UrlEncode(apiKey)}";
@@ -83,12 +103,12 @@ namespace Smartlogic.Semaphore.Api
 
                 try
                 {
-                    httpWebResponse = (HttpWebResponse) httpWebRequest.GetResponse();
+                    httpWebResponse = (HttpWebResponse)httpWebRequest.GetResponse();
                 }
                 catch (WebException ex)
                 {
                     logger.WriteLow("Access token request returned {0}", ex.Message);
-                    httpWebResponse = (HttpWebResponse) ex.Response;
+                    httpWebResponse = (HttpWebResponse)ex.Response;
                     if (httpWebResponse.StatusCode == HttpStatusCode.BadRequest)
                     {
                         var errorResponse = DeserializeJsonResponse<TokenErrorResponse>(httpWebResponse);
@@ -116,10 +136,23 @@ namespace Smartlogic.Semaphore.Api
             {
                 logger.WriteLow("Using cached access token");
             }
+        }
 
+        private void AddAuthenticationHeaders(HttpWebRequest request, string apiKey, ILogger logger)
+        {
+            logger.WriteLow("Adding authentication header");
+            GetTokenFromApiKey(request.RequestUri.GetLeftPart(UriPartial.Authority), apiKey, logger);
             logger.WriteLow("Adding 'Authorization' header with access token");
             var bearer = $"bearer {_keyCache[apiKey].AccessToken}";
             request.Headers.Add(HttpRequestHeader.Authorization, bearer);
+        }
+
+        private void AddAuthenticationHeaders(HttpClient client, string apiKey, ILogger logger)
+        {
+            logger.WriteLow("Adding authentication header");
+            GetTokenFromApiKey(client.BaseAddress.GetLeftPart(UriPartial.Authority), apiKey, logger);
+            logger.WriteLow("Adding 'Authorization' header with access token");
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _keyCache[apiKey].AccessToken);
         }
 
         private T DeserializeJsonResponse<T>(HttpWebResponse httpWebResponse)

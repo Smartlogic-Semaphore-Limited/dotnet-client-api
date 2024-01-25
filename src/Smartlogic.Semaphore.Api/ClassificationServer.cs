@@ -5,9 +5,13 @@ using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Net;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text.RegularExpressions;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Xml;
 
 namespace Smartlogic.Semaphore.Api
@@ -130,50 +134,7 @@ namespace Smartlogic.Semaphore.Api
 
             WriteMedium("Calling Tagging API (Binary). Item Title={0}, FileName={1}", title, fileName);
 
-            var oFrmFields =
-                new Dictionary<string, string>
-                {
-                    {"operation", "CLASSIFY"},
-                    {"title", title},
-                    {"body", altBody}
-                };
-
-            if (options != null)
-            {
-                if (options.Threshold.HasValue)
-                {
-                    oFrmFields.Add("threshold", options.Threshold.Value.ToString(CultureInfo.InvariantCulture));
-                }
-                if (!string.IsNullOrEmpty(options.Type))
-                {
-                    oFrmFields.Add("type", options.Type);
-                }
-                if (!string.IsNullOrEmpty(options.ClusteringType))
-                {
-                    oFrmFields.Add("clustering_type", options.ClusteringType);
-                }
-
-                if (options.ClusteringThreshold.HasValue)
-                {
-                    oFrmFields.Add("clustering_threshold", options.ClusteringThreshold.Value.ToString(CultureInfo.InvariantCulture));
-                }
-
-                switch (options.ArticleType)
-                {
-                    case ArticleType.Default:
-                    case ArticleType.ServerDefault:
-                        break;
-                    case ArticleType.SingleArticle:
-                        oFrmFields.Add("singlearticle", "1");
-                        break;
-                    case ArticleType.MultiArticle:
-                        oFrmFields.Add("multiarticle", "1");
-                        break;
-                }
-            }
-
-            foreach (var sKey in metaValues.Keys)
-                oFrmFields.Add("meta_" + sKey, metaValues[sKey]);
+            var oFrmFields = PopulateClassifyFormField(title, altBody, options, metaValues);
 
             List<FileUpload> oFiles = null;
 
@@ -190,6 +151,54 @@ namespace Smartlogic.Semaphore.Api
                 };
             }
             return PerformWebClassify(oFrmFields, oFiles);
+        }
+
+        /// <summary>
+        ///     Passes values and stream-based binary content to Classification Server for processing.
+        ///     This method accepts a stream for binary data, allowing for efficient processing of large or streamed content.
+        /// </summary>
+        /// <param name="title">The title of the item being classified. This value is optional.</param>
+        /// <param name="document">A stream representing binary content to be classified</param>
+        /// <param name="fileName">Where binary content is being classified, a filename is required</param>
+        /// <param name="metaValues">A dictionary of values to be classified</param>
+        /// <param name="altBody">
+        ///     When classifying HTML content, <paramref name="altBody" /> is used to pass the body of the page
+        /// </param>
+        /// <param name="options">Additional classification options. If no values are passed, server defaults are used</param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentException"></exception>
+        public ClassificationResult ClassifyFromStream(string title,
+            Stream document,
+            string fileName,
+            Dictionary<string, string> metaValues,
+            string altBody,
+            ClassificationOptions options)
+        {
+            if (metaValues == null) throw new ArgumentException("Missing metaValues", nameof(metaValues));
+            if (document != null && string.IsNullOrEmpty(fileName)) throw new ArgumentException("Documents must have an associated filename", nameof(fileName));
+            if (document == null && !string.IsNullOrEmpty(fileName))
+                throw new ArgumentException("Filename parameter should not be set unless an associated document is passed via the document parameter",
+                    nameof(document));
+
+            WriteMedium("Calling Tagging API (Binary). Item Title={0}, FileName={1}", title, fileName);
+
+            var oFrmFields = PopulateClassifyFormField(title, altBody, options, metaValues);
+
+            List<FileStreamUpload> oFiles = null;
+
+            if (!string.IsNullOrEmpty(fileName) && document != null)
+            {
+                oFiles = new List<FileStreamUpload>
+                {
+                    new FileStreamUpload
+                    {
+                        FieldName = "UploadFile",
+                        FileName = fileName,
+                        Contents = document
+                    }
+                };
+            }
+            return PerformStreamWebClassify(oFrmFields, oFiles);
         }
 
 
@@ -628,7 +637,7 @@ namespace Smartlogic.Semaphore.Api
                 {
                     var oStop = new Stopwatch();
                     oStop.Start();
-                    oResponse = (HttpWebResponse) request.GetResponse();
+                    oResponse = (HttpWebResponse)request.GetResponse();
                     oStop.Stop();
                     WriteLow("Response received from CS. Time elapsed M: {0} S: {1} MS: {2}",
                         oStop.Elapsed.Minutes,
@@ -650,7 +659,7 @@ namespace Smartlogic.Semaphore.Api
 
                     WriteException(oWeX);
                     //throw;
-                    oResponse = (HttpWebResponse) oWeX.Response;
+                    oResponse = (HttpWebResponse)oWeX.Response;
                     if (oResponse == null) throw; //Re-throw the original exception (TimeOut)
                 }
                 WriteMedium(
@@ -691,6 +700,164 @@ namespace Smartlogic.Semaphore.Api
             }
         }
 
+        private ClassificationResult PerformStreamWebClassify(Dictionary<string, string> formFields, IEnumerable<FileStreamUpload> files)
+        {
+            var sBoundary = BoundaryString;
+            WriteMedium($"Classifying data using server Url={_serverUrl}", null);
+            try
+            {
+                using (var client = AuthenticatedRequestBuilder.Instance.GetAuthorizedClient(_serverUrl, _apiKey, Logger, _correlationId))
+                {
+                    client.Timeout = TimeSpan.FromSeconds(_timeout);
+
+                    using (var formData = new MultipartFormDataContent(sBoundary))
+                    {
+                        #region Upload form fields
+
+                        if (formFields != null)
+                        {
+                            foreach (var field in formFields)
+                            {
+                                var fieldValue = field.Value == null ? "" : field.Value;
+                                var fieldName = $"\"{field.Key}\"";
+                                var stringContent = new StringContent(fieldValue);
+                                formData.Add(stringContent, fieldName);
+                                WriteLow("Added form-data: name={0}, value={1}", field.Key, field.Value);
+                            }
+                        }
+
+                        #endregion
+
+                        #region Upload files
+
+                        if (files != null)
+                        {
+                            foreach(var file in files)
+                            {
+                                var fileContent = new StreamContent(file.Contents);
+                                fileContent.Headers.ContentType = new MediaTypeHeaderValue("application/octet-stream");
+                                var fieldName = string.Format("\"{0}\"", file.FieldName);
+                                var fileName = string.Format("\"{0}\"", file.FileName);
+                                formData.Add(fileContent, fieldName, fileName);
+                            }
+                        }
+
+                        #endregion
+
+                        var boundary = formData.Headers.ContentType.Parameters.First(o => o.Name == "boundary");
+                        boundary.Value = boundary.Value.Replace("\"", string.Empty);
+                        WriteMedium($"Sending {formData.Headers.ContentLength} bytes", null);
+
+                        HttpResponseMessage oResponse;
+                        try
+                        {
+                            var oStop = new Stopwatch();
+                            oStop.Start();
+                            oResponse = client.PostAsync("", formData).Result;
+                            oStop.Stop();
+                            WriteLow("Response received from CS. Time elapsed M: {0} S: {1} MS: {2}",
+                                oStop.Elapsed.Minutes,
+                                oStop.Elapsed.Seconds.ToString(CultureInfo.InvariantCulture).PadLeft(2, '0'),
+                                oStop.Elapsed.Milliseconds);
+                        }
+                        catch (AggregateException aggEx)
+                        {
+                            if (aggEx.InnerException is TaskCanceledException tcEx)
+                            {
+                                WriteError("Timeout Exception occurred. Timeout setting: {0}", _timeout);
+                                throw new TimeoutException($"Call to Classification server timed out after {_timeout} seconds", tcEx);
+                            }
+                            throw aggEx.InnerException;
+                        }
+
+                        WriteMedium(
+                            $"API Response Code={oResponse.StatusCode}",
+                            null);
+                        if (!oResponse.IsSuccessStatusCode)
+                        {
+                            WriteError($"The remote server returned an error: {(int)oResponse.StatusCode} {oResponse.ReasonPhrase}");
+                        }
+
+                        ClassificationResult oParser = null;
+                        var content = oResponse.Content.ReadAsStringAsync().Result;
+
+                        if (content != null)
+                        {
+                            oParser = new ClassificationResult(content);
+                            WriteMedium("Received response: {0}", oParser.Response.OuterXml);
+                        }
+                        return oParser;
+                    }
+                }
+            }
+            catch (ThreadAbortException oTeX)
+            {
+                WriteException(oTeX);
+                throw;
+            }
+            catch (WebException oWeX)
+            {
+                WriteError("Web Exception occurred. Timeout setting: {0}", _timeout);
+                WriteException(oWeX);
+                throw;
+            }
+            catch (Exception oX)
+            {
+                WriteException(oX);
+                throw;
+            }
+        }
+
+        private Dictionary<string, string> PopulateClassifyFormField(string title, string altBody, ClassificationOptions options, Dictionary<string, string> metaValues)
+        {
+            var oFrmFields =
+                new Dictionary<string, string>
+                {
+                    {"operation", "CLASSIFY"},
+                    {"title", title},
+                    {"body", altBody}
+                };
+
+            if (options != null)
+            {
+                if (options.Threshold.HasValue)
+                {
+                    oFrmFields.Add("threshold", options.Threshold.Value.ToString(CultureInfo.InvariantCulture));
+                }
+                if (!string.IsNullOrEmpty(options.Type))
+                {
+                    oFrmFields.Add("type", options.Type);
+                }
+                if (!string.IsNullOrEmpty(options.ClusteringType))
+                {
+                    oFrmFields.Add("clustering_type", options.ClusteringType);
+                }
+
+                if (options.ClusteringThreshold.HasValue)
+                {
+                    oFrmFields.Add("clustering_threshold", options.ClusteringThreshold.Value.ToString(CultureInfo.InvariantCulture));
+                }
+
+                switch (options.ArticleType)
+                {
+                    case ArticleType.Default:
+                    case ArticleType.ServerDefault:
+                        break;
+                    case ArticleType.SingleArticle:
+                        oFrmFields.Add("singlearticle", "1");
+                        break;
+                    case ArticleType.MultiArticle:
+                        oFrmFields.Add("multiarticle", "1");
+                        break;
+                }
+            }
+
+            foreach (var sKey in metaValues.Keys)
+                oFrmFields.Add("meta_" + sKey, metaValues[sKey]);
+
+            return oFrmFields;
+        }
+
         #region Nested type: FileUpload
 
         /// <summary>
@@ -702,6 +869,31 @@ namespace Smartlogic.Semaphore.Api
             ///     The byte array content to be uploaded.
             /// </summary>
             public byte[] Contents { get; set; }
+
+            /// <summary>
+            ///     The HTML form field the file should be uploaded into.
+            /// </summary>
+            public string FieldName { get; set; }
+
+            /// <summary>
+            ///     The name of the file to be uploaded.
+            /// </summary>
+            public string FileName { get; set; }
+        }
+
+        #endregion
+
+        #region Nested type: FileStreamUpload
+
+        /// <summary>
+        ///     Holds the information about the file(s) to be uploaded.
+        /// </summary>
+        internal struct FileStreamUpload
+        {
+            /// <summary>
+            ///     The byte array content to be uploaded.
+            /// </summary>
+            public Stream Contents { get; set; }
 
             /// <summary>
             ///     The HTML form field the file should be uploaded into.
