@@ -720,8 +720,7 @@ namespace Smartlogic.Semaphore.Api
                             {
                                 var fieldValue = field.Value == null ? "" : field.Value;
                                 var fieldName = $"\"{field.Key}\"";
-                                var stringContent = new StringContent(fieldValue);
-                                formData.Add(stringContent, fieldName);
+                                formData.Add(new StringContent(fieldValue), fieldName);
                                 WriteLow("Added form-data: name={0}, value={1}", field.Key, field.Value);
                             }
                         }
@@ -736,8 +735,8 @@ namespace Smartlogic.Semaphore.Api
                             {
                                 var fileContent = new StreamContent(file.Contents);
                                 fileContent.Headers.ContentType = new MediaTypeHeaderValue("application/octet-stream");
-                                var fieldName = string.Format("\"{0}\"", file.FieldName);
-                                var fileName = string.Format("\"{0}\"", file.FileName);
+                                var fieldName =$"\"{file.FieldName}\"";
+                                var fileName = $"\"{file.FileName}\"";
                                 formData.Add(fileContent, fieldName, fileName);
                             }
                         }
