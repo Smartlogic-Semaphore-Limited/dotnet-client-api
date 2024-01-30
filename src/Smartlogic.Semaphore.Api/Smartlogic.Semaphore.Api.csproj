@@ -2,15 +2,17 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Company>MarkLogic Corporation</Company>
-    <Product>Semaphore by MarkLogic</Product>
-    <Copyright>Copyright © MarkLogic Corporation 2023</Copyright>
+    <Company>Progress Software Corporation</Company>
+    <Product>Progress Semaphore</Product>
+    <Copyright>
+        Copyright © 2024 Progress Software Corporation and/or its subsidiaries or affiliates.
+    </Copyright>
     <Description>A client library that can be used to connect to Semaphore services from Microsoft .Net framework applications</Description>
     <PackageId>Smartlogic.Semaphore.Api</PackageId>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Authors>MarkLogic Corporation</Authors>
-    <AssemblyVersion>1.1.22.0</AssemblyVersion>
-    <Version>1.1.22</Version>
+    <Authors>Progress Software Corporation</Authors>
+    <AssemblyVersion>1.1.23.0</AssemblyVersion>
+    <Version>1.1.23</Version>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
