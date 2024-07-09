@@ -13,6 +13,7 @@
       <dependency id="Newtonsoft.Json" version="11.0.0" />
     </dependencies>
     <releaseNotes>
+      v 1.1.24 - Fixed API key validation. Added Newtonsoft.Json dependency.
       v 1.1.23 - Added option to classify from stream
       v 1.1.22 - Added correlation id header to CS/SES requests
       v 1.1.21 - Added method to retrieve languages of a specific SES model
