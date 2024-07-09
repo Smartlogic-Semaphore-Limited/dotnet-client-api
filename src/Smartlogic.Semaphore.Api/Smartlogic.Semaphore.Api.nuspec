@@ -9,6 +9,9 @@
     <projectUrl>https://github.com/Smartlogic-Semaphore-Limited/dotnet-client-api</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
+    <dependencies>
+      <dependency id="Newtonsoft.Json" version="11.0.0" />
+    </dependencies>
     <releaseNotes>
       v 1.1.23 - Added option to classify from stream
       v 1.1.22 - Added correlation id header to CS/SES requests
