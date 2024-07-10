@@ -10,7 +10,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
     <dependencies>
-      <dependency id="Newtonsoft.Json" version="11.0.0" />
+      <dependency id="Newtonsoft.Json" version="11.0.2" />
     </dependencies>
     <releaseNotes>
       v 1.1.24 - Fixed API key validation. Added Newtonsoft.Json dependency.
