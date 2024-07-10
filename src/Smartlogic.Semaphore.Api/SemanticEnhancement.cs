@@ -102,10 +102,10 @@ namespace Smartlogic.Semaphore.Api
         {
             if (!string.IsNullOrEmpty(apiKey))
             {
-                var regex = new Regex("^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4})$");
+                var regex = new Regex("^(?:[A-Za-z0-9_-]{4})*(?:[A-Za-z0-9_-]{2}==|[A-Za-z0-9_-]{3}=|[A-Za-z0-9_-]{4})$");
                 if (!regex.IsMatch(apiKey))
                 {
-                    throw new ArgumentException("apikey is invalid", nameof(apiKey));
+                    throw new ArgumentException("API key is invalid", nameof(apiKey));
                 }
             }
             _apiKey = apiKey;
